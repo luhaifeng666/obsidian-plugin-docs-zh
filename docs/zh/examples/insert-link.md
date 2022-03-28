@@ -6,7 +6,7 @@ This example assumes knowledge of [commands](../guides/commands.md), [modals](..
 
 Here's what you'll create:
 
-![Insert link modal](../../static/img/example-insert-link.gif)
+![Insert link modal](/images/example-insert-link.gif)
 
 Here's the full source code:
 

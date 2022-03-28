@@ -52,7 +52,7 @@ export default class ExamplePlugin extends Plugin {
 
 The modal in the previous example only displayed some text. Let's look at a little more complex example that handles input from the user.
 
-![Modal with user input](../../static/img/modal-input.png)
+![Modal with user input](/images/modal-input.png)
 
 ```ts title="modal.ts" {21,30-31}
 import { App, Modal, Setting } from "obsidian";
@@ -108,7 +108,7 @@ new ExampleModal(this.app, (result) => {
 
 [`SuggestModal`](../api/classes/SuggestModal.md) is a special modal that lets you display a list of suggestions to the user.
 
-![Modal with suggestions](../../static/img/suggest-modal.gif)
+![Modal with suggestions](/images/suggest-modal.gif)
 
 ```ts title="modal.ts"
 import { App, Notice, SuggestModal } from "obsidian";
@@ -156,7 +156,7 @@ export class ExampleModal extends SuggestModal<Book> {
 
 In addition to `SuggestModal`, the Obsidian API provides an even more specialized type of modal for suggestions: the [`FuzzySuggestModal`](../api/classes/FuzzySuggestModal.md). While it doesn't give you the same control of how each item is rendered, you get [fuzzy string search](https://en.wikipedia.org/wiki/Approximate_string_matching) out-of-the-box.
 
-![Fuzzy string search](../../static/img/fuzzy-suggestion-modal.png)
+![Fuzzy string search](/images/fuzzy-suggestion-modal.png)
 
 ```ts
 export class ExampleModal extends FuzzySuggestModal<Book> {

@@ -58,8 +58,6 @@ pageConfig.forEach(item => {
 	})
 })
 
-console.log(sidebar)
-
 module.exports = {
   title: 'Obsidian 插件中文文档',
   base: '/obsidian-plugin-docs-zh/',

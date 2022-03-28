@@ -44,7 +44,7 @@ For more information on what icons you can use, refer to [Icons](icons.md).
 
 You can also add an item to the file menu, or the editor menu, by subscribing to the `file-menu` and `editor-menu` workspace events:
 
-![Context menu positions](../../static/img/context-menu-positions.png)
+![Context menu positions](/images/context-menu-positions.png)
 
 ```ts
 import { Notice, Plugin } from "obsidian";
