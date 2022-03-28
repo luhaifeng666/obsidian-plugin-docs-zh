@@ -4,7 +4,7 @@
 
 </div>
 
-<h1 align="center">Obsidian 插件中文文档</h1>
+<h1 align="center">Obsidian 插件开发文档</h1>
 
 <div align="center">
 

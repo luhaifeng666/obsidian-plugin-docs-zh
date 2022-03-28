@@ -59,7 +59,7 @@ pageConfig.forEach(item => {
 })
 
 module.exports = {
-  title: 'Obsidian 插件中文文档',
+  title: 'Obsidian 插件开发文档',
   base: '/obsidian-plugin-docs-zh/',
   description: ' ',
   head: [
