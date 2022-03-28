@@ -62,7 +62,7 @@ console.log(sidebar)
 
 module.exports = {
   title: 'Obsidian 插件中文文档',
-  base: '/obsdian-docs/',
+  base: '/obsidian-plugin-docs-zh/',
   description: ' ',
   head: [
 		['link', { rel: 'icon', href: 'https://forum.obsidian.md/uploads/default/optimized/1X/bf119bd48f748f4fd2d65f2d1bb05d3c806883b5_2_32x32.png' }]
