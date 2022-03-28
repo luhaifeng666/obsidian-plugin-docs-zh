@@ -1,1 +1,1 @@
-<img src="../.vuepress/public/images/logo.webp" />
+<img src="/images/logo.webp" />
