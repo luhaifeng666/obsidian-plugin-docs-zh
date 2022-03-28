@@ -1,0 +1,7 @@
+'**/*.{js, jsx, vue}':
+      - 'eslint --fix'
+      - 'git add'
+    '**/*.{less, md}':
+      - 'prettier --write'
+      - 'git add'
+    
