@@ -19,6 +19,6 @@ title: 开发流程
 
 ## 在文件发生变化时重载插件
 
-[Hot-Reload](https://github.com/pjeby/hot-reload) 可以在你插件代码发生变化的时候对其施行热重载。
+[Hot-Reload](https://github.com/pjeby/hot-reload) 可以在你的插件代码发生变化时对其施行热重载。
 
 想要获取关于这个插件的更多信息, 可以查阅 [forum announcement](https://forum.obsidian.md/t/plugin-release-for-developers-hot-reload-the-plugin-s-youre-developing/12185)。
