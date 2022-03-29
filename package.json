@@ -7,16 +7,20 @@
 	"scripts": {
 		"ca": "git add -A && git-cz -av",
 		"commit": "git-cz",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+		"docs:dev": "vuepress dev docs",
+		"docs:build": "vuepress build docs"
 	},
 	"keywords": [],
 	"license": "ISC",
 	"devDependencies": {
+		"@vuepress/plugin-search": "^2.0.0-beta.36",
 		"commitizen": "^4.2.3",
 		"cz-conventional-changelog": "^3.3.0",
 		"husky": "^5.0.9",
 		"lint-staged": "^10.5.4",
 		"vuepress": "^2.0.0-beta.36"
+	},
+	"dependencies": {
+		"webpack": "^5.0.0"
 	}
 }

@@ -1,12 +1,12 @@
 ---
-sidebar_position: 10
+title: '创建你的第一个插件'
 ---
 
-# Create your first plugin
+# 创建你的第一个插件
 
-In this guide, you'll build a plugin for Obsidian. If you prefer a video walk-through, check out [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ).
+通过这篇指南，你将学会如何开发一个 Obsidian  插件。 如果你更喜欢通过视频来学习, 可以查看由 [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ) 提供的这段视频 [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k)。
 
-:::warning Before you start
+:::warning 开始之前
 **Don't develop plugins in your main vault.** When you develop a plugin, one mistake can lead to unintentional modifications to your vault. You also risk **permanently deleting your vault**.
 :::
 

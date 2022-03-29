@@ -2,60 +2,57 @@
 const fs = require('fs')
 const BASE_URL = './docs/zh/'
 
-let getFiles = function(type) {
-	let baseUrl = type && `${type.split('/')[1]}/`
-	let urls = fs.readdirSync(`${BASE_URL}${type}`).map(item => {
-		return `/zh/${baseUrl}${item}`
+const getFiles = function (baseUrl) {
+	let urls = fs.readdirSync(`${BASE_URL}${baseUrl}`).map(item => {
+		return `/zh/${baseUrl}/${item}`
 	})
 	return urls
 }
+
+const getSidebarMenuItem = function (paths, baseUrl) {
+  return paths.reduce((arr, path) => {
+		if(!Array.isArray(path)) {
+			let children = path.children ? getSidebarMenuItem(path.children, path.url) : getFiles(`${baseUrl}${path.url}`)
+			arr.push({
+				text: path.name,
+				collapsible: true,
+				children
+			})
+		} else {
+			arr.push(...path)
+		}
+    return arr
+	}, [])
+}
+
 let sidebar = {}
 const pageConfig = [
 	{
 		name: '/zh/',
-		baseUrl: '/',
-		paths: [['introduction.md'],
-    // {
-		// 	name: '快速开始',
-		// 	url: 'getting-started'
-		// }, {
-		// 	name: '概念',
-		// 	url: 'concepts'
-		// }, {
-		// 	name: '指南',
-		// 	url: 'guides'
-		// }, {
-		// 	name: '高阶指南',
-		// 	url: 'advanced-guides'
-		// }, {
-		// 	name: '示例',
-		// 	url: 'examples'
-		// }, {
-		// 	name: '发布',
-		// 	url: 'publishing'
-		// }, {
-		// 	name: '接口',
-		// 	url: 'api'
-		// },
-    // ['manifest-reference.md', 'contribute.md']
+		baseUrl: '',
+		paths: [
+      ['/zh/introduction.md'],
+      { name: '快速开始', url: 'getting-started' },
+      { name: '概念', url: 'concepts'},
+      { name: '指南', url: 'guides'},
+      { name: '高阶指南', url: 'advanced-guides'},
+      { name: '示例', url: 'examples' },
+      { name: '发布', url: 'publishing' },
+      { name: 'API', url: 'api/', children: [
+          { name: '类', url: 'classes' },
+          { name: '枚举', url: 'enums' },
+          { name: '方法', url: 'functions' },
+          { name: '接口', url: 'interfaces' },
+          ['/zh/api/overview.md'],
+          { name: '类型', url: 'types' }
+        ]
+      },
+      ['/zh/manifest-reference.md', '/zh/contribute.md']
     ]
 	}
 ]
 pageConfig.forEach(item => {
-	sidebar[item.name] = []
-	item.paths.forEach(path => {
-		if(!Array.isArray(path)) {
-			let children = getFiles(`${item.baseUrl}${path.url}`)
-			let conf = {
-				text: path.name,
-				collapsible: true,
-				children
-			}
-			sidebar[item.name].push(conf)
-		} else {
-			sidebar[item.name].push(...path)
-		}
-	})
+	sidebar[item.name] = getSidebarMenuItem(item.paths, item.baseUrl)
 })
 
 module.exports = {
@@ -76,22 +73,21 @@ module.exports = {
 		],
     lastUpdated: 'Last Updated',
 		sidebarDepth: 3,
-    // 可折叠的侧边栏
     sidebar
   },
   plugins: [
-    // [
-    //   '@vuepress/plugin-search',
-    //   {
-    //     locales: {
-    //       '/': {
-    //         placeholder: 'Search',
-    //       },
-    //       '/zh/': {
-    //         placeholder: '搜索',
-    //       },
-    //     },
-    //   },
-    // ],
+    [
+      '@vuepress/plugin-search',
+      {
+        locales: {
+          '/': {
+            placeholder: 'Search',
+          },
+          '/zh/': {
+            placeholder: '搜索',
+          },
+        },
+      },
+    ]
   ]
 }
