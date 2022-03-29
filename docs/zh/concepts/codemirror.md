@@ -1,14 +1,13 @@
 # CodeMirror
 
-Obsidian uses [CodeMirror](https://codemirror.net/) as the underlying text editor.
+Obsidian 使用 [CodeMirror](https://codemirror.net/) 作为底层文本编辑器。
+:::danger 警告
+仅当 [编辑器](../guides/editor.md) 无法满足你的需求时再去考虑 CodeMirror。
 
-:::danger
-Only consider CodeMirror if what you want to do isn't already possible through the [Editor](../guides/editor.md).
-
-While Obsidian makes the underlying CodeMirror instance available to plugins through the Obsidian API, most plugins shouldn't use it. If possible, use [`Editor`](../api/classes/Editor.md), a high-level abstraction that bridges breaking changes between different versions of CodeMirror.
+尽管 Obsidian 将底层的 CodeMirror 实例通过 API 的方式暴露给了插件, 但是大部分的插件不应该直接使用它。而是尽可能的使用 [`Editor`](../api/classes/Editor.md)，它是一种高级抽象，用于桥接 CodeMirror 不同版本间的破坏性改动。
 :::
 
-You can access the CodeMirror editor on an active Markdown view:
+你可以在一个活动的 Markdown 窗口中访问到 CodeMirror:
 
 ```ts
 const view = this.app.workspace.getActiveViewOfType(MarkdownView);
@@ -18,5 +17,4 @@ if (view) {
 }
 ```
 
-You can also use [`registerCodeMirror()`](../api/classes/Plugin_2.md#registercodemirror) to register a callback function whenever the user opens a new editor.
-
+当用户打开一个新的编辑器时，你也可以使用 [`registerCodeMirror()`](../api/classes/Plugin_2.md#registercodemirror) 方法去注册一个回调函数。
