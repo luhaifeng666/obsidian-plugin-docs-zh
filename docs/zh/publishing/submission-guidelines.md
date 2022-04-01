@@ -6,8 +6,6 @@
 
 当你在 vault 中接收文件或文件夹的自定义 paths(路径) 时，或者当你在插件中构建你自己的 paths(路径) 时，要使用 [`normalizePath()`](../api/functions/normalizePath) 方法。
 
-`normalizePath()` 方法takes a path and scrubs it to be safe for the file system and for cross-platform use. This function:
-
 `normalizePath()` 方法接收一个 path(路径) 作为参数并清理它以确保文件系统以及跨平台使用的安全。这个方法：
 
 - 清理正斜杠和反斜杠的使用，例如将 1 个或多个 `\` 或 `/` 替换为单个 `/`。
