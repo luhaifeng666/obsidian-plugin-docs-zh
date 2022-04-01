@@ -1,3 +1,7 @@
+---
+title: Vault
+---
+
 # 库
 
 以下内容摘自官方的 [Working with multiple Vaults](https://help.obsidian.md/How+to/Working+with+multiple+vaults) 文档:
