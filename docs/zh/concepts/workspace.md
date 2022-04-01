@@ -2,6 +2,8 @@
 
 Obsidian lets you configure what content is visible to you at any given time. Hide the file explorer when you don't need it, display multiple documents side by side, or show an outline of your document while you're working on it. The configuration of visible content within your application window is known as the _workspace_.
 
+Obsidian 允许你配置在指定的时间给你显示指定内容。
+
 The workspace is implemented as a [tree data structure](https://en.wikipedia.org/wiki/Tree_(data_structure)), where each node in the tree is referred to as a [workspace item](../api/classes/WorkspaceItem.md). There are two types of workspace items: [_parents_](../api/classes/WorkspaceParent.md) and [_leaves_](../api/classes/WorkspaceLeaf.md). The main difference is that parent items can contain _child_ items, including other parent items, whereas leaf items can't contain any workspace items at all.
 
 There are two types of parent items, [_splits_](../api/classes/WorkspaceSplit.md) and [_tabs_](../api/classes/WorkspaceTabs.md), which determine how the children are presented to the user:
