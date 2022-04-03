@@ -2,49 +2,51 @@
 sidebar_position: 1
 ---
 
-# Submit your plugin
+# 提交插件
 
-If you want to share your plugin with the Obsidian community, the best way is to submit it to the [official list of plugins](https://github.com/obsidianmd/obsidian-releases/blob/master/community-plugins.json). Once your plugin has been reviewed, users can install your plugin directly from within Obsidian. It'll also be featured in the [plugin directory](https://obsidian.md/plugins) on the Obsidian website. In this guide, you'll submit your own plugin.
+如果你想与 Obsidian 社区分享你的插件，最好的方式是将你的插件提交到[官方的插件库](https://github.com/obsidianmd/obsidian-releases/blob/master/community-plugins.json)中。当你的插件被审核过后，用户可以直接在 Obsidian 中安装你的插件。它也将出现在 Obsidian 网站的[插件目录](https://obsidian.md/plugins)中。在本指南中，你将学习如何提交自己的插件。
 
-:::caution
-The purpose of this guide is to provide richer instructions for how to submit a plugin. Before you submit your plugin however, make sure that you have reviewed the [official instructions](https://github.com/obsidianmd/obsidian-sample-plugin#adding-your-plugin-to-the-community-plugin-list).
+:::warning
+本指南旨在为如何提交插件提供更丰富的说明。在你提交插件之前，请确保已经阅读过[官方的说明](https://github.com/obsidianmd/obsidian-sample-plugin#adding-your-plugin-to-the-community-plugin-list)。
 :::
 
-## Prerequisites
+## 前提
 
-To follow this guide, make sure you have the following files at the root of your repository:
+遵循本指南，请确认你项目的更路径中存在以下文件：
 
-- A `README.md` that describes the purpose of the plugin, and how to use it.
-- A `LICENSE` that determines how others are allowed to use the plugin and its source code. If you need help to pick a license for your plugin, refer to [Choose a License](https://choosealicense.com/).
-- A `manifest.json` that describes your plugin. For more information, refer to [Manifest](manifest-reference.md).
+- 用来描述插件以及使用方式的 `README.md` 文件。
+- 用来决定其他开发者如何使用插件及其源码的 `LICENSE` 。如果在选择 license 时需要帮助的话，可以查阅 [Choose a License](https://choosealicense.com/) 这篇文档。
+- 用来描述插件的 `manifest.json` 文件。想要获取更多相关信息，可以查阅 [Manifest](manifest-reference.md) 这篇文档。
 
-## Step 1 — Create a release
+## 第一步 — 创建发布
 
-In this step, you'll prepare a release for your plugin that's ready to be submitted.
+在此步骤中，你将准备提交一个插件版本。
 
-1. In `manifest.json`, update `version` to a new version that follows the [Semantic Versioning](https://semver.org/) specification.
+1. 在 `manifest.json` 文件中, 根据 [Semantic Versioning](https://semver.org/) 版本规范修改 `version` 版本。
 
-1. [Create a GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release).
-   - The  "Tag version" of the release must match the version in your `manifest.json`.
-   - Don't include a `v` in the tag version.
-1. Enter a name for the release, and describe it in the description field.
+2. [创建 Github 版本](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release).
+   - 版本的 tag 必须与 `manifest.json` 文件中的 version 字段相对应。
+   - 在版本 tag 中不要加 `v`。
 
-1. Upload the following plugin assets to the release, as binary attachments:
+3. 输入版本的名称, 并且在描述栏中输入插件的描述信息。
+
+4. 将下列文件上传至版本库, as binary attachments:
 
    - `main.js`
    - `manifest.json`
    - `styles.css` (optional)
 
 :::tip
-To automate the process of creating a release, refer to [Release your plugin with GitHub Actions](release-your-plugin-with-github-actions.md).
+要想将创建版本的过程自动化，可以查阅 [Release your plugin with GitHub Actions](release-your-plugin-with-github-actions.md) 这篇文档。
 :::
-## Step 2 — Submit your plugin for review
 
-In this step, you'll submit your plugin to the Obsidian team for review.
+## Step 2 — 提交你的插件以供审核
 
-1. Fork the [obsidian-releases](https://github.com/obsidianmd/obsidian-releases) repository on GitHub. For more information on how to fork a repository, refer to [Fork a repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+在此步骤中，你将提交插件以供 Obsidian 团队进行审核。
 
-1. In `community-plugins.json`, create a new entry in the JSON array. The following example shows the entry for the [Recent Files](https://github.com/tgrosinger/recent-files-obsidian) plugin.
+1. Fork [obsidian-releases](https://github.com/obsidianmd/obsidian-releases) 到 GitHub. 想要获取更多关于如何 fork 的信息, 可以参考 [Fork a repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo) 这篇文档。
+
+2. 在 `community-plugins.json` 的 JSON 中创建一个新条目。 可以参考 [Recent Files](https://github.com/tgrosinger/recent-files-obsidian) 这篇文档中的示例。
 
    ```json
    {
@@ -57,37 +59,37 @@ In this step, you'll submit your plugin to the Obsidian team for review.
    }
    ```
 
-   - `id`, `name`, `author`, and `description` determines how your plugin appears to the user, and should match the corresponding properties in your [plugin manifest](manifest-reference.md).
-   - `id` is unique to your plugin. Search `community-plugins.json` to confirm that there's no existing plugin with the same id.
-   - `repo` is the path to your GitHub repository. For example, if your GitHub repo is located at https://github.com/your-username/your-repo-name, the path is `your-username/your-repo-name`.
-   - (Optional) `branch` lets you specify the Git branch you want to use. It defaults to `master`, if omitted.
+   - `id`, `name`, `author`, 以及 `description` 字段将决定插件如何展呈现给用户, 并且应该与你的 [插件 manifest](manifest-reference.md) 中的相应属性匹配。
+   - `id` 是插件的唯一标识。 搜索Search `community-plugins.json` 文件，确认下没有相同id的其他插件。
+   - `repo` 是你的 GitHub 仓库路径. 举个例子, 如果你的 Github 地址是 https://github.com/your-username/your-repo-name, 那么路径就是`your-username/your-repo-name`.
+   - (可选的) `branch` 让你指定对应的 Github 分支。如果忽略，默认是 `master`。
 
-   Remember to add a comma after the closing brace, `}`, of the previous entry.
+   请记住在前一个条目的右大括号 `}` 之后添加一个逗号。
 
-1. [Create a pull request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
-1. Follow the instructions in the description field for the pull request to create a pull request from the required template.
-1. Click **Create pull request**.
-1. Fill in the details in the description for the pull request. For the checkboxes, insert an `x` between the brackets, `[x]`, to mark them as done.
-1. Click **Create pull request** (for the last time 🤞).
+3. [创建一个 pull request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+4. 按照 description 栏中的说明拉取所需模板创建一个 pull request。
+5. 点击 **Create pull request**。
+6. 在 details 栏中填写 pull request 的描述信息。对于复选框，在方括号 `[x]` 之间插入一个 `x` 以将其标记为已完成。
+7. 点击 **Create pull request** (最后一次 🤞)。
 
-You've now submitted your plugin to the Obsidian plugin directory. Sit back and wait for the team to review your plugin. The time it takes to review your plugin depends on the current workload of the Obsidian team. The team is still small, so please be patient while you wait for your plugin to be reviewed.
+现在你已经将自己的插件提交到了 Obsidian 的公共仓库。放松下坐等 Obsidian 团队审核你的插件。审核的时间取决于 Obsidian 团队的当前的工作流程。这个团队目前还不大，所以在插件审核期间请耐心等待。
 
-## Step 3 — Address review comments
+## 第三步 — Address 审核意见
 
-Once a reviewer has reviewed your plugin, they'll add a comment to your pull request with the result of the review. The reviewer may require that you update your plugin, or they can offer suggestions on how you can improve it.
+一旦有人审核了你的插件，他们会在你的 pull request 下回复审核的结果。审核者可能会要求你更新插件，或者他们可能会给你提出一些改善意见。
 
-While only Obsidian team members can publish your plugin, other community members may also offer to review your submission in the meantime.
+虽然只有 Obsidian 团队成员可以提交你的插件，同时其他社区的成员可能也会要求去审核你的提交记录。
 
-Users can install your plugin as soon as your pull request has been merged.
+当你的 pull request 被 merge 后，用户就可以立即安装你的插件了。
 
-:::tip Want to help?
-If you'd like to help review community plugins, refer to the [Plugin Review Guidelines](https://liamca.in/Obsidian/Plugin+Review+Guide/index) by Liam Cain.
+:::tip 想要提供帮助？
+如果你想去帮忙审核提交的插件，可以查阅 Liam Cain 所写的 [Plugin Review Guidelines](https://liamca.in/Obsidian/Plugin+Review+Guide/index) 这篇文档。
 :::
 
-## Update an already published plugin
+## 更新已提交的插件
 
-You only need to submit the initial version of your plugin. After that, users can automatically download any new updates to your plugin directly from within Obsidian.
+你只需要提交你最初版本的插件，之后，用户可以直接在 Obsidian 中自动自动更新你的插件。
 
-To release a new update of your plugin, follow the instructions in [Create a release](#step-1--create-a-release).
+要想发布你插件的最新版本，请参照 [Create a release](#step-1--create-a-release) 这篇文章的说明。
 
-For more information about how Obsidian pulls new versions of community plugins, refer to [How community plugins are pulled](https://github.com/obsidianmd/obsidian-releases#how-community-plugins-are-pulled).
+想要获取更多关于 Obsidian 如何拉取新版本的社区插件的信息，可以查阅 [How community plugins are pulled](https://github.com/obsidianmd/obsidian-releases#how-community-plugins-are-pulled) 这篇文档。
