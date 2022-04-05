@@ -1,58 +1,65 @@
----
-sidebar_position: 77
----
-
 # React
 
-In this guide, you'll configure your plugin to use [React](https://reactjs.org/). It assumes that you already have a plugin with a [custom view](../guides/custom-views.md) that you want to convert to use React.
+在本指南中，你将配置你的插件以使用 [React](https://reactjs.org/)。假设你已经拥有一个使用 [custom view](../guides/custom-views.md) 的插件，并且想使用 React 来改写它。
 
-While you don't need to use a separate framework to build a plugin, there are a few reasons why you'd want to use React:
+虽然你并不需要使用单独的框架来开发一个插件，以下是你想使用 React 的几点原因：
 
-- You have existing experience of React and want to use a familiar technology.
-- You have existing React components that you want to reuse in your plugin.
-- Your plugin requires complex state management or other features that can be cumbersome to implement with regular [HTML element](../guides/html-elements.md).
+- 你有使用 React 的经验，并且想使用熟悉的技术。
+- 你想在插件中重复使用现有的 React 组件。
+- 你的插件需要复杂的状态管理，或者有使用常规 [HTML element](../guides/html-elements.md) 无法实现的其他功能。
 
-## Configure your plugin
+## 配置你的插件
 
-1. Add React to your plugin dependencies:
+1. 将 React 添加到依赖中:
 
    ```bash
    npm install react react-dom
    ```
 
-1. Add type definitions for React:
+2. 添加 React 的类型声明:
 
    ```bash
    npm install --save-dev @types/react @types/react-dom
    ```
 
-1. In `tsconfig.json`, enable JSX support on the `compilerOptions` object:
+3. 在 `tsconfig.json` 的 `compilerOptions` 对象中开启 JSX 支持：
 
-   ```ts title="tsconfig.json"
-   {
-     "compilerOptions": {
-       "jsx": "react"
-     }
-   }
-   ```
+:::: code-group
+::: code-group-item tsconfig.json
+```ts
+{
+  "compilerOptions": {
+    "jsx": "react"
+  }
+}
+```
+:::
+::::
 
-## Create a React component
+## 创建 React 组件
 
-Create a new file called `ReactView.tsx` in the plugin root directory, with the following content:
+在插件的根目录下创建名为 `ReactView.tsx` 的文件，文件内容如下：
 
-```tsx title="ReactView.tsx"
+
+:::: code-group
+::: code-group-item ReactView.tsx
+```tsx
 import * as React from "react";
 
 export const ReactView = () => {
   return <h4>Hello, React!</h4>;
 };
 ```
+:::
+::::
 
-## Mount the React component
+## 挂载 React 组件
 
-To use the React component, it needs to be mounted on a [HTML element](../guides/html-elements.md). The following example mounts the `ReactView` component on the `this.containerEl.children[1]` element:
+要想使用 React 组件，需要在一个 [HTML element](../guides/html-elements.md) 中挂载它。下例中将 `ReactView` 组件挂载到了 `this.containerEl.children[1]` 元素上：
 
-```tsx title="view.tsx" {2-4,22-25,29}
+:::: code-group
+::: code-group-item view.tsx
+```tsx {2-4,22-25,29}
 import { ItemView, WorkspaceLeaf } from "obsidian";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
@@ -85,55 +92,73 @@ class ExampleView extends ItemView {
   }
 }
 ```
+:::
+::::
 
-For more information on `ReactDOM.render()` and `ReactDOM.unmountComponentAtNode()`, refer to the documentation on [ReactDOM](https://reactjs.org/docs/react-dom.html).
+想要获取更多关于 `ReactDOM.render()` 以及 `ReactDOM.unmountComponentAtNode()` 的信息，可以去查阅
+ [ReactDOM](https://reactjs.org/docs/react-dom.html) 这篇文档。
 
-You can mount your React component on any `HTMLElement`, for example [status bar items](../guides/status-bar.md). Just make sure to clean up properly by calling `ReactDOM.unmountComponentAtNode()` when you're done.
+你可以将你的 React 组件挂载到任意 `HTMLElement` 上，可以看 [status bar items](../guides/status-bar.md) 这个示例。当你使用完组件后请调用`ReactDOM.unmountComponentAtNode()` 方法确保组件被彻底移除。
 
-## Create an App context
+## 创建应用上下文
 
-If you want to access the [`App`](../api/classes/App.md) object from one of your React components, you need to pass it as a dependency. As your plugin grows, even though you're only using the `App` object in a few places, you start passing it through the whole component tree.
+如果你想从 React 组件中获取到 [`App`](../api/classes/App.md) 对象，你需要将其作为依赖传递。随着插件的迭代更新，尽管你在很少的几个地方使用了 `App` 对象，它也会在整个组件树中被传递。
 
-Another alternative is to create a React context for the app to make it globally available to all components inside your React view.
+还有一个选择就是给应用创建一个 React 上下文，使得 `App` 变成全局对象以便在 React 视图中的所有组件都可以获取到它。
 
-1. Use `React.createContext()` to create a new app context.
+1. 使用 `React.createContext()` 去创建应用上下文。
+:::: code-group
+::: code-group-item context.ts
+```tsx
+export const AppContext = React.createContext<App>(undefined);
+```
+:::
+::::
 
-   ```tsx title="context.ts"
-   export const AppContext = React.createContext<App>(undefined);
-   ```
+2. 用上下文提供者包装`ReactView`并将应用作为值传递
 
-1. Wrap the `ReactView` with a context provider and pass the app as the value.
+:::: code-group
+::: code-group-item view.ts
+```tsx
+ReactDOM.render(
+  <AppContext.Provider value={this.app}>
+    <ReactView />
+  </AppContext.Provider>,
+  this.containerEl.children[1]
+);
+```
+:::
+::::
 
-   ```tsx title="view.tsx"
-   ReactDOM.render(
-     <AppContext.Provider value={this.app}>
-       <ReactView />
-     </AppContext.Provider>,
-     this.containerEl.children[1]
-   );
-   ```
+3. 创建自定义钩子以便在组件中更方便的使用上下文。
 
-1. Create a custom hook to make it easier to use the context in your components.
+:::: code-group
+::: code-group-item hooks.ts
+```tsx
+import { AppContext } from "./context";
 
-   ```tsx title="hooks.ts"
-   import { AppContext } from "./context";
+export const useApp = (): App | undefined => {
+  return React.useContext(AppContext);
+};
+```
+:::
+::::
 
-   export const useApp = (): App | undefined => {
-     return React.useContext(AppContext);
-   };
-   ```
+4. 在 `ReactView` 中的任意 React 组件中使用钩子函数以获取 app。
 
-1. Use the hook in any React component within `ReactView` to access the app.
+:::: code-group
+::: code-group-item ReactView.ts
+```tsx
+import * as React from "react";
+import { useApp } from "./hooks";
 
-   ```tsx title="ReactView.tsx"
-   import * as React from "react";
-   import { useApp } from "./hooks";
+export const ReactView = () => {
+  const { vault } = useApp();
 
-   export const ReactView = () => {
-     const { vault } = useApp();
+  return <h4>{vault.getName()}</h4>;
+};
+```
+:::
+::::
 
-     return <h4>{vault.getName()}</h4>;
-   };
-   ```
-
-For more information, refer to the React documentation for [Context](https://reactjs.org/docs/context.html) and [Building Your Own Hooks](https://reactjs.org/docs/hooks-custom.html).
+要想获取更多信息，可以查阅 React 文档中的 [Context](https://reactjs.org/docs/context.html) and [Building Your Own Hooks](https://reactjs.org/docs/hooks-custom.html)。
