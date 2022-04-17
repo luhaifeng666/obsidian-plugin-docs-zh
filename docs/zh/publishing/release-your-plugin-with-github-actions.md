@@ -1,12 +1,12 @@
-# Release your plugin with GitHub Actions
+# 使用 GitHub Actions 发布您的插件
 
-Manually creating your plugin release can be time-consuming and error-prone. In this guide, you'll configure your plugin to use [GitHub Actions](https://github.com/features/actions) to automatically create a release when you create a new tag.
+通过手动的方式创建插件的 release 比较费事也容易出错。在本指南中，你将通过配置 [GitHub Actions](https://github.com/features/actions) 的方式，在你创建新的 tag 时自动创建对应的 release。
 
-:::note
-The GitHub Action workflow was originally created and shared by [argentum](https://forum.obsidian.md/u/argentum). For more information and other variations, refer to the [forum announcement](https://forum.obsidian.md/t/using-github-actions-to-release-plugins/7877/3).
+:::tip
+Github Action 工作流起初由 [argentum](https://forum.obsidian.md/u/argentum) 创建和共享。想要获取更多信息以及其他变更，可以查阅 [forum announcement](https://forum.obsidian.md/t/using-github-actions-to-release-plugins/7877/3) 这篇文档。
 :::
 
-1. In the root directory of your plugin, create a file called `release.yml` under `.github/workflows` with the following content:
+1. 在你插件的根目录下，创建 `.github/workflows/release.yml` 文件，并将以下内容写入文件：
 
    ```yml title=".github/workflows/release.yml"
    name: Release Obsidian plugin
@@ -98,7 +98,7 @@ The GitHub Action workflow was originally created and shared by [argentum](https
              asset_content_type: text/css
    ```
 
-1. In your terminal, commit the workflow.
+2. 在控制台中提交这些文件。
 
    ```bash
    git add .github/workflows/release.yml
@@ -106,19 +106,19 @@ The GitHub Action workflow was originally created and shared by [argentum](https
    git push origin main
    ```
 
-1. Create a tag that matches the version in the `manifest.json` file.
+3. 创建一个与 `manifest.json` 文件中的版本号相对应的 tag。
 
    ```bash
    git tag -a 1.0.1 -m "1.0.1"
    git push origin 1.0.1
    ```
 
-   - `-a` creates an [annotated tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_creating_tags).
+   - `-a` 创建了一个 [注释标签](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_creating_tags).
    - `-m` specifies the name of your release. For Obsidian plugins, this must be the same as the version.
 
-1. Browse to your repository on GitHub and click the **Actions** tab. Your workflow might still be running, or it might have finished already.
+4. Browse to your repository on GitHub and click the **Actions** tab. Your workflow might still be running, or it might have finished already.
 
-1. When the workflow finishes, go back to the main page for your repository and click **Releases** in the side bar on the right-hand side. The workflow has created a GitHub release and uploaded the required assets as binary attachments.
+5. When the workflow finishes, go back to the main page for your repository and click **Releases** in the side bar on the right-hand side. The workflow has created a GitHub release and uploaded the required assets as binary attachments.
 
 You've set up your plugin to automatically create a GitHub release whenever you create a new tag.
 
