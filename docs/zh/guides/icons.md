@@ -1,17 +1,18 @@
 # Icons
 
-Several of the UI components in the Obsidian API lets you configure an accompanying icon. You can choose from one of the built-in icons, or you can add your own.
+Obsidian API 中的一些 UI 组件允许你配置与之对应的icon。你可以从内置的 icon 中选择一个，或者添加自定义的icon。
 
-## Browse available icons
+## 浏览可用的 icon
 
-If you'd like to see all available icons and their corresponding names, you can install the
-[Icon Swapper](https://github.com/mgmeyers/obsidian-icon-swapper) plugin by mgmeyers. While its main purpose is to replace the built-in icons with custom ones, it also serves as a list of what icons are available in Obsidian.
+如果你想查看所有可用的 icon 以及它们相关的名称，你可以安装由 mgmeyers 提供的 [Icon Swapper](https://github.com/mgmeyers/obsidian-icon-swapper) 插件。尽管它的主要目的是使用自定义 icon 替换内置 icon，同时它也是 Obsidian 中可用图标的列表。
 
-## Draw icons
+## 绘制 icons
 
-If you'd like to use icons in your custom interfaces, use the [`setIcon`](../api/functions/setIcon.md) utility function to add an icon to an [HTML element](html-elements.md). The following example adds icon to the status bar:
+如果你想在你自定义的接口中使用 icon，可以使用 [`setIcon`](../api/functions/setIcon.md) 方法去添加一个 icon 到 [HTML element](html-elements.md)。下例中展示了如何向状态栏中添加 icon：
 
-```ts title="main.ts"
+:::: code-group
+::: code-group-item main.ts
+```ts
 import { Plugin, setIcon } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -21,12 +22,16 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
+:::
+::::
 
-## Add your own icon
+## 添加你自己的 icon
 
-To add a custom icon for your plugin, use the [`addIcon`](../api/functions/addIcon.md) utility:
+要想在插件中添加自定义 icon，可以使用 [`addIcon`](../api/functions/addIcon.md) 方法：
 
-```ts title="main.ts"
+:::: code-group
+::: code-group-item main.ts
+```ts
 import { addIcon, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -39,12 +44,14 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
+:::
+::::
 
-`addIcon` takes two arguments:
+`addIcon` 接受两个参数:
 
-1. A name to uniquely identify your icon.
-1. The SVG content for the icon, without the surrounding `<svg>` tag.
+1. 一个唯一标识你的 icon 的名称。
+2. 不包含 `<svg>` 标签的 icon SVG 内容。
 
-Note that your icon needs to fit within a `0 0 100 100` view box to be drawn properly.
+需要注意的是，你的图标需要适合 `0 0 100 100` 视图框才能被正确绘制。
 
-After the call to `addIcon`, you can use the icon just like any of the built-in icons.
+在调用完 `addIcon` 后，你就可以像使用任意内置 icon 一样使用该 icon。
