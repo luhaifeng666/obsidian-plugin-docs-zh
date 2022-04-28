@@ -1,5 +1,7 @@
 
 const fs = require('fs')
+const { defaultTheme } = require('@vuepress/theme-default')
+const { searchPlugin } = require('@vuepress/plugin-search')
 const BASE_URL = './docs/zh/'
 
 const getFiles = function (baseUrl) {
@@ -65,7 +67,7 @@ module.exports = {
   markdown: {
 		lineNumbers: true
 	},
-  themeConfig: {
+  theme: defaultTheme({
     navbar: [
 			{ text: '首页', link: '/' },
 			{ text: '文档', link: '/zh/' },
@@ -74,20 +76,17 @@ module.exports = {
     lastUpdated: 'Last Updated',
 		sidebarDepth: 3,
     sidebar
-  },
+  }),
   plugins: [
-    [
-      '@vuepress/plugin-search',
-      {
-        locales: {
-          '/': {
-            placeholder: 'Search',
-          },
-          '/zh/': {
-            placeholder: '搜索',
-          },
+    searchPlugin({
+      locales: {
+        '/': {
+          placeholder: 'Search',
+        },
+        '/zh/': {
+          placeholder: '搜索',
         },
       },
-    ]
+    })
   ]
 }
