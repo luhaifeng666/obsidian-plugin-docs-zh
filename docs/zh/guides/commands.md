@@ -1,16 +1,14 @@
----
-sidebar_position: 40
----
-
 # Commands
 
-Commands are actions that the user can perform from the [Command Palette](https://help.obsidian.md/Plugins/Command+palette) or by using a hot key.
+Commands(指令) 是指用户可以通过 [Command Palette(命令面板)](https://help.obsidian.md/Plugins/Command+palette) 或者热键的方式来执行的操作。
 
 ![Command](/images/command.png)
 
-To register a new command for your plugin, call the [`addCommand()`](../api/classes/Plugin_2.md#addcommand) method inside the `onload()` method:
+要想在你的插件中添加指令，可以在 `onload()` 方法中调用 [`addCommand()`](../api/classes/Plugin_2.md#addcommand) 方法：
 
-```ts title="main.ts" {5-11}
+:::: code-group
+::: code-group-item tsconfig.json
+```ts {5-11}
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -25,8 +23,10 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
+:::
+::::
 
-## Conditional commands
+## 带条件的指令
 
 If your command is only able to run under certain conditions, then consider using [`checkCallback`](../api/interfaces/Command.md#checkcallback) instead.
 
@@ -124,6 +124,6 @@ this.addCommand({
 });
 ```
 
-:::note
+::: tip
 The Mod key is a special modifier key that becomes Ctrl on Windows and Linux, and Cmd on macOS.
 :::
