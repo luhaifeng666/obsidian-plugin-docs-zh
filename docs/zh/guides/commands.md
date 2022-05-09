@@ -28,18 +28,18 @@ export default class ExamplePlugin extends Plugin {
 
 ## 带条件的指令
 
-If your command is only able to run under certain conditions, then consider using [`checkCallback`](../api/interfaces/Command.md#checkcallback) instead.
+如果你的指令只能在某些条件下运行，可以考虑使用 [`checkCallback`](../api/interfaces/Command.md#checkcallback)。
 
-The `checkCallback` runs twice. First, to perform a preliminary check to determine whether the command can run. Second, to perform the action.
+`checkCallback` 执行两次。第一次执行预检以确定指令是否可以执行，第二次执行操作。
 
-Since time may pass between the two runs, you need to perform the check during both calls.
+由于两次执行需要时间，你需要在每次调用时进行校验。
 
-To determine whether the callback should perform a preliminary check or an action, a `checking` argument is passed to the callback.
+为了确定回调函数是否应该执行预检或者操作，回调函数中会接收 `checking` 参数。 
 
-- If `checking` is set to `true`, perform a preliminary check.
-- If `checking` is set to `false`, perform an action.
+- 如果 `checking` 是 `true`，执行预检。
+- 如果 `checking` 是 `false`，执行操作。
 
-The command in the following example depends on a required value. In both runs, the callback checks that the value is present but only performs the action if `checking` is `false`.
+下例中的指令取决于所需要的值。在每次执行过程中，回调函数会检查该值是否存在，但仅在检查为假时执行该操作。
 
 ```ts {4}
 this.addCommand({
@@ -61,9 +61,9 @@ this.addCommand({
 });
 ```
 
-## Editor commands
+## 编辑器指令
 
-If your command needs access to the editor, you can also use the [`editorCallback`](../api/interfaces/Command.md#editorcallback), which provides the active editor and its view as arguments.
+如果你的指令需要访问编辑器，你也可以使用 [`editorCallback`](../api/interfaces/Command.md#editorcallback) 方法，它的入参是当前活动的编辑器对象以及它的视图。
 
 ```ts {4}
 this.addCommand({
@@ -77,11 +77,11 @@ this.addCommand({
 }
 ```
 
-:::note
-Editor commands only appear in the Command Palette when there's an active editor available.
+::: tip
+编辑器指令仅在存在可用的活动编辑器时才会出现在命令面板中。
 :::
 
-If the editor callback can only run given under certain conditions, consider using the [`editorCheckCallback`](../api/interfaces/Command.md#editorcheckcallback) instead. For more information, refer to [conditional commands](#conditional-commands).
+如果编辑器回调函数仅在给定的确定条件下运行的话，可以考虑使用 [`editorCheckCallback`](../api/interfaces/Command.md#editorcheckcallback) 方法。要想获取更多信息，可以参考 [conditional commands](#conditional-commands)。
 
 ```ts {4}
 this.addCommand({
@@ -103,15 +103,15 @@ this.addCommand({
 });
 ```
 
-## Hot keys
+## 热键
 
-The user can run commands using a keyboard shortcut, or _hot key_. While they can configure this themselves, you can also provide a default hot key.
+用户可以通过快捷方式或者 _热键_ 来使用指令。尽管他们可以自行配置，你也可以给他们提供一个默认的热键。
 
 :::warning
-Avoid setting default hot keys for plugins that you intend for others to use. Hot keys are highly likely to conflict with those defined by other plugins or by the user themselves.
+要避免为打算提供给其他人使用的插件设置默认热键。因为这很有可能跟其他插件定义的热键或者用户自定义的热键相冲突。
 :::
 
-In this example, the user can run the command by pressing and holding Ctrl (or Cmd on Mac) and Shift together, and then pressing the letter `a` on their keyboard.
+在本例中，用户可以通过同时按住 Ctrl（或者 Mac 上的 Command）键和 Shift 键，然后按键盘上的字母 a 来运行指令。
 
 ```ts {4}
 this.addCommand({
@@ -125,5 +125,5 @@ this.addCommand({
 ```
 
 ::: tip
-The Mod key is a special modifier key that becomes Ctrl on Windows and Linux, and Cmd on macOS.
+Mod 键是一个特殊的修饰键，在 Windows 和 Linux 上变为 Ctrl，在 macOS 上变为 Command。
 :::
