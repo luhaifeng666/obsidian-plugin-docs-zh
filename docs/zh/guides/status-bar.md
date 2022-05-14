@@ -1,4 +1,4 @@
-# Status bar
+# 状态栏
 
 要想在状态栏中创建新块，可以在 `onload()` 事件中调用 [`addStatusBarItem()`](../api/classes/Plugin_2.md#addstatusbaritem) 方法。你可以将自定义元素插入到 `addStatusBarItem()` 事件返回的 [HTML 元素](html-elements.md) 中。
 

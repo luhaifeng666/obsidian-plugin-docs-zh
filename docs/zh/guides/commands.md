@@ -1,3 +1,7 @@
+---
+title: 指令
+---
+
 # Commands
 
 Commands(指令) 是指用户可以通过 [Command Palette(命令面板)](https://help.obsidian.md/Plugins/Command+palette) 或者热键的方式来执行的操作。

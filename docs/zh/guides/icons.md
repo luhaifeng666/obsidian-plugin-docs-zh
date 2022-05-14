@@ -1,3 +1,7 @@
+---
+title: 图标
+---
+
 # Icons
 
 Obsidian API 中的一些 UI 组件允许你配置与之对应的icon。你可以从内置的 icon 中选择一个，或者添加自定义的icon。
