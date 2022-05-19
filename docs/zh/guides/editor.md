@@ -1,14 +1,14 @@
 ---
-sidebar_position: 80
+title: 编辑器
 ---
 
 # Editor
 
-The [`Editor`](../api/classes/Editor.md) class exposes operations for reading and manipulating an active Markdown document in edit mode.
+[`Editor`](../api/classes/Editor.md) 类透出在编辑模式下读取以及操作 Markdown 文档的操作。
 
-If you want to access the editor in a command, use the [editorCallback](./commands.md#editor-commands).
+如果你想在命令中访问编辑器，可以使用 [editorCallback](./commands.md#editor-commands)。
 
-If you want to use the editor elsewhere, you can access it from the active view:
+如果你想在其他地方使用编辑器，你可以通过活动视图访问到它。
 
 ```ts {5}
 const view = this.app.workspace.getActiveViewOfType(MarkdownView);
@@ -21,15 +21,15 @@ if (view) {
 }
 ```
 
-:::note
-Obsidian uses [CodeMirror](https://codemirror.net/) (CM) as the underlying text editor, and exposes the CodeMirror editor as part of the API. `Editor` serves as an abstraction to bridge features in CM5 (desktop) and CM6 (mobile). By using `Editor` instead of directly accessing the CodeMirror instance, you ensure that your plugin works on both platforms.
+::: tip
+Obsidian 使用 [CodeMirror](https://codemirror.net/) (CM) 作为底层文本编辑器，并且将 CodeMirror 作为 API 的一部分暴露出来。`Editor` 作为CM5（桌面端）和 CM6（移动端）中的桥接功能而被抽象出来。使用 `Editor` 而不是直接访问 CodeMirror，那么你的插件就可以在两个平台上都可以运行。
 :::
 
-## Insert text at cursor position
+## 在光标处插入文本
 
-The [`replaceRange()`](../api/classes/Editor.md#replacerange) method replaces the text between two cursor positions. If you only give it one position, it inserts the new text between that position and the next.
+[`replaceRange()`](../api/classes/Editor.md#replacerange) 方法用于替换选中的文本。如果你没有选中文本，那么文本将会在光标处被插入。
 
-The following command inserts today's date at the cursor position:
+下例中的指令会将当前日期插入光标所在位置：
 
 ```ts title="main.ts" {9}
 import { Editor, moment, Plugin } from "obsidian";
@@ -49,13 +49,15 @@ export default class ExamplePlugin extends Plugin {
 
 ![Insert today's date](/images/editor-todays-date.gif)
 
-## Replace current selection
+## 替换当前选中的内容
 
-If you want to modify the selected text, use [`replaceSelection()`](../api/classes/Editor.md#replaceselection) to replace the current selection with a new text.
+如果你想编辑选中的文本，使用 [`replaceSelection()`](../api/classes/Editor.md#replaceselection) 方法去替换选中的文本。
 
-The following command reads the current selection and converts it to uppercase:
+下例中的指令读取当前选中的内容并替换成大写：
 
-```ts title="main.ts" {9-10}
+:::: code-group
+::: code-group-item main.ts
+```ts {9-10}
 import { Editor, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -71,5 +73,7 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
+:::
+::::
 
 ![Convert to uppercase](/images/editor-uppercase.gif)
