@@ -41,11 +41,11 @@ const pageConfig = [
       { name: '示例', url: 'examples' },
       { name: '发布', url: 'publishing' },
       { name: 'API', url: 'api/', children: [
+		      ['/zh/api/overview.md'],
           { name: '类', url: 'classes' },
           { name: '枚举', url: 'enums' },
           { name: '方法', url: 'functions' },
           { name: '接口', url: 'interfaces' },
-          ['/zh/api/overview.md'],
           { name: '类型', url: 'types' }
         ]
       },
