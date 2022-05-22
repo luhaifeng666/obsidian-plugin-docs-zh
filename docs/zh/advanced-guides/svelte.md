@@ -14,7 +14,7 @@ Svelte 是围绕一个可以预编译你的代码为普通 Javascript 的编辑�
 
 如果你想学习到更多关于 Svelte 的只是，以及如何去使用它，可以查阅 [tutorial](https://svelte.dev/tutorial/basics) 以及 [documentation](https://svelte.dev/docs) 这两篇文档。
 
-本指南假定你已经阅读完[创建你的第一个差价](../getting-started/create-your-first-plugin) 这篇文档。
+本指南假定你已经阅读完[创建你的第一个插件](../getting-started/create-your-first-plugin) 这篇文档。
 
 :::tip Visual Studio Code
 Svelte 有一个[官方的 Visual Studio Code 扩展](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) 可以提供 Svelte 组件语法高亮以及智能提示。
