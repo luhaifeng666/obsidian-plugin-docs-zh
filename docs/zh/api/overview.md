@@ -1,16 +1,15 @@
 ---
-slug: /api
-sidebar_label: Overview
+title: 接口预览
 ---
 
-# API reference
+# API 参考
 
 :::warning
-This documentation has been generated from the [Obsidian API](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts).
+该文档依据 [Obsidian API](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts) 而生成。
 
-The [script](https://github.com/marcusolsson/dts-docs) used to generate the documentation is still relatively untested. If you spot any errors or inconsistencies with the official API, let me know.
+用于生成文档的 [script](https://github.com/marcusolsson/dts-docs) 脚本未经过测试，如果你发现错误或者与官方 API 不一致之处，还请告知于我。
 :::
-## Classes
+## 类
 
 - [AbstractTextComponent](classes/AbstractTextComponent.md)
 - [App](classes/App.md)
@@ -73,11 +72,11 @@ The [script](https://github.com/marcusolsson/dts-docs) used to generate the docu
 - [WorkspaceSplit](classes/WorkspaceSplit.md)
 - [WorkspaceTabs](classes/WorkspaceTabs.md)
 
-## Enums
+## 枚举
 
 - [PopoverState](enums/PopoverState.md)
 
-## Functions
+## 方法
 
 - [addIcon](functions/addIcon.md)
 - [debounce](functions/debounce.md)
@@ -115,7 +114,7 @@ The [script](https://github.com/marcusolsson/dts-docs) used to generate the docu
 - [stringifyYaml](functions/stringifyYaml.md)
 - [stripHeading](functions/stripHeading.md)
 
-## Interfaces
+## 接口
 
 - [EventListenerInfo](interfaces/EventListenerInfo.md)
 - [AjaxOptions](interfaces/AjaxOptions.md)
@@ -180,7 +179,7 @@ The [script](https://github.com/marcusolsson/dts-docs) used to generate the docu
 - [ViewState](interfaces/ViewState.md)
 - [ViewStateResult](interfaces/ViewStateResult.md)
 
-## Types
+## 类型
 
 - [EditorCommandName](types/EditorCommandName.md)
 - [KeymapEventListener](types/KeymapEventListener.md)

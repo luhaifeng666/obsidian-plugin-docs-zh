@@ -4,35 +4,37 @@ sidebar_position: 78
 
 # Svelte
 
-:::info
-This guide is written for an older version of the sample plugin that uses Rollup. If you know how to adapt it for ESBuild, consider [contributing](../contribute.md) the changes.
+::: tip
+该指南是为使用 Rollup 的旧版示例插件编写的。如果你知道如何适用 ESBuild，考虑换成 [contributing](../contribute.md)。
 :::
 
-This guide explains how to configure your plugin to use [Svelte](https://svelte.dev/), a light-weight alternative to traditional frameworks like React and Vue.
+该指南解释了如何配置你的插件以使用 [Svelte](https://svelte.dev/), 一个轻量级的可用于替换诸如 React 以及 Vue 这些的框架。
 
-Svelte is built around a compiler that preprocesses your code and outputs vanilla JavaScript, which means it doesn't need to load any libraries at run time. This also means that it doesn't need a virtual DOM to track state changes, which allows your plugin to run with minimal additional overhead.
+Svelte 是围绕一个可以预编译你的代码为普通 Javascript 的编辑器构建的，这意味着在运行时不需要加载任何类库。这也意味着不需要使用虚拟 DOM 去追踪状态的变化，允许你的插件以最小的额外开销运行。
 
-If you want to learn more about Svelte, and how to use it, refer to the [tutorial](https://svelte.dev/tutorial/basics) and the [documentation](https://svelte.dev/docs).
+如果你想学习到更多关于 Svelte 的只是，以及如何去使用它，可以查阅 [tutorial](https://svelte.dev/tutorial/basics) 以及 [documentation](https://svelte.dev/docs) 这两篇文档。
 
-This guide assumes that you've finished [Create your first plugin](../getting-started/create-your-first-plugin).
+本指南假定你已经阅读完[创建你的第一个差价](../getting-started/create-your-first-plugin) 这篇文档。
 
 :::tip Visual Studio Code
-Svelte has an [official Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) that enables syntax highlighting and rich IntelliSense in Svelte components.
+Svelte 有一个[官方的 Visual Studio Code 扩展](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) 可以提供 Svelte 组件语法高亮以及智能提示。
 :::
 
-## Configure your plugin
+## 配置你的插件
 
-To build a Svelte application, you need to install the dependencies and configure your plugin to compile code written using Svelte.
+要想构建一个 Svelte 应用，你需要去安装依赖以及配置你的插件以编译使用 Svelte 编写的代码。
 
-1. Add Svelte to your plugin dependencies:
+1. 将 Svelte 添加到你插件的依赖中：
 
-   ```bash
-   npm install --save-dev svelte svelte-preprocess @tsconfig/svelte rollup-plugin-svelte
-   ```
+```bash
+npm install --save-dev svelte svelte-preprocess @tsconfig/svelte rollup-plugin-svelte
+```
 
-1. Extend the `tsconfig.json` to enable additional type checking for common Svelte issues. The `types` property is important for TypeScript to recognize `.svelte` files.
+2. 修改 `tsconfig.json` 文件以为常见的 Svelte 问题启用额外的类型检查。`types` 属性非常关键，它可以让 Typescript 识别出 `.svelte` 文件。
 
-   ```json title="tsconfig.json"
+:::: code-group
+::: code-group-item tsconfig.json
+```json
    {
      "extends": "@tsconfig/svelte/tsconfig.json",
      "compilerOptions": {
@@ -41,49 +43,65 @@ To build a Svelte application, you need to install the dependencies and configur
        // ...
      }
    }
-   ```
+```
+:::
+::::
 
-1. Remove the following line from your `tsconfig.json` as it conflicts with the Svelte configuration.
+3. 将下面的内容从 `tsconfig.json` 中移除，该配置与 Svelte 的配置相冲突。
 
-   ```json title="tsconfig.json"
-   "inlineSourceMap": true,
-   ```
+:::: code-group
+::: code-group-item tsconfig.json
+```json
+"inlineSourceMap": true,
+```
+:::
+::::
 
-1. In `rollup.config.js`, add the following imports to the top of the file:
+4. 在 `rollup.config.js` 文件中引入以下内容：
 
-   ```js title="rollup.config.js"
-   import svelte from "rollup-plugin-svelte";
-   import sveltePreprocess from "svelte-preprocess";
-   ```
+:::: code-group
+::: code-group-item rollup.config.js
+```js
+import svelte from "rollup-plugin-svelte";
+import sveltePreprocess from "svelte-preprocess";
+```
+:::
+::::
 
-1. Add Svelte to the list of plugins.
+5. 将 Svelte 添加到插件列表中。
 
-   ```js title="rollup.config.js" {14}
-   export default {
-     input: 'main.ts',
-     output: {
-       dir: '.',
-       sourcemap: 'inline',
-       sourcemapExcludeSources: isProd,
-       format: 'cjs',
-       exports: 'default',
-       banner,
-     },
-     external: ['obsidian'],
-     plugins: [
-       typescript(),
-       svelte({ emitCss: false, preprocess: sveltePreprocess() }),
-       nodeResolve({browser: true}),
-       commonjs(),
-     ]
-   };
-   ```
+:::: code-group
+::: code-group-item rollup.config.js
+```js {14}
+export default {
+  input: 'main.ts',
+  output: {
+    dir: '.',
+    sourcemap: 'inline',
+    sourcemapExcludeSources: isProd,
+    format: 'cjs',
+    exports: 'default',
+    banner,
+  },
+  external: ['obsidian'],
+  plugins: [
+    typescript(),
+    svelte({ emitCss: false, preprocess: sveltePreprocess() }),
+    nodeResolve({browser: true}),
+    commonjs(),
+  ]
+};
+```
+:::
+::::
 
-## Create a Svelte component
+## 创建一个 Svelte 组件
 
-In the root directory of the plugin, create a new file called `Component.svelte`:
+在插件的根目录下，创建一个名为 `Component.svelte` 的新文件：
 
-```tsx title="Component.svelte"
+:::: code-group
+::: code-group-item Component.svelte
+```tsx
 <script lang="ts">
   export let variable: number;
 </script>
@@ -98,10 +116,12 @@ In the root directory of the plugin, create a new file called `Component.svelte`
   }
 </style>
 ```
+:::
+::::
 
-## Mount the Svelte component
+## 加载 Svelte 组件
 
-To use the Svelte component, it needs to be mounted on an existing [HTML element](../guides/html-elements.md). For example, if you are mounting on a custom [`ItemView`](../api/classes/ItemView.md) in Obsidian:
+要想使用 Svelte 组件，需要在一个即存的 [HTML element](../guides/html-elements.md) 中加载它。比如，如果在 Obsidian 的自定义 [`ItemView`](../api/classes/ItemView.md) 中进行加载：
 
 ```ts
 import { ItemView, WorkspaceLeaf } from "obsidian";
@@ -140,23 +160,25 @@ class ExampleView extends ItemView {
 }
 ```
 
-## Create a Svelte store
+## 创建一个 Svelte 的 store
 
-To create a store for your plugin and access it from within a generic Svelte component instead of passing the plugin as a prop, follow these steps:
+要为你的插件创建一个 store 以及在通用的 Svelte 组件中访问它来代替通过 prop 的方式访问，需要遵循如下步骤：
 
-1. Create a file called `store.ts`:
+1. 创建一个名为 `store.ts` 的文件：
 
-   ```jsx title="store.ts"
+```jsx title="store.ts"
    import { writable } from "svelte/store";
    import type ExamplePlugin from "./main";
 
    const plugin = writable<ExamplePlugin>();
    export default { plugin };
-   ```
+```
 
-1. Configure the store:
+2. 配置 store
 
-   ```ts title="view.ts" {}
+:::: code-group
+::: code-group-item view.ts
+```ts
    import { ItemView, WorkspaceLeaf } from "obsidian";
    import type ExamplePlugin from "./main";
    import store from "./store";
@@ -178,15 +200,21 @@ To create a store for your plugin and access it from within a generic Svelte com
        });
      }
    }
-   ```
+```
+:::
+::::
 
-1. To use the store in your component:
+3. 在组件中使用 store：
 
-   ```jsx title="Component.svelte" {}
+:::: code-group
+::: code-group-item Component.svelte
+```jsx
    <script lang="ts">
      import type MyPlugin from "./main";
 
      let plugin: MyPlugin;
      store.plugin.subscribe((p) => (plugin = p));
    </script>
-   ```
+```
+:::
+::::
