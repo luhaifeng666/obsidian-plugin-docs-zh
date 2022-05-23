@@ -90,6 +90,6 @@ sidebar_position: 1
 
 你只需要提交你最初版本的插件，之后，用户可以直接在 Obsidian 中自动自动更新你的插件。
 
-要想发布你插件的最新版本，请参照 [Create a release](#step-1--create-a-release) 这篇文章的说明。
+要想发布你插件的最新版本，请参照 [创建发布](#第一步-—-创建发布) 的说明。
 
 想要获取更多关于 Obsidian 如何拉取新版本的社区插件的信息，可以查阅 [How community plugins are pulled](https://github.com/obsidianmd/obsidian-releases#how-community-plugins-are-pulled) 这篇文档。
