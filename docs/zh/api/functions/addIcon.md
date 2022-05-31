@@ -4,11 +4,11 @@
 export function addIcon(iconId: string, svgContent: string): void;
 ```
 
-Adds an icon to the library
+往库中添加一个icon。
 
 ## Parameters
 
-| Parameter | Description |
+| 参数 | 描述 |
 |-----------|-------------|
-| `iconId` | the icon ID |
-| `svgContent` | the content of the SVG, without the &lt;svg&gt;. Must fit viewBox="0 0 100 100". |
+| `iconId` | icon ID |
+| `svgContent` | SVG 的内容，不能包含 &lt;svg&gt; 。尺寸必须满足 viewBox="0 0 100 100" |
