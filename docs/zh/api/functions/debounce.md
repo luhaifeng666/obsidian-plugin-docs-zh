@@ -6,12 +6,12 @@ export function debounce<T extends unknown[]>(cb: (...args: [
 ]) => any, timeout?: number, resetTimer?: boolean): Debouncer<T>;
 ```
 
-A standard debounce function.
+标准的防抖方法。
 
 ## Parameters
 
-| Parameter | Description |
+| 参数 | 描述 |
 |-----------|-------------|
-| `cb` | The function to call. |
-| `timeout` | The timeout to wait. |
-| `resetTimer` | Whether to reset the timeout when the debouncer is called again. |
+| `cb` | 回调函数 |
+| `timeout` | 延时 |
+| `resetTimer` | 在防抖方法被再次调用时是否需要清空延时 |
