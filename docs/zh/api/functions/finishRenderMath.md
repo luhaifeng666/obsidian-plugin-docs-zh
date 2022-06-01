@@ -4,4 +4,4 @@
 export function finishRenderMath(): Promise<void>;
 ```
 
-Flush the MathJax stylesheet.
+刷新MathJax样式表。
