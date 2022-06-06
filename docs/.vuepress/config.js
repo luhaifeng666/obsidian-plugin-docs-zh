@@ -86,7 +86,8 @@ module.exports = defineUserConfig({
       repo: 'luhaifeng666/obsidian-plugin-docs-zh',
       repoId: 'R_kgDOHE7GmA',
       category: 'Ideas',
-      categoryId: 'DIC_kwDOHE7GmM4CPfmT'
+      categoryId: 'DIC_kwDOHE7GmM4CPfmT',
+      mapping: 'title'
     }),
     searchPlugin({
       locales: {
