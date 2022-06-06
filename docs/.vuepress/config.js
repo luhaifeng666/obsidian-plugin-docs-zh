@@ -1,7 +1,9 @@
 
 const fs = require('fs')
-const { defaultTheme } = require('@vuepress/theme-default')
+const { defineUserConfig } = require("@vuepress/cli")
 const { searchPlugin } = require('@vuepress/plugin-search')
+const { commentPlugin } = require('vuepress-plugin-comment2')
+const { commentTheme } = require('./public/themes')
 const BASE_URL = './docs/zh/'
 
 const getFiles = function (baseUrl) {
@@ -57,7 +59,7 @@ pageConfig.forEach(item => {
 	sidebar[item.name] = getSidebarMenuItem(item.paths, item.baseUrl)
 })
 
-module.exports = {
+module.exports = defineUserConfig({
   title: 'Obsidian 插件开发文档',
   base: '/obsidian-plugin-docs-zh/',
   description: ' ',
@@ -67,17 +69,25 @@ module.exports = {
   markdown: {
 		lineNumbers: true
 	},
-  theme: defaultTheme({
+  theme: commentTheme({
     navbar: [
 			{ text: '首页', link: '/' },
-			{ text: '文档', link: '/zh/' },
-			{ text: 'GitHub', link: 'https://github.com/luhaifeng666/obsidian-plugin-docs-zh' },
+			{ text: '文档', link: '/zh/' }
 		],
     lastUpdated: 'Last Updated',
 		sidebarDepth: 3,
+    repo: 'https://github.com/luhaifeng666/obsidian-plugin-docs-zh',
     sidebar
   }),
   plugins: [
+    commentPlugin({
+      // 插件选项
+      provider: 'Giscus',
+      repo: 'luhaifeng666/obsidian-plugin-docs-zh',
+      repoId: 'R_kgDOHE7GmA',
+      category: 'Ideas',
+      categoryId: 'DIC_kwDOHE7GmM4CPfmT'
+    }),
     searchPlugin({
       locales: {
         '/': {
@@ -89,4 +99,4 @@ module.exports = {
       },
     })
   ]
-}
+})
