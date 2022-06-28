@@ -110,6 +110,9 @@ class ExampleView extends ItemView {
 :::: code-group
 ::: code-group-item context.ts
 ```tsx
+import * as React from "react";
+import { App } from 'obsidian';
+
 export const AppContext = React.createContext<App>(undefined);
 ```
 :::

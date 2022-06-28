@@ -26,11 +26,25 @@ Svelte 有一个[官方的 Visual Studio Code 扩展](https://marketplace.visual
 
 1. 将 Svelte 添加到你插件的依赖中：
 
+:::: code-group
+::: code-group-item npm
+
 ```bash
-npm install --save-dev svelte svelte-preprocess @tsconfig/svelte rollup-plugin-svelte
+  npm install --save-dev svelte svelte-preprocess @tsconfig/svelte esbuild-svelte
 ```
 
-2. 修改 `tsconfig.json` 文件以为常见的 Svelte 问题启用额外的类型检查。`types` 属性非常关键，它可以让 Typescript 识别出 `.svelte` 文件。
+:::
+
+::: code-group-item yarn
+
+```bash
+  yarn add --dev svelte svelte-preprocess @tsconfig/svelte esbuild-svelte
+```
+
+:::
+::::
+
+1. 修改 `tsconfig.json` 文件以为常见的 Svelte 问题启用额外的类型检查。`types` 属性非常关键，它可以让 Typescript 识别出 `.svelte` 文件。
 
 :::: code-group
 ::: code-group-item tsconfig.json
@@ -57,12 +71,12 @@ npm install --save-dev svelte svelte-preprocess @tsconfig/svelte rollup-plugin-s
 :::
 ::::
 
-4. 在 `rollup.config.js` 文件中引入以下内容：
+4. 在 `esbuild.config.mjs` 文件中引入以下内容：
 
 :::: code-group
-::: code-group-item rollup.config.js
+::: code-group-item esbuild.config.mjs
 ```js
-import svelte from "rollup-plugin-svelte";
+import esbuildSvelte from "esbuild-svelte";
 import sveltePreprocess from "svelte-preprocess";
 ```
 :::
@@ -71,26 +85,19 @@ import sveltePreprocess from "svelte-preprocess";
 5. 将 Svelte 添加到插件列表中。
 
 :::: code-group
-::: code-group-item rollup.config.js
-```js {14}
-export default {
-  input: 'main.ts',
-  output: {
-    dir: '.',
-    sourcemap: 'inline',
-    sourcemapExcludeSources: isProd,
-    format: 'cjs',
-    exports: 'default',
-    banner,
-  },
-  external: ['obsidian'],
-  plugins: [
-    typescript(),
-    svelte({ emitCss: false, preprocess: sveltePreprocess() }),
-    nodeResolve({browser: true}),
-    commonjs(),
-  ]
-};
+::: code-group-item esbuild.config.mjs
+```js{15}
+ esbuild
+ .build({
+   plugins: [
+     esbuildSvelte({
+       compilerOptions: { css: true },
+       preprocess: sveltePreprocess(),
+     }),
+   ],
+   // ...
+ })
+ .catch(() => process.exit(1));
 ```
 :::
 ::::
@@ -159,6 +166,22 @@ class ExampleView extends ItemView {
   }
 }
 ```
+
+:::tip
+
+Svelte 要求 TypeScript 的版本至少是 4.5。如果当你构建插件的时候看到如下报错，你需要升级 TypeScript 到一个更新的版本。
+
+```plain
+error TS5023: Unknown compiler option 'preserveValueImports'.
+```
+
+要想解决这个报错，在控制台中运行如下指令：
+
+```bash
+yarn upgrade typescript@~4.5.0
+```
+
+:::
 
 ## 创建一个 Svelte 的 store
 
