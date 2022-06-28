@@ -1,6 +1,10 @@
----
-sidebar_position: 1
----
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-03-24 23:00:24
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-06-28 15:59:21
+ * @Description: 
+-->
 
 # 提交插件
 
@@ -66,7 +70,7 @@ sidebar_position: 1
 
    请记住在前一个条目的右大括号 `}` 之后添加一个逗号。
 
-3. [创建一个 pull request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+3. [创建一个 pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 4. 按照 description 栏中的说明拉取所需模板创建一个 pull request。
 5. 点击 **Create pull request**。
 6. 在 details 栏中填写 pull request 的描述信息。对于复选框，在方括号 `[x]` 之间插入一个 `x` 以将其标记为已完成。
