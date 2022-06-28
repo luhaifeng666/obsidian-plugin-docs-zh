@@ -79,11 +79,16 @@ title: 接口预览
 ## 方法
 
 - [addIcon](functions/addIcon.md)
+- [arrayBufferToBase64](functions/arrayBufferToBase64.md)
+- [arrayBufferToHex](functions/arrayBufferToHex.md)
+- [base64ToArrayBuffer](functions/base64ToArrayBuffer.md)
 - [debounce](functions/debounce.md)
 - [finishRenderMath](functions/finishRenderMath.md)
 - [fuzzySearch](functions/fuzzySearch.md)
 - [getAllTags](functions/getAllTags.md)
+- [getBlobArrayBuffer](functions/getBlobArrayBuffer.md)
 - [getLinkpath](functions/getLinkpath.md)
+- [hexToArrayBuffer](functions/hexToArrayBuffer.md)
 - [htmlToMarkdown](functions/htmlToMarkdown.md)
 - [iterateCacheRefs](functions/iterateCacheRefs.md)
 - [iterateRefs](functions/iterateRefs.md)
