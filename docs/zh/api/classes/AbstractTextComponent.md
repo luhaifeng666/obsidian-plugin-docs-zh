@@ -1,6 +1,13 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-03-24 23:00:24
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-07-13 16:13:53
+ * @Description: 
+-->
 # AbstractTextComponent
 
-Extends `ValueComponent<string>`
+继承自 `ValueComponent<string>`
 
 ## Constructor
 
