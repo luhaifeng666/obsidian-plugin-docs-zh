@@ -1,6 +1,13 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-03-24 23:00:24
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-07-25 22:47:54
+ * @Description: 
+-->
 # ItemView
 
-Extends `View`
+继承自 `View`
 
 ## Constructor
 
