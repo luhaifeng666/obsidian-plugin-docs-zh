@@ -1,0 +1,1 @@
+import{_ as t,o as r,c as o,a as e,d as c}from"./app.863a47fe.js";const a={},s=e("h1",{id:"constructor",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#constructor","aria-hidden":"true"},"#"),c(" Constructor")],-1),n=[s];function _(d,i){return r(),o("div",null,n)}var h=t(a,[["render",_],["__file","Constructor.html.vue"]]);export{h as default};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-c1f15690","path":"/zh/api/interfaces/EmbedCache.html","title":"EmbedCache","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1648472910000,"contributors":[{"name":"luhaifeng","email":"lhf222458@ncarzone.com","commits":1}]},"filePathRelative":"zh/api/interfaces/EmbedCache.md"}');export{e as data};

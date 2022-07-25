@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-198737e9","path":"/zh/examples/insert-link.html","title":"\u63D2\u5165\u94FE\u63A5","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1648698576000,"contributors":[{"name":"luhaifeng","email":"lhf222458@ncarzone.com","commits":3}]},"filePathRelative":"zh/examples/insert-link.md"}');export{e as data};

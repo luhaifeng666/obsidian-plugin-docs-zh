@@ -1,0 +1,1 @@
+import{_ as a,o as c,c as t,a as e,d as n}from"./app.863a47fe.js";const r={},o=e("h1",{id:"linkcache",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#linkcache","aria-hidden":"true"},"#"),n(" LinkCache")],-1),s=[o];function i(_,h){return c(),t("div",null,s)}var l=a(r,[["render",i],["__file","LinkCache.html.vue"]]);export{l as default};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3cd8d2de","path":"/zh/concepts/codemirror.html","title":"CodeMirror","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1648548308000,"contributors":[{"name":"luhaifeng","email":"lhf222458@ncarzone.com","commits":2}]},"filePathRelative":"zh/concepts/codemirror.md"}');export{e as data};

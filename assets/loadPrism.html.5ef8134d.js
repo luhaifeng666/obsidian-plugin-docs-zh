@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-2871fc2f","path":"/zh/api/functions/loadPrism.html","title":"loadPrism","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1648472910000,"contributors":[{"name":"luhaifeng","email":"lhf222458@ncarzone.com","commits":1}]},"filePathRelative":"zh/api/functions/loadPrism.md"}');export{t as data};

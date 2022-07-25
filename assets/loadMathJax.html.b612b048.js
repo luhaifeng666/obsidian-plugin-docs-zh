@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-675ba2b7","path":"/zh/api/functions/loadMathJax.html","title":"loadMathJax","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1648472910000,"contributors":[{"name":"luhaifeng","email":"lhf222458@ncarzone.com","commits":1}]},"filePathRelative":"zh/api/functions/loadMathJax.md"}');export{a as data};

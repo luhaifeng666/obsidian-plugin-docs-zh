@@ -1,0 +1,5 @@
+import{_ as a,o as s,c as n,e}from"./app.863a47fe.js";const t={},c=e(`<h1 id="searchmatchpart" tabindex="-1"><a class="header-anchor" href="#searchmatchpart" aria-hidden="true">#</a> SearchMatchPart</h1><div class="language-typescript ext-ts line-numbers-mode"><pre class="language-typescript"><code><span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">SearchMatchPart</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token builtin">number</span><span class="token punctuation">,</span>
+    <span class="token builtin">number</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,2),r=[c];function i(p,l){return s(),n("div",null,r)}var d=a(t,[["render",i],["__file","SearchMatchPart.html.vue"]]);export{d as default};

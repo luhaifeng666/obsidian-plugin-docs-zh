@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-aa99eb7e","path":"/zh/api/types/SearchMatches.html","title":"SearchMatches","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1648472910000,"contributors":[{"name":"luhaifeng","email":"lhf222458@ncarzone.com","commits":1}]},"filePathRelative":"zh/api/types/SearchMatches.md"}');export{e as data};

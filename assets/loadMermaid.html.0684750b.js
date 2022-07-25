@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-dc04a7b2","path":"/zh/api/functions/loadMermaid.html","title":"loadMermaid","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1648472910000,"contributors":[{"name":"luhaifeng","email":"lhf222458@ncarzone.com","commits":1}]},"filePathRelative":"zh/api/functions/loadMermaid.md"}');export{a as data};

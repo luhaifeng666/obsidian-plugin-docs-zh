@@ -1,0 +1,1 @@
+import{_ as t,o as a,c as r,a as e,d as n}from"./app.863a47fe.js";const c={},o=e("h1",{id:"eventref",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#eventref","aria-hidden":"true"},"#"),n(" EventRef")],-1),s=[o];function _(d,f){return a(),r("div",null,s)}var h=t(c,[["render",_],["__file","EventRef.html.vue"]]);export{h as default};

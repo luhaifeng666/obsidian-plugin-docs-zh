@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-1b396fb7","path":"/zh/api/interfaces/Constructor.html","title":"Constructor","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1648472910000,"contributors":[{"name":"luhaifeng","email":"lhf222458@ncarzone.com","commits":1}]},"filePathRelative":"zh/api/interfaces/Constructor.md"}');export{t as data};

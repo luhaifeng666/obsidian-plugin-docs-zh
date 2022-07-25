@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-45c46925","path":"/zh/api/types/ViewCreator.html","title":"ViewCreator","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1648472910000,"contributors":[{"name":"luhaifeng","email":"lhf222458@ncarzone.com","commits":1}]},"filePathRelative":"zh/api/types/ViewCreator.md"}');export{e as data};

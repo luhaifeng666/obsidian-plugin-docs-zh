@@ -1,0 +1,1 @@
+import{_ as t,o as a,c as r,a as e,d as c}from"./app.863a47fe.js";const o={},n=e("h1",{id:"frontmattercache",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#frontmattercache","aria-hidden":"true"},"#"),c(" FrontMatterCache")],-1),s=[n];function _(h,d){return a(),r("div",null,s)}var f=t(o,[["render",_],["__file","FrontMatterCache.html.vue"]]);export{f as default};

@@ -1,0 +1,1 @@
+import{_ as a,o as c,c as t,a as e,d}from"./app.863a47fe.js";const r={},o=e("h1",{id:"embedcache",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#embedcache","aria-hidden":"true"},"#"),d(" EmbedCache")],-1),s=[o];function _(h,n){return c(),t("div",null,s)}var m=a(r,[["render",_],["__file","EmbedCache.html.vue"]]);export{m as default};

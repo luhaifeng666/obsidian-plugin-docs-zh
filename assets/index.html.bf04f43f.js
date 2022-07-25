@@ -1,0 +1,1 @@
+import{_ as e,o,c as s,a as t}from"./app.863a47fe.js";var _="/obsidian-plugin-docs-zh/images/logo.webp";const c={},n=t("img",{src:_},null,-1),a=[n];function r(i,l){return o(),s("div",null,a)}var m=e(c,[["render",r],["__file","index.html.vue"]]);export{m as default};

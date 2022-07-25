@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-666df9d5","path":"/zh/api/functions/loadPdfJs.html","title":"loadPdfJs","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1648472910000,"contributors":[{"name":"luhaifeng","email":"lhf222458@ncarzone.com","commits":1}]},"filePathRelative":"zh/api/functions/loadPdfJs.md"}');export{t as data};

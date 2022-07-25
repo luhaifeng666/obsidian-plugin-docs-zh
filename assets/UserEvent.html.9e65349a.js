@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-7098a31d","path":"/zh/api/types/UserEvent.html","title":"UserEvent","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1648472910000,"contributors":[{"name":"luhaifeng","email":"lhf222458@ncarzone.com","commits":1}]},"filePathRelative":"zh/api/types/UserEvent.md"}');export{e as data};
