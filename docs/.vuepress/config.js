@@ -40,6 +40,7 @@ const pageConfig = [
       { name: '概念', url: 'concepts'},
       { name: '指南', url: 'guides'},
       { name: '高阶指南', url: 'advanced-guides'},
+      { name: 'Tutorials', url: 'tutorials'},
       { name: '示例', url: 'examples' },
       { name: '发布', url: 'publishing' },
       { name: 'API', url: 'api/', children: [
