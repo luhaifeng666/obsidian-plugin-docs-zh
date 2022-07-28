@@ -207,9 +207,9 @@ yarn upgrade typescript@~4.5.0
    import store from "./store";
    import Component from "./Component.svelte";
 
-   const VIEW_TYPE_EXAMPLE = "example-view";
+   export const VIEW_TYPE_EXAMPLE = "example-view";
 
-   class ExampleView extends ItemView {
+   export class ExampleView extends ItemView {
      // ...
 
      async onOpen() {
