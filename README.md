@@ -1,3 +1,10 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-03-28 21:10:00
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-07 11:54:11
+ * @Description: 
+-->
 <div align="center">
 
 <img src="./docs/.vuepress/public/images/logo.webp" width="200" />
@@ -13,6 +20,10 @@
 </div>
 
 <br/>
+
+<h2 align="center">文档更新说明 📢</h2>
+
+<p align="center">官方文档近期更新变动较大，目录结构也进行了调整，我会尽快对文档进行整理翻译，并更新2.0版本。敬请期待~</p>
 
 <h2 align="center">关于共建</h2>
 
@@ -41,7 +52,8 @@
 
 </p>
 
-### TODO
+### TODOs
 
-- [ ] 跟进补充插件文档；
 - [x] 添加评论区模块；
+- [ ] Alfred 插件汉化
+- [ ] 2.0 文档翻译

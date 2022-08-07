@@ -10,9 +10,23 @@ actions:
     type: secondary
 ---
 
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-03-28 17:12:14
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-07 11:50:45
+ * @Description: 
+-->
+
+<h2 align="center">文档更新说明 📢</h2>
+
+<p align="center">官方文档近期更新变动较大，目录结构也进行了调整，我会尽快对文档进行整理翻译，并更新2.0版本。敬请期待~</p>
+
 <h2 align="center">关于共建</h2>
 
 <p align="center">
+
+本文翻译自 [这篇文档](https://marcus.se.net/obsidian-plugin-docs) 。
 
 由于本人水平以及精力有限，如果有翻译不周到之处还望海涵，方便的话可以提 [Issue](https://github.com/luhaifeng666/obsidian-plugin-docs-zh/issues) 以便让我修正~
 
