@@ -1,12 +1,12 @@
 ---
-sidebar_position: 60
+title: 事件
 ---
 
 # Events
 
-Many of the interfaces in the Obsidian lets you subscribe to events throughout the application, for example when the user makes changes to a file.
+Obsidian 中的许多接口允许你订阅整个应用中的事件，例如当用户对文件进行更改时。
 
-Any registered event handlers need to be detached whenever the plugin unloads. The safest way to make sure this happens is to use the [`registerEvent()`](./reference/typescript/classes/Component.md#registerevent) method.
+每当插件卸载时，任何注册的事件处理程序都需要被分离。确保发生这种情况的最安全方法是使用 [`registerEvent()`](./reference/typescript/classes/Component.md#registerevent) 方法。
 
 ```ts title="main.ts"
 import { Plugin } from "obsidian";
@@ -22,11 +22,11 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-## Timing events
+## 定时事件
 
-If you want to repeatedly call a function with a fixed delay, use the [`window.setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) function with the [`registerInterval()`](./reference/typescript/classes/Component.md#registerinterval) method.
+如果你想定时重复调用一个方法的话，可以使用 [`window.setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/setInterval) 函数和 [`registerInterval()`](../api/classes/Component.md#registerinterval) 方法。
 
-The following example displays the current time in the status bar, updated every second:
+下例中实现了在状态栏中显示当前时间，并且每秒更新：
 
 ```ts {11-13}
 import { moment, Plugin } from "obsidian";
@@ -53,7 +53,7 @@ export default class ExamplePlugin extends Plugin {
 ```
 
 :::tip
-[Moment](https://momentjs.com/) is a popular JavaScript library for working with dates and time. Obsidian uses Moment internally, so you don't need to install it yourself. You can import it from the Obsidian API instead:
+[Moment](https://momentjs.com/) 是一个非常流行的用来处理时间跟日期的 Javascript 库。Obsidian 内部使用了这个库，你无需手动安装。你可以直接从 Obsidian API 中引入：
 
 ```ts
 import { moment } from "obsidian";

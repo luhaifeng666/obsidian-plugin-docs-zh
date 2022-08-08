@@ -1,3 +1,10 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-03-24 23:00:24
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-08 22:33:55
+ * @Description: 
+-->
 ---
 title: 事件
 ---
@@ -6,7 +13,7 @@ title: 事件
 
 Obsidian 中的许多接口允许你订阅整个应用中的事件，例如当用户对文件进行更改时。
 
-每当插件卸载时，任何注册的事件处理程序都需要被分离。确保发生这种情况的最安全方法是使用 registerEvent() 方法。
+每当插件卸载时，任何注册的事件处理程序都需要被分离。确保发生这种情况的最安全方法是使用 [`registerEvent()`](./reference/typescript/classes/Component.md#registerevent) 方法。
 
 :::: code-group
 ::: code-group-item tsconfig.json
