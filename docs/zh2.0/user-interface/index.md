@@ -10,4 +10,4 @@ You can see some of the user interface components when you first open Obsidian.
 
 To modify the editor, refer to [Editor](editor/index.md) and [Editor extensions](editor/extensions/index.md).
 
-![User interface](user-interface.png)
+![User interface](/images/img/user-interface.png)
