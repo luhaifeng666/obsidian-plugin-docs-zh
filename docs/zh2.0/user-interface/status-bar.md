@@ -1,3 +1,10 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-09 17:26:34
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-09 17:26:55
+ * @Description: 
+-->
 # Status bar
 
 To create a new block in the status bar, call the [`addStatusBarItem()`](../reference/typescript/classes/Plugin_2.md#addstatusbaritem) in the `onload()` method. The `addStatusBarItem()` method returns an [HTML element](html-elements.md) that you can add your own elements to.
@@ -41,4 +48,4 @@ export default class ExamplePlugin extends Plugin {
 
 The example above results in the following status bar:
 
-![Status bar](../../static/img/status-bar.png)
+![Status bar](/images/img/status-bar.png)

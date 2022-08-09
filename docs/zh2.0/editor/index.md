@@ -45,7 +45,7 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-![Insert today's date](../../static/img/editor-todays-date.gif)
+![Insert today's date](/images/img/editor-todays-date.gif)
 
 ## Replace current selection
 
@@ -72,4 +72,4 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-![Convert to uppercase](../../static/img/editor-uppercase.gif)
+![Convert to uppercase](/images/img/editor-uppercase.gif)

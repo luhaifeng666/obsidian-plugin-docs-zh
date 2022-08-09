@@ -6,7 +6,7 @@ const { commentPlugin } = require('vuepress-plugin-comment2')
 const { commentTheme } = require('./public/themes')
 
 const getFiles = function (baseUrl, name) {
-	let urls = fs.readdirSync(`./docs/${name}${baseUrl}`).map(item => {
+	let urls = fs.readdirSync(`./docs${name}${baseUrl}`).map(item => {
 		return `${name}${baseUrl}/${item}`
 	})
 	return urls
@@ -14,15 +14,21 @@ const getFiles = function (baseUrl, name) {
 
 const getSidebarMenuItem = function (paths, baseUrl, name) {
   return paths.reduce((arr, path) => {
-		if(!Array.isArray(path)) {
-			let children = path.children ? getSidebarMenuItem(path.children, path.url, name) : getFiles(`${baseUrl}${path.url}`, name)
+		if(Array.isArray(path)) {
+      if (path.every(item => typeof(item) === 'string')) {
+        arr.push(...path)
+      } else {
+        path.children.forEach(item => {
+          getSidebarMenuItem(item, path.url, name)
+        })
+      }
+		} else {
+			let children = path.children ? getSidebarMenuItem(path.children, `${baseUrl}${path.url}`, name) : getFiles(`${baseUrl}${path.url}`, name)
 			arr.push({
 				text: path.name,
 				collapsible: true,
 				children
 			})
-		} else {
-			arr.push(...path)
 		}
     return arr
 	}, [])
@@ -54,22 +60,52 @@ const pageConfig = [
       ['/zh/manifest-reference.md', '/zh/contribute.md']
     ]
 	},
-  // {
-	// 	name: '/zh2.0/',
-	// 	baseUrl: '',
-	// 	paths: [
-  //     ['/zh2.0/introduction.md'],
-  //     { name: '快速开始', url: 'getting-started' },
-  //     { name: '用户界面', url: 'user-interface'},
-  //     { name: '编辑器', url: 'editor'},
-  //     ['/zh2.0/vault.md', '/zh2.0/events.md'],
-  //     { name: '发布', url: 'publishing' },
-  //     { name: 'Reference', url: 'reference'},
-  //     { name: 'Tutorials', url: 'tutorials'},
-  //     { name: '示例', url: 'examples' },
-  //     ['/zh2.0/developer-tools.md', '/zh2.0/contribute.md']
-  //   ]
-	// },
+  {
+		name: '/zh2.0/',
+		baseUrl: '',
+		paths: [
+      ['/zh2.0/introduction.md'],
+      { name: '快速开始', url: 'getting-started' },
+      { name: '用户界面', url: 'user-interface'},
+      { name: '编辑器', url: 'editor', children: [
+          {
+            name: '扩展', url: '/extensions'
+          }
+        ]
+      },
+      ['/zh2.0/vault.md', '/zh2.0/events.md'],
+      { name: '发布', url: 'publishing' },
+      { name: 'Reference', url: 'reference', children: [
+          {
+            name: 'typescript',
+            url: '/typescript/',
+            children: [
+              {
+                name: 'classes',
+                url: 'classes'
+              }, {
+                name: 'enums',
+                url: 'enums'
+              }, {
+                name: 'functions',
+                url: 'functions'
+              }, {
+                name: 'interfaces',
+                url: 'interfaces'
+              }, {
+                name: 'types',
+                url: 'types'
+              } 
+            ]
+          },
+          ['/zh2.0/reference/manifest.md']
+        ]
+      },
+      { name: 'Tutorials', url: 'tutorials'},
+      { name: '示例', url: 'examples' },
+      ['/zh2.0/developer-tools.md', '/zh2.0/contribute.md']
+    ]
+	},
 ]
 pageConfig.forEach(item => {
 	sidebar[item.name] = getSidebarMenuItem(item.paths, item.baseUrl, item.name)
@@ -89,10 +125,10 @@ module.exports = defineUserConfig({
     navbar: [
 			{ text: '首页', link: '/' },
 			{ text: '文档', link: '/zh/' },
-			// { text: '文档v2.0', link: '/zh2.0/' },
+			{ text: '文档v2.0', link: '/zh2.0/' },
 		],
     lastUpdated: 'Last Updated',
-		sidebarDepth: 3,
+		sidebarDepth: 5,
     repo: 'https://github.com/luhaifeng666/obsidian-plugin-docs-zh',
     sidebar
   }),
