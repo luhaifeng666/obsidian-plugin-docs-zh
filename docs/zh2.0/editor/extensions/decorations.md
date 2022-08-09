@@ -47,7 +47,7 @@ One way would be to pass the entire document to an external spell checker which 
 
 Another way would be to only spellcheck what's visible in the viewport. The extension would need to continuously run a spell check as the user scrolls through the document, but you'd be able to spell check documents with millions of lines of text.
 
-![State field vs. view plugin](decorations.svg)
+![State field vs. view plugin](/images/img/decorations.svg)
 
 ## Providing decorations
 
