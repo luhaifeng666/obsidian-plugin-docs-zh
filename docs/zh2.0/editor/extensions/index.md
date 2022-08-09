@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-09 17:43:11
+ * @LastEditTime: 2022-08-09 17:52:21
  * @Description: 
 -->
 # Editor extensions
@@ -34,7 +34,9 @@ onload() {
 
 While CM6 supports several types of extensions, two of the most common ones are [View plugins](view-plugins.md) and [State fields](state-fields.md).
 
+```ts
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-<DocCardList items={useCurrentSidebarCategory().items}></DocCardList>
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
