@@ -1,3 +1,10 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-07 11:00:59
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-09 17:43:11
+ * @Description: 
+-->
 # Editor extensions
 
 Editor extensions let you customize the experience of editing notes in Obsidian. This page explains what editor extensions are, and when to use them.
@@ -30,4 +37,4 @@ While CM6 supports several types of extensions, two of the most common ones are 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<DocCardList items={useCurrentSidebarCategory().items}></DocCardList>
