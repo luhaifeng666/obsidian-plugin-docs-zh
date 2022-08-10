@@ -1,7 +1,3 @@
----
-title: '创建您的第一个插件'
----
-
 # 创建您的第一个插件
 
 通过这篇指南，您将学会如何开发一个 Obsidian  插件。 如果您更喜欢通过视频的方式来学习, 可以查看由 [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ) 提供的视频 [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k)。
@@ -54,30 +50,39 @@ cd path/to/vault/.obsidian/plugins/obsidian-instant-coffee
 ```
 
 2. 安装依赖。
+
 :::: code-group
 ::: code-group-item npm
+
 ```bash
 npm install
 ```
+
 :::
 ::: code-group-item yarn
+
 ```bash
 yarn install
 ```
+
 :::
 ::::
 
 1. 编译插件代码。 执行下述命令会生成 `main.js` 文件，该文件中包含插件的编译版本。
 :::: code-group
 ::: code-group-item npm
+
 ```bash
 npm run dev
 ```
+
 :::
 ::: code-group-item yarn
+
 ```bash
 yarn run dev
 ```
+
 :::
 ::::
 

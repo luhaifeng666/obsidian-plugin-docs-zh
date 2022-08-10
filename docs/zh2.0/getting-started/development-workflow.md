@@ -2,18 +2,14 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-10 13:50:52
+ * @LastEditTime: 2022-08-10 14:41:10
  * @Description: 
 -->
 # 开发流程
 
-Whenever you make a change to the plugin source code, the plugin needs to be reloaded. You can reload the plugin by quitting Obsidian and starting it again, but that gets tiring quickly.
-
 无论何时您对源码做出修改，插件都需要被重载。您可以通过重启 Obsidian 的方式来重载插件，但是很快你就会厌倦这种操作。
 
 ## 在 Obsidian 中重载插件
-
-You can reload the plugin by re-enabling it in the list of installed plugins:
 
 您可以通过在已安装的插件列表中重新启用插件的方式来重载插件：
 
