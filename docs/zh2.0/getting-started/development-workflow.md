@@ -1,25 +1,32 @@
----
-sidebar_position: 15
----
-
-# Development workflow
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-07 11:00:59
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-10 13:50:52
+ * @Description: 
+-->
+# 开发流程
 
 Whenever you make a change to the plugin source code, the plugin needs to be reloaded. You can reload the plugin by quitting Obsidian and starting it again, but that gets tiring quickly.
 
-## Reload plugin inside Obsidian
+无论何时您对源码做出修改，插件都需要被重载。您可以通过重启 Obsidian 的方式来重载插件，但是很快你就会厌倦这种操作。
+
+## 在 Obsidian 中重载插件
 
 You can reload the plugin by re-enabling it in the list of installed plugins:
 
-1. Open **Preferences**.
-2. Click **Community plugins**.
-3. Find your plugin under **Installed plugins**.
-4. Toggle the switch off to disable the plugin.
-5. Toggle the switch on to enable the plugin.
+您可以通过在已安装的插件列表中重新启用插件的方式来重载插件：
 
-You're now running the updated version of your plugin.
+1. 打开 **Perferences(偏好设置)**;
+2. 点击 **Community plugins(第三方插件)**;
+3. 在 **Installed plugins(已安装插件)** 中找到您的插件；
+4. 关闭开关以禁用插件。
+5. 打开开关以启用插件。
 
-## Reload plugin on file changes
+现在您运行的便是插件的最新版本。
 
-The [Hot-Reload](https://github.com/pjeby/hot-reload) plugin reloads your plugin whenever the source code changes.
+## 热重载
 
-For more information, check out the [forum announcement](https://forum.obsidian.md/t/plugin-release-for-developers-hot-reload-the-plugin-s-youre-developing/12185).
+[Hot-Reload](https://github.com/pjeby/hot-reload) 插件会在您的源码发生改变时重新加载插件。
+
+要想获取关于该插件的更多信息，可以查看 [forum announcement](https://forum.obsidian.md/t/plugin-release-for-developers-hot-reload-the-plugin-s-youre-developing/12185) 这篇文档。

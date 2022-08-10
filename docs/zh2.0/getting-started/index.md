@@ -1,38 +1,44 @@
-# Getting started
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-07 11:00:59
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-10 14:34:02
+ * @Description: 
+-->
+# 入门指南
 
-Are you ready to start building your first [Obsidian](https://obsidian.md) plugin? This page gives you an introduction to plugins, and how to set up your development environment.
+您准备好开始开发您的第一个 [Obsidian](https://obsidian.md) 插件了么？本篇文档会为您介绍插件的概念，以及如何去配置您的开发环境。
 
-## What are plugins?
+## 插件是什么？
 
-A plugin is a third-party application lets you extend or modify Obsidian to your liking. By building a plugin, you can:
+插件是一种可以让您按照自己的喜好定制 Obsidian 的第三方应用。通过开发一个插件，您可以：
 
-- Extend or modify the user interface.
-- Edit files and folders in your [Vault](vault.md).
-- Improve the [Editor](editor/index.md) for a better note-taking experience.
+- 扩展或者修改用户界面。
+- 编辑您 [库](vault.md) 中的文件以及目录。
+- 改进 [编辑器](editor/index.md) 以获得更好的记笔记的体验。
 
-To see what a plugin looks like, check out the [Insert link](../examples/insert-link.md) example.
+想看到插件看起来是个什么样子的，可以查看 [插入链接](../examples/insert-link.md) 这个示例。
 
-## What do I need?
+## 我需要做些什么？
 
-Before you can build plugins, you need to set up your development environment.
+在您可以开发插件之前，您需要先配置您的开发环境。
 
 ### Git
 
-[Git](https://git-scm.com/) is a version control system that tracks changes to your code. You need Git to download the sample plugin and to publish the plugin.
+[Git](https://git-scm.com/) 是一个可以追踪您代码变化的版本控制系统。您需要通过 Git 来下载示例插件以及发布您的插件。
 
 ### Node.js
 
-[Node.js](https://nodejs.org/) is a JavaScript runtime environment that can run JavaScript outside of a web browser.
+[Node.js](https://nodejs.org/) 是一个可以让您在浏览器以外执行 JavaScript 的 JavaScript 运行时环境。
 
 ### TypeScript
 
-To build a plugin, you need a basic understanding of [TypeScript](https://www.typescriptlang.org/). A great place to start is [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html).
+要想开发一个插件，您需要对 [TypeScript](https://www.typescriptlang.org/) 有基本的了解。[The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) 对初学者而言是个不错的选择。
 
-### Code editor
+### 代码编辑器
 
-Use [Visual Studio Code](https://code.visualstudio.com/) to write TypeScript on Windows, Linux, and macOS.
+使用 [Visual Studio Code](https://code.visualstudio.com/) 编辑器可以在 Windows，Linux 以及 macOS 平台下编写 TypeScript。
 
-## Next steps
+## 下一步
 
-Now that you've set up your development environment, it's time to [Create your first plugin](create-your-first-plugin.md).
-
+现在您的开发环境已经准备完毕，是时候去 [创建您的第一个插件了](create-your-first-plugin.md)。
