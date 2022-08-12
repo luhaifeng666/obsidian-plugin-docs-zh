@@ -1,4 +1,11 @@
 #!/usr/bin/env osascript -l JavaScript
+
+/*
+ * @Date: 2022-08-07 11:00:59
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-12 15:59:28
+ * @Description: 
+ */
 ObjC.import("stdlib");
 const app = Application.currentApplication();
 app.includeStandardAdditions = true;
@@ -10,7 +17,7 @@ String.prototype.capitalizeWords = function () {
 
 //------------------------------------------------------------------------------
 
-const workArray = JSON.parse(app.doShellScript('curl -s "https://api.github.com/repos/marcusolsson/obsidian-plugin-docs/git/trees/main?recursive=1"'))
+const workArray = JSON.parse(app.doShellScript('curl -s "https://api.github.com/repos/luhaifeng666/obsidian-plugin-docs-zh/git/trees/master?recursive=1"'))
 	.tree
 	.filter(file => file.path.startsWith("docs/"))
 	.filter(file => file.path.endsWith(".md"))
@@ -32,7 +39,7 @@ const workArray = JSON.parse(app.doShellScript('curl -s "https://api.github.com/
 			"title": displayTitle,
 			"subtitle": category,
 			"match": alfredMatcher (subsitePath),
-			"arg": `https://marcus.se.net/obsidian-plugin-docs/${subsitePath}`,
+			"arg": `https://luhaifeng666.github.io/obsidian-plugin-docs-zh/${subsitePath}`,
 			"uid": subsitePath,
 		};
 	});

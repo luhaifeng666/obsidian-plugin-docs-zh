@@ -38,7 +38,7 @@ export default class ExamplePlugin extends Plugin {
 
 由于两次执行需要时间，您需要在每次调用时进行校验。
 
-为了确定回调函数是否应该执行预检或者操作，回调函数中会接收 `checking` 参数。 
+为了确定回调函数是否应该执行预检或者操作，回调函数中会接收 `checking` 参数。
 
 - 如果 `checking` 是 `true`，执行预检。
 - 如果 `checking` 是 `false`，执行操作。
