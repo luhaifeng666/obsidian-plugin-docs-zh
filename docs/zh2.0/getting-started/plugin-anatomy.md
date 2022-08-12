@@ -1,12 +1,18 @@
----
-sidebar_position: 20
----
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-07 11:00:59
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-12 10:54:35
+ * @Description: 
+-->
+# 插件剖析
 
-# Anatomy of a plugin
+[`Plugin`](../reference/typescript/classes/Plugin_2.md) 类中定义了插件的生命周期，并且将操作暴露给其他插件：
 
-The [`Plugin`](../reference/typescript/classes/Plugin_2.md) class defines the lifecycle of a plugin and exposes the operations available to all plugins:
+:::: code-group
+::: code-group-item main.ts
 
-```ts title="main.ts"
+```ts {1,3}
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -19,18 +25,24 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
+:::
+::::
+
 ## Plugin lifecycle
 
-[`onload()`](../reference/typescript/classes/Component.md#onload) runs whenever the user starts using the plugin in Obsidian. This is where you'll configure most of the plugin's capabilities.
+[`onload()`](../reference/typescript/classes/Component.md#onload) 生命周期函数在用户激活 Obsidian 插件时触发。这将是你设置插件大部分功能的地方。
 
-[`onunload()`](../reference/typescript/classes/Component.md#onunload) runs when the plugin is disabled. Any resources that your plugin is using must be released here to avoid affecting the performance of Obsidian after your plugin has been disabled.
+[`onunload()`](../reference/typescript/classes/Component.md#onunload) 生命周期函数在插件被禁用时触发。插件所调用的任何资源必须在这里得到释放，以防止在你的插件被禁用后对 Obsidian 的性能产生影响。
 
-To better understand when these methods are called, you can print a message to the console whenever the plugin loads and unloads. The console is a valuable tool that lets developers monitor the status of their code.
+为了更好的理解这些方法会在何时被调用，当插件被加载或者被卸载时，你可以在控制台中打印一条消息。控制台是个很有用的工具，可以让开发者们监控他们代码的状态。
 
-To view the console:
+要想打开控制台:
 
-1. Toggle the Developer Tools by pressing Ctrl+Shift+I in Windows and Linux, or Cmd-Option-I on macOS.
-1. Click on the Console tab in the Developer Tools window.
+1. 通过在 Windows 和 Linux 系统中按下组合键 Ctrl+Shift+I，或者在 macOS 系统中按下组合键 Cmd-Option-I 的方式打开或关闭开发者工具。
+2. 在开发者工具的窗口中点击 Console 标签打开控制台。
+
+:::: code-group
+::: code-group-item main.ts
 
 ```ts title="main.ts"
 import { Plugin } from "obsidian";
@@ -46,3 +58,6 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
+
+:::
+::::

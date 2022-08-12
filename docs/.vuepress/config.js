@@ -4,14 +4,14 @@ const { defineUserConfig } = require("@vuepress/cli")
 const { searchPlugin } = require('@vuepress/plugin-search')
 const { commentPlugin } = require('vuepress-plugin-comment2')
 const { commentTheme } = require('./public/themes')
-
+// 获取目标目录下的文件
 const getFiles = function (baseUrl, name) {
 	let urls = fs.readdirSync(`./docs${name}${baseUrl}`).map(item => {
 		return `${name}${baseUrl}/${item}`
 	})
 	return urls
 }
-
+// 生成侧边栏
 const getSidebarMenuItem = function (paths, baseUrl, name) {
   return paths.reduce((arr, path) => {
 		if(Array.isArray(path)) {
@@ -33,8 +33,9 @@ const getSidebarMenuItem = function (paths, baseUrl, name) {
     return arr
 	}, [])
 }
-
+// 侧边栏对象
 let sidebar = {}
+// 侧边栏配置
 const pageConfig = [
 	{
 		name: '/zh/',
@@ -107,6 +108,7 @@ const pageConfig = [
     ]
 	},
 ]
+// 遍历生成目录结构
 pageConfig.forEach(item => {
 	sidebar[item.name] = getSidebarMenuItem(item.paths, item.baseUrl, item.name)
 })
