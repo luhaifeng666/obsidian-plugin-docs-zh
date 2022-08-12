@@ -41,12 +41,12 @@ export default class ExamplePlugin extends Plugin {
 [`showAtMouseEvent()`](../api/classes/Menu.md#showatmouseevent) 方法打开鼠标点击的菜单。
 
 :::tip
-如果你需要控制菜单出现的位置，你可以使用 `menu.showAtPosition({ x: 20, y: 20 })` 去打开相对 Obsidian 窗口左上角相应位置的菜单。
+如果您需要控制菜单出现的位置，您可以使用 `menu.showAtPosition({ x: 20, y: 20 })` 去打开相对 Obsidian 窗口左上角相应位置的菜单。
 :::
 
 想知道还有哪些 icons 能够使用，可以查阅 [Icons](icons.md) 这篇文档。
 
-你也可以通过订阅 `file-menu` 和 `editor-menu` workspace 事件的方式，向文件菜单或者编辑菜单中添加一个菜单项：
+您也可以通过订阅 `file-menu` 和 `editor-menu` workspace 事件的方式，向文件菜单或者编辑菜单中添加一个菜单项：
 
 ![Context menu positions](/images/context-menu-positions.png)
 

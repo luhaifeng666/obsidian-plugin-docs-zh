@@ -7,7 +7,7 @@ title: 接口预览
 :::warning
 该文档依据 [Obsidian API](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts) 而生成。
 
-用于生成文档的 [script](https://github.com/marcusolsson/dts-docs) 脚本未经过测试，如果你发现错误或者与官方 API 不一致之处，还请告知于我。
+用于生成文档的 [script](https://github.com/marcusolsson/dts-docs) 脚本未经过测试，如果您发现错误或者与官方 API 不一致之处，还请告知于我。
 :::
 ## 类
 

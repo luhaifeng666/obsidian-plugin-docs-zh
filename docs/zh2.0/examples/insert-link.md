@@ -1,16 +1,19 @@
-# Insert link
+# 插入链接
 
-This example adds a command that opens a modal to insert a Markdown link. It uses the editor to set the current selection as the default link text, and then replaces the selection when user inserts the link.
+本例中添加了一个指令，用于打开一个模态框去插入一个 Markdown 链接。它将编辑器中选中的文字作为默认的链接文本，之后再将用户插入的链接替换选中的内容。
 
-This example assumes knowledge of [commands](../user-interface/commands.md), [modals](../user-interface/modals.md), and the [editor](../editor/index.md). If you have difficulties to understand this example, refer to the corresponding guides before you continue reading.
+本例中使用到了 [commands](../user-interface/commands.md), [modals](../user-interface/modals.md), 以及 [editor](../editor/index.md) 中的知识。如果您理解本例有些困难，建议在继续往下阅读之前先去查阅相关文档。
 
-Here's what you'll create:
+下图中展示了您将创建的内容:
 
 ![Insert link modal](/images/img/example-insert-link.gif)
 
-Here's the full source code:
+以下是完整的代码:
 
-```ts title="main.ts"
+:::: code-group
+::: code-group-item main.ts
+
+```ts
 import { Editor, Plugin } from "obsidian";
 import { InsertLinkModal } from "./modal";
 
@@ -32,6 +35,12 @@ export default class InsertLinkPlugin extends Plugin {
   }
 }
 ```
+
+:::
+::::
+
+:::: code-group
+::: code-group-item modal.ts
 
 ```ts title="modal.ts"
 import { App, Modal, Setting } from "obsidian";
@@ -86,3 +95,6 @@ export class InsertLinkModal extends Modal {
   }
 }
 ```
+
+:::
+::::

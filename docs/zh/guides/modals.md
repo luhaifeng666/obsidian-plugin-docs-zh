@@ -170,7 +170,7 @@ export class ExampleModal extends SuggestModal<Book> {
 :::
 ::::
 
-除却 `SuggestModal` 外，Obsidian API 提供了一个专门用于建议的对话框类型: [`FuzzySuggestModal`](../api/classes/FuzzySuggestModal.md)。尽管它不能让你对每个项目的呈现方式做相同的控制，但是你可以获得一个开箱即用的模糊搜索功能。
+除却 `SuggestModal` 外，Obsidian API 提供了一个专门用于建议的对话框类型: [`FuzzySuggestModal`](../api/classes/FuzzySuggestModal.md)。尽管它不能让您对每个项目的呈现方式做相同的控制，但是您可以获得一个开箱即用的模糊搜索功能。
 
 ![Fuzzy string search](/images/fuzzy-suggestion-modal.png)
 

@@ -31,7 +31,7 @@ Container elements（容器元素） 是 `HTMLElement` 对象，可以在 Obsidi
 
 每个 `HTMLElement`，其中也包含 container element（容器元素），对外暴露出 `createEl()` 方法，该方法在原始元素下创建一个 `HTMLElement`。
 
-下例中展示了你该如何在 container element（容器元素）中添加一个 `<h1>` 标签：
+下例中展示了您该如何在 container element（容器元素）中添加一个 `<h1>` 标签：
 
 ```ts
 containerEl.createEl("h1", { text: "Heading 1" });
@@ -45,9 +45,9 @@ book.createEl("div", { text: "How to Take Smart Notes" });
 book.createEl("small", { text: "Sönke Ahrens" });
 ```
 
-## 给你的元素添加样式
+## 给您的元素添加样式
 
-你可以通过在插件的根目录下添加 `styles.css` 文件来给你的插件添加自定义样式。现在来给上面的 book 示例添加一些样式：
+您可以通过在插件的根目录下添加 `styles.css` 文件来给您的插件添加自定义样式。现在来给上面的 book 示例添加一些样式：
 
 :::: code-group
 ::: code-group-item styles.css
@@ -69,7 +69,7 @@ book.createEl("small", { text: "Sönke Ahrens" });
 ::::
 
 :::tip
-`--background-modifier-border` 以及 `--text-muted` 都是 Obsidian 来定义以及使用的 [CSS变量](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)。如果你将这些变量应用到你的样式中，那么即使用户使用不同的主题，你的插件看起来也会很棒！🌈
+`--background-modifier-border` 以及 `--text-muted` 都是 Obsidian 来定义以及使用的 [CSS变量](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)。如果您将这些变量应用到您的样式中，那么即使用户使用不同的主题，您的插件看起来也会很棒！🌈
 :::
 
 要想在 HTML 元素中使用这些样式，可以给它们设置 `cls` 属性：
@@ -86,7 +86,7 @@ book.createEl("small", { text: "Sönke Ahrens", cls: "book__author" });
 
 ### 动态样式
 
-如果你想基于用户的设置或者其他值来改变元素的样式，可以使用 `toggleClass` 方法：
+如果您想基于用户的设置或者其他值来改变元素的样式，可以使用 `toggleClass` 方法：
 
 ```ts
 element.toggleClass("danger", status === "error");

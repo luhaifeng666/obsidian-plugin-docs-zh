@@ -4,7 +4,7 @@ title: 自定义视图
 
 # Custom views
 
-视图决定 Obsidian 如何去展示内容。比如 file explorer, graph view, 以及 Markdown view 等都是视图。当然，你也可以为自己的插件创建一个可以更好的展示其内容的自定义视图。
+视图决定 Obsidian 如何去展示内容。比如 file explorer, graph view, 以及 Markdown view 等都是视图。当然，您也可以为自己的插件创建一个可以更好的展示其内容的自定义视图。
 
 要想创建一个自定义视图，需要创建一个继承自 [`ItemView`](../api/classes/ItemView.md) 接口的类：
 
@@ -46,7 +46,7 @@ export class ExampleView extends ItemView {
 要想获取更多关于如何使用 `createEl()` 方法的信息，可以查看 [HTML elements](html-elements.md)。
 :::
 
-每个视图都由一个唯一的名称来标识，并且有几个操作需要你指定要使用的视图。把它抽成一个常量，`VIEW_TYPE_EXAMPLE`，这是一个不错的方式。稍后你将在本指南中看到它。
+每个视图都由一个唯一的名称来标识，并且有几个操作需要您指定要使用的视图。把它抽成一个常量，`VIEW_TYPE_EXAMPLE`，这是一个不错的方式。稍后您将在本指南中看到它。
 
 - `getViewType()` 用于返回当前视图的唯一标识。
 - `getDisplayText()` 用于返回一个更加人性化的视图名称。
@@ -94,7 +94,7 @@ export default class ExamplePlugin extends Plugin {
 :::
 ::::
 
-[`registerView()`](../api/classes/Plugin_2.md#registerview) 的第二个参数是一个工厂函数，用于返回你想注册的视图实例。
+[`registerView()`](../api/classes/Plugin_2.md#registerview) 的第二个参数是一个工厂函数，用于返回您想注册的视图实例。
 
 :::warning
 永远不要在插件中管理对视图的引用，因为 Obsidian 可能会调用视图工厂函数多次。为了避免视图中的副作用，在需要访问视图实例时使用 `getLeavesOfType()`。
@@ -114,14 +114,14 @@ this.app.workspace.getLeavesOfType(VIEW_TYPE_EXAMPLE).forEach((leaf) => {
 - 通过调用 `close()` 方法允许视图自行清理。
 - 分离使用视图的所有节点。
 
-在你为插件注册了一个自定义视图后，你需要为用户提供一个激活它的方式。`activateView()` 是个很实用的方法，它做了以下三件事情：
+在您为插件注册了一个自定义视图后，您需要为用户提供一个激活它的方式。`activateView()` 是个很实用的方法，它做了以下三件事情：
 
 - 使用自定义视图分离所有节点。
 - 将自定义视图添加到正确的节点上。
 - 显示包含自定义视图的节点。
 
 :::tip
-activateView() 方法限制你的插件一次最多显示一个视图。尝试注释掉对 detachLeavesOfType() 的调用，以允许用户创建多个视图。
+activateView() 方法限制您的插件一次最多显示一个视图。尝试注释掉对 detachLeavesOfType() 的调用，以允许用户创建多个视图。
 :::
 
-用户如何激活视图的方式取决于你。这是使用 [ribbon action](./ribbon-actions.md) 的例子，当然你也可以使用 [指令](./commands.md)。
+用户如何激活视图的方式取决于您。这是使用 [ribbon action](./ribbon-actions.md) 的例子，当然您也可以使用 [指令](./commands.md)。

@@ -2,9 +2,9 @@
 
 本例中添加了一个指令，用于打开一个模态框去插入一个 Markdown 链接。它将编辑器中选中的文字作为默认的链接文本，之后再将用户插入的链接替换选中的内容。
 
-本例中使用到了 [commands](../guides/commands.md), [modals](../guides/modals.md), 以及 [editor](../guides/editor.md) 中的知识。如果你理解本例有些困难，建议在继续往下阅读之前先去查阅相关文档。
+本例中使用到了 [commands](../guides/commands.md), [modals](../guides/modals.md), 以及 [editor](../guides/editor.md) 中的知识。如果您理解本例有些困难，建议在继续往下阅读之前先去查阅相关文档。
 
-下图中展示了你将创建的内容:
+下图中展示了您将创建的内容:
 
 ![Insert link modal](/images/example-insert-link.gif)
 

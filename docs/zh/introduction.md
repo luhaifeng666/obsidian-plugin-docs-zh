@@ -5,13 +5,13 @@ title: 简介
 
 这是一份 **非官方的** Obsidian 插件开发文档。
 
-该文档由 [@marcusolsson](https://github.com/marcusolsson) 以及 Obsidian 社区共同维护。 如果你觉得本站对你有用的话, 可以给本站的维护者买杯咖啡支持一下:
+该文档由 [@marcusolsson](https://github.com/marcusolsson) 以及 Obsidian 社区共同维护。 如果您觉得本站对您有用的话, 可以给本站的维护者买杯咖啡支持一下:
 
 <a href="https://buymeacoffee.com/marcusolsson">
   <img src="/images/default-violet.webp" width="200" />
 </a>
 
-如果本站对你帮助不大的话，也许下列链接会对你有所帮助:
+如果本站对您帮助不大的话，也许下列链接会对您有所帮助:
 
 **由 Obsidian 团队提供的资源:**
 

@@ -4,7 +4,7 @@ title: Markdown 后处理器
 
 # Markdown post processing
 
-如果你想改变 Markdown 文档在预览时的呈现方式，你可以添加自定义的 _Markdown post processor(Markdown 后处理器)_。如名称所示，后处理器在 Markdown 被处理成 HTML **后**执行。它支持向被渲染的文档中添加，删除，或者替换 [HTML 元素](html-elements.md)。
+如果您想改变 Markdown 文档在预览时的呈现方式，您可以添加自定义的 _Markdown post processor(Markdown 后处理器)_。如名称所示，后处理器在 Markdown 被处理成 HTML **后**执行。它支持向被渲染的文档中添加，删除，或者替换 [HTML 元素](html-elements.md)。
 
 下例查找在两个冒号 `:` 之间的任意代码块, 并替换成合适的 emoji 符号：
 
@@ -70,7 +70,7 @@ export class Emoji extends MarkdownRenderChild {
 
 ## 后处理 Markdown 代码块
 
-你知道你可以通过创建一个具有如下文本定义的 `mermaid` 代码块的方式，在 Obsidian 中创建 [Mermaid](https://mermaid-js.github.io/) 图表？：
+您知道您可以通过创建一个具有如下文本定义的 `mermaid` 代码块的方式，在 Obsidian 中创建 [Mermaid](https://mermaid-js.github.io/) 图表？：
 
 ````md
 ```mermaid
@@ -79,14 +79,14 @@ flowchart LR
 ```
 ````
 
-如果你切换为预览模式，代码块中的文本将变成以下图表形式：
+如果您切换为预览模式，代码块中的文本将变成以下图表形式：
 
 ```mermaid
 flowchart LR
     Start --> Stop
 ```
 
-如果你想去添加类似 Mermaid 的自定义代码块，你可以使用 [`registerMarkdownCodeBlockProcessor`](../api/classes/Plugin_2.md#registermarkdowncodeblockprocessor)。以下示例将包含 CSV 数据的代码块呈现为表格：
+如果您想去添加类似 Mermaid 的自定义代码块，您可以使用 [`registerMarkdownCodeBlockProcessor`](../api/classes/Plugin_2.md#registermarkdowncodeblockprocessor)。以下示例将包含 CSV 数据的代码块呈现为表格：
 
 :::: code-group
 ::: code-group-item main.ts
