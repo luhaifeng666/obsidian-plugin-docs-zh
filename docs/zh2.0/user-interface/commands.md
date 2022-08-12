@@ -1,10 +1,17 @@
+---
+title: 指令
+---
+
 # Commands
 
-Commands are actions that the user can perform from the [Command Palette](https://help.obsidian.md/Plugins/Command+palette) or by using a hot key.
+Commands(指令) 是指用户可以通过 [Command Palette(命令面板)](https://help.obsidian.md/Plugins/Command+palette) 或者热键的方式来执行的操作。
 
 ![Command](/images/img/command.png)
 
-To register a new command for your plugin, call the [`addCommand()`](../reference/typescript/classes/Plugin_2.md#addcommand) method inside the `onload()` method:
+要想在您的插件中添加指令，可以在 `onload()` 方法中调用 [`addCommand()`](../reference/typescript/classes/Plugin_2.md#addcommand) 方法：
+
+:::: code-group
+::: code-group-item tsconfig.json
 
 ```ts title="main.ts"
 import { Plugin } from "obsidian";
@@ -24,20 +31,23 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-## Conditional commands
+:::
+::::
 
-If your command is only able to run under certain conditions, then consider using [`checkCallback`](../reference/typescript/interfaces/Command.md#checkcallback) instead.
+## 带条件的指令
 
-The `checkCallback` runs twice. First, to perform a preliminary check to determine whether the command can run. Second, to perform the action.
+如果您的指令只能在某些条件下运行，可以考虑使用 [`checkCallback`](../reference/typescript/interfaces/Command.md#checkcallback) 。
 
-Since time may pass between the two runs, you need to perform the check during both calls.
+`checkCallback` 执行两次。第一次执行预检以确定指令是否可以执行，第二次执行操作。
 
-To determine whether the callback should perform a preliminary check or an action, a `checking` argument is passed to the callback.
+由于两次执行需要时间，您需要在每次调用时进行校验。
 
-- If `checking` is set to `true`, perform a preliminary check.
-- If `checking` is set to `false`, perform an action.
+为了确定回调函数是否应该执行预检或者操作，回调函数中会接收 `checking` 参数。
 
-The command in the following example depends on a required value. In both runs, the callback checks that the value is present but only performs the action if `checking` is `false`.
+- 如果 `checking` 是 `true`，执行预检。
+- 如果 `checking` 是 `false`，执行操作。
+
+下例中的指令取决于所需要的值。在每次执行过程中，回调函数会检查该值是否存在，但仅在 `checking` 是 `false` 时执行该操作。
 
 ```ts
 this.addCommand({
@@ -60,9 +70,9 @@ this.addCommand({
 });
 ```
 
-## Editor commands
+## 编辑器指令
 
-If your command needs access to the editor, you can also use the [`editorCallback`](../reference/typescript/interfaces/Command.md#editorcallback), which provides the active editor and its view as arguments.
+如果您的指令需要访问编辑器，您也可以使用 [`editorCallback`](../reference/typescript/interfaces/Command.md#editorcallback)方法，它的入参是当前活动的编辑器对象以及它的视图。
 
 ```ts
 this.addCommand({
@@ -77,11 +87,11 @@ this.addCommand({
 }
 ```
 
-:::note
-Editor commands only appear in the Command Palette when there's an active editor available.
+::: tip
+编辑器指令仅在存在可用的活动编辑器时才会出现在命令面板中。
 :::
 
-If the editor callback can only run given under certain conditions, consider using the [`editorCheckCallback`](../reference/typescript/interfaces/Command.md#editorcheckcallback) instead. For more information, refer to [conditional commands](#conditional-commands).
+如果编辑器回调函数仅在给定的确定条件下运行的话，可以考虑使用 [`editorCheckCallback`](../reference/typescript/interfaces/Command.md#editorcheckcallback) 方法。要想获取更多信息，可以参考  [conditional commands](#conditional-commands).
 
 ```ts
 this.addCommand({
@@ -106,13 +116,13 @@ this.addCommand({
 
 ## Hot keys
 
-The user can run commands using a keyboard shortcut, or _hot key_. While they can configure this themselves, you can also provide a default hot key.
+用户可以通过快捷方式或者 _热键_ 来使用指令。尽管他们可以自行配置，您也可以给他们提供一个默认的热键。
 
 :::warning
-Avoid setting default hot keys for plugins that you intend for others to use. Hot keys are highly likely to conflict with those defined by other plugins or by the user themselves.
+要避免为打算提供给其他人使用的插件设置默认热键。因为这很有可能跟其他插件定义的热键或者用户自定义的热键相冲突。
 :::
 
-In this example, the user can run the command by pressing and holding Ctrl (or Cmd on Mac) and Shift together, and then pressing the letter `a` on their keyboard.
+在本例中，用户可以通过同时按住 Ctrl（或者 Mac 上的 Command）键和 Shift 键，然后按键盘上的字母 a 来运行指令。
 
 ```ts
 this.addCommand({
@@ -126,6 +136,6 @@ this.addCommand({
 });
 ```
 
-:::note
-The Mod key is a special modifier key that becomes Ctrl on Windows and Linux, and Cmd on macOS.
+::: tip
+Mod 键是一个特殊的修饰键，在 Windows 和 Linux 上变为 Ctrl，在 macOS 上变为 Command。
 :::
