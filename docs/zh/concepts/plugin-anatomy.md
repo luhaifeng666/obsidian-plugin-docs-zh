@@ -20,11 +20,11 @@ export default class ExamplePlugin extends Plugin {
 
 ## 插件生命周期
 
-[`onload()`](../api/classes/Component.md#onload) 生命周期函数在用户激活 Obsidian 插件时触发。这将是你设置插件大部分功能的地方。
+[`onload()`](../api/classes/Component.md#onload) 生命周期函数在用户激活 Obsidian 插件时触发。这将是您设置插件大部分功能的地方。
 
-[`onunload()`](../api/classes/Component.md#onunload) 生命周期函数在插件被禁用时触发。插件所调用的任何资源必须在这里得到释放，以防止在你的插件被禁用后对 Obsidian 的性能产生影响。
+[`onunload()`](../api/classes/Component.md#onunload) 生命周期函数在插件被禁用时触发。插件所调用的任何资源必须在这里得到释放，以防止在您的插件被禁用后对 Obsidian 的性能产生影响。
 
-为了更好的理解这些方法会在何时被调用，当插件被加载或者被卸载时，你可以在控制台中打印一条消息。控制台是个很有用的工具，可以让开发者们监控他们代码的状态。
+为了更好的理解这些方法会在何时被调用，当插件被加载或者被卸载时，您可以在控制台中打印一条消息。控制台是个很有用的工具，可以让开发者们监控他们代码的状态。
 
 要想打开控制台:
 

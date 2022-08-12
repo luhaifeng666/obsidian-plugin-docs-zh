@@ -4,15 +4,15 @@ title: 图标
 
 # Icons
 
-Obsidian API 中的一些 UI 组件允许你配置与之对应的icon。你可以从内置的 icon 中选择一个，或者添加自定义的icon。
+Obsidian API 中的一些 UI 组件允许您配置与之对应的icon。您可以从内置的 icon 中选择一个，或者添加自定义的icon。
 
 ## 浏览可用的 icon
 
-如果你想查看所有可用的 icon 以及它们相关的名称，你可以安装由 mgmeyers 提供的 [Icon Swapper](https://github.com/mgmeyers/obsidian-icon-swapper) 插件。尽管它的主要目的是使用自定义 icon 替换内置 icon，同时它也是 Obsidian 中可用图标的列表。
+如果您想查看所有可用的 icon 以及它们相关的名称，您可以安装由 mgmeyers 提供的 [Icon Swapper](https://github.com/mgmeyers/obsidian-icon-swapper) 插件。尽管它的主要目的是使用自定义 icon 替换内置 icon，同时它也是 Obsidian 中可用图标的列表。
 
 ## 绘制 icons
 
-如果你想在你自定义的接口中使用 icon，可以使用 [`setIcon`](../api/functions/setIcon.md) 方法去添加一个 icon 到 [HTML element](html-elements.md)。下例中展示了如何向状态栏中添加 icon：
+如果您想在您自定义的接口中使用 icon，可以使用 [`setIcon`](../api/functions/setIcon.md) 方法去添加一个 icon 到 [HTML element](html-elements.md)。下例中展示了如何向状态栏中添加 icon：
 
 :::: code-group
 ::: code-group-item main.ts
@@ -29,7 +29,7 @@ export default class ExamplePlugin extends Plugin {
 :::
 ::::
 
-## 添加你自己的 icon
+## 添加您自己的 icon
 
 要想在插件中添加自定义 icon，可以使用 [`addIcon`](../api/functions/addIcon.md) 方法：
 
@@ -53,9 +53,9 @@ export default class ExamplePlugin extends Plugin {
 
 `addIcon` 接受两个参数:
 
-1. 一个唯一标识你的 icon 的名称。
+1. 一个唯一标识您的 icon 的名称。
 2. 不包含 `<svg>` 标签的 icon SVG 内容。
 
-需要注意的是，你的图标需要适合 `0 0 100 100` 视图框才能被正确绘制。
+需要注意的是，您的图标需要适合 `0 0 100 100` 视图框才能被正确绘制。
 
-在调用完 `addIcon` 后，你就可以像使用任意内置 icon 一样使用该 icon。
+在调用完 `addIcon` 后，您就可以像使用任意内置 icon 一样使用该 icon。

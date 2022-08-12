@@ -4,9 +4,9 @@ title: 设置
 
 # Settings
 
-如果你想用户可以自行对插件进行配置，那么你可以将 _设置_ 选项暴露给他们。
+如果您想用户可以自行对插件进行配置，那么您可以将 _设置_ 选项暴露给他们。
 
-在本指南中，你将学到如何创建类似如下的设置页面 👇
+在本指南中，您将学到如何创建类似如下的设置页面 👇
 
 ![Settings](/images/settings.png)
 
@@ -51,7 +51,7 @@ export default class ExamplePlugin extends Plugin {
 
 ## 创建设置定义
 
-首先，你需要去创建一个定义，`ExamplePluginSettings`，用于那些你想让用户去配置的设置项。当插件被启用后，你可以通过 `settings` 的属性访问到这些配置。
+首先，您需要去创建一个定义，`ExamplePluginSettings`，用于那些您想让用户去配置的设置项。当插件被启用后，您可以通过 `settings` 的属性访问到这些配置。
 
 ```ts
 interface ExamplePluginSettings {
@@ -113,12 +113,12 @@ const DEFAULT_SETTINGS: Partial<ExamplePluginSettings> = {
 ```
 
 :::tip
-`Partial<Type>` 是 TypeScript 提供的能力，用于返回一个类型，其中 `Type` 所有的属性都是可选属性。它启用类型检查，同时让你只定义要为其提供默认值的属性。
+`Partial<Type>` 是 TypeScript 提供的能力，用于返回一个类型，其中 `Type` 所有的属性都是可选属性。它启用类型检查，同时让您只定义要为其提供默认值的属性。
 :::
 
 ## 注册设置tab
 
-现在插件已经可以保存以及加载设置了，但是用户尚且不能修改任何一项配置。通过添加一个设置标签，你可以为你的插件用户提供一个易用的界面去更新他们的设置：
+现在插件已经可以保存以及加载设置了，但是用户尚且不能修改任何一项配置。通过添加一个设置标签，您可以为您的插件用户提供一个易用的界面去更新他们的设置：
 
 ```ts
 this.addSettingTab(new ExampleSettingTab(this.app, this));
@@ -163,7 +163,7 @@ export class ExampleSettingTab extends PluginSettingTab {
 :::
 ::::
 
-在 `display()` 中你可以为设置标签创建内容。想要获取更多信息，可以查阅 [HTML elements](html-elements.md)。
+在 `display()` 中您可以为设置标签创建内容。想要获取更多信息，可以查阅 [HTML elements](html-elements.md)。
 
 `new Setting(containerEl)` 方法向容器标签中添加一个设置。本例通过 `addText()` 方法使用文本字段，但也有其他几种可用的设置类型。
 
@@ -176,4 +176,4 @@ export class ExampleSettingTab extends PluginSettingTab {
 })
 ```
 
-干的漂亮！💪 用户会感谢你提供了一种可以让他们得以自定义使用你插件的方式。在开始下一个指南前，去试试添加另外一项配置吧~
+干的漂亮！💪 用户会感谢您提供了一种可以让他们得以自定义使用您插件的方式。在开始下一个指南前，去试试添加另外一项配置吧~

@@ -1,14 +1,14 @@
 # React
 
-在本指南中，你将配置你的插件以使用 [React](https://reactjs.org/)。假设你已经拥有一个使用 [custom view](../guides/custom-views.md) 的插件，并且想使用 React 来改写它。
+在本指南中，您将配置您的插件以使用 [React](https://reactjs.org/)。假设您已经拥有一个使用 [custom view](../guides/custom-views.md) 的插件，并且想使用 React 来改写它。
 
-虽然你并不需要使用单独的框架来开发一个插件，以下是你想使用 React 的几点原因：
+虽然您并不需要使用单独的框架来开发一个插件，以下是您想使用 React 的几点原因：
 
-- 你有使用 React 的经验，并且想使用熟悉的技术。
-- 你想在插件中重复使用现有的 React 组件。
-- 你的插件需要复杂的状态管理，或者有使用常规 [HTML element](../guides/html-elements.md) 无法实现的其他功能。
+- 您有使用 React 的经验，并且想使用熟悉的技术。
+- 您想在插件中重复使用现有的 React 组件。
+- 您的插件需要复杂的状态管理，或者有使用常规 [HTML element](../guides/html-elements.md) 无法实现的其他功能。
 
-## 配置你的插件
+## 配置您的插件
 
 1. 将 React 添加到依赖中:
 
@@ -98,11 +98,11 @@ class ExampleView extends ItemView {
 想要获取更多关于 `ReactDOM.render()` 以及 `ReactDOM.unmountComponentAtNode()` 的信息，可以去查阅
  [ReactDOM](https://reactjs.org/docs/react-dom.html) 这篇文档。
 
-你可以将你的 React 组件挂载到任意 `HTMLElement` 上，可以看 [status bar items](../guides/status-bar.md) 这个示例。当你使用完组件后请调用`ReactDOM.unmountComponentAtNode()` 方法确保组件被彻底移除。
+您可以将您的 React 组件挂载到任意 `HTMLElement` 上，可以看 [status bar items](../guides/status-bar.md) 这个示例。当您使用完组件后请调用`ReactDOM.unmountComponentAtNode()` 方法确保组件被彻底移除。
 
 ## 创建应用上下文
 
-如果你想从 React 组件中获取到 [`App`](../api/classes/App.md) 对象，你需要将其作为依赖传递。随着插件的迭代更新，尽管你在很少的几个地方使用了 `App` 对象，它也会在整个组件树中被传递。
+如果您想从 React 组件中获取到 [`App`](../api/classes/App.md) 对象，您需要将其作为依赖传递。随着插件的迭代更新，尽管您在很少的几个地方使用了 `App` 对象，它也会在整个组件树中被传递。
 
 还有一个选择就是给应用创建一个 React 上下文，使得 `App` 变成全局对象以便在 React 视图中的所有组件都可以获取到它。
 

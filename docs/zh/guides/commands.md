@@ -8,7 +8,7 @@ Commands(指令) 是指用户可以通过 [Command Palette(命令面板)](https:
 
 ![Command](/images/command.png)
 
-要想在你的插件中添加指令，可以在 `onload()` 方法中调用 [`addCommand()`](../api/classes/Plugin_2.md#addcommand) 方法：
+要想在您的插件中添加指令，可以在 `onload()` 方法中调用 [`addCommand()`](../api/classes/Plugin_2.md#addcommand) 方法：
 
 :::: code-group
 ::: code-group-item tsconfig.json
@@ -32,11 +32,11 @@ export default class ExamplePlugin extends Plugin {
 
 ## 带条件的指令
 
-如果你的指令只能在某些条件下运行，可以考虑使用 [`checkCallback`](../api/interfaces/Command.md#checkcallback)。
+如果您的指令只能在某些条件下运行，可以考虑使用 [`checkCallback`](../api/interfaces/Command.md#checkcallback)。
 
 `checkCallback` 执行两次。第一次执行预检以确定指令是否可以执行，第二次执行操作。
 
-由于两次执行需要时间，你需要在每次调用时进行校验。
+由于两次执行需要时间，您需要在每次调用时进行校验。
 
 为了确定回调函数是否应该执行预检或者操作，回调函数中会接收 `checking` 参数。 
 
@@ -67,7 +67,7 @@ this.addCommand({
 
 ## 编辑器指令
 
-如果你的指令需要访问编辑器，你也可以使用 [`editorCallback`](../api/interfaces/Command.md#editorcallback) 方法，它的入参是当前活动的编辑器对象以及它的视图。
+如果您的指令需要访问编辑器，您也可以使用 [`editorCallback`](../api/interfaces/Command.md#editorcallback) 方法，它的入参是当前活动的编辑器对象以及它的视图。
 
 ```ts {4}
 this.addCommand({
@@ -109,7 +109,7 @@ this.addCommand({
 
 ## 热键
 
-用户可以通过快捷方式或者 _热键_ 来使用指令。尽管他们可以自行配置，你也可以给他们提供一个默认的热键。
+用户可以通过快捷方式或者 _热键_ 来使用指令。尽管他们可以自行配置，您也可以给他们提供一个默认的热键。
 
 :::warning
 要避免为打算提供给其他人使用的插件设置默认热键。因为这很有可能跟其他插件定义的热键或者用户自定义的热键相冲突。

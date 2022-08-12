@@ -1,22 +1,22 @@
 # Svelte
 
-该指南解释了如何配置你的插件以使用 [Svelte](https://svelte.dev/), 一个轻量级的可用于替换诸如 React 以及 Vue 这些的框架。
+该指南解释了如何配置您的插件以使用 [Svelte](https://svelte.dev/), 一个轻量级的可用于替换诸如 React 以及 Vue 这些的框架。
 
-Svelte 是围绕一个可以预编译你的代码为普通 Javascript 的编辑器构建的，这意味着在运行时不需要加载任何类库。这也意味着不需要使用虚拟 DOM 去追踪状态的变化，允许你的插件以最小的额外开销运行。
+Svelte 是围绕一个可以预编译您的代码为普通 Javascript 的编辑器构建的，这意味着在运行时不需要加载任何类库。这也意味着不需要使用虚拟 DOM 去追踪状态的变化，允许您的插件以最小的额外开销运行。
 
-如果你想学习到更多关于 Svelte 的只是，以及如何去使用它，可以查阅 [tutorial](https://svelte.dev/tutorial/basics) 以及 [documentation](https://svelte.dev/docs) 这两篇文档。
+如果您想学习到更多关于 Svelte 的只是，以及如何去使用它，可以查阅 [tutorial](https://svelte.dev/tutorial/basics) 以及 [documentation](https://svelte.dev/docs) 这两篇文档。
 
-本指南假定你已经阅读完[创建你的第一个插件](../getting-started/create-your-first-plugin) 这篇文档。
+本指南假定您已经阅读完[创建您的第一个插件](../getting-started/create-your-first-plugin) 这篇文档。
 
 :::tip Visual Studio Code
 Svelte 有一个[官方的 Visual Studio Code 扩展](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) 可以提供 Svelte 组件语法高亮以及智能提示。
 :::
 
-## 配置你的插件
+## 配置您的插件
 
-要想构建一个 Svelte 应用，你需要去安装依赖以及配置你的插件以编译使用 Svelte 编写的代码。
+要想构建一个 Svelte 应用，您需要去安装依赖以及配置您的插件以编译使用 Svelte 编写的代码。
 
-1. 将 Svelte 添加到你插件的依赖中：
+1. 将 Svelte 添加到您插件的依赖中：
 
 :::: code-group
 ::: code-group-item npm
@@ -177,7 +177,7 @@ export class ExampleView extends ItemView {
 
 :::tip
 
-Svelte 要求 TypeScript 的版本至少是 4.5。如果当你构建插件的时候看到如下报错，你需要升级 TypeScript 到一个更新的版本。
+Svelte 要求 TypeScript 的版本至少是 4.5。如果当您构建插件的时候看到如下报错，您需要升级 TypeScript 到一个更新的版本。
 
 ```plain
 error TS5023: Unknown compiler option 'preserveValueImports'.
@@ -194,7 +194,7 @@ yarn upgrade typescript@~4.5.0
 
 :::tip
 
-Svelte 要求 TypeScript 的版本至少是 4.5。如果当你构建插件的时候看到如下报错，你需要升级 TypeScript 到一个更新的版本。
+Svelte 要求 TypeScript 的版本至少是 4.5。如果当您构建插件的时候看到如下报错，您需要升级 TypeScript 到一个更新的版本。
 
 ```plain
 error TS5023: Unknown compiler option 'preserveValueImports'.
@@ -210,7 +210,7 @@ yarn upgrade typescript@~4.5.0
 
 ## 创建一个 Svelte 的 store
 
-要为你的插件创建一个 store 以及在通用的 Svelte 组件中访问它来代替通过 prop 的方式访问，需要遵循如下步骤：
+要为您的插件创建一个 store 以及在通用的 Svelte 组件中访问它来代替通过 prop 的方式访问，需要遵循如下步骤：
 
 1. 创建一个名为 `store.ts` 的文件：
 

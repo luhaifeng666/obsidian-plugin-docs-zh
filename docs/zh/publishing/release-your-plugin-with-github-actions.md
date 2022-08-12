@@ -1,12 +1,12 @@
 # 使用 GitHub Actions 发布您的插件
 
-通过手动的方式创建插件的 release 比较费事也容易出错。在本指南中，你将通过配置 [GitHub Actions](https://github.com/features/actions) 的方式，在你创建新的 tag 时自动创建对应的 release。
+通过手动的方式创建插件的 release 比较费事也容易出错。在本指南中，您将通过配置 [GitHub Actions](https://github.com/features/actions) 的方式，在您创建新的 tag 时自动创建对应的 release。
 
 :::tip
 Github Action 工作流起初由 [argentum](https://forum.obsidian.md/u/argentum) 创建和共享。想要获取更多信息以及其他变更，可以查阅 [forum announcement](https://forum.obsidian.md/t/using-github-actions-to-release-plugins/7877/3) 这篇文档。
 :::
 
-1. 在你插件的根目录下，创建 `.github/workflows/release.yml` 文件，并将以下内容写入文件：
+1. 在您插件的根目录下，创建 `.github/workflows/release.yml` 文件，并将以下内容写入文件：
 
    ```yml title=".github/workflows/release.yml"
    name: Release Obsidian plugin
@@ -116,27 +116,27 @@ Github Action 工作流起初由 [argentum](https://forum.obsidian.md/u/argentum
    - `-a` 创建了一个 [注释标签](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_creating_tags).
    - `-m` 用来指定版本的名称。在 Obsidian 插件中必须与版本号一致。
 
-4. 打开仓库所在的 github 地址并点击 **Actions** 标签。你的工作流可能还在运行或者已经运行结束。
+4. 打开仓库所在的 github 地址并点击 **Actions** 标签。您的工作流可能还在运行或者已经运行结束。
 
 5. 当工作流运行结束，回到仓库首页并点击 **Releases** 标签。该工作流已创建 GitHub 版本并将所需资产作为二进制附件上传。
 
-你已将插件设置为在创建新标签时自动创建 GitHub 版本。
+您已将插件设置为在创建新标签时自动创建 GitHub 版本。
 
-- 如果这是插件的第一个版本，你现在可以去 [提交你的插件](submit-your-plugin.md)。
+- 如果这是插件的第一个版本，您现在可以去 [提交您的插件](submit-your-plugin.md)。
 - 如果是插件的版本更新，那么现在插件的使用者们可以去更新插件的最新版本了。
 
-## 使用标准版本自动标记你的版本
+## 使用标准版本自动标记您的版本
 
-你也可以使用[标准版本](https://github.com/conventional-changelog/standard-version)根据你你创建的提交自动应用标签。
+您也可以使用[标准版本](https://github.com/conventional-changelog/standard-version)根据您您创建的提交自动应用标签。
 
-标准版本使用 [Conventional Commits](https://www.conventionalcommits.org/) 给你的提交添加一致性，并根据你的提交自动生成 `CHANGELOG.md` 。举个栗子：
+标准版本使用 [Conventional Commits](https://www.conventionalcommits.org/) 给您的提交添加一致性，并根据您的提交自动生成 `CHANGELOG.md` 。举个栗子：
 
-- 如果你的提交信息以 `fix:` 开头，那么它会影响补丁版本。
-- 如果你的提交信息以 `feat:` 开头，那么它会影响次级版本。
-- 如果你的提交信息的第三行以 `BREAKING CHANGE:` 开头，那么它会影响主要版本。
+- 如果您的提交信息以 `fix:` 开头，那么它会影响补丁版本。
+- 如果您的提交信息以 `feat:` 开头，那么它会影响次级版本。
+- 如果您的提交信息的第三行以 `BREAKING CHANGE:` 开头，那么它会影响主要版本。
 
 :::tip
-如果你使用的是 Visual Studio Code，[Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) 插件可以帮你去创建 Conventional Commits。
+如果您使用的是 Visual Studio Code，[Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) 插件可以帮您去创建 Conventional Commits。
 :::
 
 要想开启插件的标准版本：
@@ -173,7 +173,7 @@ Github Action 工作流起初由 [argentum](https://forum.obsidian.md/u/argentum
 
 要想创建版本:
 
-1. 根据 Conventional Commits 提交你的修改。
+1. 根据 Conventional Commits 提交您的修改。
 
    ```bash
    git commit -m "feat: Add settings"
