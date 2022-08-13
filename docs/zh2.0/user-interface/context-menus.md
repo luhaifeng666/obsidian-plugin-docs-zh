@@ -1,6 +1,13 @@
-# Context menus
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-09 17:26:34
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-13 22:01:55
+ * @Description: 
+-->
+# 快捷菜单
 
-If you want to open up a context menu, use [`Menu`](../reference/typescript/classes/Menu.md):
+如果想要打开 context menu, 使用 [`Menu`](../reference/typescript/classes/Menu.md):
 
 ```ts
 import { Menu, Notice, Plugin } from "obsidian";
@@ -36,15 +43,15 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-[`showAtMouseEvent()`](../reference/typescript/classes/Menu.md#showatmouseevent) opens the menu where you clicked with the mouse.
+[`showAtMouseEvent()`](../reference/typescript/classes/Menu.md#showatmouseevent) 方法打开鼠标点击的菜单。
 
 :::tip
-If you need more control of where the menu appears, you can use `menu.showAtPosition({ x: 20, y: 20 })` to open the menu at a position relative to the top-left corner of the Obsidian window.
+如果您需要控制菜单出现的位置，您可以使用 `menu.showAtPosition({ x: 20, y: 20 })` 去打开相对 Obsidian 窗口左上角相应位置的菜单。
 :::
 
-For more information on what icons you can use, refer to [Icons](icons.md).
+想知道还有哪些 icons 能够使用，可以查阅 [Icons](icons.md) 这篇文档。
 
-You can also add an item to the file menu, or the editor menu, by subscribing to the `file-menu` and `editor-menu` workspace events:
+您也可以通过订阅 `file-menu` 和 `editor-menu` workspace 事件的方式，向文件菜单或者编辑菜单中添加一个菜单项：
 
 ![Context menu positions](/images/img/context-menu-positions.png)
 
@@ -82,4 +89,4 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-For more information on handling events, refer to [Events](../events.md).
+想要获取关于处理事件的更多信息，可以查阅 [Events](../events.md) 这篇文档。
