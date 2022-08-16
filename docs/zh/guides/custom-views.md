@@ -1,8 +1,4 @@
----
-title: 自定义视图
----
-
-# Custom views
+# 自定义视图
 
 视图决定 Obsidian 如何去展示内容。比如 file explorer, graph view, 以及 Markdown view 等都是视图。当然，您也可以为自己的插件创建一个可以更好的展示其内容的自定义视图。
 
@@ -10,6 +6,7 @@ title: 自定义视图
 
 :::: code-group
 ::: code-group-item view.ts
+
 ```ts
 import { ItemView, WorkspaceLeaf } from "obsidian";
 
@@ -39,6 +36,7 @@ export class ExampleView extends ItemView {
   }
 }
 ```
+
 :::
 ::::
 
@@ -57,6 +55,7 @@ export class ExampleView extends ItemView {
 
 :::: code-group
 ::: code-group-item main.ts
+
 ```ts {6-9,17}
 import { Plugin } from "obsidian";
 import { ExampleView, VIEW_TYPE_EXAMPLE } from "./view";
@@ -91,6 +90,7 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
+
 :::
 ::::
 
