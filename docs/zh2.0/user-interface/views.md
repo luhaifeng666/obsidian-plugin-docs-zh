@@ -1,10 +1,14 @@
-# Views
+# 视图
 
-Views determine how Obsidian displays content. The file explorer, graph view, and the Markdown view are all examples of views, but you can also create your own custom views that display content in a way that makes sense for your plugin.
+视图决定 Obsidian 如何去展示内容。比如 file explorer, graph view, 以及 Markdown view 等都是视图。当然，您也可以为自己的插件创建一个可以更好的展示其内容的自定义视图。
 
-To create a custom view, create a class that extends the [`ItemView`](../reference/typescript/classes/ItemView.md) interface:
+要想创建一个自定义视图，需要创建一个继承自 [`ItemView`](../reference/typescript/classes/ItemView.md) 的类:
 
-```ts title="view.ts"
+:::: code-group
+::: code-group-item view.ts
+
+```ts
+
 import { ItemView, WorkspaceLeaf } from "obsidian";
 
 export const VIEW_TYPE_EXAMPLE = "example-view";
@@ -34,20 +38,23 @@ export class ExampleView extends ItemView {
 }
 ```
 
-:::note
-For more information on how to use the `createEl()` method, refer to [HTML elements](html-elements.md).
+::: tip
+要想获取更多关于如何使用 `createEl()` 方法的信息，可以查看 [HTML elements](html-elements.md)。
 :::
 
-Each view is uniquely identified by a text string and several operations require that you specify the view you'd like to use. Extracting it to a constant, `VIEW_TYPE_EXAMPLE`, is a good idea—as you will see later in this guide.
+每个视图都由一个唯一的名称来标识，并且有几个操作需要您指定要使用的视图。把它抽成一个常量，`VIEW_TYPE_EXAMPLE`，这是一个不错的方式。稍后您将在本指南中看到它。
 
-- `getViewType()` returns a unique identifier for the view.
-- `getDisplayText()` returns a human-friendly name for the view.
-- `onOpen()` is called when the view is opened within a new leaf and is responsible for building the content of your view.
-- `onClose()` is called when the view should close and is responsible for cleaning up any resources used by the view.
+- `getViewType()` 用于返回当前视图的唯一标识。
+- `getDisplayText()` 用于返回一个更加人性化的视图名称。
+- `onOpen()` 在视图打开时调用，它负责构建视图的内容。
+- `onClose()` 在视图需要被关闭时调用，它负责释放视图占用的资源。
 
-Custom views need to be registered when the plugin is enabled, and cleaned up when the plugin is disabled:
+自定义视图需要在插件被启用时注册，并且在插件被禁用时释放。
 
-```ts title="main.ts"
+:::: code-group
+::: code-group-item main.ts
+
+```ts
 import { Plugin } from "obsidian";
 import { ExampleView, VIEW_TYPE_EXAMPLE } from "./view";
 
@@ -85,10 +92,13 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-The second argument to [`registerView()`](../reference/typescript/classes/Plugin_2.md#registerview) is a factory function that returns an instance of the view you want to register.
+:::
+::::
+
+[`registerView()`](../reference/typescript/classes/Plugin_2.md#registerview) 的第二个参数是一个工厂函数，用于返回您想注册的视图实例。
 
 :::warning
-Never manage references to views in your plugin. Obsidian may call the view factory function multiple times. Avoid side effects in your view, and use `getLeavesOfType()` whenever you need to access your view instances.
+永远不要在插件中管理对视图的引用，因为 Obsidian 可能会调用视图工厂函数多次。为了避免视图中的副作用，在需要访问视图实例时使用 `getLeavesOfType()`。
 
 ```ts
 this.app.workspace.getLeavesOfType(VIEW_TYPE_EXAMPLE).forEach((leaf) => {
@@ -100,19 +110,19 @@ this.app.workspace.getLeavesOfType(VIEW_TYPE_EXAMPLE).forEach((leaf) => {
 
 :::
 
-In the `onunload()` method, to make sure that you clean up the view whenever the plugin is disabled:
+在 `onunload()` 方法中，确保在插件被禁用时清理视图：
 
-- Allow the view clean up after itself by calling `close()`.
-- Detach all leaves that are using the view.
+- 通过调用 `close()` 方法允许视图自行清理。
+- 分离使用视图的所有节点。
 
-After you've registered a custom view for the plugin, you should to give the user a way to activate it. The `activateView()` is a convenient method that does three things:
+在您为插件注册了一个自定义视图后，您需要为用户提供一个激活它的方式。`activateView()` 是个很实用的方法，它做了以下三件事情：
 
-- Detaches all leaves with the custom view.
-- Adds the custom view on the right leaf.
-- Reveals the leaf that contains the custom view.
+- 使用自定义视图分离所有节点。
+- 将自定义视图添加到正确的节点上。
+- 显示包含自定义视图的节点。
 
 :::tip
-The `activateView()` restricts your plugin to at most one leaf at a time. Try commenting out the call to `detachLeavesOfType()` to allow the user to create more than one leaf. One for every call to `activateView()`.
+`activateView()` 方法限制您的插件一次最多显示一个视图。尝试注释掉对 `detachLeavesOfType()` 的调用，以允许用户创建多个视图。每次调用 `activateView()`。
 :::
 
-How you want the user to activate the custom view is up to you. The example uses a [ribbon action](./ribbon-actions.md), but you can also use a [command](./commands.md).
+用户如何激活视图的方式取决于您。这是使用 [ribbon action](./ribbon-actions.md) 的例子，当然您也可以使用 [指令](./commands.md)。

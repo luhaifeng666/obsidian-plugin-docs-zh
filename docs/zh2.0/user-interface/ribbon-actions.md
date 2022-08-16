@@ -2,10 +2,10 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-15 11:10:09
+ * @LastEditTime: 2022-08-16 09:47:33
  * @Description: 
 -->
-# Ribbon actions
+# 功能区操作
 
 在 Obsidian 界面左侧的侧边栏被称之为 _功能区_。除类似于打开首选项或者其他 vault(库) 等系统操作之外，功能区还可以托管插件定义的操作。
 
