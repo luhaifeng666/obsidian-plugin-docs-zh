@@ -1,3 +1,10 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-03-24 23:00:24
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-16 10:05:57
+ * @Description: 
+-->
 # 状态栏
 
 要想在状态栏中创建新块，可以在 `onload()` 事件中调用 [`addStatusBarItem()`](../api/classes/Plugin_2.md#addstatusbaritem) 方法。您可以将自定义元素插入到 `addStatusBarItem()` 事件返回的 [HTML 元素](html-elements.md) 中。
@@ -8,6 +15,7 @@
 
 :::: code-group
 ::: code-group-item main.ts
+
 ```ts
 import { Plugin } from "obsidian";
 
@@ -18,6 +26,7 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
+
 :::
 ::::
 
@@ -29,6 +38,7 @@ export default class ExamplePlugin extends Plugin {
 
 :::: code-group
 ::: code-group-item main.ts
+
 ```ts
 import { Plugin } from "obsidian";
 
@@ -44,6 +54,7 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
+
 :::
 ::::
 

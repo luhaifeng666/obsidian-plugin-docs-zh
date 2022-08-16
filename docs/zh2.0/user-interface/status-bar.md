@@ -2,18 +2,21 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-09 17:26:34
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-09 17:26:55
+ * @LastEditTime: 2022-08-16 10:05:44
  * @Description: 
 -->
-# Status bar
+# 状态栏
 
-To create a new block in the status bar, call the [`addStatusBarItem()`](../reference/typescript/classes/Plugin_2.md#addstatusbaritem) in the `onload()` method. The `addStatusBarItem()` method returns an [HTML element](html-elements.md) that you can add your own elements to.
+要想在状态栏中创建新块，可以在 `onload()` 事件中调用 [`addStatusBarItem()`](../reference/typescript/classes/Plugin_2.md#addstatusbaritem) 方法。您可以将自定义元素插入到 `addStatusBarItem()` 事件返回的 [HTML 元素](html-elements.md) 中。
 
-:::caution Obsidian mobile
-Custom status bar items [is **not** supported](https://discord.com/channels/686053708261228577/707816848615407697/832321402106544179) on Obsidian mobile apps.
+:::warning Obsidian 手机客户端
+手机端 Obsidian App [**不支持**](https://discord.com/channels/686053708261228577/707816848615407697/832321402106544179) 自定义状态栏项目。
 :::
 
-```ts title="main.ts"
+:::: code-group
+::: code-group-item main.ts
+```ts
+
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -24,13 +27,19 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-:::note
-For more information on how to use the `createEl()` method, refer to [HTML elements](html-elements.md).
+:::
+::::
+
+:::tip
+想要知道更多关于如何使用 `createEl()` 事件的信息，可以查阅 [HTML 元素](html-elements.md) 这篇文档。
 :::
 
-You can add multiple status bar items by calling `addStatusBarItem()` multiple times. Since Obsidian adds a gap between them, you need to create multiple HTML element on the same status bar item if you need more control of spacing.
+您可以通过多次调用 `addStatusBarItem()` 方法来添加多个状态栏项目。由于 Obsidian 在它们之间添加了间隙，因此如果您需要控制间距，则需要在同一个状态栏项上创建多个 HTML 元素。
 
-```ts title="main.ts"
+:::: code-group
+::: code-group-item main.ts
+
+```ts
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -46,6 +55,9 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-The example above results in the following status bar:
+:::
+::::
+
+上述示例在状态栏中的显示效果如下图所示：
 
 ![Status bar](/images/img/status-bar.png)

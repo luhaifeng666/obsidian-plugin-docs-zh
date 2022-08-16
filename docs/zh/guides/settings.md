@@ -67,7 +67,7 @@ export default class ExamplePlugin extends Plugin {
 
 ## 保存以及加载设置对象
 
-[`loadData()`](../api/classes/Plugin_2.md#loaddata) 以及 [`saveData()`](../api/classes/Plugin_2.md#savedata) 可以很方便的从磁盘存取数据。下例中也介绍了两个辅助方法，可以更轻松地从插件的其他部分使用 `loadData()` 和 `saveData()`.
+[`loadData()`](../api/classes/Plugin_2.md#loaddata) 以及 [`saveData()`](../api/classes/Plugin_2.md#savedata) 可以很方便的从磁盘存取数据。下例中也介绍了两个辅助方法，可以更轻松地从插件的其他部分使用 `loadData()` 和 `saveData()`。
 
 ```ts
 export default class ExamplePlugin extends Plugin {
