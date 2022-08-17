@@ -1,25 +1,28 @@
----
-sidebar_position: 110
----
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-07 11:00:59
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-17 10:24:25
+ * @Description: 
+-->
+# 开发者工具
 
-# Developer tools
+本页为插件开发者们列出了一些工具。虽然它们不是开发插件所必需的，但是他们可以简化插件开发。
 
-This page lists tools for plugin developers. While they're not required for building plugins, they can simplify plugin development.
+## Obsidian 工具
 
-## Obsidian Tools
+[Obsidian Tools](https://github.com/obsidian-tools/obsidian-tools) 是一个提供给插件开发者们的工具集。
 
-[Obsidian Tools](https://github.com/obsidian-tools/obsidian-tools) is a collection of tools for plugin developers.
+## 在本地下载所有插件
 
-## Download all plugins locally
-
-If you run into a problem, it can be helpful to see how others have solved it. By downloading the entire plugin library to your computer, you can search the source code to find inspiration.
+如果您遇到了麻烦，看看其他人如何解决它是很有帮助的。通过将整个插件库下载到您的电脑上，您可以通过搜索源码去寻求灵感。
 
 - [konhi/obsidian-repositories-downloader](https://github.com/konhi/obsidian-repositories-downloader)
 - [luckman212/obsidian-plugin-downloader](https://github.com/luckman212/obsidian-plugin-downloader)
 - [claremacrae/obsidian-repos-downloader](https://github.com/claremacrae/obsidian-repos-downloader)
 
-## Beta testing
+## Beta 测试
 
-Before you [publish](publishing/submit-your-plugin.md) your plugin, you may want to let users try it out first.
+在您[提交]您的插件之前，您可能想让用户先尝试使用它。
 
-With the [BRAT](https://github.com/TfTHacker/obsidian42-brat) plugin, your beta testers can install the plugin even if it's not published yet.
+即使插件尚未发布，您的 beta 版本用户也可以通过 [BRAT](https://github.com/TfTHacker/obsidian42-brat) 这个插件安装它。
