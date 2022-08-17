@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-17 10:24:25
+ * @LastEditTime: 2022-08-17 10:37:08
  * @Description: 
 -->
 # 开发者工具
@@ -23,6 +23,6 @@
 
 ## Beta 测试
 
-在您[提交]您的插件之前，您可能想让用户先尝试使用它。
+在您[提交](publishing/submit-your-plugin.md)插件之前，您可能想让用户先尝试使用它。
 
 即使插件尚未发布，您的 beta 版本用户也可以通过 [BRAT](https://github.com/TfTHacker/obsidian42-brat) 这个插件安装它。
