@@ -1,10 +1,17 @@
-# Editor
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-09 17:26:34
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-17 10:32:13
+ * @Description: 
+-->
+# 编辑器
 
-The [`Editor`](../reference/typescript/classes/Editor.md) class exposes operations for reading and manipulating an active Markdown document in edit mode.
+[`Editor`](../reference/typescript/classes/Editor.md) 类透出在编辑模式下读取以及操作 Markdown 文档的操作。
 
-If you want to access the editor in a command, use the [editorCallback](../user-interface/commands.md#editor-commands).
+如果您想在命令中访问编辑器，可以使用 [editorCallback](../user-interface/commands.md#editor-commands)。
 
-If you want to use the editor elsewhere, you can access it from the active view:
+如果您想在其他地方使用编辑器，您可以通过活动视图访问到它。
 
 ```ts
 const view = this.app.workspace.getActiveViewOfType(MarkdownView);
@@ -18,15 +25,15 @@ if (view) {
 }
 ```
 
-:::note
-Obsidian uses [CodeMirror](https://codemirror.net/) (CM) as the underlying text editor, and exposes the CodeMirror editor as part of the API. `Editor` serves as an abstraction to bridge features in CM5 (desktop) and CM6 (mobile). By using `Editor` instead of directly accessing the CodeMirror instance, you ensure that your plugin works on both platforms.
+::: tip
+Obsidian 使用 [CodeMirror](https://codemirror.net/) (CM) 作为底层文本编辑器，并且将 CodeMirror 作为 API 的一部分暴露出来。`Editor` 作为CM5（桌面端）和 CM6（移动端）中的桥接功能而被抽象出来。使用 `Editor` 而不是直接访问 CodeMirror，那么您的插件就可以在两个平台上都可以运行。
 :::
 
-## Insert text at cursor position
+## 在光标处插入文本
 
-The [`replaceRange()`](../reference/typescript/classes/Editor.md#replacerange) method replaces the text between two cursor positions. If you only give it one position, it inserts the new text between that position and the next.
+[`replaceRange()`](../reference/typescript/classes/Editor.md#replacerange) 方法用于替换选中的文本。如果您没有选中文本，那么文本将会在光标处被插入。
 
-The following command inserts today's date at the cursor position:
+下例中的指令会将当前日期插入光标所在位置：
 
 ```ts title="main.ts"
 import { Editor, moment, Plugin } from "obsidian";
@@ -47,11 +54,11 @@ export default class ExamplePlugin extends Plugin {
 
 ![Insert today's date](/images/img/editor-todays-date.gif)
 
-## Replace current selection
+## 替换当前选中的内容
 
-If you want to modify the selected text, use [`replaceSelection()`](../reference/typescript/classes/Editor.md#replaceselection) to replace the current selection with a new text.
+如果您想编辑选中的文本，使用 [`replaceSelection()`](../api/classes/Editor.md#replaceselection) 方法去替换选中的文本。
 
-The following command reads the current selection and converts it to uppercase:
+下例中的指令读取当前选中的内容并替换成大写：
 
 ```ts title="main.ts"
 import { Editor, Plugin } from "obsidian";

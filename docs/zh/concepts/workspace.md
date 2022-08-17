@@ -1,10 +1,17 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-03-24 23:00:24
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-16 10:36:33
+ * @Description: 
+-->
 # Workspace
 
 Obsidian 允许您配置在任何指定的时间对您可见的内容。当您不需要文件搜索的时候隐藏它、并列显示多个文档、或者在您编辑文档的时候显示文档大纲。关于应用内的可见内容配置窗口在 _workspace_ 配置项中。
 
 workspace 是[树形结构](https://en.wikipedia.org/wiki/Tree_(data_structure))，树上的每一个节点都是一个 [workspace item](../api/classes/WorkspaceItem.md)。有两种类型的 workspace item: [_parents_](../api/classes/WorkspaceParent.md) and [_leaves_](../api/classes/WorkspaceLeaf.md)。两者之间的主要区别在于 _parents_ 可以包含 _leaves_ 以及其他 _parents_ ，而 _leaves_ 不可以包含任何其他项。
 
-_parents_ 也存在两种类型：[_splits_](../api/classes/WorkspaceSplit.md) and [_tabs_](../api/classes/WorkspaceTabs.md)，用来决定其中的子项如何呈现给用户:
+_parents_ 也存在两种类型：[_splits_](../api/classes/WorkspaceSplit.md) 以及 [_tabs_](../api/classes/WorkspaceTabs.md)，用来决定其中的子项如何呈现给用户:
 
 <img src="https://mermaid.ink/img/pako:eNp1j8EOgjAMhl9l6QkSeIEdTFS8eYODml0qG7LIGBkjxix7d4eKqAk9NO33f2lSB6XmAihUjb6VNRpLioy1JFTfNdK6fOz-i5A0XZF1FO0FVnH8H2yWgu0cvCKL594Vofl5f5qH3xMfflzgp4lDAkoYhZKHf9xoMbC1UIIBDSNHc2XAWh-8oeNoxY5Lqw3QCpteJICD1fm9LYFaM4hJyiReDKq35R9DHl05" />
 
@@ -58,8 +65,6 @@ export default class ExamplePlugin extends Plugin {
 要想从 workspace 中删除一个 leaf，在您想要删除的 leaf 上调用 [`detach()`](../api/classes/WorkspaceLeaf.md#detach) 方法。您也可以通过使用 [`detachLeavesOfType()`](../api/classes/Workspace.md#detachleavesoftype) 方法移除所以指定类型的 leaf。
 
 ## Leaf 组
-
-You can create by assigning multiple leaves to the same group, using .
 
 您可以使用 [`setGroup()`](../api/classes/WorkspaceLeaf.md#setgroup) 方法来分配多个 leaf 到同一个组中以创建 [linked panes](https://help.obsidian.md/User+interface/Workspace/Panes/Linked+pane)。
 

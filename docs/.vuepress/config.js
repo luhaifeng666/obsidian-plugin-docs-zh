@@ -71,7 +71,8 @@ const pageConfig = [
       { name: '编辑器', url: 'editor', children: [
           {
             name: '扩展', url: '/extensions'
-          }
+          },
+          ['/zh2.0/editor/index.md', '/zh2.0/editor/markdown-post-processing.md']
         ]
       },
       ['/zh2.0/vault.md', '/zh2.0/events.md'],
