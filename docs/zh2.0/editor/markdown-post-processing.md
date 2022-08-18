@@ -1,10 +1,13 @@
-# Markdown post processing
+# Markdown 后处理
 
-If you want to change how a Markdown document is rendered in Preview mode, you can add your own _Markdown post processor_. As indicated by the name, the post processor runs _after_ the Markdown has been processed into HTML. It lets you add, remove, or replace [HTML elements](../user-interface/html-elements.md) to the rendered document.
+如果您想要改变 Markdown 文档在预览模式下的渲染方式，您可以添加自己的 _Markdown 后处理器_。见名知意，该后处理器在 Markdown 被处理成 HTML _之后_ 运行。它可以让您添加，删除，或者替换渲染后的文档中的[HTML 元素](../user-interface/html-elements.md)。
 
-The following example looks for any code block that contains a text between two colons, `:`, and replaces it with an appropriate emoji:
+下例搜索包含在两个冒号 `:` 之间的内容，并将其替换为恰当的 emoji 表情：
 
-```ts title="main.ts"
+:::: code-group
+:::code-group-item main.ts
+
+```ts
 import { Plugin } from "obsidian";
 import { Emoji } from "./emoji";
 
@@ -29,9 +32,15 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-The `Emoji` class extends [`MarkdownRenderChild`](../reference/typescript/classes/MarkdownRenderChild.md), and replaces the code block with a `span` element with the emoji:
+:::
+::::
 
-```ts title="emoji.ts"
+`Emoji` 类继承自 [`MarkdownRenderChild`](../reference/typescript/classes/MarkdownRenderChild.md), 并用带有表情符号的 `span` 元素替换代码块:
+
+:::: code-group
+:::code-group-item emoji.ts
+
+```ts
 import { MarkdownRenderChild } from "obsidian";
 
 // highlight-next-line
@@ -61,9 +70,12 @@ export class Emoji extends MarkdownRenderChild {
 }
 ```
 
-## Post-process Markdown code blocks
+:::
+::::
 
-Did you know that you can create [Mermaid](https://mermaid-js.github.io/) diagrams in Obsidian by creating a `mermaid` code block with a text definition like this one?:
+## 后处理 Markdown 代码块
+
+您知道么，您可以通过类似以下文本创建 `mermaid` 代码块，以在在 Obsidian 中创建 [Mermaid](https://mermaid-js.github.io/) 图表？
 
 ````md
 ```mermaid
@@ -72,14 +84,15 @@ flowchart LR
 ```
 ````
 
-If you change to Preview mode, the text in the code block becomes the following diagram:
+如果更改为预览模式，代码块中的文本变为下图：
 
-```mermaid
-flowchart LR
-    Start --> Stop
-```
+<div align="center">
 
-If you want to add your own custom code blocks like the Mermaid one, you can use [`registerMarkdownCodeBlockProcessor`](../reference/typescript/classes/Plugin_2.md#registermarkdowncodeblockprocessor). The following example renders a code block with CSV data, as a table:
+<img src="https://user-images.githubusercontent.com/9375823/185280124-ffe398be-b166-4fb5-b482-d9fc8f65fd90.png" />
+
+</div>
+
+如果您想添加自己的类似以下 Mermaid 的自定义代码块，您可以使用 [`registerMarkdownCodeBlockProcessor`](../reference/typescript/classes/Plugin_2.md#registermarkdowncodeblockprocessor)。以下示例将包含 CSV 数据的代码块呈现为表格：
 
 ```ts title="main.ts"
 import { Plugin } from "obsidian";
