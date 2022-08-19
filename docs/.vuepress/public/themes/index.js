@@ -1,3 +1,10 @@
+/*
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-09 17:42:05
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-19 14:08:14
+ * @Description: 
+ */
 const { defaultTheme } = require('@vuepress/theme-default')
 const { path } = require('@vuepress/utils')
 
