@@ -1,5 +1,6 @@
 
-// const fs = require('fs')
+const fs = require('fs')
+const { viteCommonjs } = require('@originjs/vite-plugin-commonjs')
 const { defineUserConfig } = require("@vuepress/cli")
 const { searchPlugin } = require('@vuepress/plugin-search')
 const { commentPlugin } = require('vuepress-plugin-comment2')
@@ -728,6 +729,7 @@ module.exports = defineUserConfig({
     sidebar
   }),
   plugins: [
+    viteCommonjs(),
     commentPlugin({
       // 插件选项
       provider: 'Giscus',
