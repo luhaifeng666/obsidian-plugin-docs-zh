@@ -1,68 +1,64 @@
----
-sidebar_position: 11
----
+# 装饰
 
-# Decorations
+装饰让您控制在[编辑器扩展中](index.md)如何绘制或者展示内容。如果您打算通过在编辑器中添加，替换或者样式化标签来更改外观，您很可能需要使用装饰。
 
-Decorations let you control how to draw or style content in [editor extensions](index.md). If you intend to change the look and feel by adding, replacing, or styling elements in the editor, you most likely need to use decorations.
+阅读完此指南后，您将会：
 
-By the end of this page, you'll be able to:
+- 理解如何使用装饰去改变编辑器的外观。
+- 理解使用状态字段以及视图插件提供装饰之间的区别。
 
-- Understand how to use decorations to change the editor appearance.
-- Understand the difference between providing decoration using state fields and view plugins.
-
-:::note
-This page aims to distill the official CodeMirror 6 documentation for Obsidian plugin developers. For more detailed information on state fields, refer to [Decorating the Document](https://codemirror.net/docs/guide/#decorating-the-document).
+:::tip
+本页旨在提炼 CodeMirror 6 官方为 Obsidian 插件开发者们所提供文档的精华部分。想要获取更多关于状态字段的详细信息，请查阅 [Decorating the Document](https://codemirror.net/docs/guide/#decorating-the-document) 此文档。
 :::
 
-## Prerequisites
+## 先决条件
 
-- Basic understanding of [state fields](state-fields.md).
-- Basic understanding of [view plugins](view-plugins.md).
+- 基本了解 [状态字段](state-fields.md)。
+- 基本了解 [视图插件](view-plugins.md)。
 
-## Overview
+## 概览
 
-Without decorations, the document would render as plain text. Not very interesting at all. Using decorations, you can change how to display the document, for example by highlighting text or adding custom HTML elements.
+不使用装饰时，文档将呈现为纯文本的形式。一点也不有趣。使用装饰后，您将改变文档的展示形式，比如高亮文本或者添加自定义 HTML 标签：
 
-You can use the following types of decorations:
+您可以使用以下类型的装饰：
 
-- [Mark decorations](https://codemirror.net/docs/ref/#view.Decoration%5Emark) style existing elements.
-- [Widget decorations](https://codemirror.net/docs/ref/#view.Decoration%5Ewidget) insert elements in the document.
-- [Replace decorations](https://codemirror.net/docs/ref/#view.Decoration%5Ereplace) hide or replace part of the document with another element.
-- [Line decorations](https://codemirror.net/docs/ref/#view.Decoration%5Eline) add styling to the lines, rather than the document itself.
+- 使用 [Mark decorations](https://codemirror.net/docs/ref/#view.Decoration%5Emark) 修改现有元素的样式。
+- 使用 [Widget decorations](https://codemirror.net/docs/ref/#view.Decoration%5Ewidget) 在文档中插入标签。
+- 使用 [Replace decorations](https://codemirror.net/docs/ref/#view.Decoration%5Ereplace) 隐藏或使用其他标签替换文档的部分内容。
+- 使用 [Line decorations](https://codemirror.net/docs/ref/#view.Decoration%5Eline) 仅为线添加样式。
 
-To use decorations, you need to create them inside an editor extension and have the extension _provide_ them to the editor. You can provide decorations to the editor in two ways, either _directly_ using [state fields](state-fields.md) or _indirectly_ using [view plugins](view-plugins.md).
+要想使用装饰，您需要在编辑器扩展内创建他们，并将扩展程序 __提供__ 给编辑器。您有两种将装饰提供给编辑器的方式，__直接__ 使用[状态字段](state-fields.md) 或者 __间接__ 使用[视图插件](view-plugins.md)。
 
-## Should I use a view plugin or a state field?
+## 何时使用视图插件或者状态字段
 
-Both view plugins and state fields can provide decorations to the editor, but they have some differences.
+视图插件以及状态字段都可以为编辑器提供装饰，但是他们之间有些区别：
 
-- Use a view plugin if you can determine the decoration based on what's inside the [viewport](viewport.md).
-- Use a state field if you need to manage decorations outside of the viewport.
-- Use a state field if you want to make changes that could change the content of the viewport, for example by adding line breaks.
+- 如果您可以根据视图内部的内容决定装饰，此时可以使用视图插件。
+- 如果您需要在视图外部管理装饰，此时可以使用状态字段。
+- 如果您想做出可能改变视图内容的修改，比如添加分割线，此时可以使用状态字段。
 
-If you can implement your extension using either approach, then the view plugin generally results in better performance. For example, imagine that you want to implement an editor extension that checks the spelling of a document.
+如果您可以使用任何一种方法来实现您的扩展, 那么视图插件往往能带来更好的性能。比如，试想下您打算实现一个用来检查文档拼写的编辑器扩展。
 
-One way would be to pass the entire document to an external spell checker which then returns a list of spelling errors. In this case, you'd need to map each error to a decoration and use a state field to manage decorations regardless of what's in the viewport at the moment.
+一种方法是将整个文档传递给外部拼写检查器，然后返回错误列表。在此情况下，不管当前视口中有什么，您需要将每条错误映射到装饰，并使用状态字段来管理装饰。
 
-Another way would be to only spellcheck what's visible in the viewport. The extension would need to continuously run a spell check as the user scrolls through the document, but you'd be able to spell check documents with millions of lines of text.
+另一种方式是仅仅只检查展示在视口中的内容。在用户滚动浏览文档时，改扩展需要不断地执行拼写检查，但您可以拼写检查包含数百万行文本的文档。
 
 ![State field vs. view plugin](/images/img/decorations.svg)
 
-## Providing decorations
+## 提供装饰
 
-Imagine that you want to build an editor extension that replaces the bullet list item with an emoji. You can accomplish this with either a view plugin or a state field, with some differences.  In this section, you'll see how to implement it with both types of extensions.
+想象一下，您想构建一个编辑器扩展，用表情符号替换项目符号列表项。 您可以使用视图插件或状态字段来完成此操作，但有一些区别。 在本节中，您将看到如何使用这两种类型的扩展来实现它。
 
-Both implementations share the same core logic:
+两种实现共享相同的核心逻辑：
 
-1. Use [syntaxTree](https://codemirror.net/docs/ref/#language.syntaxTree) to find list items.
-1. For every list item, replace leading hyphens, `-`, with a _widget_.
+1. 使用 [syntaxTree](https://codemirror.net/docs/ref/#language.syntaxTree) 查找列表项。
+2. 将每个列表项的前导连字符 `-` 替换为小部件。
 
-### Widgets
+### 小部件
 
-Widgets are custom HTML elements that you can add to the editor. You can either insert a widget at a specific position in the document, or replace a piece of content with a widget.
+小部件是您添加到编辑器中的自定义 HTML 标签。您可以在文档中的特定位置插入一个小部件，或者用一个小部件替换一段内容。
 
-The following example defines a widget that returns an HTML element, `<span>👉</span>`. You'll use this widget later on.
+下例中定义了一个返回 `<span>👉</span>` HTML 标签的小部件。您将在稍后使用到它。
 
 ```ts
 import { EditorView, WidgetType } from "@codemirror/view";
@@ -78,7 +74,7 @@ export class EmojiWidget extends WidgetType {
 }
 ```
 
-To replace a range of content in your document with the emoji widget, use the [replace decoration](https://codemirror.net/docs/ref/#view.Decoration%5Ereplace).
+要想使用 emoji 小部件替换您文档中的一部分内容，可以使用[替换装饰](https://codemirror.net/docs/ref/#view.Decoration%5Ereplace)。
 
 ```ts
 const decoration = Decoration.replace({
@@ -86,20 +82,23 @@ const decoration = Decoration.replace({
 });
 ```
 
-### State fields
+### 状态字段
 
-To provide decorations from a state field:
+提供来自状态字段的装饰：
 
-1. [Define a state field](state-fields.md#defining-a-state-field) with a `DecorationSet` type.
-1. Add the `provide` property to the state field.
+1. 使用 `DecorationSet` 类型[定义状态字段](state-fields.md#defining-a-state-field)
+2. 将 `provide` 属性添加到状态字段中。
 
-   ```ts
-   provide(field: StateField<DecorationSet>): Extension {
-     return EditorView.decorations.from(field);
-   },
-   ```
+```ts
+provide(field: StateField<DecorationSet>): Extension {
+  return EditorView.decorations.from(field);
+},
+```
 
-```ts title="field.ts"
+:::: code-group
+:::code-group-item field.ts
+
+```ts
 import { syntaxTree } from "@codemirror/language";
 import {
   Extension,
@@ -147,18 +146,26 @@ export const emojiListField = StateField.define<DecorationSet>({
 });
 ```
 
-### View plugins
+:::
+::::
+
+### 视图插件
 
 To manage your decorations using a view plugin:
 
-1. [Create a view plugin](view-plugins.md#creating-a-view-plugin).
-1. Add a `DecorationSet` member property to your plugin.
-1. Initialize the decorations in the `constructor()`.
-1. Rebuild decorations in `update()`.
+使用视图插件管理您的装饰：
 
-Not all updates are reasons to rebuild your decorations. The following example only rebuilds decorations whenever the underlying document or the viewport changes.
+1. [创建一个视图插件](view-plugins.md#creating-a-view-plugin).
+1. 在您的插件中添加 `DecorationSet` 成员属性。
+1. 在 `constructor()` 方法中初始化装饰。
+1. 在 `update()` 中重新构建装饰。
 
-```ts title="plugin.ts"
+以下示例仅在基础文档或视口更改时重建装饰。以下示例仅在基础文档或视口更改时重建装饰。
+
+:::: code-group
+::: code-group-item plugin.ts
+
+```ts
 import { syntaxTree } from "@codemirror/language";
 import { RangeSetBuilder } from "@codemirror/state";
 import {
@@ -226,8 +233,11 @@ export const emojiListPlugin = ViewPlugin.fromClass(
 );
 ```
 
-`buildDecorations()` is a helper method that builds a complete set of decorations based on the editor view.
+:::
+::::
 
-Notice the second argument to the `ViewPlugin.fromClass()` function. The `decorations` property in the `PluginSpec` specifies how the view plugin provides the decorations to the editor.
+`buildDecorations()` 是一个辅助方法，它基于编辑器视图构建一整套装饰。
 
-Since the view plugin knows what's visible to the user, you can use `view.visibleRanges` to limit what parts of the syntax tree to visit.
+注意传入 `ViewPlugin.fromClass()` 的第二个参数。`PluginSpec` 中的 `decorations` 属性指定视图插件如何向编辑器提供装饰。
+
+由于视图插件知道什么对用户可见，因此您可以使用 `view.visibleRanges` 来限制要访问的语法树的哪些部分。
