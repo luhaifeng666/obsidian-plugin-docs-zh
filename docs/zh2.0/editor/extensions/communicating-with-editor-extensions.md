@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-19 13:47:40
+ * @LastEditTime: 2022-08-19 13:48:51
  * @Description: 
 -->
 # 与编辑器扩展通信
@@ -70,5 +70,6 @@ this.addCommand({
   },
 });
 ```
+
 :::
 ::::
