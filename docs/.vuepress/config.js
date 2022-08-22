@@ -1,14 +1,18 @@
 
-const fs = require('fs')
+const fs = require('fs/promises')
 const { defineUserConfig } = require("@vuepress/cli")
 const { searchPlugin } = require('@vuepress/plugin-search')
 const { commentPlugin } = require('vuepress-plugin-comment2')
 const { commentTheme } = require('./public/themes')
+const { url } = require('inspector')
 // 获取目标目录下的文件
 const getFiles = function (baseUrl, name) {
-	let urls = fs.readdirSync(`./docs${name}${baseUrl}`).map(item => {
-		return `${name}${baseUrl}/${item}`
-	})
+  let urls = []
+  fs.readdir(`./docs${name}${baseUrl}`).then(data => {
+    urls = (data || []).map(item => {
+      return `${name}${baseUrl}/${item}`
+    })
+  })
 	return urls
 }
 // 生成侧边栏
