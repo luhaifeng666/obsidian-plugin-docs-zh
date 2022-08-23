@@ -17,7 +17,7 @@ By the end of this tutorial, you'll be able to:
 
 1. Create a new file `view.ts` with the following content:
 
-  ```ts title="view.ts"
+  ```ts
   import { TextFileView } from "obsidian";
 
   export const VIEW_TYPE_CSV = "csv-view";
@@ -41,7 +41,7 @@ By the end of this tutorial, you'll be able to:
   }
   ```
 
-1. In `main.ts`, register the view in the `onload` method.
+2. In `main.ts`, register the view in the `onload` method.
 
    ```ts title="main.ts"
    import { CSVView, VIEW_TYPE_CSV } from "./view"
@@ -54,14 +54,14 @@ By the end of this tutorial, you'll be able to:
    );
    ```
 
-1. Register the extensions you want the view to handle.
+3. Register the extensions you want the view to handle.
 
    ```ts title="main.ts"
    this.registerExtensions(["csv"], VIEW_TYPE_CSV);
    ```
 
-1. Rebuild the plugin.
-1. In the File Explorer, click the CSV file to open the view.
+4. Rebuild the plugin.
+5. In the File Explorer, click the CSV file to open the view.
 
 Unfortunately, the view doesn't display the data, because it doesn't know how to yet. To render the CSV data in the view, add the following lines in the `setViewData` method:
 
