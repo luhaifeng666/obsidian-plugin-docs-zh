@@ -15,7 +15,6 @@
 	"devDependencies": {
 		"@babel/preset-env": "^7.18.2",
 		"@babel/preset-typescript": "^7.17.12",
-		"@originjs/vite-plugin-commonjs": "^1.0.3",
 		"@types/jest": "^28.1.1",
 		"@vuepress/client": "^2.0.0-beta.48",
 		"@vuepress/plugin-search": "^2.0.0-beta.48",
