@@ -1,7 +1,0 @@
-# MenuSeparator
-
-## Constructor
-
-```ts
-constructor();
-```
