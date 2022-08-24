@@ -123,7 +123,7 @@ class ExampleView extends ItemView {
 :::: code-group
 ::: code-group-item context.ts
 
-```tsx title="context.ts"
+```tsx
 import * as React from "react";
 import { App } from 'obsidian';
 
@@ -133,12 +133,12 @@ export const AppContext = React.createContext<App>(undefined);
 :::
 ::::
 
-2. 用上下文提供者包装`ReactView`并将应用作为值传递
+1. 用上下文提供者包装`ReactView`并将应用作为值传递
 
 :::: code-group
 ::: code-group-item view.ts
 
-```tsx title="view.tsx"
+```tsx
 const root = createRoot(this.containerEl.children[1]);
 root.render(
   <AppContext.Provider value={this.app}>
@@ -151,7 +151,7 @@ root.render(
 :::
 ::::
 
-3. 创建自定义钩子以便在组件中更方便的使用上下文。
+1. 创建自定义钩子以便在组件中更方便的使用上下文。
 
 :::: code-group
 ::: code-group-item hooks.ts

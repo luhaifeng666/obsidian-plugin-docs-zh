@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 13:54:33
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-23 23:45:22
+ * @LastEditTime: 2022-08-24 08:47:24
  * @Description: 
  */
 import fg from 'fast-glob'
@@ -52,18 +52,19 @@ function getItems(type: string, path: string, leaves: Array<SidebarConfig>): Arr
   // 单文件直接插入
   if (path.includes('.md')) {
     items.push({ text: getText(`${linkPre}${link}`), link })
-  } else if (!leaves.length) {
+  } else {
+    if (leaves.length) {
+      // 有子目录的情况
+      leaves.forEach((leaf: SidebarConfig) => {
+        items.push({ text: leaf.text, collapsible: true, items: getItems(type, `${path}/${leaf.path}`, leaf.leaves || [])})
+      })
+    }
     // 没有字目录的情况
     const files = getFiles(link)
     items.push(...files.map(file => ({
       text: getText(file),
       link: file.replace('docs', '')
     })))
-  } else {
-    // 有子目录的情况
-    leaves.forEach((leaf: SidebarConfig) => {
-      items.push({ text: leaf.text, collapsible: true, items: getItems(type, `${path}/${leaf.path}`, leaf.leaves || [])})
-    })
   }
   return items
 }
@@ -75,6 +76,7 @@ const SIDEBAR_CONFIG: {
     { text: '快速开始', path: 'getting-started'},
     { text: '示例', path: 'examples'},
     { text: '指南', path: 'guides'},
+    { text: '高级指南', path: 'advanced-guides'},
     { text: '概念', path: 'concepts'},
     { text: '发布', path: 'publishing'},
     { text: '教程', path: 'tutorials'},
@@ -87,7 +89,28 @@ const SIDEBAR_CONFIG: {
     ]},
     { text: '配置参考', path: 'manifest-reference.md'},
   ],
-  'zh2.0/': []
+  'zh2.0/': [
+    { text: '快速开始', path: 'getting-started' },
+    { text: '示例', path: 'examples'},
+    { text: '编辑器', path: 'editor', leaves: [
+      { text: '扩展', path: 'extensions' }
+    ] },
+    { text: '用户界面', path: 'user-interface' },
+    { text: '教程', path: 'tutorials' },
+    { text: '参考文档', path: 'reference', leaves: [
+      { text: 'Typescript', path: 'typescript', leaves: [
+        { text: '类', path: 'classes' },
+        { text: '枚举', path: 'enums' },
+        { text: '方法', path: 'functions' },
+        { text: '接口', path: 'interfaces' },
+        { text: '类型', path: 'types' }
+      ]}
+    ] },
+    { text: '发布', path: 'publishing' },
+    { text: '开发者工具', path: 'developer-tools.md'},
+    { text: '事件', path: 'events.md' },
+    { text: '库', path: 'vault.md' }
+  ]
 }
 Object.keys(SIDEBAR_CONFIG).forEach(key => {
   const config = SIDEBAR_CONFIG[key]

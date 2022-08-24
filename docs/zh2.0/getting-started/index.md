@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-10 14:34:02
+ * @LastEditTime: 2022-08-24 00:27:29
  * @Description: 
 -->
 # 入门指南
@@ -14,8 +14,8 @@
 插件是一种可以让您按照自己的喜好定制 Obsidian 的第三方应用。通过开发一个插件，您可以：
 
 - 扩展或者修改用户界面。
-- 编辑您 [库](vault.md) 中的文件以及目录。
-- 改进 [编辑器](editor/index.md) 以获得更好的记笔记的体验。
+- 编辑您 [库](../vault.md) 中的文件以及目录。
+- 改进 [编辑器](../editor/index.md) 以获得更好的记笔记的体验。
 
 想看到插件看起来是个什么样子的，可以查看 [插入链接](../examples/insert-link.md) 这个示例。
 

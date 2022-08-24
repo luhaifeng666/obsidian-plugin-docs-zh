@@ -8,7 +8,7 @@ The GitHub Action workflow was originally created and shared by [argentum](https
 
 1. In the root directory of your plugin, create a file called `release.yml` under `.github/workflows` with the following content:
 
-   ```yml title=".github/workflows/release.yml"
+   ```bash
    name: Release Obsidian plugin
 
    on:
@@ -98,7 +98,7 @@ The GitHub Action workflow was originally created and shared by [argentum](https
              asset_content_type: text/css
    ```
 
-1. In your terminal, commit the workflow.
+2. In your terminal, commit the workflow.
 
    ```bash
    git add .github/workflows/release.yml
@@ -106,7 +106,7 @@ The GitHub Action workflow was originally created and shared by [argentum](https
    git push origin main
    ```
 
-1. Create a tag that matches the version in the `manifest.json` file.
+3. Create a tag that matches the version in the `manifest.json` file.
 
    ```bash
    git tag -a 1.0.1 -m "1.0.1"
@@ -116,9 +116,9 @@ The GitHub Action workflow was originally created and shared by [argentum](https
    - `-a` creates an [annotated tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_creating_tags).
    - `-m` specifies the name of your release. For Obsidian plugins, this must be the same as the version.
 
-1. Browse to your repository on GitHub and click the **Actions** tab. Your workflow might still be running, or it might have finished already.
+4. Browse to your repository on GitHub and click the **Actions** tab. Your workflow might still be running, or it might have finished already.
 
-1. When the workflow finishes, go back to the main page for your repository and click **Releases** in the side bar on the right-hand side. The workflow has created a GitHub release and uploaded the required assets as binary attachments.
+5. When the workflow finishes, go back to the main page for your repository and click **Releases** in the side bar on the right-hand side. The workflow has created a GitHub release and uploaded the required assets as binary attachments.
 
 You've set up your plugin to automatically create a GitHub release whenever you create a new tag.
 
@@ -149,7 +149,7 @@ To enable standard-version for your plugin:
 
 2. In `package.json`, add the following properties:
 
-   ```json title="package.json"
+   ```json
    {
      "scripts": {
        "release": "standard-version"
@@ -171,7 +171,7 @@ To make a release:
    git commit -m "feat: Add settings"
    ```
 
-1. Create a release and update the changelog.
+2. Create a release and update the changelog.
 
    ```bash npm2yarn
    npm run release
@@ -189,7 +189,7 @@ To make a release:
 
    :::
 
-1. Push the new tag to GitHub.
+3. Push the new tag to GitHub.
 
    ```bash
    git push --follow-tags origin main

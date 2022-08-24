@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-03-28 21:10:00
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-17 13:40:12
+ * @LastEditTime: 2022-08-24 00:34:47
  * @Description: 
 -->
 <div align="center">
@@ -28,7 +28,6 @@
 <h2 align="center">关于共建</h2>
 
 <p align="center">
-
 
 本文翻译自 [这篇文档](https://marcus.se.net/obsidian-plugin-docs) 。
 

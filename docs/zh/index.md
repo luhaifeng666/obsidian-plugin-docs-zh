@@ -1,7 +1,7 @@
 ---
 title: 简介
 ---
-# Obsidian 插件开发文档
+## Obsidian 插件开发文档
 
 这是一份 **非官方的** Obsidian 插件开发文档。
 
@@ -20,7 +20,7 @@ title: 简介
 
 **由社区成员提供的资源:**
 
-- [for Plugin Developers](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/for+Plugin+Developers "for Plugin Developers - Obsidian Hub - Obsidian Publish") in Obsidian Hub
+- [for Plugin Developers](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/for+Plugin+Developers) "for Plugin Developers - Obsidian Hub - Obsidian Publish") in Obsidian Hub
 - [Plugins mini FAQ](https://forum.obsidian.md/t/plugins-mini-faq/7737)
 - [How to create a plugin for Obsidian](https://www.youtube.com/watch?v=XaES2G3PVpg) by [@phibr0](https://github.com/phibr0)
 - [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k) by [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ)

@@ -1,5 +1,12 @@
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-24 00:30:31
+ * @Description: 
+-->
+edi<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-09 17:26:34
  * @LastEditors: luhaifeng666
  * @LastEditTime: 2022-08-15 10:58:43
@@ -15,6 +22,6 @@
 - [Views](views.md)
 - [Status bar](status-bar.md)
 
-要想调整编辑器，可以查看 [Editor](editor/index.md) 以及 [Editor extensions](editor/extensions/index.md) 这两篇文档。
+要想调整编辑器，可以查看 [Editor](../editor/index.md) 以及 [Editor extensions](../editor/extensions/index.md) 这两篇文档。
 
 ![User interface](/images/img/user-interface.png)

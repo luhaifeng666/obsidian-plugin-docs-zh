@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-15 10:53:35
+ * @LastEditTime: 2022-08-24 00:31:05
  * @Description: 
 -->
 # 图标
@@ -36,7 +36,7 @@ export default class ExamplePlugin extends Plugin {
 
 ## 添加您自己的 ico
 
-要想在插件中添加自定义 icon，可以使用 [`addIcon`](../api/functions/addIcon.md) 方法：
+要想在插件中添加自定义 icon，可以使用 [`addIcon`](../reference/typescript/functions/addIcon.md) 方法：
 
 :::: code-group
 ::: code-group-item main.ts

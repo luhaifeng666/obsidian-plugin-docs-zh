@@ -38,7 +38,7 @@ leaf 是一个能以不同形式展示内容的窗口。leaf 的类型决定了�
 
 您可以通过 [App](../reference/typescript/classes/App.md) 对象访问工作区。下例中打印了在工作区中每个 leaf 的类型:
 
-```ts title="main.ts" {6-8}
+```ts  {6-8}
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {

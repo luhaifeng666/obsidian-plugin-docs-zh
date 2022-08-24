@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-03-24 23:00:24
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-16 10:36:33
+ * @LastEditTime: 2022-08-24 08:49:05
  * @Description: 
 -->
 # Workspace
@@ -23,6 +23,7 @@ _parents_ 也存在两种类型：[_splits_](../api/classes/WorkspaceSplit.md) �
 <img src="https://mermaid.ink/img/pako:eNp9kcFqwzAQRH9F7CmB5Ad8KKRxCm1zagK96LK11rGIbRlZJhThf69Wjt24DfFhWGaeRyvkITOKIIG8NJesQOvEMZW1CN-nsee2wYzEev0k9pQ7zyLaptSuv8d8GOM8yyNGn4oAsU7UwMVyRsowHPGr9SzXktGLwGax2BPmy-Wd7Pk3G9K4Dydbf7jZarLTvz9so72bnzGYL__K4z04sjzdbj0Akx2h13npPHx7FL6PIaygIluhVuHRPKMSXEEVSUjCqNCeJci6D1zXKHS0U9oZC0mOZUsrwM6Zw3edQeJsRyOUajxZrK5U_wPvVaWm" />
 
 leaf 是一个能以不同形式展示内容的窗口。leaf 的类型决定了内容该要如何展示，以及对应哪个具体的 _view_。举个例子，一个 `graph` 类型的 leaf 对应显示 [graph view](https://help.obsidian.md/Plugins/Graph+view)。
+
 ## Splits
 
 默认情况下，root split 按照垂直方向排列。当您创建了一个新的 leaf，Obsidian 在用户界面中创建一个新列。当您拆分一个 leaf，被拆分出来的 leaves 会被添加到新的 split 中去。当没有限制 root split 的层级时，实际上每个层级的实用性会降低。
@@ -37,7 +38,7 @@ leaf 是一个能以不同形式展示内容的窗口。leaf 的类型决定了�
 
 您可以通过 [App](../api/classes/App.md) 对象访问 workspace。下例中打印了在 workspace 中每个 leaf 的类型:
 
-```ts title="main.ts" {6-8}
+```ts
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {

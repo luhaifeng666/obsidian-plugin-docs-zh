@@ -8,7 +8,7 @@ Github Action 工作流起初由 [argentum](https://forum.obsidian.md/u/argentum
 
 1. 在您插件的根目录下，创建 `.github/workflows/release.yml` 文件，并将以下内容写入文件：
 
-   ```yml title=".github/workflows/release.yml"
+   ```bash
    name: Release Obsidian plugin
 
    on:
@@ -158,7 +158,7 @@ Github Action 工作流起初由 [argentum](https://forum.obsidian.md/u/argentum
 
 2. 在 `package.json` 文件中添加以下属性:
 
-   ```json title="package.json"
+   ```json
    {
      "scripts": {
        "release": "standard-version"
@@ -198,29 +198,21 @@ Github Action 工作流起初由 [argentum](https://forum.obsidian.md/u/argentum
 ::: tip
 默认情况下，如果主版本号低于 **1**，比如 0.3.4，`feat:` 和 `BREAKING CHANGE:` 会更新补丁和次要版本，而不是更新次要和主要版本。要想提高次要版本和主要版本，可以使用如下命令：
 
-<CodeGroup>
-  <CodeGroupItem title="npm" active>
 
-```bash:no-line-numbers
+```bash npm
 # Release as minor
 npm run release -- --release-as minor
 # Release as major
 npm run release -- --release-as major
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="yarn">
-
-```bash:no-line-numbers
+```bash yarn
 # Release as minor
 yarn run release -- --release-as minor
 # Release as major
 yarn run release -- --release-as major
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
 :::
 
 1. 推送的新的 tag。
