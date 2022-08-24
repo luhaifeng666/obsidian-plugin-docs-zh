@@ -1,9 +1,18 @@
+---
+title: 插件剖析
+---
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 19:36:06
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-24 14:18:44
+ * @Description: 
+-->
 # 插件剖析
 
 [`Plugin`](api/../../api/classes/Plugin_2.md) 类中定义了插件的生命周期，并且将操作暴露给其他插件：
-:::: code-group
-::: code-group-item main.ts
-```ts {1,3}
+
+```ts {1,3} main.ts
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -15,8 +24,6 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-:::
-::::
 
 ## 插件生命周期
 
@@ -31,9 +38,7 @@ export default class ExamplePlugin extends Plugin {
 1. 通过在 Windows 和 Linux 系统中按下组合键 Ctrl+Shift+I，或者在 macOS 系统中按下组合键 Cmd-Option-I 的方式打开或关闭开发者工具。
 2. 在开发者工具的窗口中点击 Console 标签打开控制台。
 
-:::: code-group
-::: code-group-item main.ts
-```ts {5,8}
+```ts {5,8} main.ts
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -45,5 +50,3 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-:::
-::::

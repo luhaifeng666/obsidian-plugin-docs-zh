@@ -1,6 +1,13 @@
 ---
-title: Vault
+title: 库
 ---
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 19:36:06
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-24 14:23:16
+ * @Description: 
+-->
 
 # 库
 
@@ -37,9 +44,7 @@ for (let i = 0; i < files.length; i++) {
 
 以下示例读取了库中的所有 Markdown 文件内容，并且返回了文档大小的均值:
 
-:::: code-group
-::: code-group-item main.ts
-```ts
+```ts main.ts
 import { Notice, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -66,8 +71,6 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-:::
-::::
 
 ## 删除文件
 

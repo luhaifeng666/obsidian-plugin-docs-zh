@@ -22,29 +22,17 @@ Svelte 有一个[官方的 Visual Studio Code 扩展](https://marketplace.visual
 
 1. 将 Svelte 添加到您插件的依赖中：
 
-:::: code-group
-::: code-group-item npm
-
-```bash
+```bash npm
   npm install --save-dev svelte svelte-preprocess @tsconfig/svelte esbuild-svelte
 ```
 
-:::
-
-::: code-group-item yarn
-
-```bash
+```bash yarn
   yarn add --dev svelte svelte-preprocess @tsconfig/svelte esbuild-svelte
 ```
 
-:::
-::::
-
 1. 修改 `tsconfig.json` 文件以为常见的 Svelte 问题启用额外的类型检查。`types` 属性非常关键，它可以让 Typescript 识别出 `.svelte` 文件。
 
-:::: code-group
-::: code-group-item tsconfig.json
-```json
+```json tsconfig.json
    {
      "extends": "@tsconfig/svelte/tsconfig.json",
      "compilerOptions": {
@@ -54,35 +42,23 @@ Svelte 有一个[官方的 Visual Studio Code 扩展](https://marketplace.visual
      }
    }
 ```
-:::
-::::
 
-3. 将下面的内容从 `tsconfig.json` 中移除，该配置与 Svelte 的配置相冲突。
+1. 将下面的内容从 `tsconfig.json` 中移除，该配置与 Svelte 的配置相冲突。
 
-:::: code-group
-::: code-group-item tsconfig.json
-```json
+```json tsconfig.json
 "inlineSourceMap": true,
 ```
-:::
-::::
 
-4. 在 `esbuild.config.mjs` 文件中引入以下内容：
+1. 在 `esbuild.config.mjs` 文件中引入以下内容：
 
-:::: code-group
-::: code-group-item esbuild.config.mjs
-```js
+```js esbuild.config.mjs
 import esbuildSvelte from "esbuild-svelte";
 import sveltePreprocess from "svelte-preprocess";
 ```
-:::
-::::
 
-5. 将 Svelte 添加到插件列表中。
+1. 将 Svelte 添加到插件列表中。
 
-:::: code-group
-::: code-group-item esbuild.config.mjs
-```js{15}
+```js {15} esbuild.config.mjs
  esbuild
  .build({
    plugins: [
@@ -95,16 +71,12 @@ import sveltePreprocess from "svelte-preprocess";
  })
  .catch(() => process.exit(1));
 ```
-:::
-::::
 
 ## 创建一个 Svelte 组件
 
 在插件的根目录下，创建一个名为 `Component.svelte` 的新文件：
 
-:::: code-group
-::: code-group-item Component.svelte
-```tsx
+```tsx Component.svelte
 <script lang="ts">
   export let variable: number;
 </script>
@@ -119,8 +91,6 @@ import sveltePreprocess from "svelte-preprocess";
   }
 </style>
 ```
-:::
-::::
 
 ## 加载 Svelte 组件
 
