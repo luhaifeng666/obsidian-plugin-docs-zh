@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 13:54:33
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 08:47:24
+ * @LastEditTime: 2022-08-24 09:42:30
  * @Description: 
  */
 import fg from 'fast-glob'
@@ -68,7 +68,7 @@ function getItems(type: string, path: string, leaves: Array<SidebarConfig>): Arr
   }
   return items
 }
-// const files = fg.sync(['docs/zh/**/*.md', 'docs/zh2.0/**/*.md'])
+
 const SIDEBAR_CONFIG: {
   [key: string]: Array<SidebarConfig>
 } = {
@@ -112,6 +112,7 @@ const SIDEBAR_CONFIG: {
     { text: '库', path: 'vault.md' }
   ]
 }
+
 Object.keys(SIDEBAR_CONFIG).forEach(key => {
   const config = SIDEBAR_CONFIG[key]
   sidebar[key] = []
