@@ -1,8 +1,11 @@
+---
+title: Release your plugin with GitHub Actions
+---
 # Release your plugin with GitHub Actions
 
 Manually creating your plugin release can be time-consuming and error-prone. In this guide, you'll configure your plugin to use [GitHub Actions](https://github.com/features/actions) to automatically create a release when you create a new tag.
 
-:::note
+:::tip
 The GitHub Action workflow was originally created and shared by [argentum](https://forum.obsidian.md/u/argentum). For more information and other variations, refer to the [forum announcement](https://forum.obsidian.md/t/using-github-actions-to-release-plugins/7877/3).
 :::
 
@@ -143,8 +146,12 @@ To enable standard-version for your plugin:
 
 1. Install standard-version.
 
-   ```bash npm2yarn
+   ```bash npm
    npm install --save-dev standard-version
+   ```
+
+   ```bash yarn
+   yarn add --save-dev standard-version
    ```
 
 2. In `package.json`, add the following properties:
@@ -162,7 +169,6 @@ To enable standard-version for your plugin:
 
    - `"t": ""` configures standard-version to remove the default `v` prefix to adhere to Obsidian's guidelines.
 
-
 To make a release:
 
 1. Commit your changes according to Conventional Commits.
@@ -173,23 +179,34 @@ To make a release:
 
 2. Create a release and update the changelog.
 
-   ```bash npm2yarn
+   ```bash npm
    npm run release
    ```
 
-   :::note
+  ```bash yarn
+   yarn release
+   ```
+
+   :::tip
    By default, if the major version is below **1**, for example in 0.3.4, `feat:` and `BREAKING CHANGE:` bump the patch and minor versions, respectively, rather than the minor and major versions. To bump the minor and major version:
 
-   ```bash npm2yarn
+   ```bash npm
    # Release as minor
    npm run release -- --release-as minor
    # Release as major
    npm run release -- --release-as major
    ```
 
+   ```bash yarn
+   # Release as minor
+   yarn release -- --release-as minor
+   # Release as major
+   yarn release -- --release-as major
+   ```
+
    :::
 
-3. Push the new tag to GitHub.
+1. Push the new tag to GitHub.
 
    ```bash
    git push --follow-tags origin main

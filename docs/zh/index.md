@@ -1,7 +1,7 @@
 ---
-title: 简介
+title: 声明
 ---
-## Obsidian 插件开发文档
+# Obsidian 插件开发文档
 
 这是一份 **非官方的** Obsidian 插件开发文档。
 

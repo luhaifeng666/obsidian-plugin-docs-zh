@@ -1,8 +1,11 @@
+---
+title: 快捷菜单
+---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-09 17:26:34
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-13 22:01:55
+ * @LastEditTime: 2022-08-24 13:38:45
  * @Description: 
 -->
 # 快捷菜单

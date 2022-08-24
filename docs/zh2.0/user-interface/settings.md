@@ -1,3 +1,6 @@
+---
+title: 设置
+---
 # 设置
 
 如果您想用户可以自行对插件进行配置，那么您可以将 _设置_ 选项暴露给他们。
@@ -8,10 +11,7 @@
 
 给插件添加设置的主要原因是保存用户的配置，即使在用户退出 Obsidian 后，配置依旧可以保留。下例示范了如何从磁盘读写配置：
 
-:::: code-group
-::: code-group-item main.ts
-
-```ts
+```ts main.ts
 import { Plugin } from "obsidian";
 import { ExampleSettingTab } from "./settings";
 
@@ -41,9 +41,6 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-
-:::
-::::
 
 这里做了很多事情 🤯, 让我们来仔细看看每个部分。
 
@@ -124,10 +121,7 @@ this.addSettingTab(new ExampleSettingTab(this.app, this));
 
 在这里，`ExampleSettingTab` 是一个继承自 [`PluginSettingTab`](../reference/typescript/classes/PluginSettingTab.md) 的类:
 
-:::: code-group
-::: code-group-item settings.ts
-
-```ts
+```ts settings.ts
 import ExamplePlugin from "./main";
 import { App, PluginSettingTab, Setting } from "obsidian";
 
@@ -159,9 +153,6 @@ export class ExampleSettingTab extends PluginSettingTab {
   }
 }
 ```
-
-:::
-::::
 
 在 `display()` 中您可以为设置标签创建内容。想要获取更多信息，可以查阅 [HTML elements](html-elements.md)。
 

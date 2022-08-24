@@ -10,10 +10,7 @@ Commands(指令) 是指用户可以通过 [Command Palette(命令面板)](https:
 
 要想在您的插件中添加指令，可以在 `onload()` 方法中调用 [`addCommand()`](../reference/typescript/classes/Plugin_2.md#addcommand) 方法：
 
-:::: code-group
-::: code-group-item tsconfig.json
-
-```ts 
+```ts tsconfig.json
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -30,9 +27,6 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-
-:::
-::::
 
 ## 带条件的指令
 

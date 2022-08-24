@@ -1,12 +1,12 @@
 ---
-sidebar_position: 1
+title: State management
 ---
 
 # State management
 
 This page aims to give an introduction to state management for [editor extensions](index.md).
 
-:::note
+:::tip
 This page aims to distill the official CodeMirror 6 documentation for Obsidian plugin developers. For more detailed information on state management, refer to [State and Updates](https://codemirror.net/docs/guide/#state-and-updates).
 :::
 

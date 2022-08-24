@@ -1,8 +1,11 @@
+---
+title: 状态栏
+---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-09 17:26:34
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-16 10:05:44
+ * @LastEditTime: 2022-08-24 13:52:37
  * @Description: 
 -->
 # 状态栏
@@ -13,9 +16,7 @@
 手机端 Obsidian App [**不支持**](https://discord.com/channels/686053708261228577/707816848615407697/832321402106544179) 自定义状态栏项目。
 :::
 
-:::: code-group
-::: code-group-item main.ts
-```ts
+```ts main.ts
 
 import { Plugin } from "obsidian";
 
@@ -27,19 +28,13 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-:::
-::::
-
 :::tip
 想要知道更多关于如何使用 `createEl()` 事件的信息，可以查阅 [HTML 元素](html-elements.md) 这篇文档。
 :::
 
 您可以通过多次调用 `addStatusBarItem()` 方法来添加多个状态栏项目。由于 Obsidian 在它们之间添加了间隙，因此如果您需要控制间距，则需要在同一个状态栏项上创建多个 HTML 元素。
 
-:::: code-group
-::: code-group-item main.ts
-
-```ts
+```ts main.ts
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -54,9 +49,6 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-
-:::
-::::
 
 上述示例在状态栏中的显示效果如下图所示：
 

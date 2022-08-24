@@ -1,11 +1,11 @@
+---
+title: 对话框
+---
 # 对话框
 
 对话框用于展示信息以及接受用户的输入信息。要想创建一个对话框，需要创建一个继承自 [`Modal`](../reference/typescript/classes/Modal.md) 的类:
 
-:::: code-group
-::: code-group-item modal.ts
-
-```ts
+```ts modal.ts
 import { App, Modal } from "obsidian";
 
 export class ExampleModal extends Modal {
@@ -25,18 +25,12 @@ export class ExampleModal extends Modal {
 }
 ```
 
-:::
-::::
-
 - [`onOpen()`](../reference/typescript/classes/Modal.md#onopen) 方法在对话框打开时被调用，它负责创建对话框中的内容。想要获取更多信息，可以查阅 [HTML elements](html-elements.md)。
 - [`onClose()`](../reference/typescript/classes/Modal.md#onclose) 方法在对话框被关闭时调用，它负责清理对话框所占用的资源。
 
 要想打开一个对话框，需要创建一个 `ExampleModal` 的实例并调用其上的 [`open()`](../reference/typescript/classes/Modal.md#open) 方法:
 
-:::: code-group
-::: code-group-item main.ts
-
-```ts
+```ts main.ts
 import { Plugin } from "obsidian";
 import { ExampleModal } from "./modal";
 
@@ -53,19 +47,13 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-:::
-::::
-
 ## 接受用户输入
 
 上例中的对话框仅展示了一些文本内容。让我们一起来看一个稍微复杂点的需要处理用户输入的例子。
 
 ![Modal with user input](/images/img/modal-input.png)
 
-:::: code-group
-::: code-group-item modal.ts
-
-```ts
+```ts modal.ts
 import { App, Modal, Setting } from "obsidian";
 
 export class ExampleModal extends Modal {
@@ -110,9 +98,6 @@ export class ExampleModal extends Modal {
 }
 ```
 
-:::
-::::
-
 结果被保存在 `this.result` 中，并且在用户点击 **Submit** 时通过 `onSubmit` 回调函数返回它：
 
 ```ts
@@ -127,10 +112,7 @@ new ExampleModal(this.app, (result) => {
 
 ![Modal with suggestions](/images/img/suggest-modal.gif)
 
-:::: code-group
-::: code-group-item modal.ts
-
-```ts
+```ts modal.ts
 import { App, Notice, SuggestModal } from "obsidian";
 
 interface Book {
@@ -173,9 +155,6 @@ export class ExampleModal extends SuggestModal<Book> {
   }
 }
 ```
-
-:::
-::::
 
 除却 `SuggestModal` 外，Obsidian API 提供了一个专门用于建议的对话框类型: [`FuzzySuggestModal`](../reference/typescript/classes/FuzzySuggestModal.md)。尽管它不能让您对每个项目的呈现方式做相同的控制，但是您可以获得一个开箱即用的 [模糊搜索功能](https://en.wikipedia.org/wiki/Approximate_string_matching) out-of-the-box.
 

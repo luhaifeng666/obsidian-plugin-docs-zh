@@ -1,3 +1,6 @@
+---
+title: 插入链接
+---
 # 插入链接
 
 本例中添加了一个指令，用于打开一个模态框去插入一个 Markdown 链接。它将编辑器中选中的文字作为默认的链接文本，之后再将用户插入的链接替换选中的内容。
@@ -10,10 +13,7 @@
 
 以下是完整的代码:
 
-:::: code-group
-::: code-group-item main.ts
-
-```ts
+```ts main.ts
 import { Editor, Plugin } from "obsidian";
 import { InsertLinkModal } from "./modal";
 
@@ -36,13 +36,7 @@ export default class InsertLinkPlugin extends Plugin {
 }
 ```
 
-:::
-::::
-
-:::: code-group
-::: code-group-item modal.ts
-
-```ts
+```ts modal.ts
 import { App, Modal, Setting } from "obsidian";
 
 export class InsertLinkModal extends Modal {
@@ -95,6 +89,3 @@ export class InsertLinkModal extends Modal {
   }
 }
 ```
-
-:::
-::::

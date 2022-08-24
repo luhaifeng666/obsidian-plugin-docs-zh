@@ -1,13 +1,14 @@
+---
+title: 自定义视图
+---
+
 # 自定义视图
 
 视图决定 Obsidian 如何去展示内容。比如 file explorer, graph view, 以及 Markdown view 等都是视图。当然，您也可以为自己的插件创建一个可以更好的展示其内容的自定义视图。
 
 要想创建一个自定义视图，需要创建一个继承自 [`ItemView`](../api/classes/ItemView.md) 接口的类：
 
-:::: code-group
-::: code-group-item view.ts
-
-```ts
+```ts view.ts
 import { ItemView, WorkspaceLeaf } from "obsidian";
 
 export const VIEW_TYPE_EXAMPLE = "example-view";
@@ -37,9 +38,6 @@ export class ExampleView extends ItemView {
 }
 ```
 
-:::
-::::
-
 ::: tip
 要想获取更多关于如何使用 `createEl()` 方法的信息，可以查看 [HTML elements](html-elements.md)。
 :::
@@ -53,10 +51,7 @@ export class ExampleView extends ItemView {
 
 自定义视图需要在插件被启用时注册，并且在插件被禁用时释放。
 
-:::: code-group
-::: code-group-item main.ts
-
-```ts {6-9,17}
+```ts {6-9,17} main.ts
 import { Plugin } from "obsidian";
 import { ExampleView, VIEW_TYPE_EXAMPLE } from "./view";
 
@@ -90,9 +85,6 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-
-:::
-::::
 
 [`registerView()`](../api/classes/Plugin_2.md#registerview) 的第二个参数是一个工厂函数，用于返回您想注册的视图实例。
 

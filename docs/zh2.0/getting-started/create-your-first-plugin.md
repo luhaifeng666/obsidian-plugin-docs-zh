@@ -1,3 +1,6 @@
+---
+title: 创建您的第一个插件
+---
 # 创建您的第一个插件
 
 通过这篇指南，您将学会如何开发一个 Obsidian  插件。 如果您更喜欢通过视频的方式来学习, 可以查看由 [Antone Heyward](https://www.youtube.com/channel/UC9w43btR2UUsfR6ZUf3AlqQ) 提供的视频 [Create Your Own Obsidian Plugin](https://www.youtube.com/watch?v=9lA-jaMNS0k)。
@@ -33,7 +36,7 @@
 cd path/to/vault/.obsidian/plugins
 ```
 
-4. 将源码下载至插件所在的文件夹。
+1. 将源码下载至插件所在的文件夹。
 
 ```bash
 git clone https://github.com/your-username/obsidian-instant-coffee.git
@@ -49,42 +52,25 @@ git clone https://github.com/your-username/obsidian-instant-coffee.git
 cd path/to/vault/.obsidian/plugins/obsidian-instant-coffee
 ```
 
-2. 安装依赖。
+1. 安装依赖。
 
-:::: code-group
-::: code-group-item npm
-
-```bash
+```bash npm
 npm install
 ```
 
-:::
-::: code-group-item yarn
-
-```bash
+```bash yarn
 yarn install
 ```
 
-:::
-::::
-
 1. 编译插件代码。 执行下述命令会生成 `main.js` 文件，该文件中包含插件的编译版本。
-:::: code-group
-::: code-group-item npm
 
-```bash
+```bash npm
 npm run dev
 ```
 
-:::
-::: code-group-item yarn
-
-```bash
+```bash yarn
 yarn run dev
 ```
-
-:::
-::::
 
 ## 第三步: 启用插件
 
@@ -129,14 +115,14 @@ this.addRibbonIcon('dice', 'Sample Plugin', () => {
 });
 ```
 
-3. 修改提示文案，您想改啥就改啥。
+1. 修改提示文案，您想改啥就改啥。
 
 ```ts
 new Notice('Hello, you!');
 ```
 
-4. 重启 Obsidian 以重新加载您的插件。
-5. 点击左侧菜单的图标，会弹出 `Hello, you!` 的提示信息。并确认当您鼠标移动到图标上时会显示 "Sample Plugin" 提示信息。
+1. 重启 Obsidian 以重新加载您的插件。
+1. 点击左侧菜单的图标，会弹出 `Hello, you!` 的提示信息。并确认当您鼠标移动到图标上时会显示 "Sample Plugin" 提示信息。
 
 ## 接下来
 

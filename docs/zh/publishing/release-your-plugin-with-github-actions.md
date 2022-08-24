@@ -1,3 +1,7 @@
+---
+title: 使用 GitHub Actions 发布您的插件
+---
+
 # 使用 GitHub Actions 发布您的插件
 
 通过手动的方式创建插件的 release 比较费事也容易出错。在本指南中，您将通过配置 [GitHub Actions](https://github.com/features/actions) 的方式，在您创建新的 tag 时自动创建对应的 release。
@@ -142,21 +146,16 @@ Github Action 工作流起初由 [argentum](https://forum.obsidian.md/u/argentum
 要想开启插件的标准版本：
 
 1. 安装标准版本。
-:::: code-group
-::: code-group-item npm
-```bash
+
+```bash npm
   npm install --save-dev standard-version
-  ```
-:::
+```
 
-::: code-group-item yarn
-```bash
+```bash yarn
   yarn add --dev standard-version
-   ```
-:::
-::::
+```
 
-2. 在 `package.json` 文件中添加以下属性:
+1. 在 `package.json` 文件中添加以下属性:
 
    ```json
    {
@@ -181,23 +180,16 @@ Github Action 工作流起初由 [argentum](https://forum.obsidian.md/u/argentum
 
 2. 创建新的 release 并更新 changelog.
 
-:::: code-group
-::: code-group-item npm
-```bash
+```bash npm
   npm run release
-  ```
-:::
+```
 
-::: code-group-item yarn
-```bash
+```bash yarn
   yarn run release
-   ```
-:::
-::::
+```
 
 ::: tip
 默认情况下，如果主版本号低于 **1**，比如 0.3.4，`feat:` 和 `BREAKING CHANGE:` 会更新补丁和次要版本，而不是更新次要和主要版本。要想提高次要版本和主要版本，可以使用如下命令：
-
 
 ```bash npm
 # Release as minor

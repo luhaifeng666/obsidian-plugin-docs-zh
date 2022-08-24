@@ -1,8 +1,11 @@
+---
+title: 编辑器
+---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-09 17:26:34
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 00:26:12
+ * @LastEditTime: 2022-08-24 12:06:30
  * @Description: 
 -->
 # 编辑器
@@ -35,7 +38,7 @@ Obsidian 使用 [CodeMirror](https://codemirror.net/) (CM) 作为底层文本编
 
 下例中的指令会将当前日期插入光标所在位置：
 
-```ts 
+```ts
 import { Editor, moment, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -60,7 +63,7 @@ export default class ExamplePlugin extends Plugin {
 
 下例中的指令读取当前选中的内容并替换成大写：
 
-```ts 
+```ts
 import { Editor, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {

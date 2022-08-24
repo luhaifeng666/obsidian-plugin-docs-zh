@@ -1,17 +1,14 @@
+---
+title: 用户界面
+---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 11:37:51
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 00:30:31
+ * @LastEditTime: 2022-08-24 13:50:09
  * @Description: 
 -->
-edi<!--
- * @Author: luhaifeng666 youzui@hotmail.com
- * @Date: 2022-08-09 17:26:34
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-15 10:58:43
- * @Description: 
--->
+
 # 用户界面
 
 本页概述了如何添加或更改 Obsidian 用户界面。

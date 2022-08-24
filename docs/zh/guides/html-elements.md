@@ -1,8 +1,11 @@
+---
+title: HTML 元素
+---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-03-24 23:00:24
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-14 22:15:53
+ * @LastEditTime: 2022-08-24 10:35:53
  * @Description: 
 -->
 # HTML 元素
@@ -52,9 +55,7 @@ book.createEl("small", { text: "Sönke Ahrens" });
 
 您可以通过在插件的根目录下添加 `styles.css` 文件来给您的插件添加自定义样式。现在来给上面的 book 示例添加一些样式：
 
-:::: code-group
-::: code-group-item styles.css
-```css
+```css styles.css
 .book {
   border: 1px solid var(--background-modifier-border);
   padding: 10px;
@@ -68,8 +69,6 @@ book.createEl("small", { text: "Sönke Ahrens" });
   color: var(--text-muted);
 }
 ```
-:::
-::::
 
 :::tip
 `--background-modifier-border` 以及 `--text-muted` 都是 Obsidian 来定义以及使用的 [CSS变量](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)。如果您将这些变量应用到您的样式中，那么即使用户使用不同的主题，您的插件看起来也会很棒！🌈

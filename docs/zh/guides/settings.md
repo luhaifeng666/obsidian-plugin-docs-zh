@@ -1,3 +1,7 @@
+---
+title: 设置
+---
+
 # 设置
 
 如果您想用户可以自行对插件进行配置，那么您可以将 _设置_ 选项暴露给他们。
@@ -118,9 +122,7 @@ this.addSettingTab(new ExampleSettingTab(this.app, this));
 
 在这里，`ExampleSettingTab` 是一个继承自 [`PluginSettingTab`](../api/classes/PluginSettingTab.md) 的类：
 
-:::: code-group
-::: code-group-item settings.ts
-```ts
+```ts settings.ts
 import ExamplePlugin from "main";
 import { App, PluginSettingTab, Setting } from "obsidian";
 
@@ -152,8 +154,6 @@ export class ExampleSettingTab extends PluginSettingTab {
   }
 }
 ```
-:::
-::::
 
 在 `display()` 中您可以为设置标签创建内容。想要获取更多信息，可以查阅 [HTML elements](html-elements.md)。
 

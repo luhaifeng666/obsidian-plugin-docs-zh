@@ -8,9 +8,7 @@ title: Markdown 后处理器
 
 下例查找在两个冒号 `:` 之间的任意代码块, 并替换成合适的 emoji 符号：
 
-:::: code-group
-::: code-group-item main.ts
-```ts {6,15}
+```ts {6,15} main.ts
 import { Plugin } from "obsidian";
 import { Emoji } from "./emoji";
 
@@ -32,14 +30,10 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-:::
-::::
 
 `Emoji` 类继承自 [`MarkdownRenderChild`](../api/classes/MarkdownRenderChild.md)，并将代码块替换为带有 `span` 标签的 emoji 符号：
 
-:::: code-group
-::: code-group-item emoji.ts
-```ts {3,19-22}
+```ts {3,19-22} emoji.ts
 import { MarkdownRenderChild } from "obsidian";
 
 export class Emoji extends MarkdownRenderChild {
@@ -65,8 +59,6 @@ export class Emoji extends MarkdownRenderChild {
   }
 }
 ```
-:::
-::::
 
 ## 后处理 Markdown 代码块
 
@@ -88,9 +80,7 @@ flowchart LR
 
 如果您想去添加类似 Mermaid 的自定义代码块，您可以使用 [`registerMarkdownCodeBlockProcessor`](../api/classes/Plugin_2.md#registermarkdowncodeblockprocessor)。以下示例将包含 CSV 数据的代码块呈现为表格：
 
-:::: code-group
-::: code-group-item main.ts
-```ts
+```ts main.ts
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -114,5 +104,3 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-:::
-::::
