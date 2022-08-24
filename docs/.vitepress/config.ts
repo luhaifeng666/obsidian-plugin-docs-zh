@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 13:54:33
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 09:42:30
+ * @LastEditTime: 2022-08-24 15:00:41
  * @Description: 
  */
 import fg from 'fast-glob'
@@ -128,6 +128,9 @@ export default {
   base: '/obsidian-plugin-docs-zh/',
   description: ' ',
   lastUpdated: true,
+  head: [
+    ['link', { rel: 'icon', type: 'image/x-icon', href: 'images/favicon.ico' }],
+  ],
   themeConfig: {
     siteTitle: 'Obsidian 插件开发文档',
     logo: '/images/logo.webp',
