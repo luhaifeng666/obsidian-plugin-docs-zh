@@ -1,7 +1,10 @@
----
-sidebar_position: 40
----
-
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 19:35:52
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-24 00:01:45
+ * @Description: 
+-->
 # Vault
 
 From the official documentation on [Working with multiple Vaults](https://help.obsidian.md/How+to/Working+with+multiple+vaults):
@@ -37,7 +40,7 @@ The only difference between `cachedRead()` and `read()` is when the file was mod
 
 The following example reads the content of all Markdown files in the Vault and returns the average document size:
 
-```ts title="main.ts"
+```ts 
 import { Notice, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {

@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-03-24 23:00:24
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-06-28 15:59:21
+ * @LastEditTime: 2022-08-24 00:31:38
  * @Description: 
 -->
 
@@ -20,7 +20,7 @@
 
 - 用来描述插件以及使用方式的 `README.md` 文件。
 - 用来决定其他开发者如何使用插件及其源码的 `LICENSE` 。如果在选择 license 时需要帮助的话，可以查阅 [Choose a License](https://choosealicense.com/) 这篇文档。
-- 用来描述插件的 `manifest.json` 文件。想要获取更多相关信息，可以查阅 [Manifest](manifest-reference.md) 这篇文档。
+- 用来描述插件的 `manifest.json` 文件。想要获取更多相关信息，可以查阅 [Manifest](../manifest-reference.md) 这篇文档。
 
 ## 第一步 — 创建发布
 
@@ -63,7 +63,7 @@
    }
    ```
 
-   - `id`, `name`, `author`, 以及 `description` 字段将决定插件如何展呈现给用户, 并且应该与您的 [插件 manifest](manifest-reference.md) 中的相应属性匹配。
+   - `id`, `name`, `author`, 以及 `description` 字段将决定插件如何展呈现给用户, 并且应该与您的 [插件 manifest](../manifest-reference.md) 中的相应属性匹配。
    - `id` 是插件的唯一标识。 搜索Search `community-plugins.json` 文件，确认下没有相同id的其他插件。
    - `repo` 是您的 GitHub 仓库路径. 举个例子, 如果您的 Github 地址是 https://github.com/your-username/your-repo-name, 那么路径就是`your-username/your-repo-name`.
    - (可选的) `branch` 让您指定对应的 Github 分支。如果忽略，默认是 `master`。

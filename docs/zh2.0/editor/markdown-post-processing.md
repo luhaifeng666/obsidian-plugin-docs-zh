@@ -94,7 +94,7 @@ flowchart LR
 
 如果您想添加自己的类似以下 Mermaid 的自定义代码块，您可以使用 [`registerMarkdownCodeBlockProcessor`](../reference/typescript/classes/Plugin_2.md#registermarkdowncodeblockprocessor)。以下示例将包含 CSV 数据的代码块呈现为表格：
 
-```ts title="main.ts"
+```ts 
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {

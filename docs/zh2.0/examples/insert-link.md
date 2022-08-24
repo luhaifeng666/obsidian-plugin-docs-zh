@@ -42,7 +42,7 @@ export default class InsertLinkPlugin extends Plugin {
 :::: code-group
 ::: code-group-item modal.ts
 
-```ts title="modal.ts"
+```ts
 import { App, Modal, Setting } from "obsidian";
 
 export class InsertLinkModal extends Modal {

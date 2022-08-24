@@ -44,7 +44,7 @@ export default class ExamplePlugin extends Plugin {
 :::: code-group
 ::: code-group-item main.ts
 
-```ts title="main.ts"
+```ts 
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {

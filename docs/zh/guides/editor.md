@@ -1,8 +1,12 @@
----
-title: 编辑器
----
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 19:36:06
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-24 08:49:32
+ * @Description: 
+-->
 
-# Editor
+# 编辑器
 
 [`Editor`](../api/classes/Editor.md) 类透出在编辑模式下读取以及操作 Markdown 文档的操作。
 
@@ -31,7 +35,7 @@ Obsidian 使用 [CodeMirror](https://codemirror.net/) (CM) 作为底层文本编
 
 下例中的指令会将当前日期插入光标所在位置：
 
-```ts title="main.ts" {9}
+```ts
 import { Editor, moment, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {

@@ -130,7 +130,7 @@ import sveltePreprocess from "svelte-preprocess";
 
 ## 加载 Svelte 组件
 
-要想使用 Svelte 组件，需要在一个即存的 [HTML element](../guides/html-elements.md). 中加载它。比如，如果在 Obsidian 的自定义 [`ItemView`](../api/classes/ItemView.md) 中进行加载：
+要想使用 Svelte 组件，需要在一个即存的 [HTML element](../user-interface/html-elements.md). 中加载它。比如，如果在 Obsidian 的自定义 [`ItemView`](../reference/typescript/classes/ItemView.md) 中进行加载：
 
 :::: code-group
 ::: code-group-item view.ts
@@ -179,7 +179,7 @@ export class ExampleView extends ItemView {
 
 Svelte 要求 TypeScript 的版本至少是 4.5。如果当您构建插件的时候看到如下报错，您需要升级 TypeScript 到一个更新的版本。
 
-```plain
+```
 error TS5023: Unknown compiler option 'preserveValueImports'.
 ```
 
@@ -196,7 +196,7 @@ yarn upgrade typescript@~4.5.0
 
 Svelte 要求 TypeScript 的版本至少是 4.5。如果当您构建插件的时候看到如下报错，您需要升级 TypeScript 到一个更新的版本。
 
-```plain
+```
 error TS5023: Unknown compiler option 'preserveValueImports'.
 ```
 
@@ -214,7 +214,7 @@ yarn upgrade typescript@~4.5.0
 
 1. 创建一个名为 `store.ts` 的文件：
 
-```jsx title="store.ts"
+```jsx
    import { writable } from "svelte/store";
    import type ExamplePlugin from "./main";
 
@@ -222,7 +222,7 @@ yarn upgrade typescript@~4.5.0
    export default { plugin };
 ```
 
-2. 配置 store
+1. 配置 store
 
 :::: code-group
 ::: code-group-item view.ts

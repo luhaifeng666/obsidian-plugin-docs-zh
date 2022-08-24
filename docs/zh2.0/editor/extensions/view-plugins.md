@@ -1,3 +1,10 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 19:35:52
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-24 00:16:13
+ * @Description: 
+-->
 ---
 sidebar_position: 10
 ---
@@ -24,7 +31,7 @@ If you want to make changes that impact the vertical layout of the editor, by fo
 
 To create a view plugin, create a class that implements [PluginValue](https://codemirror.net/docs/ref/#view.PluginValue) and pass it to the [ViewPlugin.fromClass()](https://codemirror.net/docs/ref/#view.ViewPlugin^fromClass) function.
 
-```ts title="plugin.ts"
+```ts
 import {
   ViewUpdate,
   PluginValue,

@@ -1,11 +1,7 @@
----
-sidebar_position: 78
----
-
 # Svelte
 
 ::: tip
-该指南是为使用 Rollup 的旧版示例插件编写的。如果您知道如何适用 ESBuild，考虑换成 [contributing](../contribute.md)。
+该指南是为使用 Rollup 的旧版示例插件编写的。如果您知道如何适用 ESBuild，考虑换成 `contributing`。
 :::
 
 该指南解释了如何配置您的插件以使用 [Svelte](https://svelte.dev/), 一个轻量级的可用于替换诸如 React 以及 Vue 这些的框架。
@@ -171,7 +167,7 @@ class ExampleView extends ItemView {
 
 Svelte 要求 TypeScript 的版本至少是 4.5。如果当您构建插件的时候看到如下报错，您需要升级 TypeScript 到一个更新的版本。
 
-```plain
+```js
 error TS5023: Unknown compiler option 'preserveValueImports'.
 ```
 
@@ -189,7 +185,7 @@ yarn upgrade typescript@~4.5.0
 
 1. 创建一个名为 `store.ts` 的文件：
 
-```jsx title="store.ts"
+```jsx
    import { writable } from "svelte/store";
    import type ExamplePlugin from "./main";
 
@@ -197,10 +193,8 @@ yarn upgrade typescript@~4.5.0
    export default { plugin };
 ```
 
-2. 配置 store
+1. 配置 store
 
-:::: code-group
-::: code-group-item view.ts
 ```ts
    import { ItemView, WorkspaceLeaf } from "obsidian";
    import type ExamplePlugin from "./main";
@@ -224,13 +218,9 @@ yarn upgrade typescript@~4.5.0
      }
    }
 ```
-:::
-::::
 
-3. 在组件中使用 store：
+1. 在组件中使用 store：
 
-:::: code-group
-::: code-group-item Component.svelte
 ```jsx
    <script lang="ts">
      import type MyPlugin from "./main";
@@ -239,5 +229,3 @@ yarn upgrade typescript@~4.5.0
      store.plugin.subscribe((p) => (plugin = p));
    </script>
 ```
-:::
-::::
