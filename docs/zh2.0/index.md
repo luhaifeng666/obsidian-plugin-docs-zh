@@ -1,15 +1,15 @@
 ---
-title: 简介
+title: 声明
 ---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 00:08:48
+ * @LastEditTime: 2022-08-24 13:33:50
  * @Description: 
 -->
 
-## Obsidian 插件开发文档 V2.0
+# Obsidian 插件开发文档 V2.0
 
 这是一份 **非官方的** Obsidian 插件开发文档。
 

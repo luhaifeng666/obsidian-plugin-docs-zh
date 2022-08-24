@@ -1,3 +1,13 @@
+---
+title: Manifest
+---
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-24 13:36:59
+ * @Description: 
+-->
 # Manifest
 
 This page describe the schema for the plugin manifest, `manifest.json`.
@@ -14,4 +24,3 @@ This page describe the schema for the plugin manifest, `manifest.json`.
 | `name`          | string  | **Yes**  | The display name of your plugin.                       |
 | `version`       | string  | **Yes**  | The version of your plugin.                            |
 | `authorUrl`     | string  | No       | A URL to your own website.                             |
-

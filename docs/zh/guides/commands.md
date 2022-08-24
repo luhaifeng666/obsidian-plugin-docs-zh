@@ -2,7 +2,7 @@
 title: 指令
 ---
 
-# Commands
+# 指令
 
 Commands(指令) 是指用户可以通过 [Command Palette(命令面板)](https://help.obsidian.md/Plugins/Command+palette) 或者热键的方式来执行的操作。
 
@@ -10,8 +10,6 @@ Commands(指令) 是指用户可以通过 [Command Palette(命令面板)](https:
 
 要想在您的插件中添加指令，可以在 `onload()` 方法中调用 [`addCommand()`](../api/classes/Plugin_2.md#addcommand) 方法：
 
-:::: code-group
-::: code-group-item tsconfig.json
 ```ts {5-11}
 import { Plugin } from "obsidian";
 
@@ -27,8 +25,6 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-:::
-::::
 
 ## 带条件的指令
 

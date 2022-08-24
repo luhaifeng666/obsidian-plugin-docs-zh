@@ -1,10 +1,6 @@
-<!--
- * @Author: luhaifeng666 youzui@hotmail.com
- * @Date: 2022-08-23 19:36:06
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 08:49:32
- * @Description: 
--->
+---
+title: 编辑器
+---
 
 # 编辑器
 
@@ -59,9 +55,7 @@ export default class ExamplePlugin extends Plugin {
 
 下例中的指令读取当前选中的内容并替换成大写：
 
-:::: code-group
-::: code-group-item main.ts
-```ts {9-10}
+```ts {9-10} main.ts
 import { Editor, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -77,7 +71,5 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-:::
-::::
 
 ![Convert to uppercase](/images/editor-uppercase.gif)

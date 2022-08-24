@@ -1,13 +1,13 @@
+---
+title: Viewport
+---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-09 17:35:59
+ * @LastEditTime: 2022-08-24 12:06:08
  * @Description: 
 -->
----
-sidebar_position: 3
----
 
 # Viewport
 
@@ -21,6 +21,6 @@ Whenever the user scrolls through the document, or when the document itself chan
 
 If you want to build an editor extension that depends on the viewport, refer to [View plugins](view-plugins.md).
 
-:::note
+:::tip
 This page aims to distill the official CodeMirror 6 documentation for Obsidian plugin developers. For more information on state management, refer to [Viewport](https://codemirror.net/docs/guide/#viewport).
 :::

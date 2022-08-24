@@ -1,12 +1,14 @@
+---
+title: 事件
+---
+
 # 事件
 
 Obsidian 中的许多接口允许您订阅整个应用中的事件，例如当用户对文件进行更改时。
 
 每当插件卸载时，任何注册的事件处理程序都需要被分离。确保发生这种情况的最安全方法是使用 [`registerEvent()`](../api/classes/Component.md#registerevent) 方法。
 
-:::: code-group
-::: code-group-item tsconfig.json
-```ts {5-7}
+```ts {5-7} tsconfig.json
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -17,8 +19,6 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-:::
-::::
 
 ## 定时事件
 

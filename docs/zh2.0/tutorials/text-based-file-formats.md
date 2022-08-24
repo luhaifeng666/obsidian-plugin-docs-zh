@@ -1,3 +1,6 @@
+---
+title: Text-based file formats
+---
 # Text-based file formats
 
 Obsidian has built-in support for Markdown files and other media types, such as images and PDFs. As a plugin developer, you can extend Obsidian to support other file formats. In this tutorial, you'll build a plugin for reading and editing CSV files in Obsidian.
@@ -17,7 +20,7 @@ By the end of this tutorial, you'll be able to:
 
 1. Create a new file `view.ts` with the following content:
 
-  ```ts 
+  ```ts view.ts
   import { TextFileView } from "obsidian";
 
   export const VIEW_TYPE_CSV = "csv-view";
@@ -43,11 +46,11 @@ By the end of this tutorial, you'll be able to:
 
 1. In `main.ts`, register the view in the `onload` method.
 
-   ```ts 
+   ```ts main.ts
    import { CSVView, VIEW_TYPE_CSV } from "./view"
    ```
 
-   ```ts 
+   ```ts main.ts
    this.registerView(
      VIEW_TYPE_CSV,
        (leaf: WorkspaceLeaf) => new CSVView(leaf)
@@ -56,7 +59,7 @@ By the end of this tutorial, you'll be able to:
 
 1. Register the extensions you want the view to handle.
 
-   ```ts 
+   ```ts main.ts
    this.registerExtensions(["csv"], VIEW_TYPE_CSV);
    ```
 
@@ -96,7 +99,7 @@ To replace `this.data` with a custom in-memory representation:
 
 Here's a basic implementation of parsing CSV data. For real-world use cases, consider using a more powerful parser, like [Papa Parse](https://www.papaparse.com/).
 
-```ts 
+```ts
 export class CSVView extends TextFileView {
   tableData: string[][];
 
@@ -138,7 +141,7 @@ TextFileView also exposes the `onOpen()` and `onClose()` hooks, which you can us
 1. Add the `onOpen()` method to create a `table` element.
 1. Add the `onClose()` method to clean up any elements you've created.
 
-```ts 
+```ts
 export class CSVView extends TextFileView {
   tableEl: HTMLElement;
 
@@ -160,7 +163,7 @@ To update the view when the data changes on disk:
 
 1. In the `CSVView` class, add a helper method that rerenders the table data in the `tableEl` element.
 
-   ```ts 
+   ```ts
    refresh() {
      // Remove previous data.
      this.tableEl.empty();
@@ -179,7 +182,7 @@ To update the view when the data changes on disk:
 
 1. Call the `refresh()` helper method in `setViewData()`.
 
-   ```ts  {4}
+   ```ts {4}
    setViewData(data: string, clear: boolean) {
      this.tableData = data.split("\n").map((line) => line.split(","));
 
@@ -208,7 +211,6 @@ td {
 ```
 
 :::
-
 
 ## Step 4 — Edit the data
 
@@ -273,7 +275,7 @@ In this tutorial, you've built a plugin that lets users display and edit CSV fil
 
 ## Complete example
 
-```ts 
+```ts
 import { TextFileView } from "obsidian";
 
 export const VIEW_TYPE_CSV = "csv-view";

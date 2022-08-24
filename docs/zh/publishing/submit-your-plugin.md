@@ -1,8 +1,11 @@
+---
+title: 提交插件
+---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-03-24 23:00:24
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 00:31:38
+ * @LastEditTime: 2022-08-24 10:44:49
  * @Description: 
 -->
 
@@ -65,7 +68,7 @@
 
    - `id`, `name`, `author`, 以及 `description` 字段将决定插件如何展呈现给用户, 并且应该与您的 [插件 manifest](../manifest-reference.md) 中的相应属性匹配。
    - `id` 是插件的唯一标识。 搜索Search `community-plugins.json` 文件，确认下没有相同id的其他插件。
-   - `repo` 是您的 GitHub 仓库路径. 举个例子, 如果您的 Github 地址是 https://github.com/your-username/your-repo-name, 那么路径就是`your-username/your-repo-name`.
+   - `repo` 是您的 GitHub 仓库路径. 举个例子, 如果您的 Github 地址是 `https://github.com/your-username/your-repo-name`, 那么路径就是`your-username/your-repo-name`.
    - (可选的) `branch` 让您指定对应的 Github 分支。如果忽略，默认是 `master`。
 
    请记住在前一个条目的右大括号 `}` 之后添加一个逗号。

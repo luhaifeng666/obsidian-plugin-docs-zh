@@ -1,8 +1,11 @@
+---
+title: Vault
+---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 19:35:52
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 00:01:45
+ * @LastEditTime: 2022-08-24 13:54:12
  * @Description: 
 -->
 # Vault
@@ -40,7 +43,7 @@ The only difference between `cachedRead()` and `read()` is when the file was mod
 
 The following example reads the content of all Markdown files in the Vault and returns the average document size:
 
-```ts 
+```ts
 import { Notice, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {

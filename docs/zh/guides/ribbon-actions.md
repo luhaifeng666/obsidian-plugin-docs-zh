@@ -1,8 +1,11 @@
+---
+title: 功能区操作
+---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-03-24 23:00:24
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-15 11:08:06
+ * @LastEditTime: 2022-08-24 10:39:16
  * @Description: 
 -->
 # 功能区操作
@@ -11,10 +14,7 @@
 
 要想添加操作到功能区，使用 [`addRibbonIcon()`](../api/classes/Plugin_2.md#addribbonicon) 事件：
 
-:::: code-group
-::: code-group-item main.ts
-
-```ts {5-7}
+```ts {5-7} main.ts
 
 import { Plugin } from "obsidian";
 
@@ -26,8 +26,5 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-
-:::
-::::
 
 第一个参数指定使用哪个图标。想要获取更多关于可使用的图标以及如何添加自定义图表的信息，可以查阅 [Icons](icons.md) 这篇文档。

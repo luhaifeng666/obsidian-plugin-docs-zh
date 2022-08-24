@@ -1,13 +1,13 @@
+---
+title: Markdown 后处理
+---
 # Markdown 后处理
 
 如果您想要改变 Markdown 文档在预览模式下的渲染方式，您可以添加自己的 _Markdown 后处理器_。见名知意，该后处理器在 Markdown 被处理成 HTML _之后_ 运行。它可以让您添加，删除，或者替换渲染后的文档中的[HTML 元素](../user-interface/html-elements.md)。
 
 下例搜索包含在两个冒号 `:` 之间的内容，并将其替换为恰当的 emoji 表情：
 
-:::: code-group
-:::code-group-item main.ts
-
-```ts
+```ts main.ts
 import { Plugin } from "obsidian";
 import { Emoji } from "./emoji";
 
@@ -32,15 +32,9 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-:::
-::::
-
 `Emoji` 类继承自 [`MarkdownRenderChild`](../reference/typescript/classes/MarkdownRenderChild.md), 并用带有表情符号的 `span` 元素替换代码块:
 
-:::: code-group
-:::code-group-item emoji.ts
-
-```ts
+```ts emoji.ts
 import { MarkdownRenderChild } from "obsidian";
 
 // highlight-next-line
@@ -70,9 +64,6 @@ export class Emoji extends MarkdownRenderChild {
 }
 ```
 
-:::
-::::
-
 ## 后处理 Markdown 代码块
 
 您知道么，您可以通过类似以下文本创建 `mermaid` 代码块，以在在 Obsidian 中创建 [Mermaid](https://mermaid-js.github.io/) 图表？
@@ -94,7 +85,7 @@ flowchart LR
 
 如果您想添加自己的类似以下 Mermaid 的自定义代码块，您可以使用 [`registerMarkdownCodeBlockProcessor`](../reference/typescript/classes/Plugin_2.md#registermarkdowncodeblockprocessor)。以下示例将包含 CSV 数据的代码块呈现为表格：
 
-```ts 
+```ts
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {

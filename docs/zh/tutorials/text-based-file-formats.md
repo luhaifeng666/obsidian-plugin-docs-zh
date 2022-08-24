@@ -1,3 +1,7 @@
+---
+title: Text-based file formats
+---
+
 # Text-based file formats
 
 Obsidian has built-in support for Markdown files and other media types, such as images and PDFs. As a plugin developer, you can extend Obsidian to support other file formats. In this tutorial, you'll build a plugin for reading and editing CSV files in Obsidian.
@@ -41,27 +45,27 @@ By the end of this tutorial, you'll be able to:
   }
   ```
 
-2. In `main.ts`, register the view in the `onload` method.
+1. In `main.ts`, register the view in the `onload` method.
 
-   ```ts 
+   ```ts main.ts
    import { CSVView, VIEW_TYPE_CSV } from "./view"
    ```
 
-   ```ts 
+   ```ts
    this.registerView(
      VIEW_TYPE_CSV,
        (leaf: WorkspaceLeaf) => new CSVView(leaf)
    );
    ```
 
-3. Register the extensions you want the view to handle.
+1. Register the extensions you want the view to handle.
 
-   ```ts 
+   ```ts
    this.registerExtensions(["csv"], VIEW_TYPE_CSV);
    ```
 
-4. Rebuild the plugin.
-5. In the File Explorer, click the CSV file to open the view.
+1. Rebuild the plugin.
+1. In the File Explorer, click the CSV file to open the view.
 
 Unfortunately, the view doesn't display the data, because it doesn't know how to yet. To render the CSV data in the view, add the following lines in the `setViewData` method:
 
@@ -96,7 +100,7 @@ To replace `this.data` with a custom in-memory representation:
 
 Here's a basic implementation of parsing CSV data. For real-world use cases, consider using a more powerful parser, like [Papa Parse](https://www.papaparse.com/).
 
-```ts 
+```ts
 export class CSVView extends TextFileView {
   tableData: string[][];
 
@@ -138,7 +142,7 @@ TextFileView also exposes the `onOpen()` and `onClose()` hooks, which you can us
 1. Add the `onOpen()` method to create a `table` element.
 1. Add the `onClose()` method to clean up any elements you've created.
 
-```ts 
+```ts
 export class CSVView extends TextFileView {
   tableEl: HTMLElement;
 
@@ -160,7 +164,7 @@ To update the view when the data changes on disk:
 
 1. In the `CSVView` class, add a helper method that rerenders the table data in the `tableEl` element.
 
-   ```ts 
+   ```ts
    refresh() {
      // Remove previous data.
      this.tableEl.empty();
@@ -194,25 +198,26 @@ Depending on the Obsidian theme you're using, you may want to style the table. T
 
 ```css
 table {
-	border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 table,
 td {
-	border: 1px solid var(--background-modifier-border);
+  border: 1px solid var(--background-modifier-border);
 }
 
 td {
-	padding: 4px 8px;
+  padding: 4px 8px;
 }
 ```
+
 :::
 
 ## Step 4 — Edit the data
 
 Right now, the user can only read the content of the file. In this step, you'll add `input` elements for each table cell that let the user edit the CSV values and write them back to disk.
 
-The `refresh()` helper from previous step creates a `td` element for each table cell. Right now, it adds the cell value as text inside the `td` element. 
+The `refresh()` helper from previous step creates a `td` element for each table cell. Right now, it adds the cell value as text inside the `td` element.
 
 ```ts {2}
 row.forEach((cell, j) => {
@@ -269,83 +274,83 @@ In this tutorial, you've built a plugin that lets users display and edit CSV fil
 
 ## Complete example
 
-```ts 
+```ts
 import { TextFileView } from "obsidian";
 
 export const VIEW_TYPE_CSV = "csv-view";
 
 export class CSVView extends TextFileView {
-	tableData: string[][];
-	tableEl: HTMLElement;
+  tableData: string[][];
+  tableEl: HTMLElement;
 
-	getViewData() {
-		return this.tableData.map((row) => row.join(",")).join("\n");
-	}
+  getViewData() {
+    return this.tableData.map((row) => row.join(",")).join("\n");
+  }
 
-	// If clear is set, then it means we're opening a completely different file.
-	setViewData(data: string, clear: boolean) {
-		this.tableData = data.split("\n").map((line) => line.split(","));
+  // If clear is set, then it means we're opening a completely different file.
+  setViewData(data: string, clear: boolean) {
+    this.tableData = data.split("\n").map((line) => line.split(","));
 
-		this.refresh();
-	}
+    this.refresh();
+  }
 
-	refresh() {
-		this.tableEl.empty();
+  refresh() {
+    this.tableEl.empty();
 
-		const tableBody = this.tableEl.createEl("tbody");
+    const tableBody = this.tableEl.createEl("tbody");
 
-		this.tableData.forEach((row, i) => {
-			const tableRow = tableBody.createEl("tr");
+    this.tableData.forEach((row, i) => {
+      const tableRow = tableBody.createEl("tr");
 
-			row.forEach((cell, j) => {
-				const input = tableRow
-					.createEl("td")
-					.createEl("input", { attr: { value: cell } });
+      row.forEach((cell, j) => {
+        const input = tableRow
+          .createEl("td")
+          .createEl("input", { attr: { value: cell } });
 
-				input.oninput = (ev) => {
-					if (ev.currentTarget instanceof HTMLInputElement) {
-						this.tableData[i][j] = ev.currentTarget.value;
-						this.requestSave();
-					}
-				};
-			});
-		});
-	}
+        input.oninput = (ev) => {
+          if (ev.currentTarget instanceof HTMLInputElement) {
+            this.tableData[i][j] = ev.currentTarget.value;
+            this.requestSave();
+          }
+        };
+      });
+    });
+  }
 
-	clear() {
-		this.tableData = [];
-	}
+  clear() {
+    this.tableData = [];
+  }
 
-	getViewType() {
-		return VIEW_TYPE_CSV;
-	}
+  getViewType() {
+    return VIEW_TYPE_CSV;
+  }
 
-	async onOpen() {
-		this.tableEl = this.contentEl.createEl("table");
-	}
+  async onOpen() {
+    this.tableEl = this.contentEl.createEl("table");
+  }
 
-	async onClose() {
-		this.contentEl.empty();
-	}
+  async onClose() {
+    this.contentEl.empty();
+  }
 }
 ```
 
 ```css
 table {
-	border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 table,
 td {
-	border: 1px solid var(--background-modifier-border);
+  border: 1px solid var(--background-modifier-border);
 }
 
 td {
-	padding: 4px 8px;
+  padding: 4px 8px;
 }
 
 input {
-	background: none;
-	border: none;
+  background: none;
+  border: none;
 }
 ```

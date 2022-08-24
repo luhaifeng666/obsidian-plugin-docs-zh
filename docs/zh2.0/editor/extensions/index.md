@@ -1,10 +1,14 @@
+---
+title: Editor extensions
+---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-09 17:52:21
+ * @LastEditTime: 2022-08-24 12:04:56
  * @Description: 
 -->
+
 # Editor extensions
 
 Editor extensions let you customize the experience of editing notes in Obsidian. This page explains what editor extensions are, and when to use them.

@@ -2,7 +2,7 @@
 title: 快捷菜单
 ---
 
-# Context menus
+# 快捷菜单
 
 如果想要打开 context menu, 使用 [`Menu`](../api/classes/Menu.md):
 

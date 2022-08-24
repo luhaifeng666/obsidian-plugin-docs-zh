@@ -1,3 +1,7 @@
+---
+title: Manifest 配置参考
+---
+
 # Manifest 配置参考
 
 这里罗列了插件的 `manifest.json` 配置文件中的属性描述。

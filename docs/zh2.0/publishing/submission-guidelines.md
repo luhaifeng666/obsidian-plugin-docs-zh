@@ -1,3 +1,6 @@
+---
+title: Submission guidelines
+---
 # Submission guidelines
 
 This page lists common review comments plugin authors get when submitting their plugin.

@@ -1,3 +1,6 @@
+---
+title: React
+---
 # React
 
 在本指南中，您将配置您的插件以使用 [React](https://reactjs.org/)。假设您已经拥有一个使用 [custom view](../user-interface/views.md) 的插件，并且想使用 React 来改写它。
@@ -24,10 +27,7 @@
 
 3. 在 `tsconfig.json` 的 `compilerOptions` 对象中开启 JSX 支持：
 
-:::: code-group
-::: code-group-item tsconfig.json
-
-```ts
+```ts tsconfig.json
 {
   "compilerOptions": {
     "jsx": "react"
@@ -35,17 +35,11 @@
 }
 ```
 
-:::
-::::
-
 ## 创建 React 组件
 
 在插件的根目录下创建名为 `ReactView.tsx` 的文件，文件内容如下：
 
-:::: code-group
-::: code-group-item ReactView.tsx
-
-```tsx
+```tsx ReactView.tsx
 import * as React from "react";
 
 export const ReactView = () => {
@@ -53,17 +47,11 @@ export const ReactView = () => {
 };
 ```
 
-:::
-::::
-
 ## 挂载 React 组件
 
 要想使用 React 组件，需要在一个 [HTML element](../user-interface/html-elements.md) 中挂载它。下例中将 `ReactView` 组件挂载到了 `this.containerEl.children[1]` 元素上：
 
-:::: code-group
-::: code-group-item view.tsx
-
-```tsx
+```tsx view.tsx
 import { ItemView, WorkspaceLeaf } from "obsidian";
 // highlight-start
 import * as React from "react";
@@ -105,9 +93,6 @@ class ExampleView extends ItemView {
 }
 ```
 
-:::
-::::
-
 想要获取更多关于 `ReactDOM.render()` 以及 `ReactDOM.unmountComponentAtNode()` 的信息，可以去查阅
  [ReactDOM](https://reactjs.org/docs/react-dom.html) 这篇文档。
 
@@ -120,25 +105,17 @@ class ExampleView extends ItemView {
 还有一个选择就是给应用创建一个 React 上下文，使得 `App` 变成全局对象以便在 React 视图中的所有组件都可以获取到它。
 
 1. 使用 `React.createContext()` 去创建应用上下文
-:::: code-group
-::: code-group-item context.ts
 
-```tsx
+```tsx context.ts
 import * as React from "react";
 import { App } from 'obsidian';
 
 export const AppContext = React.createContext<App>(undefined);
 ```
 
-:::
-::::
-
 1. 用上下文提供者包装`ReactView`并将应用作为值传递
 
-:::: code-group
-::: code-group-item view.ts
-
-```tsx
+```tsx view.ts
 const root = createRoot(this.containerEl.children[1]);
 root.render(
   <AppContext.Provider value={this.app}>
@@ -148,15 +125,9 @@ root.render(
 );
 ```
 
-:::
-::::
-
 1. 创建自定义钩子以便在组件中更方便的使用上下文。
 
-:::: code-group
-::: code-group-item hooks.ts
-
-```tsx
+```tsx hooks.ts
 import { AppContext } from "./context";
 
 export const useApp = (): App | undefined => {
@@ -164,15 +135,9 @@ export const useApp = (): App | undefined => {
 };
 ```
 
-:::
-::::
+1. 在 `ReactView` 中的任意 React 组件中使用钩子函数以获取 app。
 
-4. 在 `ReactView` 中的任意 React 组件中使用钩子函数以获取 app。
-
-:::: code-group
-::: code-group-item ReactView.ts
-
-```tsx
+```tsx ReactView.ts
 import * as React from "react";
 import { useApp } from "./hooks";
 
@@ -182,8 +147,5 @@ export const ReactView = () => {
   return <h4>{vault.getName()}</h4>;
 };
 ```
-
-:::
-::::
 
 要想获取更多信息，可以查阅 React 文档中的 [Context](https://reactjs.org/docs/context.html) and [Building Your Own Hooks](https://reactjs.org/docs/hooks-custom.html)。

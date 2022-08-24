@@ -1,3 +1,6 @@
+---
+title: 装饰
+---
 # 装饰
 
 装饰让您控制在[编辑器扩展中](index.md)如何绘制或者展示内容。如果您打算通过在编辑器中添加，替换或者样式化标签来更改外观，您很可能需要使用装饰。
@@ -95,10 +98,7 @@ provide(field: StateField<DecorationSet>): Extension {
 },
 ```
 
-:::: code-group
-:::code-group-item field.ts
-
-```ts
+```ts field.ts
 import { syntaxTree } from "@codemirror/language";
 import {
   Extension,
@@ -146,9 +146,6 @@ export const emojiListField = StateField.define<DecorationSet>({
 });
 ```
 
-:::
-::::
-
 ### 视图插件
 
 To manage your decorations using a view plugin:
@@ -162,10 +159,7 @@ To manage your decorations using a view plugin:
 
 以下示例仅在基础文档或视口更改时重建装饰。以下示例仅在基础文档或视口更改时重建装饰。
 
-:::: code-group
-::: code-group-item plugin.ts
-
-```ts
+```ts plugin.ts
 import { syntaxTree } from "@codemirror/language";
 import { RangeSetBuilder } from "@codemirror/state";
 import {
@@ -232,9 +226,6 @@ export const emojiListPlugin = ViewPlugin.fromClass(
   pluginSpec
 );
 ```
-
-:::
-::::
 
 `buildDecorations()` 是一个辅助方法，它基于编辑器视图构建一整套装饰。
 

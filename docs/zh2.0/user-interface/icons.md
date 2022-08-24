@@ -1,8 +1,11 @@
+---
+title: 图标
+---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 00:31:05
+ * @LastEditTime: 2022-08-24 13:49:48
  * @Description: 
 -->
 # 图标
@@ -17,10 +20,7 @@ Obsidian API 中的一些 UI 组件允许您配置与之对应的icon。您可�
 
 如果您想在您自定义的接口中使用 icon，可以使用 [`setIcon`](../reference/typescript/functions/setIcon.md) 方法去添加一个 icon 到 [HTML element](html-elements.md)。下例中展示了如何向状态栏中添加 icon：
 
-:::: code-group
-::: code-group-item main.ts
-
-```ts
+```ts main.ts
 import { Plugin, setIcon } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -31,17 +31,11 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
-:::
-::::
-
 ## 添加您自己的 ico
 
 要想在插件中添加自定义 icon，可以使用 [`addIcon`](../reference/typescript/functions/addIcon.md) 方法：
 
-:::: code-group
-::: code-group-item main.ts
-
-```ts
+```ts main.ts
 import { addIcon, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -54,9 +48,6 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
-
-:::
-::::
 
 `addIcon` 接受两个参数:
 

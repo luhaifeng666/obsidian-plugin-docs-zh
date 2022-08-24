@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+title: State fields
 ---
 
 # State fields
@@ -10,7 +10,7 @@ The calculator should be able to add and subtract a number from the current stat
 
 By the end of this page, you'll understand the basic concepts of building a state field.
 
-:::note
+:::tip
 This page aims to distill the official CodeMirror 6 documentation for Obsidian plugin developers. For more detailed information on state fields, refer to [State Fields](https://codemirror.net/docs/guide/#state-fields).
 :::
 
