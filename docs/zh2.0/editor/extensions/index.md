@@ -1,34 +1,34 @@
 ---
-title: Editor extensions
+title: 编辑器扩展
 ---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 12:04:56
+ * @LastEditTime: 2022-08-25 10:40:16
  * @Description: 
 -->
 
-# Editor extensions
+# 编辑器扩展
 
-Editor extensions let you customize the experience of editing notes in Obsidian. This page explains what editor extensions are, and when to use them.
+编辑器扩展可以让您自行改变在 Obsidian 中编辑文档的体验。本页解释了什么是编辑器扩展，以及在何时使用它们。
 
-Obsidian uses CodeMirror 6 (CM6) to power the Markdown editor. Just like Obsidian, CM6 has plugins of its own, called _extensions_. In other words, an Obsidian _editor extension_ is the same thing as a _CodeMirror 6 extension_.
+Obsidian 中的 Markdown 编辑器底层使用的是 CodeMirror 6 (CM6)。跟 Obsidian 一样，CM6 也有自己的插件，称之为 __扩展（extensions）__。换句话说，Obsidian 的 __编辑器扩展__ 和 __CodeMirror 6 的扩展__ 是一回事。
 
-The API for building editor extensions is a bit unconventional and requires that you have a basic understanding of its architecture before you get started. This section aims to give you enough context and examples for you to get started. If you want to learn more about building editor extensions, refer to the [CodeMirror 6 documentation](https://codemirror.net/docs/).
+构建编辑器扩展所用到的 API 有些不合常规，因此在您开始使用之前需要您对其架构有基本的认知。本篇文档旨在为您提供足够的背景信息以及实例以供您入门。如果您想要了解更多关于构建编辑器扩展的内容，可以查阅 [CodeMirror 6 documentation](https://codemirror.net/docs/) 这篇文档。
 
-## Do I need an editor extension?
+## 我是否需要一个编辑器扩展？
 
-Building editor extensions can be challenging, so before you start building one, consider whether you really need it.
+构建编辑器扩展可能会是个挑战，因此在您开始构建之前，您需要考虑是否真的需要它。
 
-- If you want to change how to convert Markdown to HTML in the Reading view, consider building a [Markdown post processor](../../editor/markdown-post-processing.md).
-- If you want to change how the document looks and feels in Live Preview, you need to build an editor extension.
+- 如果您想改变阅读视图下如何将 Markdown 转换为 HTML，可以考虑构建一个 [Markdown post processor](../../editor/markdown-post-processing.md)。
+- 如果您想改变文档在实时预览时的外观和感觉，您需要构建一个编辑器扩展。
 
-## Registering editor extensions
+## 注册编辑器扩展
 
-CodeMirror 6 (CM6) is a powerful engine for editing code using web technologies. At its core, the editor itself has a minimal set of features. Any features you'd expect from a modern editor are available as _extensions_ that you can pick and choose. While Obsidian comes with many of these extensions out-of-the-box, you can also register your own.
+CodeMirror 6 (CM6) 是使用 web 技术编辑代码的强大引擎。作为它的核心，编辑器本身具有最少的功能集。任何您期望在流行的编辑器上可以获得功能都可以作为 __扩展__ 供您挑选。尽管 Obsidian 附带了许多开箱即用的扩展，您依旧可以注册属于您自己的。
 
-To register an editor extension, use [registerEditorExtension](../../reference/typescript/classes/Plugin_2.md#registereditorextension) in the `onload` method of your Obsidian plugin:
+要想注册一个编辑器扩展，需要在您的 Obsidian 插件的 `onload` 方法中使用 [registerEditorExtension](../../reference/typescript/classes/Plugin_2.md#registereditorextension)。
 
 ```ts
 onload() {
@@ -36,7 +36,7 @@ onload() {
 }
 ```
 
-While CM6 supports several types of extensions, two of the most common ones are [View plugins](view-plugins.md) and [State fields](state-fields.md).
+尽管 CM6 支持多种扩展，但其中两个最常见的分别是 [View plugins](view-plugins.md) 以及 [State fields](state-fields.md)。
 
 ```ts
 import DocCardList from '@theme/DocCardList';

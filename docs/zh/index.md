@@ -1,7 +1,18 @@
 ---
 title: 声明
 ---
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-24 14:17:30
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-08-25 09:51:17
+ * @Description: 
+-->
 # Obsidian 插件开发文档
+
+::: warning
+官方对文档结构做出了较大调整，该版本文档内容较老，后期不再维护更新。建议移步[文档2.0](/zh2.0/)进行查阅。
+:::
 
 这是一份 **非官方的** Obsidian 插件开发文档。
 
