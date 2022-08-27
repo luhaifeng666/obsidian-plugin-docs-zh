@@ -1,26 +1,26 @@
 ---
-title: Viewport
+title: 视图
 ---
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 12:06:08
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-08-27 09:31:34
  * @Description: 
 -->
 
-# Viewport
+# 视图
 
-The Obsidian editor supports [huge documents](https://codemirror.net/examples/million/) with millions of lines. One of the reasons why this is possible, is because the editor only renders what's visible (and a little bit more).
+Obsidian 编辑器支持上万行的 [庞大文件](https://codemirror.net/examples/million/)。其中一个可能的原因是因为编辑器只渲染可见的（多一点点）的内容。
 
-Imagine that you want to edit a document that is too big to fit on your monitor. The Obsidian editor creates a "window" that moves across the document, only rendering the content within the window (and ignoring what's outside). This window is known as the editor's _viewport_.
+试想下您想编辑一个内容多到一屏无法展示完整的大型文档。Obsidian 编辑器创建了一个可以在文档中移动的 “窗口”，只渲染在这个“窗口”里的内容（而忽略窗口以外的内容）。这个窗口被称之为编辑器的 __视图__。
 
 ![Viewport](/images/img/viewport.svg)
 
-Whenever the user scrolls through the document, or when the document itself changes, the viewport becomes out-of-date and needs to be recomputed.
+无论何时当用户滚动浏览文档，或者是文档内容发生了变化，视图就会过期，需要重新计算。
 
-If you want to build an editor extension that depends on the viewport, refer to [View plugins](view-plugins.md).
+如果您想构建一个基于视图的编辑器扩展，可以查阅[View 插件](view-plugins.md)这篇文档。
 
 :::tip
-This page aims to distill the official CodeMirror 6 documentation for Obsidian plugin developers. For more information on state management, refer to [Viewport](https://codemirror.net/docs/guide/#viewport).
+本页旨在为 Obsidian 插件开发者们精炼 CodeMirror 6 官方文档。想要获取更多关于状态管理的内容，请查阅 [视图](https://codemirror.net/docs/guide/#viewport) 这篇文档。
 :::
