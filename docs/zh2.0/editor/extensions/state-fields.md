@@ -1,28 +1,29 @@
 ---
-title: State fields
+title: 状态字段
 ---
 
-# State fields
+# 状态字段
 
-A state field is an [editor extension](index.md) that lets you manage custom editor state. This page walks you through building a state field by implementing a calculator extension.
+状态字段是一个可以让您管理自定义编辑器状态的 [编辑器扩展](index.md)。此页面将引导您通过实现计算器扩展来构建状态字段。
 
-The calculator should be able to add and subtract a number from the current state, and to reset the state when you want to start over.
+该计算器需要支持从当前状态中加减数字，并在您想要重新开始时重置状态。
 
-By the end of this page, you'll understand the basic concepts of building a state field.
+在本页最后，您将会理解构建状态字段的基本概念。
 
 :::tip
-This page aims to distill the official CodeMirror 6 documentation for Obsidian plugin developers. For more detailed information on state fields, refer to [State Fields](https://codemirror.net/docs/guide/#state-fields).
+本页旨在为 Obsidian 插件开发者们精炼 CodeMirror 6 的官方文档。要想获取更多关于状态字段的详细信息，可以参考 [State Fields](https://codemirror.net/docs/guide/#state-fields) 这篇文档。 
 :::
 
-## Prerequisites
+## 前置准备
 
 - Basic understanding of [State management](state-management.md).
+- 对于 [状态管理](state-management.md) 有基本了解。
 
-## Defining state effects
+## 定义 state effect
 
-State effects describe the state change you'd like to make. You may think of them as methods on a class.
+State effect 描述了您想要做出的状态变化。您可以将它们想象成 class 中的 方法。
 
-In the calculator example, you'd define a state effect for each of the calculator operations:
+在计算器的例子中，您需要为每个计算操作定义一个 state effect:
 
 ```ts
 const addEffect = StateEffect.define<number>();
@@ -30,13 +31,13 @@ const subtractEffect = StateEffect.define<number>();
 const resetEffect = StateEffect.define();
 ```
 
-The type between the angle brackets, `<>`, defines the input type for the effect. For example, the number you want to add or subtract. The reset effect doesn't need any input, so you can leave it out.
+`<>` 之间的类型定义了 effect 的输入类型。比如您想要加或减的数字。Reset effect 不需要任何输入，因此您可以不用管它。
 
-## Defining a state field
+## 定义一个状态字段
 
-Contrary to what one might think, state fields don't actually _store_ state. They _manage_ it. State fields take the current state, applies any state effects, and returns the new state.
+与预料相反的是，状态字段实际上并不 __存储__ 状态。而是 __管理__ 状态。状态字段获取当前状态，应用任何 state effects, 并返回新的状态。
 
-The state field contains the calculator logic to apply the mathematical operations depending on the effects in a transaction. Since a transaction can contain multiple effects, for example two additions, the state field needs to apply them all one after another.
+状态字段包含根据 transaction 中的效果应用数学操作的计算器逻辑。一个 transaction 可以包含多个 effects, 比如两次相加，状态字段需要一个接一个的应用它们。
 
 ```ts
 export const calculatorField = StateField.define<number>({
@@ -61,13 +62,13 @@ export const calculatorField = StateField.define<number>({
 });
 ```
 
-- `create` returns the value the calculator starts with.
-- `update` contains the logic for applying the effects.
-- `effect.is()` lets you check the type of the effect before you apply it.
+- `create` 方法返回计算器的初始值。
+- `update` 包含应用 effects 的逻辑。
+- `effect.is()` 使您可以在使用 effect 之前检查它的类型。
 
-## Dispatching state effects
+## 派发 state effects
 
-To apply a state effect to a state field, you need to dispatch it to the editor view as part of a transaction.
+要想将 state effect 应用到一个状态字段中，您需要将它作为 transaction 的一部分派发到编辑器窗口。
 
 ```ts
 view.dispatch({
@@ -75,7 +76,7 @@ view.dispatch({
 });
 ```
 
-You can even define a set of helper functions that provide a more familiar API:
+您甚至可以定义一组提供更熟悉的 API 的辅助函数:
 
 ```ts
 export function add(view: EditorView, num: number) {
@@ -97,6 +98,6 @@ export function reset(view: EditorView) {
 }
 ```
 
-## Next steps
+## 下一步
 
-Provide [Decorations](decorations.md) from your state fields to change how to display the document.
+从您的状态字段中提供 [Decorations](decorations.md) 以更改文档的显示方式。
