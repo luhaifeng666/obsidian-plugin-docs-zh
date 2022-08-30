@@ -11,7 +11,7 @@ title: 状态字段
 在本页最后，您将会理解构建状态字段的基本概念。
 
 :::tip
-本页旨在为 Obsidian 插件开发者们精炼 CodeMirror 6 的官方文档。要想获取更多关于状态字段的详细信息，可以参考 [State Fields](https://codemirror.net/docs/guide/#state-fields) 这篇文档。 
+本页旨在为 Obsidian 插件开发者们精炼 CodeMirror 6 的官方文档。要想获取更多关于状态字段的详细信息，可以参考 [State Fields](https://codemirror.net/docs/guide/#state-fields) 这篇文档。
 :::
 
 ## 前置准备

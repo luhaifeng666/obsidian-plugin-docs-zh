@@ -1,18 +1,25 @@
 ---
-title: State management
+title: 状态管理
 ---
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-24 14:17:30
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-08-30 11:12:50
+ * @Description: 
+-->
 
-# State management
+# 状态管理
 
-This page aims to give an introduction to state management for [editor extensions](index.md).
+本页旨在介绍[编辑器扩展](index.md)的状态管理。
 
 :::tip
-This page aims to distill the official CodeMirror 6 documentation for Obsidian plugin developers. For more detailed information on state management, refer to [State and Updates](https://codemirror.net/docs/guide/#state-and-updates).
+本页旨在为 Obsidian 插件开发者们精炼 CodeMirror 6 官方文档。要想获取更多关于状态管理的详细信息，请查阅 [State and Updates](https://codemirror.net/docs/guide/#state-and-updates) 这篇文档。
 :::
 
-## State changes
+## 状态变化
 
-In most applications, you would update state by assigning a new value to a property or variable. As a consequence, the old value is lost forever.
+在大部分的应用中，您可能会通过为一个属性或者变量分配一个新值的方式来更新状态。这样一来，原先的值就会永远丢失。
 
 ```ts
 let note = "";
@@ -21,7 +28,7 @@ note = "# Heading"
 note = "## Heading" // How to undo this?
 ```
 
-To support features like undoing and redoing changes to a user's workspace, applications like Obsidian instead keep a history of all changes that have been made. To undo a change, you can then go back to a point in time before the change was made.
+为了支持对用户工作区的类似撤销以及重置更改的功能，诸如 Obsidian 的应用会保留所有的历史改动。要撤回改动，您可以返回改动前的时间点。
 
 |   | State      |
 |---|------------|
@@ -30,7 +37,7 @@ To support features like undoing and redoing changes to a user's workspace, appl
 | 2 | # Heading  |
 | 3 | ## Heading |
 
-In TypeScript, you'd then end up with something like this:
+在 TypeScript 中，您会得到这样的结果：
 
 ```ts
 const changes: ChangeSpec[] = [];
@@ -42,18 +49,18 @@ changes.push({ from: 0, insert: "#" });
 
 ## Transactions
 
-Imagine a feature where you select some text and press the double quote, `"` to surround the selection with quotes on both sides. One way to implement the feature would be to:
+试想一个在按下双引号 `"` 后会在选中文本前后加上该标点符号的功能。实现该功能的一种方式是：
 
-1. Insert `"` at the start of the selection.
-2. Insert `"` at the end of the selection.
+1. 在选中的文本前添加 `"`。
+2. 在选中的文本后添加 `"`。
 
-Notice that the implementation consists of _two_ state changes. If you added these to the undo history, the user would need to undo _twice_, once for each double quote. To avoid this, what if you could group these changes so that they appear as one?
+注意这种实现包含了 __两次__ 操作。如果您将这两个操作添加到了撤销历史记录中，那么用户将需要撤回 __两次__，每次撤回一个双引号。为了避免这个问题，是否可以将这两次改动合并成一次？
 
-For editor extensions, a group of state changes that happen together is called a _transaction_.
+在编辑器扩展中，一组发生在一起的状态变化被称之为 __transaction__。
 
-If you combine what you've learned so far—and if you allow transactions that contain only a single state change—then you can consider state as a _history of transactions_.
+如果结合您到目前为止所学的知识，如果允许 transaction 只包含单个状态更改, 那么可以将状态视为 transaction 的 _历史_。
 
-Bringing it all together to implement the surround feature from before in an editor extension, here's how you'd add, or _dispatch_, a transaction to the editor view:
+在编辑器扩展中，将所有这些功能放在一起来实现环绕特性，下面是你如何添加或分派事务到编辑器视图的方法:
 
 ```ts
 view.dispatch({
@@ -64,8 +71,8 @@ view.dispatch({
 });
 ```
 
-## Next steps
+## 下一步
 
-On this page, you've learned about modeling state as a series of state changes, and how to group them into transactions.
+在本页中，您了解了如何将状态建模为一系列状态更改，以及如何将它们分组到事务中。
 
-To learn how to manage custom state in your editor, refer to [State fields](state-fields.md).
+要想知道如何管理您编辑器中的自定义状态，请查阅 [状态字段](state-fields.md) 这篇文档。
