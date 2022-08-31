@@ -1,0 +1,1 @@
+import{_ as s,c as a,o,a as n}from"./app.68deaf42.js";const F=JSON.parse('{"title":"Modifier","description":"","frontmatter":{},"headers":[],"relativePath":"zh/api/types/Modifier.md","lastUpdated":1661916903000}'),p={name:"zh/api/types/Modifier.md"},e=n("",3),l=[e];function t(r,c,D,y,i,C){return o(),a("div",null,l)}const A=s(p,[["render",t]]);export{F as __pageData,A as default};
