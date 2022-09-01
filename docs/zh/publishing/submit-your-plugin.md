@@ -4,8 +4,8 @@ title: 提交插件
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-03-24 23:00:24
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 10:44:49
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-09-01 11:00:41
  * @Description: 
 -->
 
@@ -37,11 +37,11 @@ title: 提交插件
 
 3. 输入版本的名称, 并且在描述栏中输入插件的描述信息。
 
-4. 将下列文件上传至版本库, as binary attachments:
+4. 将下列文件上传至版本库, 作为二进制附件:
 
    - `main.js`
    - `manifest.json`
-   - `styles.css` (optional)
+   - `styles.css` (可选)
 
 :::tip
 要想将创建版本的过程自动化，可以查阅 [Release your plugin with GitHub Actions](release-your-plugin-with-github-actions.md) 这篇文档。
@@ -90,7 +90,7 @@ title: 提交插件
 当您的 pull request 被 merge 后，用户就可以立即安装您的插件了。
 
 :::tip 想要提供帮助？
-如果您想去帮忙审核提交的插件，可以查阅 Liam Cain 所写的 [Plugin Review Guidelines](https://liamca.in/Obsidian/Plugin+Review+Guide/index) 这篇文档。
+如果您想去帮忙审核社区的插件，可以查阅 Liam Cain 所写的 [Plugin Review Guidelines](https://liamca.in/Obsidian/Plugin+Review+Guide/index) 这篇文档。
 :::
 
 ## 更新已提交的插件
