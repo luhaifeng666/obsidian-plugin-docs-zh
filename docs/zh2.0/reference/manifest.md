@@ -4,13 +4,13 @@ title: Manifest
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 11:37:51
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 13:36:59
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-09-05 09:15:38
  * @Description: 
 -->
 # Manifest
 
-This page describe the schema for the plugin manifest, `manifest.json`.
+本页描述了插件清单 manifest.json 的结构。
 
 ## Properties
 
