@@ -1,15 +1,15 @@
 ---
-title: Release your plugin with GitHub Actions
+title: 使用 GitHub Actions 发布您的插件
 ---
-# Release your plugin with GitHub Actions
+# 使用 GitHub Actions 发布您的插件
 
-Manually creating your plugin release can be time-consuming and error-prone. In this guide, you'll configure your plugin to use [GitHub Actions](https://github.com/features/actions) to automatically create a release when you create a new tag.
+通过手动的方式创建插件的 release 比较费事也容易出错。在本指南中，您将通过配置 [GitHub Actions](https://github.com/features/actions) 的方式，在您创建新的 tag 时自动创建对应的 release。
 
 :::tip
-The GitHub Action workflow was originally created and shared by [argentum](https://forum.obsidian.md/u/argentum). For more information and other variations, refer to the [forum announcement](https://forum.obsidian.md/t/using-github-actions-to-release-plugins/7877/3).
+Github Action 工作流起初由 [argentum](https://forum.obsidian.md/u/argentum) 创建和共享。想要获取更多信息以及其他变更，可以查阅 [forum announcement](https://forum.obsidian.md/t/using-github-actions-to-release-plugins/7877/3) 这篇文档。
 :::
 
-1. In the root directory of your plugin, create a file called `release.yml` under `.github/workflows` with the following content:
+1. 在您插件的根目录下，创建 `.github/workflows/release.yml` 文件，并将以下内容写入文件：
 
    ```bash
    name: Release Obsidian plugin
@@ -101,7 +101,7 @@ The GitHub Action workflow was originally created and shared by [argentum](https
              asset_content_type: text/css
    ```
 
-2. In your terminal, commit the workflow.
+2. 在控制台中提交这些文件。
 
    ```bash
    git add .github/workflows/release.yml
@@ -109,42 +109,42 @@ The GitHub Action workflow was originally created and shared by [argentum](https
    git push origin main
    ```
 
-3. Create a tag that matches the version in the `manifest.json` file.
+3. 创建一个与 `manifest.json` 文件中的版本号相对应的 tag。
 
    ```bash
    git tag -a 1.0.1 -m "1.0.1"
    git push origin 1.0.1
    ```
 
-   - `-a` creates an [annotated tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_creating_tags).
-   - `-m` specifies the name of your release. For Obsidian plugins, this must be the same as the version.
+   - `-a` 创建了一个 [注释标签](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_creating_tags).
+   - `-m` 用来指定版本的名称。在 Obsidian 插件中必须与版本号一致。
 
-4. Browse to your repository on GitHub and click the **Actions** tab. Your workflow might still be running, or it might have finished already.
+4. 打开仓库所在的 github 地址并点击 **Actions** 标签。您的工作流可能还在运行或者已经运行结束。
 
-5. When the workflow finishes, go back to the main page for your repository and click **Releases** in the side bar on the right-hand side. The workflow has created a GitHub release and uploaded the required assets as binary attachments.
+5. 当工作流运行结束，回到仓库首页并点击 **Releases** 标签。该工作流已创建 GitHub 版本并将所需资产作为二进制附件上传。
 
-You've set up your plugin to automatically create a GitHub release whenever you create a new tag.
+您已将插件设置为在创建新标签时自动创建 GitHub 版本。
 
-- If this is the first release for this plugin, you're now ready to [submit your plugin](submit-your-plugin.md).
-- If this is an update to an already published plugin, your users can now update to the latest version.
+- 如果这是插件的第一个版本，您现在可以去 [提交您的插件](submit-your-plugin.md)。
+- 如果是插件的版本更新，那么现在插件的使用者们可以去更新插件的最新版本了。
 
-## Use standard-version to automatically tag your release
+## 使用标准版本自动标记您的版本
 
-You can also use [standard-version](https://github.com/conventional-changelog/standard-version) to apply the tags automatically based on the commits you made.
+您也可以使用[标准版本](https://github.com/conventional-changelog/standard-version)根据您您创建的提交自动应用标签。
 
-standard-version uses [Conventional Commits](https://www.conventionalcommits.org/) to add consistency to your commits, and to generate a `CHANGELOG.md` file automatically from your commits. For example:
+标准版本使用 [Conventional Commits](https://www.conventionalcommits.org/) 给您的提交添加一致性，并根据您的提交自动生成 `CHANGELOG.md` 。举个栗子：
 
-- If your commit message starts with `fix:`, it bumps the patch version.
-- If your commit message starts with `feat:`, it bumps the minor version.
-- If the third line of your commit message starts with `BREAKING CHANGE:`, it bumps the major version.
+- 如果您的提交信息以 `fix:` 开头，那么它会影响补丁版本。
+- 如果您的提交信息以 `feat:` 开头，那么它会影响次级版本。
+- 如果您的提交信息的第三行以 `BREAKING CHANGE:` 开头，那么它会影响主要版本。
 
 :::tip
-If you're using Visual Studio Code, the [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) extension helps you to create Conventional Commits.
+如果您使用的是 Visual Studio Code，[Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) 插件可以帮您去创建 Conventional Commits。
 :::
 
-To enable standard-version for your plugin:
+要想开启插件的标准版本：
 
-1. Install standard-version.
+1. 安装标准版本。
 
    ```bash npm
    npm install --save-dev standard-version
@@ -154,7 +154,7 @@ To enable standard-version for your plugin:
    yarn add --save-dev standard-version
    ```
 
-2. In `package.json`, add the following properties:
+1. 在 `package.json` 文件中添加以下属性:
 
    ```json
    {
@@ -167,17 +167,17 @@ To enable standard-version for your plugin:
    }
    ```
 
-   - `"t": ""` configures standard-version to remove the default `v` prefix to adhere to Obsidian's guidelines.
+   - `"t": ""` 配置标准版本移除开头的 `v` 以符合 Obsidian 的规则。
 
-To make a release:
+要想创建版本:
 
-1. Commit your changes according to Conventional Commits.
+1. 根据 Conventional Commits 提交您的修改。
 
    ```bash
    git commit -m "feat: Add settings"
    ```
 
-2. Create a release and update the changelog.
+2. 创建新的 release 并更新 changelog.
 
    ```bash npm
    npm run release
@@ -188,7 +188,7 @@ To make a release:
    ```
 
    :::tip
-   By default, if the major version is below **1**, for example in 0.3.4, `feat:` and `BREAKING CHANGE:` bump the patch and minor versions, respectively, rather than the minor and major versions. To bump the minor and major version:
+   默认情况下，如果主版本号低于 **1**，比如 0.3.4，`feat:` 和 `BREAKING CHANGE:` 会更新补丁和次要版本，而不是更新次要和主要版本。要想提高次要版本和主要版本，可以使用如下命令：
 
    ```bash npm
    # Release as minor
@@ -206,12 +206,12 @@ To make a release:
 
    :::
 
-1. Push the new tag to GitHub.
+1. 推送的新的 tag。
 
-   ```bash
-   git push --follow-tags origin main
-   ```
+```bash
+git push --follow-tags origin main
+```
 
-   - `main` is the name of the remote branch you want to push to.
+- `main` 是指想要推送的远程分支的名称。
 
-GitHub builds and releases the plugin using GitHub Actions.
+Github 会通过 GitHub Actions 打包并发布插件。
