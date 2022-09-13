@@ -4,8 +4,8 @@ title: 库
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 19:36:06
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 14:23:16
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-09-07 09:38:28
  * @Description: 
 -->
 
@@ -15,7 +15,7 @@ title: 库
 
 > 在 Obsidian 中每个笔记集合都是一个库。库中包含一个目录，以及目录下的所有子目录。
 
-当您的插件可以像其他任何 Node.js 应用一样访问文件系统时，[`Vault`](../api/classes/Vault.md) 模块使得在库中操作文件以及目录变得更加简单。
+当您的插件可以像其他任何 Node.js 应用一样访问文件系统时，[`Vault`](../api/classes/Vault.md) 模块旨在使在库中操作文件以及目录变得更加简单。
 
 以下示例中递归打印了库中所有 Markdown 文件的路径:
 
