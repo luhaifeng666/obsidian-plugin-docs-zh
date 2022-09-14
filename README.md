@@ -1,8 +1,8 @@
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-03-28 21:10:00
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 00:34:47
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-09-14 11:06:52
  * @Description: 
 -->
 <div align="center">
@@ -23,7 +23,7 @@
 
 <h2 align="center">文档更新说明 📢</h2>
 
-<p align="center">官方文档近期更新变动较大，目录结构也进行了调整，我会尽快对文档进行整理翻译，并更新2.0版本。敬请期待~</p>
+<p align="center">官方文档近期更新变动较大，目录结构也进行了调整，中文文档我已更新至2.0版本，建议小伙伴儿们使用最新版的文档。后续我会持续跟进官方文档的更新，敬请期待~</p>
 
 <h2 align="center">关于共建</h2>
 
