@@ -1,26 +1,27 @@
 ---
-title: 开发支持其他格式文件的插件
+title: Text-based file formats
 ---
-# 开发支持其他格式文件的插件
 
-Obsidian 内置对 Markdown 文件以及其他多媒体类型文件，例如图片以及 PDF 的支持。作为一个插件开发者，您可以扩展 Obsidian 以支持其他的文件类型。在本教程中，您将构建一个用于阅读及编辑 CSV 文件的 Obsidian 插件。
+# Text-based file formats
 
-在看完本教程后，您将可以：
+Obsidian has built-in support for Markdown files and other media types, such as images and PDFs. As a plugin developer, you can extend Obsidian to support other file formats. In this tutorial, you'll build a plugin for reading and editing CSV files in Obsidian.
 
-- 使用 [TextFileView](../reference/typescript/classes/TextFileView.md) 去展示及编辑基于文本的文件格式。
+By the end of this tutorial, you'll be able to:
 
-## 前置准备
+- Use the [TextFileView](../api/classes/TextFileView.md) to display and edit text-based file formats.
 
-- [创建您的第一个插件](../getting-started/create-your-first-plugin.md)。
-- 理解如何去创建基本的 [HTML 元素](../user-interface/html-elements.md)。
+## Prerequisites
 
-## 第一步 — 注册一个 `TextFileView`
+- [Create your first plugin](../getting-started/create-your-first-plugin.md).
+- Understand how to create basic [HTML elements](../guides/html-elements.md).
 
-[TextFileView](../reference/typescript/classes/TextFileView.md) 是一个用于从插件中读写文本文件的 [自定义视图](../user-interface/views.md)。在此步骤中，您将扩展 TextFileView 以及当用户打开一个 CSV 文件时通知 Obsidian 去使用它。
+## Step 1 — Register a `TextFileView`
 
-1. 创建一个名为 `view.ts` 的新文件，并写入以下内容：
+[TextFileView](../api/classes/TextFileView.md) is a [custom view](../guides/custom-views.md) for reading and writing text-based files from your plugin. In this step, you'll extend the TextFileView and tell Obsidian to use it when the user opens a CSV file.
 
-  ```ts view.ts
+1. Create a new file `view.ts` with the following content:
+
+  ```ts
   import { TextFileView } from "obsidian";
 
   export const VIEW_TYPE_CSV = "csv-view";
@@ -44,29 +45,29 @@ Obsidian 内置对 Markdown 文件以及其他多媒体类型文件，例如图�
   }
   ```
 
-1. 在 `main.ts` 文件中，在 `onload` 方法中注册视图。
+1. In `main.ts`, register the view in the `onload` method.
 
    ```ts main.ts
    import { CSVView, VIEW_TYPE_CSV } from "./view"
    ```
 
-   ```ts main.ts
+   ```ts
    this.registerView(
      VIEW_TYPE_CSV,
        (leaf: WorkspaceLeaf) => new CSVView(leaf)
    );
    ```
 
-1. 注册您想要视图处理的扩展。
+1. Register the extensions you want the view to handle.
 
-   ```ts main.ts
+   ```ts
    this.registerExtensions(["csv"], VIEW_TYPE_CSV);
    ```
 
-1. 重新构建插件。
-1. 在文件管理器中，点击 CSV 文件以打开视图。
+1. Rebuild the plugin.
+1. In the File Explorer, click the CSV file to open the view.
 
-不幸的是，视图并未展示数据，因为它还不知道如何去展示。要想在视图中渲染 CSV 数据，需要在 `setViewData` 方法中添加以下代码：
+Unfortunately, the view doesn't display the data, because it doesn't know how to yet. To render the CSV data in the view, add the following lines in the `setViewData` method:
 
 ```ts  {4-5}
 setViewData(data: string, clear: boolean) {
@@ -77,27 +78,27 @@ setViewData(data: string, clear: boolean) {
 }
 ```
 
-现在您可以在 Obsidian 中加载并显示 CSV 数据了。视图将 CSV 文件的原始内容打印在一个 `div` 标签内。在稍后的教程中，您将把数据渲染成 HTML 的表格，但在此之前，您首先需要将数据解析成更加合适的数据结构。
+You can now load CSV data and display it in Obsidian. The view prints the raw content of the CSV file inside a `div` element. Later in the tutorial, you'll render the data as an HTML table, but to do that you first need to parse the data into a more appropriate data structure.
 
-## 第二步 - 文本数据的编码及解码
+## Step 2 — Encode and decode text data
 
-TextFileView 提供了一个方便的属性，`this.data`, 您可以将文本内容作为 `string` 类型存储其中。虽然它适用于更简单的用例，但与此同时它也将使得访问单个单元格的值变得较为困难。在本步骤中，您将创建表数据的更加有用的内存表示。
+The TextFileView provides a convenient property, `this.data`, where you can store the text content as a `string`. While it's good for simpler use cases, it's going to make it difficult to access individual cell values. In this step, you'll create a more useful in-memory representation of the table data.
 
-TextFileView 提供了一组有用的方法用于处理文本文件：
+The TextFileView provides a set of useful methods for working with text files:
 
-- `getViewData()` 返回当前数据状态。Obsidian 使用此方法在写入文件前将视图数据解码成纯文本内容。
-- `setViewData()` 在 Obsidian 从文件中读取新数据时更新视图。使用此方法将文本数据编码成更易于使用的格式。
-- `clear()` 方法会在 Obsidian 卸载文件时重置视图。
+- `getViewData()` returns the current state of the data. Obsidian uses this method to decode the view data into plaintext before writing it to a file.
+- `setViewData()` updates the view whenever Obsidian reads new data from a file. Use this method to encode the text data into a format that makes it easier to work with.
+- `clear()` resets the view whenever Obsidian unloads the file.
 
-当表格是一个二维的数据结构时，使用二维的字符串数组，`string[][]` 将会是个更好的选择。
+Since a table is a two-dimensional data structure, a better alternative is to use a two-dimensional string array, `string[][]`.
 
-要想将 `this.data` 替换为自定义的内存表示：
+To replace `this.data` with a custom in-memory representation:
 
-1. 添加 `string[][]` 类型的 `tableData` 属性。
-2. 更新 `getViewData()` 及 `setViewData()` 方法以将 CSV  数据转换为 `tableData`。
-3. 更新 `clear()` 方法以重置视图数据。
+1. Add a `tableData` property of type `string[][]`.
+1. Update `getViewData()` and `setViewData()` to parse the CSV data into `tableData`.
+1. Update `clear()` to reset the view data.
 
-以下是解析 CSV 数据的基本实现。在现实使用中，可以考虑使用一个更加有效的解析器，比如 [Papa Parse](https://www.papaparse.com/)。
+Here's a basic implementation of parsing CSV data. For real-world use cases, consider using a more powerful parser, like [Papa Parse](https://www.papaparse.com/).
 
 ```ts
 export class CSVView extends TextFileView {
@@ -119,27 +120,27 @@ export class CSVView extends TextFileView {
 }
 ```
 
-选择一个更加合适的数据结构将使数据处理变得更加容易。
+Choosing a more appropriate data structure for our data will make it easier to work with the data.
 
 :::tip
-无论何时用户打开一个不同的文件，`setViewData` 中的 `clear` 参数始终为 `true`。使用它可以提升您视图的性能。比如，如果您正在缓存特定文件的数据，并且想要在加载新文件时清除缓存。
+The `clear` parameter in the `setViewData` is `true` whenever the user opens a different file. Use it to improve the performance of your view. For example, if you're caching data for a specific file and you want to clear the cache when loading a new file.
 :::
 
-## 第三步 - 渲染数据
+## Step 3 — Render the data
 
-为一种文件格式创建一个自定义视图的一个益处是您可以通过更加友好的方式将它呈现出来。在本步骤中，您将会把表格数据渲染成 `table` 标签。
+A benefit of creating a custom view for a file format is that you can display it in a more user-friendly way. In this step, you'll render the table data as an HTML `table` element.
 
-您可以通过把 HTML 标签插入到 TextFileView 中的 `contentEl` 属性中的方式将它们插入到视图中。要想获取更多关于如何创建 HTML 标签的信息，请查阅 [HTML 标签](../user-interface/html-elements.md) 这篇文档。
+You can add HTML elements to the view by appending them to the `contentEl` property on the TextFileView. For more information on how to create HTML elements, refer to [HTML elements](../guides/html-elements.md).
 
 ```ts
 this.contentEl.createEl("table");
 ```
 
-TextFileView 也暴露出 `onOpen()` 及 `onClose()` 钩子，使您可以分别设置及移除您的视图。
+TextFileView also exposes the `onOpen()` and `onClose()` hooks, which you can use to set up and tear down your view respectively.
 
-1. 添加一个 `HTMLElement` 类型的 `tableEl` 属性。
-2. 添加 `onOpen()` 方法去创建一个 `table` 标签。
-3. 添加 `onClose()` 方法以清除任何您已经创建的标签。
+1. Add a `tableEl` property of type `HTMLElement`.
+1. Add the `onOpen()` method to create a `table` element.
+1. Add the `onClose()` method to clean up any elements you've created.
 
 ```ts
 export class CSVView extends TextFileView {
@@ -157,11 +158,11 @@ export class CSVView extends TextFileView {
 }
 ```
 
-`onOpen()` 以及 `onClose()` 方法只有在用户打开及关闭视图的时候才会执行。要想在潜在的文件发生改变时更新视图，您需要通过 `setViewData()` 方法更新 HTML 标签。通过保持对 `tableEl` 的引用，您可以只更新数据发生变化的那一部分视图。
+`onOpen()` and `onClose()` only run when the user opens and closes the view. To update the view when the underlying file changes, you need to update the HTML element from the `setViewData()` method. By keeping a reference to the `tableEl`, you can update only the parts of the view that changes along with the data.
 
-要想在磁盘中的数据发生变化时更新视图：
+To update the view when the data changes on disk:
 
-1. 在 `CSVView` 类中，添加一个辅助方法用于在 `tableEl` 标签中渲染表格数据。
+1. In the `CSVView` class, add a helper method that rerenders the table data in the `tableEl` element.
 
    ```ts
    refresh() {
@@ -180,9 +181,9 @@ export class CSVView extends TextFileView {
    }
    ```
 
-2. 在 `setViewData()` 方法中调用 `refresh()` 辅助方法。
+1. Call the `refresh()` helper method in `setViewData()`.
 
-   ```ts {4}
+   ```ts  {4}
    setViewData(data: string, clear: boolean) {
      this.tableData = data.split("\n").map((line) => line.split(","));
 
@@ -190,10 +191,10 @@ export class CSVView extends TextFileView {
    }
    ```
 
-您的插件现在可以适当的将 CSV 数据呈现为表格。您难道不会问，能否更加友好些呢？
+Your plugin can now appropriately display CSV data as a table. Much more user-friendly, wouldn't you say?
 
-:::tip
-取决于您当前使用的 Obsidian 主题，您也许想要设置 table 的样式。要想为您的表格添加基础的 CSS 样式，可以将以下内容添加到根目录下的 `style.css` 文件中。
+::: tip
+Depending on the Obsidian theme you're using, you may want to style the table. To add some basic CSS to your table, add the following to a file called `styles.css` in the plugin's root directory:
 
 ```css
 table {
@@ -212,53 +213,51 @@ td {
 
 :::
 
-## 第四步 - 编辑数据
+## Step 4 — Edit the data
 
-到目前为止，用户仅仅可以阅读文件的内容。在本步骤中，您将为每一个单元格添加一个 `input` 标签，以允许用户编辑 CSV 的值及将它们写入磁盘。
+Right now, the user can only read the content of the file. In this step, you'll add `input` elements for each table cell that let the user edit the CSV values and write them back to disk.
 
-上一步骤中的 `refresh()` 辅助方法为每个单元格创建了一个 `td` 标签。现在，它将单元格中的值作为文本添加到 `td` 标签中。
+The `refresh()` helper from previous step creates a `td` element for each table cell. Right now, it adds the cell value as text inside the `td` element.
 
-```ts
+```ts {2}
 row.forEach((cell, j) => {
   rowEl.createEl("td", { text: cell });
 });
 ```
 
-要想让用户可以编辑内容，改用 `input` 标签添加到 `td` 标签中。
+To let the user edit the value, instead add an `input` element to the `td` element.
 
 ```ts
 row.forEach((cell, j) => {
   rowEl
     .createEl("td")
     .createEl("input", { attr: { value: cell } });
-});
+}
 ```
 
-用户现在可以编辑表格中的内容看了，但是 `input` 实际上没有更新表格的数据，当您关闭再打开视图时，先前改变的内容并不会被保持。
+The user can now edit the values in the table, but since the `input` doesn't actually update the table data, the changes don't persist when you close and reopen the view.
 
-要想保存改变的内容，添加 `oninput` 事件处理器以在 `input` 中的值发生改变时更新 `tableData`。
+To save the changes, add an `oninput` event handler that updates `tableData` when the `input` value changes.
 
-```ts
+```ts {6-11}
 row.forEach((cell, j) => {
   const inputEl = rowEl
     .createEl("td")
     .createEl("input", { attr: { value: cell } });
 
-  // highlight-start
   input.oninput = (ev) => {
     if (ev.currentTarget instanceof HTMLInputElement) {
       this.tableData[i][j] = ev.currentTarget.value;
       this.requestSave();
     }
   };
-  // highlight-end
 });
 ```
 
-input 更新的事件处理器更新 table 在内存中的内容，并通过调用 `this.requestSave()` 方法告知 Obsidian 更新磁盘中的内容。
+The event handler for the input updates the in-memory representation of the table and tells Obsidian to update it on disk, by calling `this.requestSave()`.
 
 :::tip
-将 `input` 标签的 background 及 border 移除看起来会更好。
+Remove the background and border of the `input` element for a more polished look.
 
 ```css
 input {
@@ -269,11 +268,11 @@ input {
 
 :::
 
-## 下一步
+## Next steps
 
-在本教程中，您已经构建了一个可以让用户在 Obsidian 中展示以及编辑 CSV 文件的插件。您可以通过相同的步骤去支持其他格式的文件，比如 [Org Mode](https://orgmode.org/) 以及 [BibTex](http://www.bibtex.org/)。
+In this tutorial, you've built a plugin that lets users display and edit CSV files in Obsidian. You can use the same steps to add support for other text-based file formats, such as [Org Mode](https://orgmode.org/) and [BibTex](http://www.bibtex.org/).
 
-## 完整示例
+## Complete example
 
 ```ts
 import { TextFileView } from "obsidian";
