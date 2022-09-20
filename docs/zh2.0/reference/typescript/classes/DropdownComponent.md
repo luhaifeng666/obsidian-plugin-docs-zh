@@ -1,6 +1,13 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-09-20 16:20:36
+ * @Description: 
+-->
 # DropdownComponent
 
-Extends `ValueComponent<string>`
+继承自 `ValueComponent<string>`
 
 ## Constructor
 
