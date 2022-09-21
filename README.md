@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-03-28 21:10:00
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-09-14 11:06:52
+ * @LastEditTime: 2022-09-21 11:34:29
  * @Description: 
 -->
 <div align="center">
@@ -55,4 +55,4 @@
 
 - [x] 添加评论区模块；
 - [x] Alfred 插件汉化
-- [ ] 2.0 文档翻译
+- [x] 2.0 文档翻译
