@@ -2,8 +2,8 @@
 
 /*
  * @Date: 2022-08-07 11:00:59
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-12 15:59:28
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-09-26 11:00:36
  * @Description: 
  */
 ObjC.import("stdlib");
@@ -19,7 +19,7 @@ String.prototype.capitalizeWords = function () {
 
 const workArray = JSON.parse(app.doShellScript('curl -s "https://api.github.com/repos/luhaifeng666/obsidian-plugin-docs-zh/git/trees/master?recursive=1"'))
 	.tree
-	.filter(file => file.path.startsWith("docs/"))
+	.filter(file => file.path.startsWith("docs/zh2.0"))
 	.filter(file => file.path.endsWith(".md"))
 	.map(file => {
 		const subsitePath = file.path.slice(5, -3);
