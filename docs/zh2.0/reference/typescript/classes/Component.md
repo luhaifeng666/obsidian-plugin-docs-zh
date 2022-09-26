@@ -14,7 +14,7 @@ constructor();
 load(): void;
 ```
 
-Load this component and its children
+将此组件加载为它的子元素
 
 ### onload
 
@@ -22,7 +22,7 @@ Load this component and its children
 onload(): void;
 ```
 
-Override this to load your component
+覆写此方法以加载您的组件
 
 ### unload
 
@@ -30,7 +30,7 @@ Override this to load your component
 unload(): void;
 ```
 
-Unload this component and its children
+卸载此组件及其子元素
 
 ### onunload
 
@@ -38,7 +38,7 @@ Unload this component and its children
 onunload(): void;
 ```
 
-Override this to unload your component
+覆写此方法以卸载您的插件
 
 ### addChild
 
@@ -46,7 +46,7 @@ Override this to unload your component
 addChild<T extends Component>(component: T): T;
 ```
 
-Adds a child component, loading it if this component is loaded
+添加一个子组件，如果此组件已经被加载，则加载它
 
 ### removeChild
 
@@ -54,7 +54,7 @@ Adds a child component, loading it if this component is loaded
 removeChild<T extends Component>(component: T): T;
 ```
 
-Removes a child component, unloading it
+移除一个子组件，卸载它
 
 ### register
 
@@ -62,7 +62,7 @@ Removes a child component, unloading it
 register(cb: () => any): void;
 ```
 
-Registers a callback to be called when unloading
+注册一个在卸载时调用的回调函数
 
 ### registerEvent
 
@@ -70,7 +70,7 @@ Registers a callback to be called when unloading
 registerEvent(eventRef: EventRef): void;
 ```
 
-Registers an event to be detached when unloading
+注册卸载时要分离的事件
 
 ### registerDomEvent
 
@@ -78,7 +78,7 @@ Registers an event to be detached when unloading
 registerDomEvent<K extends keyof WindowEventMap>(el: Window, type: K, callback: (this: HTMLElement, ev: WindowEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
 ```
 
-Registers an DOM event to be detached when unloading
+注册卸载时要分离的 DOM 事件
 
 ### registerDomEvent
 
@@ -86,7 +86,7 @@ Registers an DOM event to be detached when unloading
 registerDomEvent<K extends keyof DocumentEventMap>(el: Document, type: K, callback: (this: HTMLElement, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
 ```
 
-Registers an DOM event to be detached when unloading
+注册卸载时要分离的 DOM 事件
 
 ### registerDomEvent
 
@@ -94,7 +94,7 @@ Registers an DOM event to be detached when unloading
 registerDomEvent<K extends keyof HTMLElementEventMap>(el: HTMLElement, type: K, callback: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
 ```
 
-Registers an DOM event to be detached when unloading
+注册卸载时要分离的 DOM 事件
 
 ### registerScopeEvent
 
@@ -102,7 +102,7 @@ Registers an DOM event to be detached when unloading
 registerScopeEvent(keyHandler: KeymapEventHandler): void;
 ```
 
-Registers an key event to be detached when unloading
+注册卸载时要分离的键事件
 
 ### registerInterval
 
@@ -110,5 +110,5 @@ Registers an key event to be detached when unloading
 registerInterval(id: number): number;
 ```
 
-Registers an interval (from setInterval) to be cancelled when unloading
-Use {@link window.setInterval} instead of {@link setInterval} to avoid TypeScript confusing between NodeJS vs Browser API
+注册卸载时要取消的间隔（来自 setInterval）
+使用 {@link window.setInterval} 而不是 {@link setInterval} 以避免 TypeScript 混淆 NodeJS 和 Browser 的 API
