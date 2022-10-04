@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-03-28 21:10:00
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-09-21 11:34:29
+ * @LastEditTime: 2022-10-04 10:55:44
  * @Description: 
 -->
 <div align="center">
@@ -23,7 +23,7 @@
 
 <h2 align="center">文档更新说明 📢</h2>
 
-<p align="center">官方文档近期更新变动较大，目录结构也进行了调整，中文文档我已更新至2.0版本，建议小伙伴儿们使用最新版的文档。后续我会持续跟进官方文档的更新，敬请期待~</p>
+<p align="center">原先的老版本文档已移除，现只保留最新版本的文档~</p>
 
 <h2 align="center">关于共建</h2>
 

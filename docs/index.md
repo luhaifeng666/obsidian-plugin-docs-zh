@@ -16,7 +16,7 @@ hero:
       link: https://github.com/marcusolsson/obsidian-plugin-docs
 features:
   - title: 文档更新说明 📢
-    details: 官方文档近期更新变动较大，目录结构也进行了调整，中文文档我已更新至2.0版本，建议小伙伴儿们使用最新版的文档。后续我会持续跟进官方文档的更新，敬请期待~
+    details: 原先的老版本文档已移除，现只保留最新版本的文档~
   - title: 关于共建
     details: 文档翻译自官方开发文档。由于本人水平以及精力有限，如果有翻译不周到之处还望海涵，方便的话可以提 Issue 以便让我修正~ 有愿意加入的小伙伴欢迎提PR~ 感谢诸位~ 🫶
 ---
