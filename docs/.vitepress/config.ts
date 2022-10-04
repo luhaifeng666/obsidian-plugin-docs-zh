@@ -1,8 +1,8 @@
 /*
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 13:54:33
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 15:00:41
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-10-04 10:57:26
  * @Description: 
  */
 import fg from 'fast-glob'
@@ -72,23 +72,6 @@ function getItems(type: string, path: string, leaves: Array<SidebarConfig>): Arr
 const SIDEBAR_CONFIG: {
   [key: string]: Array<SidebarConfig>
 } = {
-  '/zh/': [
-    { text: '快速开始', path: 'getting-started'},
-    { text: '示例', path: 'examples'},
-    { text: '指南', path: 'guides'},
-    { text: '高级指南', path: 'advanced-guides'},
-    { text: '概念', path: 'concepts'},
-    { text: '发布', path: 'publishing'},
-    { text: '教程', path: 'tutorials'},
-    { text: 'API', path: 'api', leaves: [
-      { text: '类', path: 'classes' },
-      { text: '枚举', path: 'enums' },
-      { text: '方法', path: 'functions' },
-      { text: '接口', path: 'interfaces' },
-      { text: '类型', path: 'types' }
-    ]},
-    { text: '配置参考', path: 'manifest-reference.md'},
-  ],
   'zh2.0/': [
     { text: '快速开始', path: 'getting-started' },
     { text: '示例', path: 'examples'},
@@ -136,8 +119,7 @@ export default {
     logo: '/images/logo.webp',
     nav: [
 			{ text: '首页', link: '/' },
-			{ text: '文档', link: '/zh/' },
-			{ text: '文档v2.0', link: '/zh2.0/' },
+			{ text: '文档', link: '/zh2.0/' },
 		],
     editLink: {
       pattern: 'https://github.com/luhaifeng666/obsidian-plugin-docs-zh/docs/:path',

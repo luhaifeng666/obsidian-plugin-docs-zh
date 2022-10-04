@@ -1,7 +1,0 @@
-# WorkspaceRibbon
-
-## Constructor
-
-```ts
-constructor();
-```
