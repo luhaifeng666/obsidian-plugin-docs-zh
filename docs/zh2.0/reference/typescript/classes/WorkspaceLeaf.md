@@ -1,6 +1,6 @@
 # WorkspaceLeaf
 
-Extends `WorkspaceItem`
+继承自 `WorkspaceItem`
 
 ## Constructor
 
@@ -24,8 +24,8 @@ view: View
 openFile(file: TFile, openState?: OpenViewState): Promise<void>;
 ```
 
-By default, `openFile` will also make the leaf active.
-Pass in `{ active: false }` to override.
+默认情况下, `openFile` 会使对应的文件节点高亮。
+通过 `{ active: false }` 可以覆盖。
 
 ### open
 
