@@ -96,7 +96,7 @@ async onload() {
 要想明白这是怎么生效的，来一起看看下面的代码：
 
 ```ts
-Object.assign(DEFAULT_SETTINGS, await this.loadData())
+Object.assign({}, DEFAULT_SETTINGS, await this.loadData())
 ```
 
 `Object.assign()` 是个 JavaScript 函数，可以将一个对象的所有属性复制到另外一个对象中。所有通过 `loadData()` 返回的属性都会覆盖 `DEFAULT_SETTINGS` 中的属性。
