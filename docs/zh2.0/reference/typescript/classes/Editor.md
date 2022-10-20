@@ -1,6 +1,6 @@
 # Editor
 
-A common interface that bridges the gap between CodeMirror 5 and CodeMirror 6.
+连接CodeMirror 5和CodeMirror 6之间的通用接口。
 
 ## Constructor
 
