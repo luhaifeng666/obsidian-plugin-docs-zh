@@ -148,22 +148,6 @@ yarn upgrade typescript@~4.5.0
 
 :::
 
-:::tip
-
-Svelte 要求 TypeScript 的版本至少是 4.5。如果当您构建插件的时候看到如下报错，您需要升级 TypeScript 到一个更新的版本。
-
-```bash
-error TS5023: Unknown compiler option 'preserveValueImports'.
-```
-
-要想解决这个报错，在控制台中运行如下指令：
-
-```bash
-yarn upgrade typescript@~4.5.0
-```
-
-:::
-
 ## 创建一个 Svelte 的 store
 
 要为您的插件创建一个 store 以及在通用的 Svelte 组件中访问它来代替通过 prop 的方式访问，需要遵循如下步骤：
