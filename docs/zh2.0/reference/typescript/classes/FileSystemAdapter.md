@@ -1,6 +1,6 @@
 # FileSystemAdapter
 
-Implements `DataAdapter`
+实现 `DataAdapter`
 
 ## Constructor
 
