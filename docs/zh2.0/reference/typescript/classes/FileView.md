@@ -1,6 +1,13 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-10-24 10:06:50
+ * @Description: 
+-->
 # FileView
 
-Extends `ItemView`
+继承自 `ItemView`
 
 ## Constructor
 
@@ -28,12 +35,12 @@ file: TFile
 navigation: boolean
 ```
 
-Whether or not the view is intended for navigation.
-If your view is a static view that is not intended to be navigated away, set this to false.
-(For example: File explorer, calendar, etc.)
-If your view opens a file or can be otherwise navigated, set this to true.
-(For example: Markdown editor view, Kanban view, PDF view, etc.)
-File views can be navigated by default.
+视图是否用于导航。
+如果您的视图是不被用于导航的静态视图，请将其设置为 false。
+（比如：文件搜索，日历等等。）
+如果您的视图用于打开文件或者以其他方式导航，请将其设置为 true
+（比如：Markdown 编辑器视图，Kanban 视图，PDF 视图等等）
+文件视图默认是可以被导航的。
 
 ## Methods
 
@@ -49,7 +56,7 @@ getDisplayText(): string;
 onload(): void;
 ```
 
-Override this to load your component
+覆盖它以加载您的组件
 
 ### getState
 
