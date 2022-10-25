@@ -1,6 +1,13 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-10-25 09:58:51
+ * @Description: 
+-->
 # FuzzySuggestModal
 
-Extends `SuggestModal<FuzzyMatch<T>>`
+继承自 `SuggestModal<FuzzyMatch<T>>`
 
 ## Constructor
 
@@ -22,7 +29,7 @@ getSuggestions(query: string): FuzzyMatch<T>[];
 renderSuggestion(item: FuzzyMatch<T>, el: HTMLElement): void;
 ```
 
-Render the suggestion item into DOM.
+将建议项渲染进DOM。
 
 ### onChooseSuggestion
 
