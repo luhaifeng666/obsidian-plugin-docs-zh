@@ -1,6 +1,13 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-10-27 09:51:39
+ * @Description: 
+-->
 # ItemView
 
-Extends `View`
+继承自 `View`
 
 ## Constructor
 
