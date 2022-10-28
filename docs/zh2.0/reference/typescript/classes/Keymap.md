@@ -1,3 +1,10 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-10-28 11:16:50
+ * @Description: 
+-->
 # Keymap
 
 ## Constructor
@@ -26,7 +33,7 @@ popScope(scope: Scope): void;
 static isModifier(evt: MouseEvent | TouchEvent | KeyboardEvent, modifier: Modifier): boolean;
 ```
 
-Checks whether the modifier key is pressed during this event
+检查在此事件中修饰键是否被按下。
 
 ### isModEvent
 
@@ -34,4 +41,4 @@ Checks whether the modifier key is pressed during this event
 static isModEvent(evt?: UserEvent | null): boolean;
 ```
 
-Returns true if the modifier key Cmd/Ctrl is pressed OR if this is a middle-click MouseEvent.
+当按下 Cmd/Ctrl 键或者鼠标中键时返回 true。
