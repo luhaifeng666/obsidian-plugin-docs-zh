@@ -1,8 +1,15 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-10-31 10:05:32
+ * @Description: 
+-->
 # MarkdownEditView
 
-Implements `MarkdownSubView`, `HoverParent`
+实现 `MarkdownSubView`, `HoverParent`
 
-This is the editor for Obsidian Mobile as well as the upcoming WYSIWYG editor.
+这是提供给移动端 Obsidian 的编辑器，也是即将推出的WYSIWYG编辑器。
 
 ## Constructor
 
