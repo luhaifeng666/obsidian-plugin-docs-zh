@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 13:54:33
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-10-04 10:57:26
+ * @LastEditTime: 2022-11-02 14:38:24
  * @Description: 
  */
 import fg from 'fast-glob'
@@ -92,6 +92,7 @@ const SIDEBAR_CONFIG: {
     { text: '发布', path: 'publishing' },
     { text: '开发者工具', path: 'developer-tools.md'},
     { text: '事件', path: 'events.md' },
+    { text: '测试', path: 'testing' },
     { text: '库', path: 'vault.md' }
   ]
 }
