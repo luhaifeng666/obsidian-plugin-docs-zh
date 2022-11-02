@@ -5,7 +5,7 @@ title: 图标
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 13:49:48
+ * @LastEditTime: 2022-11-02 14:41:06
  * @Description: 
 -->
 # 图标
@@ -14,7 +14,7 @@ Obsidian API 中的一些 UI 组件允许您配置与之对应的icon。您可�
 
 ## 浏览可用的 icon
 
-如果您想查看所有可用的 icon 以及它们相关的名称，您可以安装由 mgmeyers 提供的 [Icon Swapper](https://github.com/mgmeyers/obsidian-icon-swapper) 插件。尽管它的主要目的是使用自定义 icon 替换内置 icon，同时它也是 Obsidian 中可用图标的列表。
+浏览 [lucide.dev](https://lucide.dev/) 站点以查看所有可用的图标以及对应的名称。
 
 ## 绘制 icons
 
