@@ -1,6 +1,13 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-11-03 09:52:06
+ * @Description: 
+-->
 # MarkdownSourceView
 
-Implements `MarkdownSubView`, `HoverParent`
+实现 `MarkdownSubView`, `HoverParent`
 
 ## Constructor
 
