@@ -1,6 +1,13 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-11-05 21:23:56
+ * @Description: 
+-->
 # Menu
 
-Extends `Component`
+继承自 `Component`
 
 ## Constructor
 
