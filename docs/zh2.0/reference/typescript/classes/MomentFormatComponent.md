@@ -1,6 +1,13 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-11-08 16:19:24
+ * @Description: 
+-->
 # MomentFormatComponent
 
-Extends `TextComponent`
+继承自 `TextComponent`
 
 ## Constructor
 
@@ -24,7 +31,7 @@ sampleEl: HTMLElement
 setDefaultFormat(defaultFormat: string): this;
 ```
 
-Sets the default format when input is cleared. Also used for placeholder.
+在 input 被清空时设置默认形式。也应用于 placeholder。
 
 ### setSampleEl
 
