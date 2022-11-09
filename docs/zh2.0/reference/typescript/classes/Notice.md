@@ -1,3 +1,10 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-11-09 09:29:35
+ * @Description: 
+-->
 # Notice
 
 ## Constructor
@@ -14,7 +21,7 @@ constructor(message: string | DocumentFragment, timeout: number);
 setMessage(message: string | DocumentFragment): this;
 ```
 
-Change the message of this notice.
+修改提示的信息。
 
 ### hide
 
