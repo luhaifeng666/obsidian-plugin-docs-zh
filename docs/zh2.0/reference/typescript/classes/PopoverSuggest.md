@@ -1,6 +1,13 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-11-11 09:50:51
+ * @Description: 
+-->
 # PopoverSuggest
 
-Implements `ISuggestOwner<T>`, `CloseableComponent`
+实现 `ISuggestOwner<T>`, `CloseableComponent`
 
 ## Constructor
 
@@ -28,7 +35,7 @@ close(): void;
 abstract renderSuggestion(value: T, el: HTMLElement): void;
 ```
 
-Render the suggestion item into DOM.
+将建议项渲染到 DOM 中。
 
 ### selectSuggestion
 
@@ -36,4 +43,4 @@ Render the suggestion item into DOM.
 abstract selectSuggestion(value: T, evt: MouseEvent | KeyboardEvent): void;
 ```
 
-Called when the user makes a selection.
+当用户选择时调用。
