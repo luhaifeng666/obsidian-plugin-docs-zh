@@ -1,6 +1,13 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-11-15 09:44:36
+ * @Description: 
+-->
 # SliderComponent
 
-Extends `ValueComponent<number>`
+继承自 `ValueComponent<number>`
 
 ## Constructor
 
