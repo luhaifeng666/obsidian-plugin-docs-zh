@@ -1,8 +1,15 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-11-16 22:55:34
+ * @Description: 
+-->
 # SuggestModal
 
-Extends `Modal`
+继承自 `Modal`
 
-Implements `ISuggestOwner<T>`
+实现 `ISuggestOwner<T>`
 
 ## Constructor
 
