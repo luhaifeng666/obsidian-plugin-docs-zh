@@ -1,6 +1,13 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2022-11-17 09:49:12
+ * @Description: 
+-->
 # TAbstractFile
 
-This can be either a `TFile` or a `TFolder`.
+这个可以是一个 `TFile` 或者是一个 `TFolder`.
 
 ## Constructor
 
