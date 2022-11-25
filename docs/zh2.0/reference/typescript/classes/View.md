@@ -1,6 +1,6 @@
 # View
 
-Extends `Component`
+继承自 `Component`
 
 ## Constructor
 
@@ -28,11 +28,11 @@ icon: string
 navigation: boolean
 ```
 
-Whether or not the view is intended for navigation.
-If your view is a static view that is not intended to be navigated away, set this to false.
-(For example: File explorer, calendar, etc.)
-If your view opens a file or can be otherwise navigated, set this to true.
-(For example: Markdown editor view, Kanban view, PDF view, etc.)
+视图是否用于导航。
+如果您的视图是个静态视图，不打算被导航离开，请设置为 false。
+（比如：文件搜索，日历等等。）
+如果您的视图打开文件或可以以其他方式导航，请将其设置为 true。
+（比如：Markdonw 编辑器视图, 看板视图, PDF 视图等等）
 
 ### leaf
 
