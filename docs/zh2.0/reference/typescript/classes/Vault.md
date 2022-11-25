@@ -1,6 +1,6 @@
 # Vault
 
-Extends `Events`
+继承自 `Events`
 
 ## Constructor
 
@@ -22,8 +22,8 @@ adapter: DataAdapter
 configDir: string
 ```
 
-Gets the path to the config folder.
-This value is typically `.obsidian` but it could be different.
+获取配置目录的路径。
+该值通常是 `.obsidian`，但它也可以不同。
 
 ## Methods
 
