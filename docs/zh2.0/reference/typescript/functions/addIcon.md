@@ -1,10 +1,17 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-11-30 12:28:09
+ * @Description: 
+-->
 # addIcon
 
 ```ts
 export function addIcon(iconId: string, svgContent: string): void;
 ```
 
-Adds an icon to the library
+往库中添加一个icon
 
 ## Parameters
 
