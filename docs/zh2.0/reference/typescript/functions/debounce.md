@@ -6,7 +6,7 @@ export function debounce<T extends unknown[]>(cb: (...args: [
 ]) => any, timeout?: number, resetTimer?: boolean): Debouncer<T>;
 ```
 
-A standard debounce function.
+一个标准的防抖函数。
 
 ## Parameters
 
