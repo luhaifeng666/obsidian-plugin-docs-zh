@@ -19,6 +19,12 @@ title: 创建您的第一个插件
 
 ## 第一步: 下载示例插件
 
+:::tip
+以下步骤将会引导您创建自己的插件，如果您想要跳过一些手动步骤（诸如拉取代码库，修改插件名称等），可以尝试使用 [obsidian-plugin-generator](https://www.npmjs.com/package/obsidian-plugin-generator) 这个插件。
+
+该插件会自动拉取官方的示例项目，并根据您输入的内容自动替换插件名称等内容。
+:::
+
 首先, 您需要下载一个工作示例插件，并基于这个插件完成剩余步骤。
 
 1. 跳转至 [Obsidian Sample Plugin](https://github.com/obsidianmd/obsidian-sample-plugin) 页面。
