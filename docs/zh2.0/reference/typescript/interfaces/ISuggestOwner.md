@@ -1,3 +1,10 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-12-14 09:38:57
+ * @Description: 
+-->
 # ISuggestOwner
 
 ## Methods
@@ -8,7 +15,7 @@
 renderSuggestion: (value: T, el: HTMLElement) => void
 ```
 
-Render the suggestion item into DOM.
+将建议项渲染到 DOM 中。
 
 ### selectSuggestion
 
@@ -16,4 +23,4 @@ Render the suggestion item into DOM.
 selectSuggestion: (value: T, evt: MouseEvent | KeyboardEvent) => void
 ```
 
-Called when the user makes a selection.
+当用户执行选择操作时被调用。
