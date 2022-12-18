@@ -1,3 +1,10 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-12-18 12:21:50
+ * @Description: 
+-->
 # App
 
 ## Constructor
@@ -50,4 +57,4 @@ fileManager: FileManager
 lastEvent: UserEvent
 ```
 
-The last known user interaction event, to help commands find out what modifier keys are pressed.
+最后已知的用户交互事件，以帮助命令找出按下的修改键。
