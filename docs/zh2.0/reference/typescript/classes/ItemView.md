@@ -1,8 +1,8 @@
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 11:37:51
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-10-27 09:51:39
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-12-19 11:03:42
  * @Description: 
 -->
 # ItemView
@@ -28,5 +28,5 @@ contentEl: HTMLElement
 ### addAction
 
 ```ts
-addAction(icon: string, title: string, callback: (evt: MouseEvent) => any, size?: number): HTMLElement;
+addAction(icon: IconName, title: string, callback: (evt: MouseEvent) => any): HTMLElement;
 ```

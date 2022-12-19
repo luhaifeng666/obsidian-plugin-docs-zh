@@ -2,7 +2,7 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-08-23 11:37:51
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-11-30 12:28:09
+ * @LastEditTime: 2022-12-19 11:16:37
  * @Description: 
 -->
 # addIcon
@@ -18,4 +18,4 @@ export function addIcon(iconId: string, svgContent: string): void;
 | Parameter | Description |
 |-----------|-------------|
 | `iconId` | the icon ID |
-| `svgContent` | the content of the SVG, without the &lt;svg&gt;. Must fit viewBox="0 0 100 100". |
+| `svgContent` | the content of the SVG. |

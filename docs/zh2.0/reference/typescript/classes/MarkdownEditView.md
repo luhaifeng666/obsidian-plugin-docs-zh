@@ -2,12 +2,12 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-08-23 11:37:51
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-10-31 10:05:32
+ * @LastEditTime: 2022-12-19 11:04:46
  * @Description: 
 -->
 # MarkdownEditView
 
-实现 `MarkdownSubView`, `HoverParent`
+实现 `MarkdownSubView`, `HoverParent`, `MarkdownFileInfo`
 
 这是提供给移动端 Obsidian 的编辑器，也是即将推出的WYSIWYG编辑器。
 
@@ -18,6 +18,12 @@ constructor(view: MarkdownView);
 ```
 
 ## Properties
+
+### app
+
+```ts
+app: App
+```
 
 ### hoverPopover
 

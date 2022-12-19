@@ -1,8 +1,8 @@
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 11:37:51
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-10-22 21:32:15
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-12-19 11:01:08
  * @Description: 
 -->
 # ExtraButtonComponent
@@ -34,13 +34,13 @@ setDisabled(disabled: boolean): this;
 ### setTooltip
 
 ```ts
-setTooltip(tooltip: string): this;
+setTooltip(tooltip: string, options?: TooltipOptions): this;
 ```
 
 ### setIcon
 
 ```ts
-setIcon(icon: string): this;
+setIcon(icon: IconName): this;
 ```
 
 ### onClick

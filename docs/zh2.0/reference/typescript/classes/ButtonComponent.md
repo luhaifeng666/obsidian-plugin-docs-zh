@@ -2,7 +2,7 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-08-23 11:37:51
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-09-22 10:25:36
+ * @LastEditTime: 2022-12-19 10:59:13
  * @Description: 
 -->
 # ButtonComponent
@@ -52,7 +52,7 @@ setWarning(): this;
 ### setTooltip
 
 ```ts
-setTooltip(tooltip: string): this;
+setTooltip(tooltip: string, options?: TooltipOptions): this;
 ```
 
 ### setButtonText
@@ -64,7 +64,7 @@ setButtonText(name: string): this;
 ### setIcon
 
 ```ts
-setIcon(icon: string): this;
+setIcon(icon: IconName): this;
 ```
 
 ### setClass

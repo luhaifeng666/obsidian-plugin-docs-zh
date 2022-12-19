@@ -1,13 +1,13 @@
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 11:37:51
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-11-03 09:52:06
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-12-19 11:05:51
  * @Description: 
 -->
 # MarkdownSourceView
 
-实现 `MarkdownSubView`, `HoverParent`
+实现 `MarkdownSubView`, `HoverParent`, `MarkdownFileInfo`
 
 ## Constructor
 
@@ -16,6 +16,12 @@ constructor(view: MarkdownView);
 ```
 
 ## Properties
+
+### app
+
+```ts
+app: App
+```
 
 ### cmEditor
 
