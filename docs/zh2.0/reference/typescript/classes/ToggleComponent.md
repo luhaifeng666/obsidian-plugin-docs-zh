@@ -1,13 +1,13 @@
 <!--
- * @Author: luhaifeng666 youzui@hotmail.com
- * @Date: 2022-08-23 11:37:51
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-11-23 09:48:16
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-12-05 09:49:20
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-12-19 11:13:24
  * @Description: 
 -->
 # ToggleComponent
 
-继承自 `ValueComponent<boolean>`
+Extends `ValueComponent<boolean>`
 
 ## Constructor
 
@@ -46,7 +46,7 @@ setValue(on: boolean): this;
 ### setTooltip
 
 ```ts
-setTooltip(tooltip: string): this;
+setTooltip(tooltip: string, options?: TooltipOptions): this;
 ```
 
 ### onClick

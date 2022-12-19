@@ -2,7 +2,7 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-08-23 11:37:51
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-11-06 10:24:27
+ * @LastEditTime: 2022-12-19 11:08:23
  * @Description: 
 -->
 # MenuItem
@@ -24,13 +24,13 @@ setTitle(title: string | DocumentFragment): this;
 ### setIcon
 
 ```ts
-setIcon(icon: string | null, size?: number): this;
+setIcon(icon: IconName | null): this;
 ```
 
-### setActive
+### setChecked
 
 ```ts
-setActive(active: boolean): this;
+setChecked(checked: boolean | null): this;
 ```
 
 ### setDisabled

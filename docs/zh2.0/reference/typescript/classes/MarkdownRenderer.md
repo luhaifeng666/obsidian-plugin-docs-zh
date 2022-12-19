@@ -1,3 +1,10 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-12-19 11:05:36
+ * @Description: 
+-->
 # MarkdownRenderer
 
 Extends `MarkdownRenderChild`
@@ -11,6 +18,12 @@ constructor(containerEl: HTMLElement);
 ```
 
 ## Properties
+
+### app
+
+```ts
+app: App
+```
 
 ### hoverPopover
 

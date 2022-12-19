@@ -2,7 +2,7 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-08-23 11:37:51
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-10-28 11:16:50
+ * @LastEditTime: 2022-12-19 11:04:19
  * @Description: 
 -->
 # Keymap
@@ -38,7 +38,10 @@ static isModifier(evt: MouseEvent | TouchEvent | KeyboardEvent, modifier: Modifi
 ### isModEvent
 
 ```ts
-static isModEvent(evt?: UserEvent | null): boolean;
+static isModEvent(evt?: UserEvent | null): PaneType | boolean;
 ```
 
-当按下 Cmd/Ctrl 键或者鼠标中键时返回 true。
+Translates an event into the type of pane that should open.
+Returns 'tab' if the modifier key Cmd/Ctrl is pressed OR if this is a middle-click MouseEvent.
+Returns 'split' if Cmd/Ctrl+Alt is pressed.
+Returns 'window' if Cmd/Ctrl+Alt+Shift is pressed.

@@ -1,8 +1,8 @@
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 11:37:51
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-10-24 10:06:50
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-12-19 11:03:20
  * @Description: 
 -->
 # FileView
@@ -80,6 +80,12 @@ onLoadFile(file: TFile): Promise<void>;
 
 ```ts
 onUnloadFile(file: TFile): Promise<void>;
+```
+
+### onRename
+
+```ts
+onRename(file: TFile): Promise<void>;
 ```
 
 ### canAcceptExtension

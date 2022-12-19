@@ -2,12 +2,14 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-08-23 11:37:51
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-11-04 10:23:20
+ * @LastEditTime: 2022-12-19 11:06:29
  * @Description: 
 -->
 # MarkdownView
 
 继承自 `TextFileView`
+
+实现 `MarkdownFileInfo`
 
 ## Constructor
 
@@ -33,6 +35,12 @@ previewMode: MarkdownPreviewView
 
 ```ts
 currentMode: MarkdownSubView
+```
+
+### hoverPopover
+
+```ts
+hoverPopover: HoverPopover
 ```
 
 ## Methods

@@ -2,7 +2,7 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-08-23 11:37:51
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-17 22:15:25
+ * @LastEditTime: 2022-12-18 12:19:18
  * @Description: 
 -->
 # MarkdownPostProcessorContext
@@ -50,4 +50,3 @@ getSectionInfo: (el: HTMLElement) => MarkdownSectionInformation
 仅在您需要此信息之前调用此方法以获取最新的版本。
 
 该方法在很多情况下也可能会返回 null；如果您使用了该方法，您必须对返回 null 的情况做兼容。
-
