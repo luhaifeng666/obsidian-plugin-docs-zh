@@ -19,7 +19,7 @@ hero:
       link: https://github.com/marcusolsson/obsidian-plugin-docs
 features:
   - title: 文档更新说明 📢
-    details: 原先的老版本文档已移除，现只保留最新版本的文档~
+    details: 最近官方文档有次较大的更新，近期我会逐步同步。
   - title: 一个小工具
     details: 为了方便小伙伴儿们能够快速创建插件项目，我开发了一个小工具，用于拉取官方示例项目，并根据输入内容自动替换诸如插件 id，插件名称等信息。希望对小伙伴儿们有所帮助~
   - title: 关于共建
