@@ -2,14 +2,14 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-19 10:59:57
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-19 11:00:41
+ * @LastEditTime: 2022-12-23 09:57:34
  * @Description: 
 -->
 # ColorComponent
 
-Extends `ValueComponent<string>`
+继承自 `ValueComponent<string>`
 
-Color picker component. Values are by default 6-digit hash-prefixed hex strings like `#000000`.
+选择颜色的组件。色值的默认格式是由哈希前缀加上6位16进制数组成的字符串，比如 `#000000`;
 
 ## Constructor
 
