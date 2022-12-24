@@ -102,7 +102,7 @@ getIcon(): IconName;
 onResize(): void;
 ```
 
-Called when the size of this view is changed.
+在该视图尺寸发生变化时被调用。
 
 ### getDisplayText
 
@@ -116,6 +116,6 @@ abstract getDisplayText(): string;
 onPaneMenu(menu: Menu, source: 'more-options' | 'tab-header' | string): void;
 ```
 
-Populates the pane menu.
+填充窗格菜单。
 
-(Replaces the previously removed `onHeaderMenu` and `onMoreOptionsMenu`)
+(替换之前移除的 `onHeaderMenu` 和 `onMoreOptionsMenu` 方法)
