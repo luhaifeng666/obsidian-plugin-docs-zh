@@ -1,6 +1,6 @@
 # Workspace
 
-Extends `Events`
+继承自 `Events`
 
 ## Constructor
 
