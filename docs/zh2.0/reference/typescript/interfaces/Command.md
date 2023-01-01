@@ -1,8 +1,8 @@
 <!--
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-08-23 11:37:51
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:38:33
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-01-01 10:34:35
  * @Description: 
 -->
 # Command
@@ -15,7 +15,7 @@
 id: string
 ```
 
-Globally unique ID to identify this command.
+全局唯一的 ID 用以识别改指令。
 
 ### name
 
@@ -23,7 +23,7 @@ Globally unique ID to identify this command.
 name: string
 ```
 
-Human friendly name for searching.
+用于搜索的名称（命名要友好，见名知意）。
 
 ### icon
 
@@ -31,7 +31,7 @@ Human friendly name for searching.
 icon: string
 ```
 
-Icon ID to be used in the toolbar.
+在 toolbar 中使用的 icon ID。
 
 ### mobileOnly
 
@@ -45,7 +45,7 @@ mobileOnly: boolean
 repeatable: boolean
 ```
 
-Whether holding the hotkey should repeatedly trigger this command. Defaults to false.
+是否在按住热键的时候需要重复触发该指令，默认值为 false。
 
 ### callback
 
@@ -53,7 +53,7 @@ Whether holding the hotkey should repeatedly trigger this command. Defaults to f
 callback: () => any
 ```
 
-Simple callback, triggered globally.
+单纯的回调函数，全局可触发。
 
 ### checkCallback
 
@@ -61,11 +61,9 @@ Simple callback, triggered globally.
 checkCallback: (checking: boolean) => boolean | void
 ```
 
-Complex callback, overrides the simple callback.
-Used to "check" whether your command can be performed in the current circumstances.
-For example, if your command requires the active focused pane to be a MarkdownSourceView, then
-you should only return true if the condition is satisfied. Returning false or undefined causes
-the command to be hidden from the command palette.
+复杂的回调函数，会覆盖 callback。
+用于 “检查” 您的指令是否可以在当前环境下执行。
+比如，如果您的指令要求当前选中的窗口是 MarkdownSourceView，那么当条件符合时您仅需要返回 true。返回 false 或者 undefined 将导致指令不会显示在命令面板中。
 
 ### editorCallback
 
@@ -73,8 +71,8 @@ the command to be hidden from the command palette.
 editorCallback: (editor: Editor, ctx: MarkdownView | MarkdownFileInfo) => any
 ```
 
-A command callback that is only triggered when the user is in an editor.
-Overrides `callback` and `checkCallback`
+只有当用户在编辑器中是才会被触发的指令回调。
+会覆盖 `callback` 以及 `checkCallback`。
 
 ### editorCheckCallback
 
@@ -82,8 +80,8 @@ Overrides `callback` and `checkCallback`
 editorCheckCallback: (checking: boolean, editor: Editor, ctx: MarkdownView | MarkdownFileInfo) => boolean | void
 ```
 
-A command callback that is only triggered when the user is in an editor.
-Overrides `editorCallback`, `callback` and `checkCallback`
+只有当用户在编辑器中是才会被触发的指令回调。
+会覆盖 `editorCallback`、 `callback` 以及 `checkCallback`。
 
 ### hotkeys
 
@@ -91,5 +89,4 @@ Overrides `editorCallback`, `callback` and `checkCallback`
 hotkeys: Hotkey[]
 ```
 
-Sets the default hotkey. It is recommended for plugins to avoid setting default hotkeys if possible,
-to avoid conflicting hotkeys with one that's set by the user, even though customized hotkeys have higher priority.
+设置默认热键。建议插件尽量避免设置默认热键，以避免与用户设置的其他热键产生冲突，尽管自定义热键拥有更高的优先级。
