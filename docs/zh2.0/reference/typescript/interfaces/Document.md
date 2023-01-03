@@ -1,13 +1,13 @@
 <!--
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:39:13
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:39:24
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-01-03 08:39:54
  * @Description: 
 -->
 # Document
 
-Any web page loaded in the browser and serves as an entry point into the web page's content, which is the DOM tree.
+在浏览器中加载并充当网页内容（即 DOM 树）的入口点的任何网页。
 
 ## Properties
 
