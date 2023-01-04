@@ -1,3 +1,10 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-01-04 10:00:16
+ * @Description: 
+-->
 # CachedMetadata
 
 ## Properties
@@ -32,7 +39,7 @@ headings: HeadingCache[]
 sections: SectionCache[]
 ```
 
-Sections are root level markdown blocks, which can be used to divide the document up.
+Sections 是 markdown 的顶级模块，可以用来分割文档。
 
 ### listItems
 
