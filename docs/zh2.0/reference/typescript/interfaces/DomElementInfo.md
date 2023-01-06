@@ -2,7 +2,7 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:40:08
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:40:18
+ * @LastEditTime: 2023-01-06 14:04:14
  * @Description: 
 -->
 # DomElementInfo
@@ -15,7 +15,7 @@
 cls: string | string[]
 ```
 
-The class to be assigned. Can be a space-separated string or an array of strings.
+需要被分配的 class。可以是以空格分割的字符串，或者是字符串数组。
 
 ### text
 
@@ -23,7 +23,7 @@ The class to be assigned. Can be a space-separated string or an array of strings
 text: string | DocumentFragment
 ```
 
-The textContent to be assigned.
+需要被分配的 text。
 
 ### attr
 
@@ -31,7 +31,7 @@ The textContent to be assigned.
 attr: { [key: string]: string | number | boolean; }
 ```
 
-HTML attributes to be added.
+需要被添加的 HTML 属性。
 
 ### title
 
@@ -39,7 +39,7 @@ HTML attributes to be added.
 title: string
 ```
 
-HTML title (for hover tooltip).
+HTML 标题（用于 hover 时的 tooltip 显示）。
 
 ### parent
 
@@ -47,7 +47,7 @@ HTML title (for hover tooltip).
 parent: Node
 ```
 
-The parent element to be assigned to.
+要分配给的父元素。
 
 ### value
 
