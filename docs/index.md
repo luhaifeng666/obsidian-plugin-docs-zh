@@ -1,9 +1,9 @@
 ---
 layout: home
-title: Obsidian 中文开发文档
+title: Obsidian 插件开发文档
 hero:
   name: Obsidian Plugin
-  text: 中文开发文档
+  text: 开发文档
   image:
     src: /images/logo.webp
     alt: Obsidian
