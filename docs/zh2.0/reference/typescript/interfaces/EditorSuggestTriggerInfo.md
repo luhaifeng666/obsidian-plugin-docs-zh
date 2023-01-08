@@ -1,3 +1,10 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-01-08 09:51:58
+ * @Description: 
+-->
 # EditorSuggestTriggerInfo
 
 ## Properties
@@ -8,7 +15,7 @@
 start: EditorPosition
 ```
 
-The start position of the triggering text. This is used to position the popover.
+触发文本的起始位置。用来定位弹窗。
 
 ### end
 
@@ -16,7 +23,7 @@ The start position of the triggering text. This is used to position the popover.
 end: EditorPosition
 ```
 
-The end position of the triggering text. This is used to position the popover.
+触发文本的终止位置。 也用来定位弹窗。
 
 ### query
 
@@ -24,4 +31,4 @@ The end position of the triggering text. This is used to position the popover.
 query: string
 ```
 
-They query string (usually the text between start and end) that will be used to generate the suggestion content.
+查询将用于生成建议内容的字符串（通常是开始和结束之间的文本）。
