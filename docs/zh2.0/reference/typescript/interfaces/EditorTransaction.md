@@ -20,7 +20,7 @@ changes: EditorChange[]
 selections: EditorRangeOrCaret[]
 ```
 
-Multiple selections, overrides `selection`.
+多选项，覆盖 `selection`。
 
 ### selection
 
