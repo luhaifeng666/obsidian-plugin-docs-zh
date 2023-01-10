@@ -2,12 +2,12 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:40:39
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:40:40
+ * @LastEditTime: 2023-01-10 14:58:27
  * @Description: 
 -->
 # Element
 
-Element is the most general base class from which all objects in a Document inherit. It only has methods and properties common to all kinds of elements. More specific classes inherit from Element.
+Element 是最通用的基类，Document 中的所有对象都继承自该基类。 它只有各种元素共有的方法和属性。 更具体的类继承自 Element。
 
 ## Methods
 
