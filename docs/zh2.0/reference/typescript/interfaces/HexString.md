@@ -2,7 +2,7 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:48:47
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:48:49
+ * @LastEditTime: 2023-01-11 13:05:31
  * @Description: 
 -->
 # HexString
@@ -11,5 +11,5 @@
 export type HexString = string;
 ```
 
-Hex strings are 6-digit hash-prefixed rgb strings in lowercase form.
-Example: #ffffff
+十六进制字符串是小写形式的 6 位散列前缀 rgb 字符串。
+例如: #ffffff
