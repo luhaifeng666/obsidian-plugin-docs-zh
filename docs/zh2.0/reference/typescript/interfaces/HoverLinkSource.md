@@ -2,7 +2,7 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:42:07
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:42:09
+ * @LastEditTime: 2023-01-12 15:23:29
  * @Description: 
 -->
 # HoverLinkSource
@@ -15,7 +15,7 @@
 display: string
 ```
 
-The string that will be displayed in the 'Page preview' plugin settings. It should match your plugin's display name.
+显示在“页面预览”插件设置中的字段。该字段应与您插件的名称一致。
 
 ### defaultMod
 
@@ -23,4 +23,4 @@ The string that will be displayed in the 'Page preview' plugin settings. It shou
 defaultMod: boolean
 ```
 
-Whether or not the `hover-link` event requires the 'Mod' key to be pressed to trigger.
+`hover-link` 事件是否需要按下 'Mod' 键才可以触发。
