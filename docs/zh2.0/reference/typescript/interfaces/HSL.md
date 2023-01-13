@@ -1,8 +1,8 @@
 <!--
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:40:57
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:40:59
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-01-13 10:35:28
  * @Description: 
 -->
 # HSL
@@ -15,7 +15,7 @@
 h: number
 ```
 
-Hue integer value between 0 and 360
+0 到 360 之间的 Hue 整数值。
 
 ### s
 
@@ -23,7 +23,7 @@ Hue integer value between 0 and 360
 s: number
 ```
 
-Saturation integer value between 0 and 100
+0 到 100 之间的 Saturation 整数值。
 
 ### l
 
@@ -31,4 +31,4 @@ Saturation integer value between 0 and 100
 l: number
 ```
 
-Lightness integer value between 0 and 100
+0 到 100 之间的 Lightness 整数值。
