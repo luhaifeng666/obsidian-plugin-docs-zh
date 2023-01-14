@@ -2,12 +2,12 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:41:38
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:41:43
+ * @LastEditTime: 2023-01-14 09:15:56
  * @Description: 
 -->
 # HTMLElement
 
-Any HTML element. Some elements directly implement this interface, while others implement it via an interface that inherits it.
+任何 HTML 元素。一些元素直接实现此接口，而另一些元素通过继承它的接口实现它。
 
 ## Properties
 
