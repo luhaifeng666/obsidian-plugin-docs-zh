@@ -5,7 +5,7 @@ title: 插件剖析
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 12:13:04
+ * @LastEditTime: 2023-01-16 16:40:41
  * @Description: 
 -->
 # 插件剖析
@@ -27,7 +27,7 @@ export default class ExamplePlugin extends Plugin {
 
 ## 插件生命周期
 
-[`onload()`](../reference/typescript/classes/Component.md#onload) 生命周期函数在用户激活 Obsidian 插件时触发。这将是您设置插件大部分功能的地方。
+[`onload()`](../reference/typescript/classes/Component.md#onload) 生命周期函数在用户激活 Obsidian 插件时触发。这将是您设置插件大部分功能的地方。该方法在插件更新时也会被触发。
 
 [`onunload()`](../reference/typescript/classes/Component.md#onunload) 生命周期函数在插件被禁用时触发。插件所调用的任何资源必须在这里得到释放，以防止在您的插件被禁用后对 Obsidian 的性能产生影响。
 
