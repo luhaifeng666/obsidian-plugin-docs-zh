@@ -1,3 +1,10 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2023-01-16 16:05:10
+ * @Description: 
+-->
 # ListItemCache
 
 ## Properties
@@ -8,7 +15,7 @@
 id: string
 ```
 
-The block ID of this list item, if defined.
+列表项的块 ID。
 
 ### task
 
@@ -16,10 +23,10 @@ The block ID of this list item, if defined.
 task: string
 ```
 
-A single character indicating the checked status of a task.
-The space character `' '` is interpreted as an incomplete task.
-An other character is interpreted as completed task.
-`undefined` if this item isn't a task.
+表示任务已检查状态的单个字符。
+空格符 `' '` 被看做是未完成的任务。
+另一个字符则被看做已完成的任务。
+如果该项不是一个任务，则值为 `undefined`
 
 ### parent
 
@@ -27,9 +34,8 @@ An other character is interpreted as completed task.
 parent: number
 ```
 
-Line number of the parent list item (position.start.line).
-If this item has no parent (e.g. it's a root level list),
-then this value is the negative of the line number of the first list item (start of the list).
+父级列表项的行号 (position.start.line)。
+如果该项没有父级 （比如这是一个根级列表），则该值为列表首项（列表的开始项）行号的负数 。
 
-Can be used to deduce which list items belongs to the same group (item1.parent === item2.parent).
-Can be used to reconstruct hierarchy information (parentItem.position.start.line === childItem.parent).
+可以用于推断哪些列表项属于同一组 (item1.parent === item2.parent)。
+也可以用于重构层次结构信息 (parentItem.position.start.line === childItem.parent)。
