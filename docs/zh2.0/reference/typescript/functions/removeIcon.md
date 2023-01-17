@@ -1,8 +1,8 @@
 <!--
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-20 10:47:28
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-20 10:47:31
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-01-17 09:53:40
  * @Description: 
 -->
 # removeIcon
@@ -11,7 +11,7 @@
 export function removeIcon(iconId: string): void;
 ```
 
-Remove a custom icon from the library
+从库中删除自定义 icon。
 
 ## Parameters
 
