@@ -9,7 +9,7 @@ title: Vue
 
 ## 第一步：下载插件开发模板
 
-首先, 您需要从 [Obsidian Vue Sample Plugin](https://github.com/renmu123/obsidian-vue-sample-plugin) 下载一个基于 Vue 框架的 Obsidian 插件开发模板，并基于这个模板完成剩余的步骤。
+首先, 您需要从 [Obsidian Vue Sample Plugin](https://github.com/luhaifeng666/obsidian-vue-sample-plugin) 下载一个基于 Vue 框架的 Obsidian 插件开发模板，并基于这个模板完成剩余的步骤。
 
 ## 第二步：安装依赖
 
