@@ -4,8 +4,8 @@ title: 提交您的插件
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 19:35:52
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-09-05 09:14:09
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-01-18 13:55:43
  * @Description: 
 -->
 
@@ -55,29 +55,33 @@ title: 提交您的插件
 
 2. 在 `community-plugins.json` 的 JSON 中创建一个新条目。 可以参考 [Recent Files](https://github.com/tgrosinger/recent-files-obsidian) 这篇文档中的示例。
 
-   ```json
-   {
-     "id": "recent-files-obsidian",
-     "name": "Recent Files",
-     "author": "Tony Grosinger",
-     "description": "Display a list of recently opened files",
-     "repo": "tgrosinger/recent-files-obsidian",
-     "branch": "main"
-   }
-   ```
+::: code-group
 
-   - `id`, `name`, `author`, 以及 `description` 字段将决定插件如何展呈现给用户, 并且应该与您的 [插件 manifest](../reference/manifest.md) 中的相应属性匹配。
-   - `id` 是插件的唯一标识。 搜索Search `community-plugins.json` 文件，确认下没有相同id的其他插件。
-   - `repo` 是您的 GitHub 仓库路径. 举个例子, 如果您的 Github 地址是 `https://github.com/your-username/your-repo-name`, 那么路径就是`your-username/your-repo-name`.
-   - (可选的) `branch` 让您指定对应的 Github 分支。如果忽略，默认是 `master`。
+```json [community-plugins.json]
+{
+  "id": "recent-files-obsidian",
+  "name": "Recent Files",
+  "author": "Tony Grosinger",
+  "description": "Display a list of recently opened files",
+  "repo": "tgrosinger/recent-files-obsidian",
+  "branch": "main"
+}
+```
 
-   请记住在前一个条目的右大括号 `}` 之后添加一个逗号。
+:::
 
-3. [创建一个 pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
-4. 按照 description 栏中的说明拉取所需模板创建一个 pull request。
-5. 点击 **Create pull request**。
-6. 在 details 栏中填写 pull request 的描述信息。对于复选框，在方括号 `[x]` 之间插入一个 `x` 以将其标记为已完成。
-7. 点击 **Create pull request** (最后一次 🤞)。
+- `id`, `name`, `author`, 以及 `description` 字段将决定插件如何展呈现给用户, 并且应该与您的 [插件 manifest](../reference/manifest.md) 中的相应属性匹配。
+- `id` 是插件的唯一标识。 搜索Search `community-plugins.json` 文件，确认下没有相同id的其他插件。
+- `repo` 是您的 GitHub 仓库路径. 举个例子, 如果您的 Github 地址是 `https://github.com/your-username/your-repo-name`, 那么路径就是`your-username/your-repo-name`.
+- (可选的) `branch` 让您指定对应的 Github 分支。如果忽略，默认是 `master`。
+
+请记住在前一个条目的右大括号 `}` 之后添加一个逗号。
+
+1. [创建一个 pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+2. 按照 description 栏中的说明拉取所需模板创建一个 pull request。
+3. 点击 **Create pull request**。
+4. 在 details 栏中填写 pull request 的描述信息。对于复选框，在方括号 `[x]` 之间插入一个 `x` 以将其标记为已完成。
+5. 点击 **Create pull request** (最后一次 🤞)。
 
 现在您已经将自己的插件提交到了 Obsidian 的公共仓库。放松下坐等 Obsidian 团队审核您的插件。审核的时间取决于 Obsidian 团队的当前的工作流程。这个团队目前还不大，所以在插件审核期间请耐心等待。
 

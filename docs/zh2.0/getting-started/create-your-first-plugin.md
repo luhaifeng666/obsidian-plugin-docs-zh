@@ -60,23 +60,31 @@ cd path/to/vault/.obsidian/plugins/obsidian-instant-coffee
 
 1. 安装依赖。
 
-```bash npm
+::: code-group
+
+```bash [npm]
 npm install
 ```
 
-```bash yarn
+```bash [yarn]
 yarn install
 ```
 
+:::
+
 1. 编译插件代码。 执行下述命令会生成 `main.js` 文件，该文件中包含插件的编译版本。
 
-```bash npm
+::: code-group
+
+```bash [npm]
 npm run dev
 ```
 
-```bash yarn
+```bash [yarn]
 yarn run dev
 ```
+
+:::
 
 ## 第三步: 启用插件
 
