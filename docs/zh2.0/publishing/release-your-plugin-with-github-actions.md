@@ -145,66 +145,79 @@ Github Action 工作流起初由 [argentum](https://forum.obsidian.md/u/argentum
 要想开启插件的标准版本：
 
 1. 安装标准版本。
+::: code-group
 
-   ```bash npm
-   npm install --save-dev standard-version
-   ```
+```bash [npm]
+npm install --save-dev standard-version
+```
 
-   ```bash yarn
-   yarn add --save-dev standard-version
-   ```
+```bash [yarn]
+yarn add --save-dev standard-version
+```
+
+:::
 
 1. 在 `package.json` 文件中添加以下属性:
 
-   ```json
-   {
-     "scripts": {
-       "release": "standard-version"
-     },
-     "standard-version": {
-       "t": ""
-     }
-   }
-   ```
+::: code-group
 
-   - `"t": ""` 配置标准版本移除开头的 `v` 以符合 Obsidian 的规则。
+```json [package.json]
+{
+  "scripts": {
+    "release": "standard-version"
+  },
+  "standard-version": {
+    "t": ""
+  }
+}
+```
+
+:::
+
+- `"t": ""` 配置标准版本移除开头的 `v` 以符合 Obsidian 的规则。
 
 要想创建版本:
 
 1. 根据 Conventional Commits 提交您的修改。
 
-   ```bash
-   git commit -m "feat: Add settings"
-   ```
+```bash
+git commit -m "feat: Add settings"
+```
 
-2. 创建新的 release 并更新 changelog.
+1. 创建新的 release 并更新 changelog.
 
-   ```bash npm
-   npm run release
-   ```
+::: code-group
 
-  ```bash yarn
-   yarn release
-   ```
+```bash [npm]
+npm run release
+```
 
-   :::tip
-   默认情况下，如果主版本号低于 **1**，比如 0.3.4，`feat:` 和 `BREAKING CHANGE:` 会更新补丁和次要版本，而不是更新次要和主要版本。要想提高次要版本和主要版本，可以使用如下命令：
+```bash [yarn]
+yarn release
+```
 
-   ```bash npm
-   # Release as minor
-   npm run release -- --release-as minor
-   # Release as major
-   npm run release -- --release-as major
-   ```
+:::
 
-   ```bash yarn
-   # Release as minor
-   yarn release -- --release-as minor
-   # Release as major
-   yarn release -- --release-as major
-   ```
+:::tip
+默认情况下，如果主版本号低于 **1**，比如 0.3.4，`feat:` 和 `BREAKING CHANGE:` 会更新补丁和次要版本，而不是更新次要和主要版本。要想提高次要版本和主要版本，可以使用如下命令：
 
-   :::
+::: code-group
+
+```bash [npm]
+# Release as minor
+npm run release -- --release-as minor
+# Release as major
+npm run release -- --release-as major
+```
+
+```bash [yarn]
+# Release as minor
+yarn release -- --release-as minor
+# Release as major
+yarn release -- --release-as major
+```
+
+:::
 
 1. 推送的新的 tag。
 

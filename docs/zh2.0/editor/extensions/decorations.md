@@ -98,7 +98,9 @@ provide(field: StateField<DecorationSet>): Extension {
 },
 ```
 
-```ts field.ts
+::: code-group
+
+```ts [field.ts]
 import { syntaxTree } from "@codemirror/language";
 import {
   Extension,
@@ -146,6 +148,8 @@ export const emojiListField = StateField.define<DecorationSet>({
 });
 ```
 
+:::
+
 ### 视图插件
 
 To manage your decorations using a view plugin:
@@ -159,7 +163,9 @@ To manage your decorations using a view plugin:
 
 以下示例仅在基础文档或视口更改时重建装饰。以下示例仅在基础文档或视口更改时重建装饰。
 
-```ts plugin.ts
+::: code-group
+
+```ts [plugin.ts]
 import { syntaxTree } from "@codemirror/language";
 import { RangeSetBuilder } from "@codemirror/state";
 import {
@@ -226,6 +232,8 @@ export const emojiListPlugin = ViewPlugin.fromClass(
   pluginSpec
 );
 ```
+
+:::
 
 `buildDecorations()` 是一个辅助方法，它基于编辑器视图构建一整套装饰。
 

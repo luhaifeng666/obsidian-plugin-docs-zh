@@ -5,7 +5,7 @@ title: 与编辑器扩展通信
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 12:03:38
+ * @LastEditTime: 2023-01-18 13:46:37
  * @Description: 
 -->
 # 与编辑器扩展通信
@@ -25,7 +25,9 @@ const editorView = view.editor.cm as EditorView;
 
 您可以通过 `EditorView.plugin()` 方法访问[视图插件](view-plugins.md)实例。
 
-```ts {8-12} main.ts
+::: code-group
+
+```ts {8-12} [main.ts]
 this.addCommand({
   id: "example-editor-command",
   name: "Example editor command",
@@ -42,11 +44,15 @@ this.addCommand({
 });
 ```
 
+:::
+
 ## 状态字段
 
 您可以在编辑器视图内直接派发变动以及[state effects](state-fields.md#dispatching-state-effects)。
 
-```ts {8-12} main.ts
+::: code-group
+
+```ts {8-12} [main.ts]
 this.addCommand({
   id: "example-editor-command",
   name: "Example editor command",
@@ -62,3 +68,5 @@ this.addCommand({
   },
 });
 ```
+
+:::

@@ -20,55 +20,71 @@ Obsidian 内置对 Markdown 文件以及其他多媒体类型文件，例如图�
 
 1. 创建一个名为 `view.ts` 的新文件，并写入以下内容：
 
-  ```ts view.ts
-  import { TextFileView } from "obsidian";
+::: code-group
 
-  export const VIEW_TYPE_CSV = "csv-view";
+```ts [view.ts]
+import { TextFileView } from "obsidian";
 
-  export class CSVView extends TextFileView {
-    getViewData() {
-      return this.data;
-    }
+export const VIEW_TYPE_CSV = "csv-view";
 
-    setViewData(data: string, clear: boolean) {
-      this.data = data;
-    }
-
-    clear() {
-      this.data = "";
-    }
-
-    getViewType() {
-      return VIEW_TYPE_CSV;
-    }
+export class CSVView extends TextFileView {
+  getViewData() {
+    return this.data;
   }
-  ```
+
+  setViewData(data: string, clear: boolean) {
+    this.data = data;
+  }
+
+  clear() {
+    this.data = "";
+  }
+
+  getViewType() {
+    return VIEW_TYPE_CSV;
+  }
+}
+```
+
+:::
 
 1. 在 `main.ts` 文件中，在 `onload` 方法中注册视图。
 
-   ```ts main.ts
-   import { CSVView, VIEW_TYPE_CSV } from "./view"
-   ```
+::: code-group
 
-   ```ts main.ts
-   this.registerView(
-     VIEW_TYPE_CSV,
-       (leaf: WorkspaceLeaf) => new CSVView(leaf)
-   );
-   ```
+```ts [main.ts]
+import { CSVView, VIEW_TYPE_CSV } from "./view"
+```
+
+:::
+
+::: code-group
+
+```ts [main.ts]
+this.registerView(
+  VIEW_TYPE_CSV,
+    (leaf: WorkspaceLeaf) => new CSVView(leaf)
+);
+```
+
+:::
 
 1. 注册您想要视图处理的扩展。
 
-   ```ts main.ts
-   this.registerExtensions(["csv"], VIEW_TYPE_CSV);
-   ```
+::: code-group
+
+```ts [main.ts]
+this.registerExtensions(["csv"], VIEW_TYPE_CSV);
+```
+
+:::
 
 1. 重新构建插件。
 1. 在文件管理器中，点击 CSV 文件以打开视图。
 
 不幸的是，视图并未展示数据，因为它还不知道如何去展示。要想在视图中渲染 CSV 数据，需要在 `setViewData` 方法中添加以下代码：
 
-```ts  {4-5}
+```ts {4-5}
 setViewData(data: string, clear: boolean) {
   this.data = data;
 
@@ -163,32 +179,32 @@ export class CSVView extends TextFileView {
 
 1. 在 `CSVView` 类中，添加一个辅助方法用于在 `tableEl` 标签中渲染表格数据。
 
-   ```ts
-   refresh() {
-     // Remove previous data.
-     this.tableEl.empty();
+```ts
+refresh() {
+  // Remove previous data.
+  this.tableEl.empty();
 
-     const bodyEl = this.tableEl.createEl("tbody");
+  const bodyEl = this.tableEl.createEl("tbody");
 
-     this.tableData.forEach((row, i) => {
-       const rowEl = bodyEl.createEl("tr");
+  this.tableData.forEach((row, i) => {
+    const rowEl = bodyEl.createEl("tr");
 
-       row.forEach((cell, j) => {
-         rowEl.createEl("td", { text: cell });
-       });
-     });
-   }
-   ```
+    row.forEach((cell, j) => {
+      rowEl.createEl("td", { text: cell });
+    });
+  });
+}
+```
 
-2. 在 `setViewData()` 方法中调用 `refresh()` 辅助方法。
+1. 在 `setViewData()` 方法中调用 `refresh()` 辅助方法。
 
-   ```ts {4}
-   setViewData(data: string, clear: boolean) {
-     this.tableData = data.split("\n").map((line) => line.split(","));
+```ts {4}
+setViewData(data: string, clear: boolean) {
+  this.tableData = data.split("\n").map((line) => line.split(","));
 
-     this.refresh();
-   }
-   ```
+  this.refresh();
+}
+```
 
 您的插件现在可以适当的将 CSV 数据呈现为表格。您难道不会问，能否更加友好些呢？
 

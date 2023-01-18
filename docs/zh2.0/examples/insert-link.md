@@ -13,7 +13,9 @@ title: 插入链接
 
 以下是完整的代码:
 
-```ts main.ts
+::: code-group
+
+```ts [main.ts]
 import { Editor, Plugin } from "obsidian";
 import { InsertLinkModal } from "./modal";
 
@@ -36,7 +38,7 @@ export default class InsertLinkPlugin extends Plugin {
 }
 ```
 
-```ts modal.ts
+```ts [modal.ts]
 import { App, Modal, Setting } from "obsidian";
 
 export class InsertLinkModal extends Modal {
@@ -89,3 +91,5 @@ export class InsertLinkModal extends Modal {
   }
 }
 ```
+
+:::

@@ -5,7 +5,7 @@ title: 工作区
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 13:53:30
+ * @LastEditTime: 2023-01-18 14:01:34
  * @Description: 
 -->
 # 工作区
@@ -41,7 +41,7 @@ leaf 是一个能以不同形式展示内容的窗口。leaf 的类型决定了�
 
 您可以通过 [App](../reference/typescript/classes/App.md) 对象访问工作区。下例中打印了在工作区中每个 leaf 的类型:
 
-```ts  {6-8}
+```ts {6-8}
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
