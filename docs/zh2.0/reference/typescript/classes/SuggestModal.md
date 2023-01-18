@@ -1,8 +1,8 @@
 <!--
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-08-23 11:37:51
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-11-16 22:55:34
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-01-18 09:52:50
  * @Description: 
 -->
 # SuggestModal
@@ -69,7 +69,7 @@ onNoSuggestion(): void;
 selectSuggestion(value: T, evt: MouseEvent | KeyboardEvent): void;
 ```
 
-Called when the user makes a selection.
+当用户选择时调用。
 
 ### getSuggestions
 
@@ -83,7 +83,7 @@ abstract getSuggestions(query: string): T[] | Promise<T[]>;
 abstract renderSuggestion(value: T, el: HTMLElement): any;
 ```
 
-Render the suggestion item into DOM.
+将建议项渲染到 DOM 中。
 
 ### onChooseSuggestion
 
