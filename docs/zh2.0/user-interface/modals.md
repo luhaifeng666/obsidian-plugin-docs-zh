@@ -30,7 +30,9 @@ export class ExampleModal extends Modal {
 
 要想打开一个对话框，需要创建一个 `ExampleModal` 的实例并调用其上的 [`open()`](../reference/typescript/classes/Modal.md#open) 方法:
 
-```ts main.ts
+::: code-group
+
+```ts [main.ts]
 import { Plugin } from "obsidian";
 import { ExampleModal } from "./modal";
 
@@ -47,13 +49,17 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
+:::
+
 ## 接受用户输入
 
 上例中的对话框仅展示了一些文本内容。让我们一起来看一个稍微复杂点的需要处理用户输入的例子。
 
 ![Modal with user input](/images/img/modal-input.png)
 
-```ts modal.ts
+::: code-group
+
+```ts [modal.ts]
 import { App, Modal, Setting } from "obsidian";
 
 export class ExampleModal extends Modal {
@@ -98,6 +104,8 @@ export class ExampleModal extends Modal {
 }
 ```
 
+:::
+
 结果被保存在 `this.result` 中，并且在用户点击 **Submit** 时通过 `onSubmit` 回调函数返回它：
 
 ```ts
@@ -112,7 +120,9 @@ new ExampleModal(this.app, (result) => {
 
 ![Modal with suggestions](/images/img/suggest-modal.gif)
 
-```ts modal.ts
+::: code-group
+
+```ts [modal.ts]
 import { App, Notice, SuggestModal } from "obsidian";
 
 interface Book {
@@ -155,6 +165,8 @@ export class ExampleModal extends SuggestModal<Book> {
   }
 }
 ```
+
+:::
 
 除却 `SuggestModal` 外，Obsidian API 提供了一个专门用于建议的对话框类型: [`FuzzySuggestModal`](../reference/typescript/classes/FuzzySuggestModal.md)。尽管它不能让您对每个项目的呈现方式做相同的控制，但是您可以获得一个开箱即用的 [模糊搜索功能](https://en.wikipedia.org/wiki/Approximate_string_matching) out-of-the-box.
 

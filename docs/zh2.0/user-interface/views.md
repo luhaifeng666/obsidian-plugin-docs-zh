@@ -7,7 +7,9 @@ title: 视图
 
 要想创建一个自定义视图，需要创建一个继承自 [`ItemView`](../reference/typescript/classes/ItemView.md) 的类:
 
-```ts view.ts
+::: code-group
+
+```ts [view.ts]
 
 import { ItemView, WorkspaceLeaf } from "obsidian";
 
@@ -38,6 +40,8 @@ export class ExampleView extends ItemView {
 }
 ```
 
+:::
+
 ::: tip
 要想获取更多关于如何使用 `createEl()` 方法的信息，可以查看 [HTML elements](html-elements.md)。
 :::
@@ -51,7 +55,9 @@ export class ExampleView extends ItemView {
 
 自定义视图需要在插件被启用时注册，并且在插件被禁用时释放。
 
-```ts main.ts
+::: code-group
+
+```ts [main.ts]
 import { Plugin } from "obsidian";
 import { ExampleView, VIEW_TYPE_EXAMPLE } from "./view";
 
@@ -88,6 +94,8 @@ export default class ExamplePlugin extends Plugin {
   }
 }
 ```
+
+:::
 
 [`registerView()`](../reference/typescript/classes/Plugin_2.md#registerview) 的第二个参数是一个工厂函数，用于返回您想注册的视图实例。
 

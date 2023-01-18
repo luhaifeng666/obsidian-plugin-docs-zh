@@ -2,11 +2,12 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 13:54:33
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2023-01-07 11:44:31
+ * @LastEditTime: 2023-01-18 11:44:13
  * @Description: 
  */
 import fg from 'fast-glob'
 import matter from 'gray-matter'
+import { defineConfig } from 'vitepress'
 
 interface SidebarConfig {
   text: string,
@@ -107,11 +108,14 @@ Object.keys(SIDEBAR_CONFIG).forEach(key => {
   })
 })
 
-export default {
+export default defineConfig({
   title: 'Obsidian 插件开发文档',
   base: '/obsidian-plugin-docs-zh/',
   description: ' ',
   lastUpdated: true,
+  markdown: {
+    lineNumbers: true
+  },
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', href: 'images/favicon.ico' }],
   ],
@@ -132,8 +136,51 @@ export default {
     algolia: {
       appId: 'VI8LY5RZKO',
       apiKey: 'e2f1997c9bd194f6b5357ff70e15faf2',
-      indexName: 'dev_obsidian_plugin_docs_zh'
+      indexName: 'dev_obsidian_plugin_docs_zh',
+      // locales: {
+      //   zh: {
+      //     placeholder: '搜索文档',
+      //     translations: {
+      //       button: {
+      //         buttonText: '搜索文档',
+      //         buttonAriaLabel: '搜索文档'
+      //       },
+      //       modal: {
+      //         searchBox: {
+      //           resetButtonTitle: '清除查询条件',
+      //           resetButtonAriaLabel: '清除查询条件',
+      //           cancelButtonText: '取消',
+      //           cancelButtonAriaLabel: '取消'
+      //         },
+      //         startScreen: {
+      //           recentSearchesTitle: '搜索历史',
+      //           noRecentSearchesText: '没有搜索历史',
+      //           saveRecentSearchButtonTitle: '保存至搜索历史',
+      //           removeRecentSearchButtonTitle: '从搜索历史中移除',
+      //           favoriteSearchesTitle: '收藏',
+      //           removeFavoriteSearchButtonTitle: '从收藏中移除'
+      //         },
+      //         errorScreen: {
+      //           titleText: '无法获取结果',
+      //           helpText: '你可能需要检查你的网络连接'
+      //         },
+      //         footer: {
+      //           selectText: '选择',
+      //           navigateText: '切换',
+      //           closeText: '关闭',
+      //           searchByText: '搜索提供者'
+      //         },
+      //         noResultsScreen: {
+      //           noResultsText: '无法找到相关结果',
+      //           suggestedQueryText: '你可以尝试查询',
+      //           reportMissingResultsText: '你认为该查询应该有结果？',
+      //           reportMissingResultsLinkText: '点击反馈'
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
     },
     sidebar
   }
-}
+})

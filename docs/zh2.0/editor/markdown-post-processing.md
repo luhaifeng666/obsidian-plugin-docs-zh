@@ -7,7 +7,9 @@ title: Markdown 后处理
 
 下例搜索包含在两个冒号 `:` 之间的内容，并将其替换为恰当的 emoji 表情：
 
-```ts main.ts
+::: code-group
+
+```ts [main.ts]
 import { Plugin } from "obsidian";
 import { Emoji } from "./emoji";
 
@@ -32,9 +34,13 @@ export default class ExamplePlugin extends Plugin {
 }
 ```
 
+:::
+
 `Emoji` 类继承自 [`MarkdownRenderChild`](../reference/typescript/classes/MarkdownRenderChild.md), 并用带有表情符号的 `span` 元素替换代码块:
 
-```ts emoji.ts
+::: code-group
+
+```ts [emoji.ts]
 import { MarkdownRenderChild } from "obsidian";
 
 // highlight-next-line
@@ -63,6 +69,8 @@ export class Emoji extends MarkdownRenderChild {
   }
 }
 ```
+
+:::
 
 ## 后处理 Markdown 代码块
 
