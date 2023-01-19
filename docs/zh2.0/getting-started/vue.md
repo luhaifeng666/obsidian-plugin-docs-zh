@@ -56,7 +56,7 @@ git clone https://github.com/your-username/obsidian-instant-coffee.git
 cd path/to/vault/.obsidian/plugins/obsidian-instant-coffee
 ```
 
-2. 安装依赖。
+1. 安装依赖。
 
 ::: code-group
 
@@ -79,6 +79,7 @@ yarn install -D naive-ui
 ## 第四步：查看 `src` 文件夹
 
 ::: tip
+
 1. 与其它 Obsidian 插件开发模板不同的是，基于 Vue 框架的插件开发模板其 `main.ts` 文件位于 `src` 目录下，我们建议所有的代码都放在 `src` 文件夹里。
 
 2. `style.scss` 文件允许您自定义插件的样式。
@@ -188,7 +189,7 @@ export class VueSamplePluginSettingTab extends PluginSettingTab {
 
 您可以使用 `createApp` 方法创建一个 Vue 组件实例，然后用 `mount` 方法将创建的 Vue 组件实例挂载到到任意 `HTMLElement` 上，当您使用完该 Vue 组件实例后记得调用 `unmount` 方法确保 Vue 组件实例已被移除。
 
-## 第七步：编译！
+## 第七步：编译
 
 就是现在，让我们享受编译的快感！
 
