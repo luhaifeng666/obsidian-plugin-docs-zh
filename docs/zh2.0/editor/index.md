@@ -5,7 +5,7 @@ title: 编辑器
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-09 17:26:34
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 12:06:30
+ * @LastEditTime: 2023-01-19 22:58:27
  * @Description: 
 -->
 # 编辑器
@@ -16,12 +16,11 @@ title: 编辑器
 
 如果您想在其他地方使用编辑器，您可以通过活动视图访问到它。
 
-```ts
+```ts {5}
 const view = this.app.workspace.getActiveViewOfType(MarkdownView);
 
 // Make sure the user is editing a Markdown file.
 if (view) {
-  // highlight-next-line
   const cursor = view.editor.getCursor();
 
   // ...
@@ -38,7 +37,7 @@ Obsidian 使用 [CodeMirror](https://codemirror.net/) (CM) 作为底层文本编
 
 下例中的指令会将当前日期插入光标所在位置：
 
-```ts
+```ts {9}
 import { Editor, moment, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -47,7 +46,6 @@ export default class ExamplePlugin extends Plugin {
       id: "insert-todays-date",
       name: "Insert today's date",
       editorCallback: (editor: Editor) => {
-        // highlight-next-line
         editor.replaceRange(moment().format("YYYY-MM-DD"), editor.getCursor());
       },
     });
@@ -63,7 +61,7 @@ export default class ExamplePlugin extends Plugin {
 
 下例中的指令读取当前选中的内容并替换成大写：
 
-```ts
+```ts {9-10}
 import { Editor, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
@@ -72,10 +70,8 @@ export default class ExamplePlugin extends Plugin {
       id: "convert-to-uppercase",
       name: "Convert to uppercase",
       editorCallback: (editor: Editor) => {
-        // highlight-start
         const selection = editor.getSelection();
         editor.replaceSelection(selection.toUpperCase());
-        // highlight-end
       },
     });
   }

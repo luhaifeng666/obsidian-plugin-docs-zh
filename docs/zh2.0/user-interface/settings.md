@@ -170,10 +170,8 @@ export class ExampleSettingTab extends PluginSettingTab {
 
 ```ts {2,3}
 .onChange(async (value) => {
-  // highlight-start
   this.plugin.settings.dateFormat = value;
   await this.plugin.saveSettings();
-  // highlight-end
 })
 ```
 

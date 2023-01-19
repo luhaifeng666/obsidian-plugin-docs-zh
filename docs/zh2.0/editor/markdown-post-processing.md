@@ -9,13 +9,12 @@ title: Markdown 后处理
 
 ::: code-group
 
-```ts [main.ts]
+```ts [main.ts] {6,15}
 import { Plugin } from "obsidian";
 import { Emoji } from "./emoji";
 
 export default class ExamplePlugin extends Plugin {
   async onload() {
-    // highlight-next-line
     this.registerMarkdownPostProcessor((element, context) => {
       const codeblocks = element.querySelectorAll("code");
 
@@ -25,7 +24,6 @@ export default class ExamplePlugin extends Plugin {
         const isEmoji = text[0] === ":" && text[text.length - 1] === ":";
 
         if (isEmoji) {
-          // highlight-next-line
           context.addChild(new Emoji(codeblock, text));
         }
       }
@@ -40,10 +38,9 @@ export default class ExamplePlugin extends Plugin {
 
 ::: code-group
 
-```ts [emoji.ts]
+```ts [emoji.ts] {3,19-22}
 import { MarkdownRenderChild } from "obsidian";
 
-// highlight-next-line
 export class Emoji extends MarkdownRenderChild {
   static ALL_EMOJIS: Record<string, string> = {
     ":+1:": "👍",
@@ -60,12 +57,10 @@ export class Emoji extends MarkdownRenderChild {
   }
 
   onload() {
-    // highlight-start
     const emojiEl = this.containerEl.createSpan({
       text: Emoji.ALL_EMOJIS[this.text] ?? this.text,
     });
     this.containerEl.replaceWith(emojiEl);
-    // highlight-end
   }
 }
 ```

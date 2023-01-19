@@ -12,13 +12,12 @@ title: 快捷菜单
 
 如果想要打开 context menu, 使用 [`Menu`](../reference/typescript/classes/Menu.md):
 
-```ts
+```ts {6-26}
 import { Menu, Notice, Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
   async onload() {
     this.addRibbonIcon("dice", "Open menu", (event) => {
-      // highlight-start
       const menu = new Menu(this.app);
 
       menu.addItem((item) =>
@@ -40,7 +39,6 @@ export default class ExamplePlugin extends Plugin {
       );
 
       menu.showAtMouseEvent(event);
-      // highlight-end
     });
   }
 }

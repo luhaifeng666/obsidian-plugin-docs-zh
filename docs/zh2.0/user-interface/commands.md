@@ -12,12 +12,11 @@ Commands(指令) 是指用户可以通过 [Command Palette(命令面板)](https:
 
 ::: code-group
 
-```ts [tsconfig.json]
+```ts [tsconfig.json] {5-11}
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
   async onload() {
-    // highlight-start
     this.addCommand({
       id: "print-greeting-to-console",
       name: "Print greeting to console",
@@ -25,7 +24,6 @@ export default class ExamplePlugin extends Plugin {
         console.log("Hey, you!");
       },
     });
-    // highlight-end
   }
 }
 ```
@@ -47,11 +45,10 @@ export default class ExamplePlugin extends Plugin {
 
 下例中的指令取决于所需要的值。在每次执行过程中，回调函数会检查该值是否存在，但仅在 `checking` 是 `false` 时执行该操作。
 
-```ts
+```ts {4}
 this.addCommand({
   id: 'example-command',
   name: 'Example command',
-  // highlight-next-line
   checkCallback: (checking: boolean) => {
     const value = getRequiredValue();
 
@@ -72,11 +69,10 @@ this.addCommand({
 
 如果您的指令需要访问编辑器，您也可以使用 [`editorCallback`](../reference/typescript/interfaces/Command.md#editorcallback)方法，它的入参是当前活动的编辑器对象以及它的视图。
 
-```ts
+```ts {4}
 this.addCommand({
   id: 'example-command',
   name: 'Example command',
-  // highlight-next-line
   editorCallback: (editor: Editor, view: MarkdownView) => {
     const sel = editor.getSelection()
 
@@ -91,11 +87,10 @@ this.addCommand({
 
 如果编辑器回调函数仅在给定的确定条件下运行的话，可以考虑使用 [`editorCheckCallback`](../reference/typescript/interfaces/Command.md#editorcheckcallback) 方法。要想获取更多信息，可以参考  [conditional commands](#conditional-commands).
 
-```ts
+```ts {4}
 this.addCommand({
   id: 'example-command',
   name: 'Example command',
-  // highlight-next-line
   editorCheckCallback: (checking: boolean, editor: Editor, view: MarkdownView) => {
     const value = getRequiredValue();
 
@@ -122,11 +117,10 @@ this.addCommand({
 
 在本例中，用户可以通过同时按住 Ctrl（或者 Mac 上的 Command）键和 Shift 键，然后按键盘上的字母 a 来运行指令。
 
-```ts
+```ts {4}
 this.addCommand({
   id: 'example-command',
   name: 'Example command',
-  // highlight-next-line
   hotkeys: [{ modifiers: ["Mod", "Shift"], key: "a" }],
   callback: () => {
     console.log('Hey, you!');
