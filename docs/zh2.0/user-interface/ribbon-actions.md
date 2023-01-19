@@ -5,7 +5,7 @@ title: 功能区操作
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2023-01-18 14:00:15
+ * @LastEditTime: 2023-01-19 23:06:39
  * @Description: 
 -->
 # 功能区操作
@@ -16,16 +16,14 @@ title: 功能区操作
 
 ::: code-group
 
-```ts [main.ts]
+```ts [main.ts] {5-7}
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
   async onload() {
-    // highlight-start
     this.addRibbonIcon("dice", "Print to console", () => {
       console.log("Hello, you!");
     });
-    // highlight-end
   }
 }
 ```

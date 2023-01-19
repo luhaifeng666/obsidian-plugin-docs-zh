@@ -254,20 +254,18 @@ row.forEach((cell, j) => {
 
 要想保存改变的内容，添加 `oninput` 事件处理器以在 `input` 中的值发生改变时更新 `tableData`。
 
-```ts
+```ts {6-11}
 row.forEach((cell, j) => {
   const inputEl = rowEl
     .createEl("td")
     .createEl("input", { attr: { value: cell } });
 
-  // highlight-start
   input.oninput = (ev) => {
     if (ev.currentTarget instanceof HTMLInputElement) {
       this.tableData[i][j] = ev.currentTarget.value;
       this.requestSave();
     }
   };
-  // highlight-end
 });
 ```
 

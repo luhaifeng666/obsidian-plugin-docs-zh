@@ -59,7 +59,7 @@ export default class ExamplePlugin extends Plugin {
 
 ::: code-group
 
-```ts [modal.ts]
+```ts [modal.ts] {21,30,31}
 import { App, Modal, Setting } from "obsidian";
 
 export class ExampleModal extends Modal {
@@ -80,7 +80,6 @@ export class ExampleModal extends Modal {
       .setName("Name")
       .addText((text) =>
         text.onChange((value) => {
-          // highlight-next-line
           this.result = value
         }));
 
@@ -90,10 +89,8 @@ export class ExampleModal extends Modal {
           .setButtonText("Submit")
           .setCta()
           .onClick(() => {
-            // highlight-start
             this.close();
             this.onSubmit(this.result);
-            // highlight-end
           }));
   }
 

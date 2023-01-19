@@ -57,18 +57,16 @@ export class ExampleView extends ItemView {
 
 ::: code-group
 
-```ts [main.ts]
+```ts [main.ts] {6-9,17}
 import { Plugin } from "obsidian";
 import { ExampleView, VIEW_TYPE_EXAMPLE } from "./view";
 
 export default class ExamplePlugin extends Plugin {
   async onload() {
-    // highlight-start
     this.registerView(
       VIEW_TYPE_EXAMPLE,
       (leaf) => new ExampleView(leaf)
     );
-    // highlight-end
 
     this.addRibbonIcon("dice", "Activate view", () => {
       this.activateView();
@@ -76,7 +74,6 @@ export default class ExamplePlugin extends Plugin {
   }
 
   async onunload() {
-    // highlight-next-line
     this.app.workspace.detachLeavesOfType(VIEW_TYPE_EXAMPLE);
   }
 

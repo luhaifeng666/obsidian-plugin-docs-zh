@@ -5,7 +5,7 @@ title: 插件剖析
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2023-01-18 13:50:50
+ * @LastEditTime: 2023-01-19 23:01:22
  * @Description: 
 -->
 # 插件剖析
@@ -44,16 +44,14 @@ export default class ExamplePlugin extends Plugin {
 
 ::: code-group
 
-```ts [main.ts]
+```ts [main.ts] {5,9}
 import { Plugin } from "obsidian";
 
 export default class ExamplePlugin extends Plugin {
   async onload() {
-    // highlight-next-line
     console.log('loading plugin')
   }
   async onunload() {
-    // highlight-next-line
     console.log('unloading plugin')
   }
 }
