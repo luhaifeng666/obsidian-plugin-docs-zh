@@ -19,13 +19,13 @@ title: React
 npm install react react-dom
 ```
 
-1. 添加 React 的类型声明:
+2. 添加 React 的类型声明:
 
 ```bash
 npm install --save-dev @types/react @types/react-dom
 ```
 
-1. 在 `tsconfig.json` 的 `compilerOptions` 对象中开启 JSX 支持：
+3. 在 `tsconfig.json` 的 `compilerOptions` 对象中开启 JSX 支持：
 
 ::: code-group
 
@@ -124,7 +124,7 @@ export const AppContext = React.createContext<App>(undefined);
 
 :::
 
-1. 用上下文提供者包装`ReactView`并将应用作为值传递
+2. 用上下文提供者包装`ReactView`并将应用作为值传递
 
 ::: code-group
 
@@ -140,7 +140,7 @@ root.render(
 
 :::
 
-1. 创建自定义钩子以便在组件中更方便的使用上下文。
+3. 创建自定义钩子以便在组件中更方便的使用上下文。
 
 ::: code-group
 
@@ -154,7 +154,7 @@ export const useApp = (): App | undefined => {
 
 :::
 
-1. 在 `ReactView` 中的任意 React 组件中使用钩子函数以获取 app。
+4. 在 `ReactView` 中的任意 React 组件中使用钩子函数以获取 app。
 
 ::: code-group
 
