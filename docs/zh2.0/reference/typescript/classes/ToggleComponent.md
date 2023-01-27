@@ -1,13 +1,13 @@
 <!--
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-05 09:49:20
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-19 11:13:24
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-01-23 10:36:38
  * @Description: 
 -->
 # ToggleComponent
 
-Extends `ValueComponent<boolean>`
+继承自 `ValueComponent<boolean>`
 
 ## Constructor
 

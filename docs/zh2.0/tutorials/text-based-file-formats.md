@@ -48,7 +48,7 @@ export class CSVView extends TextFileView {
 
 :::
 
-1. 在 `main.ts` 文件中，在 `onload` 方法中注册视图。
+2. 在 `main.ts` 文件中，在 `onload` 方法中注册视图。
 
 ::: code-group
 
@@ -69,7 +69,7 @@ this.registerView(
 
 :::
 
-1. 注册您想要视图处理的扩展。
+3. 注册您想要视图处理的扩展。
 
 ::: code-group
 
@@ -79,8 +79,8 @@ this.registerExtensions(["csv"], VIEW_TYPE_CSV);
 
 :::
 
-1. 重新构建插件。
-1. 在文件管理器中，点击 CSV 文件以打开视图。
+4. 重新构建插件。
+5. 在文件管理器中，点击 CSV 文件以打开视图。
 
 不幸的是，视图并未展示数据，因为它还不知道如何去展示。要想在视图中渲染 CSV 数据，需要在 `setViewData` 方法中添加以下代码：
 
@@ -196,7 +196,7 @@ refresh() {
 }
 ```
 
-1. 在 `setViewData()` 方法中调用 `refresh()` 辅助方法。
+2. 在 `setViewData()` 方法中调用 `refresh()` 辅助方法。
 
 ```ts {4}
 setViewData(data: string, clear: boolean) {

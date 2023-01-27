@@ -33,7 +33,7 @@ Svelte 有一个[官方的 Visual Studio Code 扩展](https://marketplace.visual
 
 :::
 
-1. 修改 `tsconfig.json` 文件以为常见的 Svelte 问题启用额外的类型检查。`types` 属性非常关键，它可以让 Typescript 识别出 `.svelte` 文件。
+2. 修改 `tsconfig.json` 文件以为常见的 Svelte 问题启用额外的类型检查。`types` 属性非常关键，它可以让 Typescript 识别出 `.svelte` 文件。
 
 ::: code-group
 
@@ -50,7 +50,7 @@ Svelte 有一个[官方的 Visual Studio Code 扩展](https://marketplace.visual
 
 :::
 
-1. 将下面的内容从 `tsconfig.json` 中移除，该配置与 Svelte 的配置相冲突。
+3. 将下面的内容从 `tsconfig.json` 中移除，该配置与 Svelte 的配置相冲突。
 
 ::: code-group
 
@@ -60,7 +60,7 @@ Svelte 有一个[官方的 Visual Studio Code 扩展](https://marketplace.visual
 
 :::
 
-1. 在 `esbuild.config.mjs` 文件中引入以下内容：
+4. 在 `esbuild.config.mjs` 文件中引入以下内容：
 
 ::: code-group
 
@@ -71,7 +71,7 @@ import sveltePreprocess from "svelte-preprocess";
 
 :::
 
-1. 将 Svelte 添加到插件列表中。
+5. 将 Svelte 添加到插件列表中。
 
 ::: code-group
 
@@ -194,7 +194,7 @@ yarn upgrade typescript@~4.5.0
 
 :::
 
-1. 配置 store
+2. 配置 store
 
 ::: code-group
 
@@ -224,7 +224,7 @@ yarn upgrade typescript@~4.5.0
 
 :::
 
-1. 在组件中使用 store：
+3. 在组件中使用 store：
 
 ::: code-group
 

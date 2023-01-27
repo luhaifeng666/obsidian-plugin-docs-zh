@@ -56,7 +56,7 @@ git clone https://github.com/your-username/obsidian-instant-coffee.git
 cd path/to/vault/.obsidian/plugins/obsidian-instant-coffee
 ```
 
-1. 安装依赖。
+2. 安装依赖。
 
 ::: code-group
 

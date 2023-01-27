@@ -58,7 +58,7 @@ git clone https://github.com/your-username/obsidian-instant-coffee.git
 cd path/to/vault/.obsidian/plugins/obsidian-instant-coffee
 ```
 
-1. 安装依赖。
+2. 安装依赖。
 
 ::: code-group
 
@@ -72,7 +72,7 @@ yarn install
 
 :::
 
-1. 编译插件代码。 执行下述命令会生成 `main.js` 文件，该文件中包含插件的编译版本。
+3. 编译插件代码。 执行下述命令会生成 `main.js` 文件，该文件中包含插件的编译版本。
 
 ::: code-group
 
@@ -129,14 +129,14 @@ this.addRibbonIcon('dice', 'Sample Plugin', () => {
 });
 ```
 
-1. 修改提示文案，您想改啥就改啥。
+3. 修改提示文案，您想改啥就改啥。
 
 ```ts
 new Notice('Hello, you!');
 ```
 
-1. 重启 Obsidian 以重新加载您的插件。
-1. 点击左侧菜单的图标，会弹出 `Hello, you!` 的提示信息。并确认当您鼠标移动到图标上时会显示 "Sample Plugin" 提示信息。
+4. 重启 Obsidian 以重新加载您的插件。
+5. 点击左侧菜单的图标，会弹出 `Hello, you!` 的提示信息。并确认当您鼠标移动到图标上时会显示 "Sample Plugin" 提示信息。
 
 ## 接下来
 

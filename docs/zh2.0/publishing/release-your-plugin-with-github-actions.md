@@ -157,7 +157,7 @@ yarn add --save-dev standard-version
 
 :::
 
-1. 在 `package.json` 文件中添加以下属性:
+2. 在 `package.json` 文件中添加以下属性:
 
 ::: code-group
 
@@ -178,13 +178,13 @@ yarn add --save-dev standard-version
 
 要想创建版本:
 
-1. 根据 Conventional Commits 提交您的修改。
+3. 根据 Conventional Commits 提交您的修改。
 
 ```bash
 git commit -m "feat: Add settings"
 ```
 
-1. 创建新的 release 并更新 changelog.
+4. 创建新的 release 并更新 changelog.
 
 ::: code-group
 
@@ -219,7 +219,7 @@ yarn release -- --release-as major
 
 :::
 
-1. 推送的新的 tag。
+5. 推送的新的 tag。
 
 ```bash
 git push --follow-tags origin main
