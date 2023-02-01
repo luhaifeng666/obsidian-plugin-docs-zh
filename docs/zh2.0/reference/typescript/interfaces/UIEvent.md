@@ -1,13 +1,13 @@
 <!--
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:48:11
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:48:13
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-02-01 21:03:45
  * @Description: 
 -->
 # UIEvent
 
-Simple user interface events.
+简单的用户界面事件。
 
 ## Properties
 
@@ -37,5 +37,4 @@ doc: Document
 instanceOf: <T>(type: new (...data: any[]) => T) => this is T
 ```
 
-Cross-window capable instanceof check, a drop-in replacement
-for instanceof checks on UIEvents.
+跨窗口的 instanceof 检查，用于替代在 UIEvents 上的 instanceof 检查。
