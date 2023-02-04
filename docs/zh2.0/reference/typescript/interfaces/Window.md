@@ -1,13 +1,13 @@
 <!--
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:48:27
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:48:28
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-02-04 10:50:45
  * @Description: 
 -->
 # Window
 
-A window containing a DOM document; the document property points to the DOM document loaded in that window.
+包含 DOM 文档的窗口；document 属性指向该窗口中加载的 DOM 文档。
 
 ## Properties
 
@@ -17,8 +17,7 @@ A window containing a DOM document; the document property points to the DOM docu
 activeWindow: Window
 ```
 
-The actively focused Window object. This is usually the same as `window` but
-it will be different when using popout windows.
+主动聚焦的窗口对象。通常与 `window` 一样，但是当使用弹窗时会有所不同。
 
 ### activeDocument
 
@@ -26,5 +25,4 @@ it will be different when using popout windows.
 activeDocument: Document
 ```
 
-The actively focused Document object. This is usually the same as `document` but
-it will be different when using popout windows.
+主动聚焦的文档对象。通常与 `document` 一样，但是当使用弹窗时会有所不同。
