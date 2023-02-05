@@ -1,8 +1,8 @@
 /*
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 13:54:33
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2023-02-02 22:13:03
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-02-05 17:51:40
  * @Description: 
  */
 import fg from 'fast-glob'
@@ -133,11 +133,11 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/luhaifeng666/obsidian-plugin-docs-zh' }
     ],
-    algolia: {
-      appId: 'VI8LY5RZKO',
-      apiKey: 'e2f1997c9bd194f6b5357ff70e15faf2',
-      indexName: 'prod_ob_plugin_docs'
-    },
+    // algolia: {
+    //   appId: 'VI8LY5RZKO',
+    //   apiKey: 'e2f1997c9bd194f6b5357ff70e15faf2',
+    //   indexName: 'prod_ob_plugin_docs'
+    // },
     sidebar
   }
 })
