@@ -26,6 +26,7 @@
 		"markdown-it": "^13.0.1",
 		"postcss": "^8.1.0",
 		"sass-loader": "^12.6.0",
+		"vite": "^4.1.1",
 		"vitepress": "^1.0.0-alpha.43",
 		"vitepress-plugin-search": "1.0.4-alpha.19",
 		"vue": "^3.2.37"
