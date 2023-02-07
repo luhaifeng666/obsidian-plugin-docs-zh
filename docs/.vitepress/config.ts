@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 13:54:33
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2023-02-05 17:51:40
+ * @LastEditTime: 2023-02-07 17:43:55
  * @Description: 
  */
 import fg from 'fast-glob'
@@ -127,7 +127,7 @@ export default defineConfig({
 			{ text: '文档', link: '/zh2.0/' },
 		],
     editLink: {
-      pattern: 'https://github.com/luhaifeng666/obsidian-plugin-docs-zh/docs/:path',
+      pattern: 'https://github.com/luhaifeng666/obsidian-plugin-docs-zh/tree/test/docs/:path',
       text: 'Edit this page on GitHub'
     },
     socialLinks: [
