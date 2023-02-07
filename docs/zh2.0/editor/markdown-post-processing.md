@@ -3,7 +3,7 @@ title: Markdown 后处理
 ---
 # Markdown 后处理
 
-如果您想要改变 Markdown 文档在预览模式下的渲染方式，您可以添加自己的 _Markdown 后处理器_。见名知意，该后处理器在 Markdown 被处理成 HTML _之后_ 运行。它可以让您添加，删除，或者替换渲染后的文档中的[HTML 元素](../user-interface/html-elements.md)。
+如果您想要改变 Markdown 文档在阅读模式下的渲染方式，您可以添加自己的 _Markdown 后处理器_。见名知意，该后处理器在 Markdown 被处理成 HTML _之后_ 运行。它可以让您添加，删除，或者替换渲染后的文档中的[HTML 元素](../user-interface/html-elements.md)。
 
 下例搜索包含在两个冒号 `:` 之间的内容，并将其替换为恰当的 emoji 表情：
 

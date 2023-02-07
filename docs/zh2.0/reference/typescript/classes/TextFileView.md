@@ -1,11 +1,17 @@
+<!--
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2023-02-07 16:43:54
+ * @Description: 
+-->
 # TextFileView
 
-Extends `EditableFileView`
+继承自 `EditableFileView`
 
-This class implements a plaintext-based editable file view, which can be loaded and saved given an editor.
+该类实现了一个基于纯文本的可编辑文件视图，可以在给定的编辑器中加载以及保存它。
 
-Note that by default, this view only saves when it's closing. To implement auto-save, your editor should
-call `this.requestSave()` when the content is changed.
+注意，默认情况下该视图仅在其关闭时被保存。要想自动保存，您的编辑器需要在内容发生变化时调用 `this.requestSave()`。
 
 ## Constructor
 
@@ -21,7 +27,7 @@ constructor(leaf: WorkspaceLeaf);
 data: string
 ```
 
-In memory data
+内存数据
 
 ### requestSave
 
@@ -29,7 +35,7 @@ In memory data
 requestSave: () => void
 ```
 
-Debounced save in 2 seconds from now
+从当前时间开始2s内退出保存
 
 ## Methods
 
@@ -57,7 +63,7 @@ save(clear?: boolean): Promise<void>;
 abstract getViewData(): string;
 ```
 
-Gets the data from the editor. This will be called to save the editor contents to the file.
+从编辑器中获取数据。该方法在将编辑器中的内容保存到文件中时被调用。
 
 ### setViewData
 
@@ -65,11 +71,10 @@ Gets the data from the editor. This will be called to save the editor contents t
 abstract setViewData(data: string, clear: boolean): void;
 ```
 
-Set the data to the editor. This is used to load the file contents.
+设置数据到编辑器中。该方法通常用来加载文件内容。
 
-If clear is set, then it means we're opening a completely different file.
-In that case, you should call clear(), or implement a slightly more efficient
-clearing mechanism given the new data to be set.
+如果设置了 clear, 浙江意味着我们正在打开一个完全不同的文件。
+在情况下，您应该调用 clear() 方法，或者在给定要设置的新数据的情况下实现一个稍微更有效的清除机制。
 
 ### clear
 
@@ -77,6 +82,4 @@ clearing mechanism given the new data to be set.
 abstract clear(): void;
 ```
 
-Clear the editor. This is usually called when we're about to open a completely
-different file, so it's best to clear any editor states like undo-redo history,
-and any caches/indexes associated with the previous file contents.
+清空编辑器。该方法通常在我们需要打开一个完全不同的文件时调用，所以最好清除编辑器的所有状态，比如撤销/重做历史记录，以及任何与之前文件相关的缓存/索引。
