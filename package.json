@@ -19,12 +19,15 @@
 		"commitizen": "^4.2.3",
 		"cz-conventional-changelog": "^3.3.0",
 		"fast-glob": "^3.2.11",
+		"flexsearch": "^0.7.31",
 		"gray-matter": "^4.0.3",
 		"husky": "^5.0.9",
 		"lint-staged": "^10.5.4",
+		"markdown-it": "^13.0.1",
 		"postcss": "^8.1.0",
 		"sass-loader": "^12.6.0",
 		"vitepress": "^1.0.0-alpha.43",
+		"vitepress-plugin-search": "1.0.4-alpha.19",
 		"vue": "^3.2.37"
 	},
 	"dependencies": {
