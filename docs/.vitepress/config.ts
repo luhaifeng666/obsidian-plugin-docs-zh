@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 13:54:33
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2023-02-07 17:46:21
+ * @LastEditTime: 2023-02-08 10:20:41
  * @Description: 
  */
 import fg from 'fast-glob'
@@ -104,7 +104,7 @@ Object.keys(SIDEBAR_CONFIG).forEach(key => {
   config.forEach(cfg => {
     const { text, path, leaves = [] } = cfg
     const items: Items[] = getItems(key, path, leaves)
-    sidebar[key].push({ text, items, collapsible: true })
+    sidebar[key].push({ text, items, collapsed: true })
   })
 })
 
