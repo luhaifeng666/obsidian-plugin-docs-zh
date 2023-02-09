@@ -9,14 +9,17 @@ hero:
     alt: Obsidian
   actions:
     - theme: brand
-      text: 小工具
-      link: https://www.npmjs.com/package/obsidian-plugin-generator
+      text: Obsidian 下载
+      link: https://obsidian.md/
     - theme: brand
       text: 官方文档地址
       link: https://marcus.se.net/obsidian-plugin-docs/
     - theme: alt
       text: 官方文档 Github 地址
       link: https://github.com/marcusolsson/obsidian-plugin-docs
+    - theme: alt
+      text: 小工具
+      link: https://www.npmjs.com/package/obsidian-plugin-generator
 features:
   - title: 文档更新说明 📢
     details: 最新文档已同步完成。
@@ -27,9 +30,9 @@ features:
 ---
 
 <!--
- * @Author: luhaifeng666 youzui@hotmail.com
- * @Date: 2022-08-23 11:37:51
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-23 14:21:31
+ * @Author: haifeng.lu haifeng.lu@ly.com
+ * @Date: 2022-12-20 11:18:11
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2023-02-08 13:40:06
  * @Description: 
 -->
