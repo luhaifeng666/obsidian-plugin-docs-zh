@@ -5,7 +5,7 @@ title: 声明
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-08-24 13:33:50
+ * @LastEditTime: 2023-02-10 10:07:52
  * @Description: 
 -->
 
@@ -13,7 +13,7 @@ title: 声明
 
 这是一份 **非官方的** Obsidian 插件开发文档。
 
-该文档由 [@marcusolsson](https://github.com/marcusolsson) 以及 Obsidian 社区共同维护。 如果您觉得本站对您有用的话, 可以给本站的维护者买杯咖啡支持一下:
+该文档由 [@marcusolsson](https://github.com/marcusolsson) 以及 Obsidian 社区共同维护。 如果您觉得文档对您有用的话, 可以给文档的**原作者**买杯咖啡支持一下:
 
 <a href="https://buymeacoffee.com/marcusolsson">
   <img src="/images/default-violet.webp" width="200" />
