@@ -2,7 +2,7 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-05 09:49:20
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-20 10:44:26
+ * @LastEditTime: 2023-02-11 09:51:56
  * @Description: 
 -->
 # debounce
@@ -19,6 +19,6 @@ export function debounce<T extends unknown[], V>(cb: (...args: [
 
 | Parameter | Description |
 |-----------|-------------|
-| `cb` | The function to call. |
-| `timeout` | The timeout to wait. |
-| `resetTimer` | Whether to reset the timeout when the debouncer is called again. |
+| `cb` | 回调函数。 |
+| `timeout` | 延迟时间。 |
+| `resetTimer` | 再次调用该函数时是否重置延迟时间。 |
