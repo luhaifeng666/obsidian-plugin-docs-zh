@@ -1,8 +1,8 @@
 <!--
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-08-23 11:37:51
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-20 10:47:53
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-02-17 10:16:26
  * @Description: 
 -->
 # request
@@ -11,8 +11,8 @@
 export function request(request: RequestUrlParam | string): Promise<string>;
 ```
 
-Similar to `fetch()`, request a URL using HTTP/HTTPS, without any CORS restrictions.
-Returns the text value of the response.
+与 `fetch()` 方法类似，使用 HTTP/HTTPS 请求一个地址，没有任何跨域限制。
+返回响应结果文本值。
 
 ## Parameters
 
