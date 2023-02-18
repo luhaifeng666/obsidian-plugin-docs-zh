@@ -2,7 +2,7 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-08-23 11:37:51
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-20 10:48:07
+ * @LastEditTime: 2023-02-18 22:46:08
  * @Description: 
 -->
 # requestUrl
@@ -11,7 +11,7 @@
 export function requestUrl(request: RequestUrlParam | string): RequestUrlResponsePromise;
 ```
 
-Similar to `fetch()`, request a URL using HTTP/HTTPS, without any CORS restrictions.
+类似 `fetch()` 方法，使用HTTP/HTTPS请求 URL, 没有任何跨域限制。
 
 ## Parameters
 
