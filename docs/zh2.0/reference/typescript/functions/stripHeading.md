@@ -1,10 +1,17 @@
+<!--
+ * @Author: luhaifeng666 youzui@hotmail.com
+ * @Date: 2022-08-23 11:37:51
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-02-21 09:42:11
+ * @Description: 
+-->
 # stripHeading
 
 ```ts
 export function stripHeading(heading: string): string;
 ```
 
-This function normalizes headings for link matching by stripping out special characters and shrinking consecutive spaces.
+该方法通过剔除特殊字符以及减少连续空格的方式来规范化链接匹配的 heading。
 
 ## Parameters
 
