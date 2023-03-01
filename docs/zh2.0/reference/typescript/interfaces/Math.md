@@ -1,13 +1,13 @@
 <!--
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:42:44
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:42:46
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-02-23 10:58:54
  * @Description: 
 -->
 # Math
 
-An intrinsic object that provides basic mathematics functionality and constants.
+一个提供基础数学函数及常量的内部对象。
 
 ## Methods
 

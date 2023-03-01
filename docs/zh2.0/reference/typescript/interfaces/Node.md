@@ -1,13 +1,13 @@
 <!--
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:43:24
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:43:26
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-03-01 10:52:24
  * @Description: 
 -->
 # Node
 
-Node is an interface from which a number of DOM API object types inherit. It allows those types to be treated similarly; for example, inheriting the same set of methods, or being tested in the same way.
+Node 是一个接口，许多 DOM API 对象类型继承自该接口。它允许对这些类型进行类似处理；比如，继承相同的方法集，或者通过相同的方式进行测试。
 
 ## Methods
 
@@ -17,7 +17,7 @@ Node is an interface from which a number of DOM API object types inherit. It all
 createEl: <K extends "object" | "a" | "abbr" | "address" | "applet" | "area" | "article" | "aside" | "audio" | "b" | "base" | "basefont" | "bdi" | "bdo" | "blockquote" | "body" | "br" | "button" | "canvas" | ... 99 more ... | "wbr">(tag: K, o?: string | DomElementInfo, callback?: (el: HTMLElementTagNameMap[K]) => void) => HTM...
 ```
 
-Create an element and append it to this node.
+创建一个元素并插入到该节点中。
 
 ### createDiv
 
