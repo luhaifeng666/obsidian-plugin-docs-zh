@@ -2,7 +2,7 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-08-23 11:37:51
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:45:07
+ * @LastEditTime: 2023-03-07 09:35:56
  * @Description: 
 -->
 # RequestUrlParam
@@ -45,5 +45,5 @@ headers: Record<string, string>
 throw: boolean
 ```
 
-Whether to throw an error when the status code is &gt;= 400
-Defaults to true
+是否在状态码 >= 400 时抛出一个错误
+默认值为 true
