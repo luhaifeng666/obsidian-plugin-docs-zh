@@ -2,7 +2,7 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:44:32
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:44:34
+ * @LastEditTime: 2023-03-09 09:48:47
  * @Description: 
 -->
 # RGB
@@ -15,7 +15,7 @@
 r: number
 ```
 
-Red integer value between 0 and 255
+0-255间的红色整数值
 
 ### g
 
@@ -23,7 +23,7 @@ Red integer value between 0 and 255
 g: number
 ```
 
-Green integer value between 0 and 255
+0-255间的绿色整数值
 
 ### b
 
@@ -31,4 +31,4 @@ Green integer value between 0 and 255
 b: number
 ```
 
-Blue integer value between 0 and 255
+0-255间的蓝色整数值
