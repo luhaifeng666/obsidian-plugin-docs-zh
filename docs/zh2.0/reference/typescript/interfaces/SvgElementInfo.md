@@ -1,8 +1,8 @@
 <!--
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:47:08
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:47:10
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-03-10 10:26:59
  * @Description: 
 -->
 # SvgElementInfo
@@ -15,7 +15,7 @@
 cls: string | string[]
 ```
 
-The class to be assigned. Can be a space-separated string or an array of strings.
+要分配的 class。可以是用空格隔开的字符串或者字符串数组。
 
 ### attr
 
@@ -23,7 +23,7 @@ The class to be assigned. Can be a space-separated string or an array of strings
 attr: { [key: string]: string | number | boolean; }
 ```
 
-HTML attributes to be added.
+要添加的 HTML 属性。
 
 ### parent
 
@@ -31,7 +31,7 @@ HTML attributes to be added.
 parent: Node
 ```
 
-The parent element to be assigned to.
+要被分配到的父元素。
 
 ### prepend
 
