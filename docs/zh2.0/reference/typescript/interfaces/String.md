@@ -1,13 +1,13 @@
 <!--
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-12-21 10:46:22
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-21 10:46:23
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-03-12 17:59:30
  * @Description: 
 -->
 # String
 
-Allows manipulation and formatting of text strings and determination and location of substrings within strings.
+允许对文本字符串进行操作和格式化，并确定字符串中的子字符串的位置。
 
 ## Methods
 
@@ -23,9 +23,7 @@ contains: (target: string) => boolean
 startsWith: { (searchString: string, position?: number): boolean; (searchString: string, position?: number): boolean; }
 ```
 
-Returns true if the sequence of elements of searchString converted to a String is the
-same as the corresponding elements of this object (converted to a String) starting at
-position. Otherwise returns false.
+如果 searchString 转换为 String 的元素序列与此对象(转换为 String )的对应元素从开始位置起相同，则返回true。否则返回 false。
 
 ### endsWith
 
@@ -33,9 +31,7 @@ position. Otherwise returns false.
 endsWith: { (searchString: string, endPosition?: number): boolean; (target: string, length?: number): boolean; }
 ```
 
-Returns true if the sequence of elements of searchString converted to a String is the
-same as the corresponding elements of this object (converted to a String) starting at
-endPosition – length(this). Otherwise returns false.
+如果 searchString 转换为 String 的元素序列与此对象(转换为 String )的对应元素从结束位置起相同，则返回true。否则返回 false。
 
 ### format
 
