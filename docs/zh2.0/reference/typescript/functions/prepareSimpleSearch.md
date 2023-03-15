@@ -2,7 +2,7 @@
  * @Author: haifeng.lu haifeng.lu@ly.com
  * @Date: 2022-08-23 11:37:51
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2023-02-15 09:24:54
+ * @LastEditTime: 2023-03-15 10:34:17
  * @Description: 
 -->
 # prepareSimpleSearch
@@ -17,4 +17,4 @@ export function prepareSimpleSearch(query: string): (text: string) => SearchResu
 
 | Parameter | Description |
 |-----------|-------------|
-| `query` | the space-separated words |
+| `query` | 用空格隔开的词 |
