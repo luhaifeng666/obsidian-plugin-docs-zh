@@ -4,8 +4,8 @@ title: Manifest
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 11:37:51
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-09-05 09:15:38
+ * @LastEditors: luhaifeng666
+ * @LastEditTime: 2023-03-20 14:43:19
  * @Description: 
 -->
 # Manifest
@@ -24,3 +24,4 @@ title: Manifest
 | `name`          | string  | **Yes**  | The display name of your plugin.                       |
 | `version`       | string  | **Yes**  | The version of your plugin.                            |
 | `authorUrl`     | string  | No       | A URL to your own website.                             |
+| `fundingUrl`    | string  | No       | A URL to where the users can support your project.     |
