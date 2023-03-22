@@ -5,7 +5,7 @@ title: Manifest
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 11:37:51
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2023-03-20 14:43:19
+ * @LastEditTime: 2023-03-22 11:30:04
  * @Description: 
 -->
 # Manifest
@@ -16,12 +16,12 @@ title: Manifest
 
 | Property        | Type    | Required | Description                                            |
 |-----------------|---------|----------|--------------------------------------------------------|
-| `author`        | string  | **Yes**  | The plugin author's name.                              |
-| `description`   | string  | **Yes**  | The long description of your plugin.                   |
-| `id`            | string  | **Yes**  | The ID of your plugin.                                 |
-| `isDesktopOnly` | boolean | **Yes**  | Whether your plugin uses NodeJS or Electron APIs.      |
-| `minAppVersion` | string  | **Yes**  | The minimum required Obsidian version for your plugin. |
-| `name`          | string  | **Yes**  | The display name of your plugin.                       |
-| `version`       | string  | **Yes**  | The version of your plugin.                            |
-| `authorUrl`     | string  | No       | A URL to your own website.                             |
-| `fundingUrl`    | string  | No       | A URL to where the users can support your project.     |
+| `author`        | string  | **Yes**  | 插件作者的名字。                              |
+| `description`   | string  | **Yes**  | 您插件的详细描述。                   |
+| `id`            | string  | **Yes**  | 您插件的ID.                                 |
+| `isDesktopOnly` | boolean | **Yes**  | 您的插件是否使用 NodeJS 或者 Electron APIs。      |
+| `minAppVersion` | string  | **Yes**  | 您插件所要求的 Obsidian 的最低版本。 |
+| `name`          | string  | **Yes**  | 您插件的显示名称。                       |
+| `version`       | string  | **Yes**  | 您插件的版本号。                            |
+| `authorUrl`     | string  | No       | 您自己网页的地址。                             |
+| `fundingUrl`    | string  | No       | 一个用户可以支持您项目的地址。     |
