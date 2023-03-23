@@ -5,9 +5,9 @@ sidebar_label: Overview
 # Obsidian TypeScript API
 
 :::warning
-This documentation has been generated from the [Obsidian API](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts).
+该文档是从 [Obsidian API](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts) 生成的。
 
-The [script](https://github.com/marcusolsson/dts-docs) used to generate the documentation is still relatively untested. If you spot any errors or inconsistencies with the official API, let me know.
+用来生成文档的 [script](https://github.com/marcusolsson/dts-docs) 尚未经过测试。如果您发现任何错误或者与官方 API 相悖之处，请告知于我。
 :::
 
 ## Classes
