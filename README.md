@@ -2,12 +2,12 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-03-28 21:10:00
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2023-04-03 11:11:49
+ * @LastEditTime: 2023-04-03 11:13:43
  * @Description: 
 -->
 <div align="center">
 
-<img src="./docs/.vuepress/public/images/logo.webp" width="200" />
+<img src="./docs/public/images/logo.webp" width="200" />
 
 </div>
 
