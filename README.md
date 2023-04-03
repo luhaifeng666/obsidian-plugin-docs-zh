@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-03-28 21:10:00
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-10-04 10:55:44
+ * @LastEditTime: 2023-04-03 11:11:49
  * @Description: 
 -->
 <div align="center">
@@ -15,7 +15,7 @@
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/vuepress-v2.x-brightgreen" />
+<img src="https://img.shields.io/badge/VitePress-%5E1.0.0--alpha.43-brightgreen" />
 
 </div>
 
