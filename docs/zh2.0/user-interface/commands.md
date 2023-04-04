@@ -78,7 +78,7 @@ this.addCommand({
 
     console.log(`You have selected: ${sel}`);
   },
-}
+});
 ```
 
 ::: tip
