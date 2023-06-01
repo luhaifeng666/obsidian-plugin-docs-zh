@@ -63,13 +63,13 @@ cd path/to/vault/.obsidian/plugins/obsidian-instant-coffee
 
 ```bash [npm]
 # 以下命令二选一
-npm run chore
+npm run install
 npm install
 ```
 
 ```bash [yarn]
 # 以下命令二选一
-yarn run chore
+yarn run install
 yarn install
 ```
 
