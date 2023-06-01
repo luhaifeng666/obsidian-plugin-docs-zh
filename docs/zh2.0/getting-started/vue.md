@@ -49,7 +49,7 @@ cd path/to/vault/.obsidian/plugins
 git clone https://github.com/your-username/obsidian-instant-coffee.git
 ```
 
-## 第二步：安装和更新项目依赖
+## 第二步：安装项目依赖
 
 1. 打开终端，进入您的插件文件夹。
 
@@ -63,13 +63,13 @@ cd path/to/vault/.obsidian/plugins/obsidian-instant-coffee
 
 ```bash [npm]
 # 以下命令二选一
-npm run install
+npm run chore
 npm install
 ```
 
 ```bash [yarn]
 # 以下命令二选一
-yarn run install
+yarn run chore
 yarn install
 ```
 
@@ -86,26 +86,6 @@ npm install -D naive-ui
 ```bash [yarn]
 yarn install -D naive-ui
 ```
-
-:::
-
-4. 更新项目依赖。
-
-::: code-group
-
-```bash [npm]
-# 以下命令二选一
-npm run update
-npm update
-```
-
-```bash [yarn]
-# 以下命令二选一
-yarn run update
-yarn update
-```
-
-:::
 
 ## 第三步：修改插件的 manifest 配置
 
