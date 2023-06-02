@@ -121,7 +121,7 @@ export default defineConfig({
   ],
   themeConfig: {
     siteTitle: 'Obsidian 插件开发文档',
-    logo: '/images/logo.webp',
+    logo: '/images/img/logo.svg',
     nav: [
 			{ text: '首页', link: '/' },
 			{ text: '文档', link: '/zh2.0/' },

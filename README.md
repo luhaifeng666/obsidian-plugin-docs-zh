@@ -7,7 +7,7 @@
 -->
 <div align="center">
 
-<img src="./docs/public/images/logo.webp" width="200" />
+<img src="./docs/public/images/img/logo.svg" width="100" />
 
 </div>
 

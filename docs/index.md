@@ -5,7 +5,7 @@ hero:
   name: Obsidian Plugin
   text: 开发文档
   image:
-    src: /images/logo.webp
+    src: /images/img/logo.svg
     alt: Obsidian
   actions:
     - theme: brand
