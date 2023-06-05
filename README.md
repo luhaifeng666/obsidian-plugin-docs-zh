@@ -21,10 +21,6 @@
 
 <br/>
 
-<h2 align="center">文档更新说明 📢</h2>
-
-<p align="center">原先的老版本文档已移除，现只保留最新版本的文档~</p>
-
 <h2 align="center">关于共建</h2>
 
 <p align="center">
