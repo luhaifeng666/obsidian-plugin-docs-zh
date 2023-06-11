@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 13:54:33
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2023-02-08 10:20:41
+ * @LastEditTime: 2023-06-11 21:52:39
  * @Description: 
  */
 import fg from 'fast-glob'
@@ -133,6 +133,9 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/luhaifeng666/obsidian-plugin-docs-zh' }
     ],
-    sidebar
+    sidebar,
+    search: {
+      provider: 'local'
+    }
   }
 })
