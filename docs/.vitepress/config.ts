@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-23 13:54:33
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2023-06-11 21:52:39
+ * @LastEditTime: 2023-06-26 23:21:55
  * @Description: 
  */
 import fg from 'fast-glob'
@@ -107,6 +107,8 @@ Object.keys(SIDEBAR_CONFIG).forEach(key => {
     sidebar[key].push({ text, items, collapsed: true })
   })
 })
+
+console.log(sidebar, '//////////')
 
 export default defineConfig({
   title: 'Obsidian 插件开发文档',

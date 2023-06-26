@@ -7,4 +7,4 @@ MD025: false
 
 MD033:
   # Allowed elements
-  allowed_elements: ['a', 'img', 'div']
+  allowed_elements: ['a', 'img', 'div', 'VPTeamMembers', 'script']

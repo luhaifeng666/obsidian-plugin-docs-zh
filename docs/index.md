@@ -28,11 +28,3 @@ features:
   - title: 关于共建
     details: 文档翻译自官方开发文档。由于本人水平以及精力有限，如果有翻译不周到之处还望海涵，方便的话可以提 Issue 以便让我修正~ 有愿意加入的小伙伴欢迎提PR~ 感谢诸位~ 🫶
 ---
-
-<!--
- * @Author: haifeng.lu haifeng.lu@ly.com
- * @Date: 2022-12-20 11:18:11
- * @LastEditors: haifeng.lu
- * @LastEditTime: 2023-02-08 13:40:06
- * @Description: 
--->
