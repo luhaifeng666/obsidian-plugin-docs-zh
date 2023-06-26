@@ -5,7 +5,7 @@ title: 声明
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2023-02-10 10:07:52
+ * @LastEditTime: 2023-06-27 00:26:28
  * @Description: 
 -->
 
@@ -35,3 +35,31 @@ title: 声明
 - [Unofficial API FAQ](https://liamca.in/Obsidian/API+FAQ/index) by [Liam Cain](https://liamca.in)
 - [Obsidian Tools](https://github.com/obsidian-tools/obsidian-tools)
 - [Getting Started with CodeMirror 6](https://github.com/nothingislost/obsidian-cm6-attributes#getting-started-with-codemirror-6) by [NothingIsLost](https://github.com/nothingislost)
+
+## 贡献者
+
+<VPTeamMembers align="center" size="small" :members="members" />
+
+<script setup>
+import { VPTeamMembers } from 'vitepress/theme'
+
+const members = [
+  {
+    avatar: 'https://www.github.com/luhaifeng666.png',
+    name: 'luhaifeng666',
+    title: 'Creator',
+    sponsor: 'https://www.buymeacoffee.com/luhaifeng',
+    links: [
+      { icon: 'github', link: 'https://github.com/luhaifeng666' }
+    ]
+  },
+  {
+    avatar: 'https://www.github.com/RealBigBrownBear.png',
+    name: 'RealBigBrownBear',
+    title: 'Developer',
+    links: [
+      { icon: 'github', link: 'https://github.com/RealBigBrownBear' }
+    ]
+  }
+]
+</script>
