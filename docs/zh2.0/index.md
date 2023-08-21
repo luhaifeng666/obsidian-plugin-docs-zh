@@ -5,11 +5,21 @@ title: 声明
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666 youzui@hotmail.com
- * @LastEditTime: 2023-08-15 14:35:22
+ * @LastEditTime: 2023-08-21 09:48:49
  * @Description: 
 -->
 
 # Obsidian 插件开发文档
+
+::: danger 提示
+
+该文档的原文档现已不再维护，官方文档已经迁移至 [`新地址`](https://docs.obsidian.md/Home)。本文档目前尚可作参考，如若发现有不对劲的地儿，可移步至官方文档进行查阅~
+
+官方的 Github 地址[`请戳这里`~](https://github.com/obsidianmd/obsidian-developer-docs)!
+
+感谢诸位这段时间的使用与支持~
+
+:::
 
 这是一份 **非官方的** Obsidian 插件开发文档。
 
