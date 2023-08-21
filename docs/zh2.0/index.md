@@ -5,7 +5,7 @@ title: 声明
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-08-07 11:00:59
  * @LastEditors: luhaifeng666 youzui@hotmail.com
- * @LastEditTime: 2023-08-21 09:48:49
+ * @LastEditTime: 2023-08-21 16:58:04
  * @Description: 
 -->
 
@@ -58,7 +58,6 @@ const members = [
     avatar: 'https://www.github.com/luhaifeng666.png',
     name: 'luhaifeng666',
     title: 'Creator',
-    sponsor: 'https://www.buymeacoffee.com/luhaifeng',
     links: [
       { icon: 'github', link: 'https://github.com/luhaifeng666' }
     ]
